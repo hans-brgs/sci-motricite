@@ -45,6 +45,49 @@ wikilinks, plan de cours — ne franchit jamais la frontière.
 Pour ajouter un chapitre, il suffit d'ajouter son entrée dans la constante
 `COURSE.chapters`, en tête du script.
 
+## Écrire un quiz d'entraînement
+
+Chaque chapitre peut porter un quiz de fin de chapitre, dans **son propre
+fichier** du vault, déclaré par la clé `quiz` de son entrée dans
+`COURSE.chapters`.
+
+> **Le quiz est public.** Tout ce que ce script lit part dans un dépôt GitHub
+> public. Les questions d'examen n'ont donc rien à y faire : elles vivent dans un
+> fichier que `COURSE.chapters` ne référence pas, et que le script ne lit jamais.
+
+La grammaire est faite pour rester lisible **dans Obsidian**, où les
+propositions s'affichent comme une vraie liste à cocher :
+
+```markdown
+## Q1 — Laquelle de ces formulations résume le mieux ce qu'étudie la biomécanique ?
+
+Renvoi : §1.1
+
+- [ ] L'étude des muscles et des os du corps humain
+- [x] L'étude des forces et de leurs effets sur le vivant
+- [ ] L'étude des machines et des moteurs appliquée au sport
+
+> **Justification.** Pourquoi celle-là, et pourquoi pas la plus tentante des
+> autres.
+```
+
+| Élément | Règle |
+|---|---|
+| `## Q<n> — énoncé ?` | Le titre porte l'énoncé. Le `Q<n>` sert de repère dans Obsidian ; la numérotation affichée sur le site suit l'ordre du fichier. |
+| `Renvoi : §1.1` | Facultatif. Ajoute sous la correction un lien « Relire la section 1.1 ». Le script prévient si la section n'existe pas. |
+| `- [ ]` / `- [x]` | Les propositions. **Exactement une** case cochée : le script refuse la question sinon, et le dit. |
+| `> …` | La justification, révélée après correction. Du Markdown complet : gras, italique, listes, plusieurs paragraphes. |
+
+`npm run sync:check` valide sans rien écrire, et signale une question sans
+propositions, à zéro ou plusieurs bonnes réponses, sans justification, ou dont le
+renvoi pointe vers une section inconnue.
+
+**Écrire de bons distracteurs**, c'est le vrai travail. Trois gisements dans le
+chapitre lui-même : les listes « ✅ je dois être capable de… », qui sont la
+spécification des questions ; les encadrés « ⚠ idée reçue », qui sont des erreurs
+documentées donc les meilleurs distracteurs possibles ; et le glossaire de
+section, d'où sortent presque gratuitement les questions de définition.
+
 ## Développer
 
 ```bash

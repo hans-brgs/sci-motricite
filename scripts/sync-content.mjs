@@ -4,7 +4,7 @@
  * ---------------------------------------------------------------------------
  * Le vault reste la zone de rédaction : c'est là que les chapitres sont écrits,
  * relus et validés section par section. Ce script les publie, il ne les
- * réécrit pas. Il traduit trois choses :
+ * réécrit pas. Il traduit quatre choses :
  *
  *   1. la **grammaire des blocs** du support écrit — les citations Markdown
  *      titrées par un émoji (🎯 objectifs, 🔎 pour aller plus loin, 🏃
@@ -16,6 +16,9 @@
  *   3. l'**annexe des corrigés** : chaque question de « Vérifiez votre
  *      compréhension » est réunie avec sa réponse dans un <Reveal>. Sur papier
  *      les corrigés vivent en annexe ; sur le web ils vivent sous la question.
+ *   4. le **quiz d'entraînement** de fin de chapitre, écrit dans son propre
+ *      fichier du vault — voir `parseQuiz` et le README § « Écrire un quiz ».
+ *      Ce quiz est public : la banque d'examen ne doit jamais y figurer.
  *
  * Ce qui est propre à l'enseignant ne franchit jamais la frontière : état des
  * sections, notes de production, wikilinks vers le vault, plan de cours.
@@ -50,6 +53,9 @@ const COURSE = {
       label: "Chapitre 1 · Cinématique",
       title: "Chapitre 1 — Cinématique : décrire le mouvement",
       source: "contenu/support-ecrit-ch1-cinematique.md",
+      // Quiz d'entraînement, publié. La banque d'examen ne doit JAMAIS être
+      // référencée ici : tout ce que ce script lit part dans un dépôt public.
+      quiz: "contenu/quiz-ch1-cinematique.md",
       lead: "Décrire un mouvement sans encore en chercher les causes : trajectoire, distance, vitesse, accélération, angles articulaires. C'est le socle de vocabulaire sur lequel tout le reste du cours s'appuie.",
     },
     {
@@ -620,6 +626,148 @@ const GENERATED_BANNER = (chapter) =>
   `    synchronisation. Corriger le chapitre dans le vault, puis resynchroniser. */}`;
 
 /* ===========================================================================
+   Quiz d'entraînement de fin de chapitre
+   ======================================================================== */
+
+/**
+ * Grammaire du fichier de quiz (voir README.md § « Écrire un quiz ») :
+ *
+ *     ## Q1 — L'énoncé de la question ?
+ *
+ *     Renvoi : §1.6
+ *
+ *     - [ ] Une proposition fausse
+ *     - [x] La bonne réponse
+ *     - [ ] Une autre proposition fausse
+ *
+ *     > **Justification.** Pourquoi celle-là, et pourquoi pas la plus tentante
+ *     > des autres.
+ *
+ * Choisie pour rester lisible **dans Obsidian** : les propositions y forment
+ * une vraie liste à cocher, et la bonne réponse se voit d'un coup d'œil.
+ * `Renvoi` et la justification sont facultatifs ; exactement une case doit être
+ * cochée.
+ */
+function parseQuiz(body, ctx) {
+  const questions = [];
+  let current = null;
+
+  for (const line of body.split(/\r?\n/)) {
+    const heading = line.match(/^##\s+(?:Q\s*(\d+)\s*[—-]\s*)?(.+?)\s*$/);
+    if (heading) {
+      current = {
+        number: heading[1] || String(questions.length + 1),
+        question: heading[2].trim(),
+        renvoi: "",
+        options: [],
+        explanation: [],
+      };
+      questions.push(current);
+      continue;
+    }
+    if (!current) continue;
+
+    const renvoi = line.match(/^Renvoi\s*:\s*§?\s*([\d.]+)/i);
+    if (renvoi) {
+      current.renvoi = renvoi[1];
+      continue;
+    }
+
+    const option = line.match(/^\s*-\s*\[( |x|X)\]\s+(.+?)\s*$/);
+    if (option) {
+      current.options.push({ correct: option[1].toLowerCase() === "x", label: option[2] });
+      continue;
+    }
+
+    const quoted = line.match(/^>\s?(.*)$/);
+    if (quoted) {
+      current.explanation.push(quoted[1]);
+      continue;
+    }
+  }
+
+  return questions.filter((q) => {
+    const correct = q.options.filter((o) => o.correct).length;
+    if (q.options.length < 2) {
+      warn(`${ctx} — Q${q.number} n'a pas de propositions : question ignorée`);
+      return false;
+    }
+    if (correct !== 1) {
+      warn(
+        `${ctx} — Q${q.number} a ${correct} bonne(s) réponse(s) au lieu d'une : question ignorée`
+      );
+      return false;
+    }
+    if (!q.explanation.join("").trim()) {
+      warn(`${ctx} — Q${q.number} n'a pas de justification`);
+    }
+    return true;
+  });
+}
+
+function renderQuizPage(chapter, questions, sectionHrefs) {
+  const items = questions.map((q) => {
+    const target = sectionHrefs[q.renvoi];
+    if (q.renvoi && !target) {
+      warn(`quiz ch.${chapter.number} — Q${q.number} renvoie à §${q.renvoi}, section inconnue`);
+    }
+    const attrs = [
+      `question="${attr(plain(q.question))}"`,
+      q.renvoi && target ? `renvoi="${attr(q.renvoi)}"` : "",
+      target ? `href="${target}"` : "",
+    ]
+      .filter(Boolean)
+      .join(" ");
+
+    const options = q.options
+      .map((o) => `    <QuizOption${o.correct ? " correct" : ""}>${o.label}</QuizOption>`)
+      .join("\n");
+
+    // La justification est écrite au ras de la marge, entre deux lignes vides :
+    // MDX la traite alors comme du Markdown de bloc, et une justification peut
+    // porter un gras, une liste ou deux paragraphes sans rien casser. En
+    // l'indentant, elle deviendrait un bloc de code.
+    const explanation = q.explanation.join("\n").trim();
+
+    return (
+      `  <QuizItem ${attrs}>\n${options}\n` +
+      (explanation ? `    <QuizExplanation>\n\n${explanation}\n\n    </QuizExplanation>\n` : "") +
+      `  </QuizItem>`
+    );
+  });
+
+  return [
+    "---",
+    "id: quiz",
+    `title: ${JSON.stringify(`Quiz d'entraînement — ${chapter.label.replace(/^Chapitre \d+ · /, "")}`)}`,
+    `sidebar_label: "Quiz d'entraînement"`,
+    "sidebar_position: 99",
+    `slug: /${COURSE.slug}/${chapter.dir}/quiz`,
+    `description: ${JSON.stringify(
+      `${questions.length} questions pour vérifier ce que vous retenez du chapitre. Entraînement, corrigé, sans note.`
+    )}`,
+    "---",
+    "",
+    GENERATED_BANNER({ source: chapter.quiz }),
+    "",
+    `<SectionLead label="Comment s'en servir">`,
+    "",
+    "Répondez à toutes les questions, puis demandez la correction : vous verrez",
+    "votre score, la bonne réponse à chaque question et pourquoi c'est celle-là.",
+    "Rien n'est enregistré, rien n'est noté — recommencez autant de fois que vous",
+    "voulez. Ces questions sont un **entraînement** : elles ne sont pas celles de",
+    "l'examen.",
+    "",
+    "</SectionLead>",
+    "",
+    "<QuizSet>",
+    items.join("\n\n"),
+    "</QuizSet>",
+    "",
+  ].join("\n");
+}
+
+/* ===========================================================================
    Page d'accueil d'un chapitre
    ======================================================================== */
 
@@ -686,7 +834,7 @@ function main() {
     process.exit(1);
   }
 
-  const totals = { pages: 0, figures: 0, questions: 0, media: 0, missingAnswers: 0 };
+  const totals = { pages: 0, figures: 0, questions: 0, media: 0, missingAnswers: 0, quiz: 0 };
   const glossary = [];
 
   for (const [i, chapter] of COURSE.chapters.entries()) {
@@ -707,6 +855,28 @@ function main() {
     const pages = sections.map((s) => renderSection(s, chapter, corriges, footnotes));
     const dir = path.join(OUT, chapter.dir);
 
+    // Table « numéro de section → adresse », pour que chaque question du quiz
+    // puisse renvoyer vers la section à relire.
+    const hrefs = Object.fromEntries(
+      pages.map((p) => [
+        p.section.number,
+        `/cours/${COURSE.slug}/${slugify(p.section.number, p.section.title)}`,
+      ])
+    );
+
+    let quiz = [];
+    if (chapter.quiz) {
+      const quizPath = path.join(VAULT, chapter.quiz);
+      if (!fs.existsSync(quizPath)) {
+        warn(`chapitre ${chapter.number} — quiz annoncé mais absent : ${chapter.quiz}`);
+      } else {
+        quiz = parseQuiz(
+          sanitizeSource(stripFrontMatter(fs.readFileSync(quizPath, "utf8"))),
+          `quiz ch.${chapter.number}`
+        );
+      }
+    }
+
     if (!CHECK_ONLY) {
       fs.rmSync(dir, { recursive: true, force: true });
       fs.mkdirSync(dir, { recursive: true });
@@ -714,6 +884,9 @@ function main() {
       fs.writeFileSync(path.join(dir, "index.mdx"), renderChapterIndex(chapter, pages), "utf8");
       for (const page of pages) {
         fs.writeFileSync(path.join(dir, page.file), page.content, "utf8");
+      }
+      if (quiz.length) {
+        fs.writeFileSync(path.join(dir, "quiz.mdx"), renderQuizPage(chapter, quiz, hrefs), "utf8");
       }
     }
 
@@ -746,11 +919,14 @@ function main() {
     totals.media += stat.media;
     totals.missingAnswers += stat.missingAnswers;
 
+    totals.quiz += quiz.length;
+
     console.log(
       `  ${chapter.label.padEnd(28)} ${String(pages.length).padStart(2)} sections · ` +
         `${String(stat.figures).padStart(2)} figures · ` +
         `${String(stat.questions).padStart(2)} questions · ` +
-        `${String(stat.media).padStart(2)} renvois média`
+        `${String(stat.media).padStart(2)} renvois média` +
+        (quiz.length ? ` · ${quiz.length} questions de quiz` : "")
     );
   }
 
@@ -801,7 +977,8 @@ function main() {
 
   console.log(
     `\n  ${totals.pages} pages · ${totals.figures} figures · ${totals.questions} questions ` +
-      `· ${totals.media} renvois média · ${unique.length} entrées de glossaire` +
+      `· ${totals.media} renvois média · ${totals.quiz} questions de quiz` +
+      ` · ${unique.length} entrées de glossaire` +
       `${CHECK_ONLY ? "   (analyse seule, rien écrit)" : ""}`
   );
 
