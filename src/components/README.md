@@ -51,6 +51,7 @@ de rédaction du support écrit (`outils/support-ecrit-structure.md` du vault) :
 
 | Adaptateur | Rôle |
 |---|---|
+| `panel` (`mdx/panel.js`) | La grammaire visuelle commune des encadrés, reprise des cartes du diaporama : un aplat très dilué de la teinte qui se dissipe en diagonale vers la transparence, et une bordure de cette même teinte. Voir ci-dessous. |
 | `Formule` | Formule + sens de chaque symbole + unité. Une formule n'apparaît jamais sans ses unités. |
 | `ExempleResolu` | Méthode → Calcul → Interprétation, les trois temps du modèle Pressbooks. |
 | `Ressource` / `Animation` | Le renvoi 🔗 vers un média, et le lecteur YouTube à façade cliquable. |
@@ -59,6 +60,28 @@ Chacun reçoit un **dispositif visuel différent** (bande entre filets, encadré
 filet gauche, pointillés) — jamais neuf boîtes identiques de couleurs
 différentes. C'est ce qui les rend reconnaissables au défilement, et c'est la
 règle que le design system pose déjà pour les blocs existants.
+
+## Les teintes des encadrés
+
+Tous les encadrés partagent la même grammaire (`mdx/panel.js`) mais **pas la
+même teinte ni le même dispositif** : c'est ce qui permet de les reconnaître au
+défilement, comme le veut le design system, sans que la page ne devienne une
+pile de boîtes identiques. Les teintes sont prises le long du dégradé
+teal → violet de la marque.
+
+| Encadré | Teinte | Dispositif propre |
+|---|---|---|
+| Formule | teal | filet d'accent en haut |
+| Exemple résolu | bleu | filet d'accent à gauche |
+| Application | violet | pastille à cheval sur la bordure haute |
+| Ressource numérique | cyan | bordure en pointillés |
+| Pour aller plus loin | indigo | pointillés, replié, aplat plus faible |
+| Capacités attendues | teal | cases à cocher et compteur |
+| Glossaire | *(aucune)* | tableau à filets, sans fond — voulu par le design system |
+| Attention | **ambre** | filet d'accent à gauche |
+
+L'ambre de l'encadré « Attention » sort volontairement du dégradé : un
+avertissement doit se lire comme un avertissement, pas comme un encadré de plus.
 
 ## Enregistrement dans MDX
 

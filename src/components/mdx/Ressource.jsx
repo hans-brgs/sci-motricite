@@ -1,5 +1,6 @@
 import React from "react";
 import { Icon } from "./Icon";
+import { panel, hueOf } from "./panel";
 
 /**
  * Encadré « Ressource numérique » — le renvoi vers une animation, une vidéo
@@ -17,15 +18,13 @@ export function Ressource({ children, style, ...rest }) {
         display: "flex",
         gap: "var(--sp-3)",
         alignItems: "flex-start",
-        border: "1px dashed var(--border-strong)",
-        borderRadius: "var(--radius-md)",
-        background: "var(--bg-subtle)",
+        ...panel("cyan", { dashed: true, fill: 9 }),
         padding: "var(--sp-4) var(--sp-5)",
         ...style,
       }}
       {...rest}
     >
-      <Icon name="link-2" size={16} style={{ marginTop: 3, color: "var(--text-muted)" }} />
+      <Icon name="link-2" size={16} style={{ marginTop: 3, color: hueOf("cyan") }} />
       <div
         style={{
           font: "var(--type-small)",
@@ -39,7 +38,7 @@ export function Ressource({ children, style, ...rest }) {
             font: "var(--type-eyebrow)",
             letterSpacing: "var(--ls-caps)",
             textTransform: "uppercase",
-            color: "var(--text-muted)",
+            color: hueOf("cyan"),
             fontWeight: "var(--fw-semibold)",
             display: "block",
             marginBottom: "var(--sp-2)",

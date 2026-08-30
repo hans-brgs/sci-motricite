@@ -1,4 +1,5 @@
 import React from "react";
+import { panel, hueOf } from "./panel";
 
 /**
  * Encadré « Exemple résolu », en trois temps — **Méthode → Calcul →
@@ -6,19 +7,16 @@ import React from "react";
  * rédaction. Toute formule est suivie d'un exemple entièrement résolu avant
  * qu'on demande quoi que ce soit au lecteur.
  *
- * Dispositif visuel : encadré fermé, filet gauche violet (côté « savoir »),
- * numéro en mono — encore un traitement différent des autres blocs.
+ * Teinte bleue, filet d'accent à gauche : à mi-chemin du dégradé, entre la
+ * formule (teal) et l'application (violet), comme il est à mi-chemin entre la
+ * règle et le terrain.
  */
 export function ExempleResolu({ number, title, children, style, ...rest }) {
   return (
     <section
       className="sm-block"
       style={{
-        border: "1px solid var(--border-default)",
-        borderInlineStart: "3px solid var(--accent-2-strong)",
-        borderRadius: "0 var(--radius-lg) var(--radius-lg) 0",
-        background: "var(--surface-card)",
-        boxShadow: "var(--shadow-1)",
+        ...panel("blue", { edge: "left" }),
         padding: "var(--sp-5) var(--sp-6)",
         ...style,
       }}
@@ -29,7 +27,7 @@ export function ExempleResolu({ number, title, children, style, ...rest }) {
           font: "var(--type-eyebrow)",
           letterSpacing: "var(--ls-caps)",
           textTransform: "uppercase",
-          color: "var(--accent-2-strong)",
+          color: hueOf("blue"),
           fontWeight: "var(--fw-semibold)",
           display: "block",
           marginBottom: "var(--sp-3)",

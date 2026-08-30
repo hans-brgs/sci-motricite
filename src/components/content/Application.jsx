@@ -1,12 +1,13 @@
 import React from "react";
+import { panel } from "../mdx/panel";
 import { Icon } from "../mdx/Icon";
 
 export function Application({ title = "Application", subject, children, style, ...rest }) {
   return (
     <section style={{
       position: "relative", marginTop: "var(--sp-6)",
-      border: "1px solid var(--violet-200)", borderRadius: "var(--radius-lg)",
-      background: "var(--accent-2-soft)", padding: "var(--sp-6)", ...style
+      ...panel("violet"),
+      padding: "var(--sp-6)", ...style
     }} {...rest}>
       <span style={{
         position: "absolute", top: -11, insetInlineStart: "var(--sp-5)",

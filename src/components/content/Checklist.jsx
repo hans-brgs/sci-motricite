@@ -1,15 +1,16 @@
 import React from "react";
 import { Icon } from "../mdx/Icon";
+import { panel, hueOf } from "../mdx/panel";
 
 export function Checklist({ items = [], title = "À la fin de cette section, je dois être capable de…", style, ...rest }) {
   const [done, setDone] = React.useState(() => items.map(() => false));
   const count = done.filter(Boolean).length;
   const toggle = i => setDone(d => d.map((v, j) => j === i ? !v : v));
   return (
-    <section style={{ background: "var(--bg-subtle)", border: "1px solid var(--border-subtle)", borderRadius: "var(--radius-lg)", padding: "var(--sp-5) var(--sp-6)", ...style }} {...rest}>
+    <section style={{ ...panel("teal", { fill: 9 }), padding: "var(--sp-5) var(--sp-6)", ...style }} {...rest}>
       <div style={{ display: "flex", alignItems: "center", gap: "var(--sp-2)", marginBottom: "var(--sp-4)" }}>
         <Icon name="circle-check" size={15} />
-        <span style={{ font: "var(--type-eyebrow)", letterSpacing: "var(--ls-caps)", textTransform: "uppercase", color: "var(--status-success)", fontWeight: "var(--fw-semibold)" }}>{title}</span>
+        <span style={{ font: "var(--type-eyebrow)", letterSpacing: "var(--ls-caps)", textTransform: "uppercase", color: hueOf("teal"), fontWeight: "var(--fw-semibold)" }}>{title}</span>
         <span style={{ marginLeft: "auto", font: "var(--type-code)", fontSize: 11, color: "var(--text-faint)" }}>{count} / {items.length}</span>
       </div>
       <ol style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column" }}>
@@ -20,8 +21,8 @@ export function Checklist({ items = [], title = "À la fin de cette section, je 
           }}>
             <span style={{
               width: 17, height: 17, flex: "0 0 auto", marginTop: 1, borderRadius: "var(--radius-xs)",
-              border: `1.5px solid ${done[i] ? "var(--status-success)" : "var(--border-strong)"}`,
-              background: done[i] ? "var(--status-success)" : "transparent",
+              border: `1.5px solid ${done[i] ? hueOf("teal") : "var(--border-strong)"}`,
+              background: done[i] ? hueOf("teal") : "transparent",
               display: "inline-flex", alignItems: "center", justifyContent: "center",
               transition: "var(--transition-control)"
             }}>
