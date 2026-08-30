@@ -161,10 +161,27 @@ body {
 
 /* --- Colonne de lecture ------------------------------------------------- */
 
+/* La colonne de lecture est bornée à la « mesure » — la longueur de ligne
+   confortable. Mais la colonne que Docusaurus lui alloue est plus large que
+   cela : à 1920 px, le texte s'arrêtait à 737 px dans une colonne de 942, et
+   ces 200 px de vide donnaient l'impression d'un texte tronqué. On resserre
+   donc le conteneur des pages de cours pour que la colonne épouse la mesure —
+   plutôt que d'allonger les lignes au-delà du lisible. */
+html.plugin-docs .container {
+  max-width: 1160px;
+}
+
 .markdown {
   --ifm-h2-vertical-rhythm-top: 2.4;
   --ifm-h3-vertical-rhythm-top: 1.8;
   max-width: var(--measure);
+}
+
+/* Le bandeau d'ouverture partage la largeur de la colonne de lecture — bandeau
+   et texte alignés sur la même marge —, mais il lui faut de l'air avant que la
+   première sous-section ne commence. */
+.markdown > header {
+  margin-bottom: var(--sp-10);
 }
 
 .markdown > h1 {

@@ -75,6 +75,7 @@ Renvoi : §1.1
 |---|---|
 | `## Q<n> — énoncé ?` | Le titre porte l'énoncé. Le `Q<n>` sert de repère dans Obsidian ; la numérotation affichée sur le site suit l'ordre du fichier. |
 | `Renvoi : §1.1` | Facultatif. Ajoute sous la correction un lien « Relire la section 1.1 ». Le script prévient si la section n'existe pas. |
+| `![légende](assets/images/courbe.png)` | Facultatif. Une image d'énoncé — une courbe à lire, un schéma à interpréter — affichée **avant** de répondre. Chemin relatif au fichier de quiz, donc l'image s'affiche aussi dans la prévisualisation Obsidian. Le script la copie dans `static/img/quiz/`. Le texte alternatif est obligatoire, et il ne doit pas donner la réponse. |
 | `- [ ]` / `- [x]` | Les propositions. **Exactement une** case cochée : le script refuse la question sinon, et le dit. |
 | `> …` | La justification, révélée après correction. Du Markdown complet : gras, italique, listes, plusieurs paragraphes. |
 

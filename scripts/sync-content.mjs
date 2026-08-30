@@ -52,6 +52,8 @@ const COURSE = {
       dir: "ch1-cinematique",
       label: "Chapitre 1 · Cinématique",
       title: "Chapitre 1 — Cinématique : décrire le mouvement",
+      // Catégories affichées dans le bandeau de chaque section.
+      tags: ["Biomécanique", "Cinématique"],
       source: "contenu/support-ecrit-ch1-cinematique.md",
       // Quiz d'entraînement, publié. La banque d'examen ne doit JAMAIS être
       // référencée ici : tout ce que ce script lit part dans un dépôt public.
@@ -63,6 +65,7 @@ const COURSE = {
       dir: "ch2-cinetique",
       label: "Chapitre 2 · Cinétique",
       title: "Chapitre 2 — Cinétique : les causes du mouvement",
+      tags: ["Biomécanique", "Cinétique"],
       source: "contenu/support-ecrit-ch2-cinetique.md",
       lead: "Remonter des effets aux causes. Ce qu'est une force, comment on la décrit, et comment les trois lois de Newton relient les forces au mouvement qu'elles produisent.",
     },
@@ -109,6 +112,30 @@ function slugify(number, title) {
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
   return `${number.replace(/\./g, "-")}-${body}`;
+}
+
+const MOIS = [
+  "janvier", "février", "mars", "avril", "mai", "juin",
+  "juillet", "août", "septembre", "octobre", "novembre", "décembre",
+];
+
+/** « 17-08-2026 » (jour-mois-année, comme dans le vault) → « 17 août 2026 ». */
+function formatDate(raw) {
+  const m = raw.match(/^(\d{2})-(\d{2})-(\d{4})$/);
+  if (!m) return "";
+  const [, day, month, year] = m;
+  const label = MOIS[Number(month) - 1];
+  return label ? `${Number(day)} ${label} ${year}` : "";
+}
+
+/**
+ * Temps de lecture, en minutes, à 200 mots par minute — une cadence usuelle
+ * pour de la prose en français. On compte le texte source, débarrassé des
+ * notes de bas de page et du balisage.
+ */
+function readingTime(lines) {
+  const words = plain(lines.join(" ")).split(/\s+/).filter(Boolean).length;
+  return Math.max(1, Math.round(words / 200));
 }
 
 /** Tronque proprement, sur une frontière de mot. */
@@ -179,6 +206,7 @@ function splitChapter(body) {
   let mode = "preamble";
   const annexe = [];
   const notes = [];
+  const etat = [];
 
   for (const line of lines) {
     const h2 = line.match(/^## (.+)$/);
@@ -201,7 +229,14 @@ function splitChapter(body) {
         current = null;
         continue;
       }
-      // « État des sections » et consorts : matière de travail, pas de publication.
+      // Le tableau « État des sections » ne se publie pas tel quel — c'est de
+      // la matière de travail. Mais il porte, section par section, la date de
+      // validation : c'est elle qui alimente le « mis à jour le… » du bandeau.
+      if (/^État des sections/i.test(heading)) {
+        mode = "etat";
+        current = null;
+        continue;
+      }
       mode = "skip";
       current = null;
       continue;
@@ -210,13 +245,31 @@ function splitChapter(body) {
     if (mode === "section" && current) current.lines.push(line);
     else if (mode === "annexe") annexe.push(line);
     else if (mode === "notes") notes.push(line);
+    else if (mode === "etat") etat.push(line);
   }
 
   return {
     sections,
     corriges: parseCorriges(annexe),
     footnotes: parseFootnotes(notes),
+    dates: parseEtat(etat),
   };
+}
+
+/**
+ * Lignes du tableau « État des sections » → { "1.1": "17-08-2026" }.
+ * On ne retient que la date de validation ; le reste de la colonne (numéro de
+ * version, notes de production) ne regarde que l'enseignant.
+ */
+function parseEtat(lines) {
+  const out = {};
+  for (const line of lines) {
+    const row = line.match(/^\|\s*(\d+\.\d+)\s*\|[^|]*\|([^|]*)\|/);
+    if (!row) continue;
+    const date = row[2].match(/(\d{2}-\d{2}-\d{4})/);
+    if (date) out[row[1]] = date[1];
+  }
+  return out;
 }
 
 /** `**Section 1.1**` puis `**a.** …` → { "1.1": { a: "…", b: "…" } } */
@@ -361,10 +414,15 @@ function renderQuote(lines, ctx) {
   // et doivent devenir des <Figure /> comme les autres.
   const rest = () => renderProse(lines.slice(lines.indexOf(first) + 1), ctx).join("\n\n");
 
-  // 🎯 Objectifs de la section → le chapeau de la page
+  // 🎯 Objectifs de la section. Ils ne deviennent pas un encadré de plus : ils
+  // sont hissés dans le bandeau d'ouverture de la page (`<ChapterHeader>`),
+  // sous un filet — c'est la règle du design system, et c'est ce qui évite
+  // qu'une section commence sur une pile de blocs.
   if (/^###\s*🎯\s*Objectifs de la section/.test(first)) {
-    ctx.objectives = plain(rest());
-    return `<SectionLead>\n\n${rest()}\n\n</SectionLead>`;
+    const body = rest();
+    ctx.objectives = plain(body);
+    ctx.objectivesMdx = body;
+    return "";
   }
 
   // 🏃 Application
@@ -558,17 +616,19 @@ function renderProse(lines, ctx) {
    Assemblage d'une page de section
    ======================================================================== */
 
-function renderSection(section, chapter, corriges, footnotes) {
+function renderSection(section, chapter, corriges, footnotes, dates) {
   const ctx = {
     id: `§${section.number}`,
     number: section.number,
     corriges,
     objectives: "",
+    objectivesMdx: "",
     figures: 0,
     questions: 0,
     mediaCalls: 0,
     missingAnswers: 0,
     glossary: [],
+    minutes: readingTime(section.lines),
   };
 
   const parts = [];
@@ -604,6 +664,9 @@ function renderSection(section, chapter, corriges, footnotes) {
     `sidebar_position: ${Number(section.number.split(".")[1])}`,
     `slug: /${COURSE.slug}/${slugify(section.number, section.title)}`,
     `description: ${JSON.stringify(truncate(ctx.objectives || plain(bodyText)))}`,
+    // Le titre est rendu par le bandeau, pas par Docusaurus : sans cela, la
+    // page afficherait deux fois le même h1.
+    "hide_title: true",
     "---",
   ].join("\n");
 
@@ -612,11 +675,51 @@ function renderSection(section, chapter, corriges, footnotes) {
     "",
     GENERATED_BANNER(chapter),
     "",
+    renderChapterHeader(section, chapter, ctx, dates),
+    "",
     bodyText,
     definitions.length ? `\n${definitions.join("\n\n")}\n` : "",
   ].join("\n");
 
   return { section, ctx, content, file: `${slugify(section.number, section.title)}.mdx` };
+}
+
+/**
+ * Bandeau d'ouverture d'une section.
+ *
+ * Le design system le décrit comme l'ouverture de toute page de cours : titre,
+ * ligne de métadonnées, puis les objectifs sous un filet. Les objectifs vivent
+ * **dans** le bandeau et non dans un encadré séparé — c'est ce qui évite qu'une
+ * section démarre sur une pile de boîtes.
+ *
+ * La ligne de métadonnées ne demande aucune saisie supplémentaire : elle
+ * recombine ce que le vault sait déjà — les catégories du chapitre, le numéro
+ * de section, le temps de lecture calculé sur le texte, et la date de
+ * validation lue dans le tableau « État des sections ».
+ */
+function renderChapterHeader(section, chapter, ctx, dates) {
+  const meta = (chapter.tags || []).map(
+    (tag, i) => `<Badge tone="${i === 0 ? "violet" : "teal"}">${attr(tag)}</Badge>`
+  );
+  meta.push(`<Badge tone="neutral">Section ${attr(section.number)}</Badge>`);
+
+  const mono = (text) =>
+    `<span style={{font:"var(--type-code)",fontSize:12,color:"var(--text-muted)"}}>${text}</span>`;
+
+  meta.push(mono(`${ctx.minutes} min de lecture`));
+  const date = formatDate(dates[section.number] || "");
+  if (date) meta.push(mono(`mis à jour le ${attr(date)}`));
+
+  return [
+    "<ChapterHeader",
+    `  title=${JSON.stringify(`${section.number} ${section.title}`)}`,
+    `  meta={<>${meta.join("")}</>}`,
+    ">",
+    "",
+    ctx.objectivesMdx.trim(),
+    "",
+    "</ChapterHeader>",
+  ].join("\n");
 }
 
 const GENERATED_BANNER = (chapter) =>
@@ -659,6 +762,7 @@ function parseQuiz(body, ctx) {
         number: heading[1] || String(questions.length + 1),
         question: heading[2].trim(),
         renvoi: "",
+        figure: null,
         options: [],
         explanation: [],
       };
@@ -670,6 +774,21 @@ function parseQuiz(body, ctx) {
     const renvoi = line.match(/^Renvoi\s*:\s*§?\s*([\d.]+)/i);
     if (renvoi) {
       current.renvoi = renvoi[1];
+      continue;
+    }
+
+    // Une image sur sa propre ligne illustre l'énoncé : une courbe à lire, un
+    // schéma à interpréter. Écrite en Markdown, elle s'affiche aussi dans la
+    // prévisualisation Obsidian.
+    const image = line.match(/^!\[(.*?)\]\(([^)]+)\)\s*$/);
+    if (image) {
+      if (current.figure) {
+        warn(`${ctx} — Q${current.number} porte plusieurs images ; seule la première est retenue`);
+      } else if (!image[1].trim()) {
+        warn(`${ctx} — Q${current.number} : l'image n'a pas de texte alternatif, elle est ignorée`);
+      } else {
+        current.figure = { alt: image[1].trim(), src: image[2].trim() };
+      }
       continue;
     }
 
@@ -705,6 +824,35 @@ function parseQuiz(body, ctx) {
   });
 }
 
+/**
+ * Copie les images citées par un quiz depuis le vault vers `static/img/quiz/`,
+ * et remplace le chemin du vault par l'adresse publique.
+ *
+ * Le vault n'est pas servi par le site : une image qui y reste n'est visible
+ * que sur le poste de l'auteur. Une image introuvable est signalée et la
+ * question est publiée sans elle, plutôt que d'afficher un cadre brisé.
+ */
+function copyQuizImages(questions, quizPath, ctx) {
+  const from = path.dirname(quizPath);
+  const to = path.join(ROOT, "static", "img", "quiz");
+
+  for (const q of questions) {
+    if (!q.figure) continue;
+    const source = path.resolve(from, q.figure.src);
+    if (!fs.existsSync(source)) {
+      warn(`${ctx} — Q${q.number} : image introuvable dans le vault (${q.figure.src})`);
+      q.figure = null;
+      continue;
+    }
+    const name = path.basename(source);
+    if (!CHECK_ONLY) {
+      fs.mkdirSync(to, { recursive: true });
+      fs.copyFileSync(source, path.join(to, name));
+    }
+    q.figure.public = `/img/quiz/${name}`;
+  }
+}
+
 function renderQuizPage(chapter, questions, sectionHrefs) {
   const items = questions.map((q) => {
     const target = sectionHrefs[q.renvoi];
@@ -719,6 +867,10 @@ function renderQuizPage(chapter, questions, sectionHrefs) {
       .filter(Boolean)
       .join(" ");
 
+    const figure = q.figure?.public
+      ? `    <QuizFigure src="${attr(q.figure.public)}" alt="${attr(q.figure.alt)}" />\n`
+      : "";
+
     const options = q.options
       .map((o) => `    <QuizOption${o.correct ? " correct" : ""}>${o.label}</QuizOption>`)
       .join("\n");
@@ -730,7 +882,7 @@ function renderQuizPage(chapter, questions, sectionHrefs) {
     const explanation = q.explanation.join("\n").trim();
 
     return (
-      `  <QuizItem ${attrs}>\n${options}\n` +
+      `  <QuizItem ${attrs}>\n${figure}${options}\n` +
       (explanation ? `    <QuizExplanation>\n\n${explanation}\n\n    </QuizExplanation>\n` : "") +
       `  </QuizItem>`
     );
@@ -845,14 +997,16 @@ function main() {
     }
 
     const raw = fs.readFileSync(source, "utf8");
-    const { sections, corriges, footnotes } = splitChapter(sanitizeSource(stripFrontMatter(raw)));
+    const { sections, corriges, footnotes, dates } = splitChapter(
+      sanitizeSource(stripFrontMatter(raw))
+    );
 
     if (!sections.length) {
       warn(`chapitre ${chapter.number} — aucune section « ## N.M » trouvée`);
       continue;
     }
 
-    const pages = sections.map((s) => renderSection(s, chapter, corriges, footnotes));
+    const pages = sections.map((s) => renderSection(s, chapter, corriges, footnotes, dates));
     const dir = path.join(OUT, chapter.dir);
 
     // Table « numéro de section → adresse », pour que chaque question du quiz
@@ -874,6 +1028,7 @@ function main() {
           sanitizeSource(stripFrontMatter(fs.readFileSync(quizPath, "utf8"))),
           `quiz ch.${chapter.number}`
         );
+        copyQuizImages(quiz, quizPath, `quiz ch.${chapter.number}`);
       }
     }
 

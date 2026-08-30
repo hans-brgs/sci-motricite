@@ -19,6 +19,7 @@ import React from "react";
 
 const ROLE_OPTION = "quiz-option";
 const ROLE_EXPLANATION = "quiz-explanation";
+const ROLE_FIGURE = "quiz-figure";
 
 /* --- Une proposition de réponse ------------------------------------------ */
 
@@ -26,6 +27,35 @@ export function QuizOption({ children }) {
   return <>{children}</>;
 }
 QuizOption.__role = ROLE_OPTION;
+
+/* --- L'illustration d'un énoncé ------------------------------------------- */
+
+/**
+ * Image d'un énoncé — une courbe à lire, un schéma à interpréter. Elle est
+ * visible avant de répondre : elle fait partie de la question, pas de la
+ * correction. L'`alt` est obligatoire, et il doit décrire ce qu'il faut voir
+ * sans donner la réponse.
+ */
+export function QuizFigure({ src, alt, ratio }) {
+  return (
+    <figure
+      style={{
+        margin: "0 0 var(--sp-4)",
+        border: "1px solid var(--border-subtle)",
+        borderRadius: "var(--radius-md)",
+        overflow: "hidden",
+        background: "var(--bg-subtle)",
+      }}
+    >
+      <img
+        src={src}
+        alt={alt}
+        style={{ display: "block", width: "100%", height: "auto", aspectRatio: ratio }}
+      />
+    </figure>
+  );
+}
+QuizFigure.__role = ROLE_FIGURE;
 
 /* --- La justification, révélée après correction --------------------------- */
 
@@ -53,6 +83,7 @@ export function QuizItem({
   const kids = React.Children.toArray(children);
   const options = kids.filter((c) => hasRole(c, ROLE_OPTION));
   const explanation = kids.find((c) => hasRole(c, ROLE_EXPLANATION));
+  const figure = kids.find((c) => hasRole(c, ROLE_FIGURE));
   const correctIndex = options.findIndex((o) => o.props.correct);
   const answered = picked !== null && picked !== undefined;
   const right = submitted && picked === correctIndex;
@@ -93,6 +124,8 @@ export function QuizItem({
           {question}
         </span>
       </div>
+
+      {figure}
 
       <div role="radiogroup" aria-label={question} style={{ display: "flex", flexDirection: "column", gap: "var(--sp-2)" }}>
         {options.map((option, i) => {

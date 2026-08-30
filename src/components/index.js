@@ -58,5 +58,5 @@ export { ExempleResolu } from "./mdx/ExempleResolu";
 export { Ressource } from "./mdx/Ressource";
 export { Animation } from "./mdx/Animation";
 export { Verification } from "./mdx/Verification";
-export { QuizSet, QuizItem, QuizOption, QuizExplanation } from "./mdx/QuizSet";
+export { QuizSet, QuizItem, QuizOption, QuizExplanation, QuizFigure } from "./mdx/QuizSet";
 export { Icon } from "./mdx/Icon";

@@ -40,6 +40,7 @@ et notes de bas de page compris.
 | `Glossaire` / `Terme` | `GlossaryBox` | `<Glossaire><Terme nom="Vitesse">…</Terme></Glossaire>` |
 | `Capacites` / `Capacite` | `Checklist` | `<Capacites><Capacite>…</Capacite></Capacites>` |
 | `Verification` | — | En-tête de la rubrique, autour d'une suite de `<Reveal>` |
+| `QuizSet` / `QuizItem` / `QuizOption` / `QuizFigure` / `QuizExplanation` | — | Le quiz d'entraînement de fin de chapitre : on répond à tout, puis on demande la correction et le score. Le `Quiz` du design system, lui, corrige au clic — il reste le bon choix pour une question isolée dans le fil du texte. |
 
 Et trois blocs que le design system ne fournissait pas, prescrits par le contrat
 de rédaction du support écrit (`outils/support-ecrit-structure.md` du vault) :

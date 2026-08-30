@@ -2,6 +2,7 @@ import MDXComponents from "@theme-original/MDXComponents";
 
 import {
   // Blocs pédagogiques du support écrit
+  ChapterHeader,
   SectionLead,
   Application,
   FurtherReading,
@@ -26,6 +27,7 @@ import {
   QuizItem,
   QuizOption,
   QuizExplanation,
+  QuizFigure,
   // Dispositifs repris du diaporama
   Stat,
   StepList,
@@ -43,6 +45,7 @@ import {
  */
 export default {
   ...MDXComponents,
+  ChapterHeader,
   SectionLead,
   Application,
   FurtherReading,
@@ -66,6 +69,7 @@ export default {
   QuizItem,
   QuizOption,
   QuizExplanation,
+  QuizFigure,
   Stat,
   StepList,
   GlowSurface,
