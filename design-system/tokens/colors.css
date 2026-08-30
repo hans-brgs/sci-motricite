@@ -1,0 +1,22 @@
+:root{
+/* Teal — couleur principale (relevée dans le diaporama CM1) */
+--teal-50:#e7faf7;--teal-100:#c3f2ec;--teal-200:#8ce6db;--teal-300:#4fd6c6;
+--teal-400:#15b8a7;--teal-500:#10a294;--teal-600:#0d8a7e;--teal-700:#0b6f66;
+--teal-800:#085249;--teal-900:#063b36;
+/* Violet — couleur secondaire */
+--violet-50:#f5edfe;--violet-100:#e8dafd;--violet-200:#d3b8fb;--violet-300:#bd93f9;
+--violet-400:#a756f6;--violet-500:#9340ea;--violet-600:#7c31cd;--violet-700:#6526a8;
+--violet-800:#4d1c80;--violet-900:#37145c;
+/* Encre — valeurs exactes du diaporama (0e1622 / 182534 / 1e2c3d / 6b7a90 / 93a1b5 / a9b5c6 / eaf0f7) */
+--ink-0:#ffffff;--ink-25:#f7fafd;--ink-50:#eaf0f7;--ink-100:#dbe4ee;--ink-200:#c2cede;
+--ink-300:#a9b5c6;--ink-400:#93a1b5;--ink-500:#6b7a90;--ink-600:#4a5a70;
+--ink-700:#2f3f54;--ink-800:#1e2c3d;--ink-850:#182534;--ink-900:#0e1622;--ink-950:#080e17;
+/* Bleus / violets de soutien relevés dans les schémas du diaporama */
+--support-blue:#5a9fd3;--support-cyan:#49b3c3;--support-indigo:#7f7de4;--support-periwinkle:#8c9be7;
+/* Sémantiques */
+--green-500:#12a150;--green-100:#dcf5e6;
+--amber-500:#c97a06;--amber-100:#fdf0d8;
+--red-500:#d13c3c;--red-100:#fbe4e4;
+/* Marque brute */
+--brand-teal:#15b8a7;--brand-violet:#a756f6;--brand-night:#0e1622;
+}

@@ -1,0 +1,51 @@
+Sci Motricité — deux licences, selon la nature du fichier
+========================================================
+
+CONTENU PÉDAGOGIQUE — CC BY 4.0
+-------------------------------
+Les chapitres de cours et tout le matériel pédagogique du site — `docs/`,
+`src/data/glossaire.json`, ainsi que les figures et illustrations produites
+pour le cours — sont publiés sous licence
+
+    Creative Commons Attribution 4.0 International (CC BY 4.0)
+    https://creativecommons.org/licenses/by/4.0/deed.fr
+
+Vous êtes libre de partager et d'adapter ce contenu, y compris à des fins
+commerciales, à condition de créditer l'auteur, d'indiquer un lien vers la
+licence et de signaler les modifications apportées.
+
+    Attribution : Hans Bourgeois — Sci Motricité
+                  https://scimotricite.hans-brgs.dev
+
+Les œuvres de tiers citées ou reproduites dans les chapitres restent soumises
+à leurs propres conditions : la licence ci-dessus ne s'y applique pas.
+
+CODE DU SITE — MIT
+------------------
+Le code qui fait tourner le site — `src/`, `scripts/`, `docusaurus.config.mjs`,
+`sidebars.js` et les fichiers de configuration — est publié sous licence MIT.
+
+Copyright (c) 2026 Hans Bourgeois
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+DESIGN SYSTEM
+-------------
+`design-system/` est le design system « Sci Motricité », propriété de l'auteur,
+distribué avec ce dépôt sous la même licence MIT que le code.

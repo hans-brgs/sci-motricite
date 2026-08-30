@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Chapitre de cours" description="Page de chapitre Docusaurus : sommaire, article sourcé, encadrés, sommaire de page." -->
+<helmet><script src="./ds-base.js"></script><style>body{margin:0;background:var(--bg-page)}a{color:var(--text-link);text-decoration:none}a:hover{color:var(--text-link-hover);text-decoration:underline}</style></helmet>
+<div style="max-width:1320px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:280px minmax(0,1fr) 220px;gap:40px;font-family:'IBM Plex Sans',system-ui,sans-serif;color:var(--text-body)">
+<aside style="border-right:1px solid var(--border-subtle);padding:32px 16px 32px 0;position:sticky;top:0;align-self:start;height:100vh;overflow:auto">
+<div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text-faint);padding:0 12px;margin-bottom:20px">STAPS-231 · Biomécanique</div>
+<x-import component-from-global-scope="MotricitDesignSystem_ea5604.SidebarNav" active-id="c2" dc-props="{{ sidebar }}" hint-size="100%,300px"></x-import>
+</aside>
+<article style="padding:32px 0 48px;min-width:0">
+<div style="position:relative;overflow:hidden;background:var(--bg-subtle);border:1px solid var(--border-subtle);border-radius:14px;padding:32px;margin-bottom:40px">
+<span style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#15b8a7,#a756f6)"></span>
+<x-import component-from-global-scope="MotricitDesignSystem_ea5604.Breadcrumb" dc-props="{{ crumbs }}" hint-size="100%,20px"></x-import>
+<h1 style="font-family:'Space Grotesk',sans-serif;font-size:44px;font-weight:700;line-height:1.05;letter-spacing:-0.03em;color:var(--text-title);margin:16px 0 0;max-width:20ch">Titre du chapitre</h1>
+<div style="display:flex;gap:8px;align-items:center;margin-top:16px;flex-wrap:wrap">
+<x-import component-from-global-scope="MotricitDesignSystem_ea5604.Badge" hint-size="70px,24px">CM 02</x-import>
+<x-import component-from-global-scope="MotricitDesignSystem_ea5604.Badge" tone="violet" hint-size="90px,24px">Section 2.1</x-import>
+<x-import component-from-global-scope="MotricitDesignSystem_ea5604.Badge" tone="neutral" hint-size="80px,24px">≈ 12 min</x-import>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text-faint)">mis à jour le 12 mars 2026</span>
+</div>
+<div style="margin-top:24px;padding-top:20px;border-top:1px solid var(--border-default)">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+<span style="font-size:14px;line-height:1">🎯</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent-strong);font-weight:600">Objectifs de la section</span>
+</div>
+<p style="font-size:17px;line-height:1.6;max-width:68ch;color:var(--text-body);margin:0">Ce que la section apporte, et ce que vous devez savoir faire à la fin. Deux à quatre phrases.</p>
+</div>
+</div>
+<h2 style="font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:600;line-height:1.3;color:var(--text-title);margin:40px 0 12px">Première section</h2>
+<p style="font-size:17px;line-height:1.6;max-width:68ch;color:var(--text-body)">Développement. Chaque affirmation scientifique doit pouvoir être rattachée à une référence de la bibliographie de fin de page.</p>
+<div style="margin:24px 0"><x-import component-from-global-scope="MotricitDesignSystem_ea5604.Figure" number="1" caption="Légende de la figure." source="à compléter" hint-size="100%,260px"></x-import></div>
+<div style="margin:24px 0"><x-import component-from-global-scope="MotricitDesignSystem_ea5604.Admonition" kind="attention" hint-size="100%,80px">Signaler ici la confusion classique que font les étudiants sur ce point.</x-import></div>
+<h2 style="font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:600;line-height:1.3;color:var(--text-title);margin:40px 0 12px">Application</h2>
+<div style="margin:20px 0"><x-import component-from-global-scope="MotricitDesignSystem_ea5604.CodeBlock" title="Application numérique" language="r" code="{{ code }}" hint-size="100%,120px"></x-import></div>
+<div style="margin:24px 0"><x-import component-from-global-scope="MotricitDesignSystem_ea5604.Application" subject="une situation de terrain" hint-size="100%,110px">Le raisonnement de la section, transposé au terrain.</x-import></div>
+<div style="margin:24px 0"><x-import component-from-global-scope="MotricitDesignSystem_ea5604.FurtherReading" hint-size="100%,54px">Le détour facultatif : histoire, technique, ouverture.</x-import></div>
+<div style="margin:24px 0"><x-import component-from-global-scope="MotricitDesignSystem_ea5604.Checklist" dc-props="{{ capacites }}" hint-size="100%,150px"></x-import></div>
+<h2 style="font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:600;line-height:1.3;color:var(--text-title);margin:40px 0 12px">Vérifiez votre compréhension</h2>
+<div style="display:flex;flex-direction:column;gap:12px;margin-bottom:16px">
+<x-import component-from-global-scope="MotricitDesignSystem_ea5604.Reveal" index="a." question="Première question ouverte de la section." hint-size="100%,60px">La réponse attendue, en deux ou trois phrases.</x-import>
+<x-import component-from-global-scope="MotricitDesignSystem_ea5604.Reveal" index="b." tone="violet" question="Deuxième question — vrai ou faux, à justifier." hint-size="100%,60px">Faux : justification en une phrase.</x-import>
+<x-import component-from-global-scope="MotricitDesignSystem_ea5604.Quiz" index="1" question="Question fermée à correction immédiate." dc-props="{{ qcm }}" hint-size="100%,180px"></x-import>
+</div>
+<h2 style="font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:600;line-height:1.3;color:var(--text-title);margin:40px 0 12px">Références</h2>
+<x-import component-from-global-scope="MotricitDesignSystem_ea5604.Reference" year="2009" authors="Winter D. A." title="Biomechanics and Motor Control of Human Movement" source="Wiley" href="#" hint-size="100%,44px"></x-import>
+<x-import component-from-global-scope="MotricitDesignSystem_ea5604.Reference" year="2015" authors="Enoka R. M." title="Neuromechanics of Human Movement" source="Human Kinetics" href="#" hint-size="100%,44px"></x-import>
+<div style="margin-top:40px"><x-import component-from-global-scope="MotricitDesignSystem_ea5604.DocNav" dc-props="{{ pager }}" hint-size="100%,90px"></x-import></div>
+</article>
+<div style="padding:32px 0">
+<div style="position:sticky;top:32px">
+<div style="font-family:'IBM Plex Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-faint);margin-bottom:10px">Sur cette page</div>
+<ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;border-left:1px solid var(--border-subtle)">
+<li style="padding-left:12px;margin-left:-1px;border-left:2px solid var(--accent)"><a href="#" style="font-size:13px;color:var(--text-link)">Première section</a></li>
+<li style="padding-left:12px;margin-left:-1px;border-left:2px solid transparent"><a href="#" style="font-size:13px;color:var(--text-muted)">Application</a></li>
+<li style="padding-left:12px;margin-left:-1px;border-left:2px solid transparent"><a href="#" style="font-size:13px;color:var(--text-muted)">Références</a></li>
+</ul>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      sidebar: { sections: [
+        { label: "Partie 1 · Fondements", items: [{ id: "c1", label: "Introduction" }, { id: "c2", label: "Titre du chapitre" }, { id: "c3", label: "Chapitre suivant" }] },
+        { label: "Travaux dirigés", items: [{ id: "td1", label: "TD 1" }, { id: "td2", label: "TD 2" }] }
+      ] },
+      crumbs: { items: [{ label: "L2 STAPS", href: "#" }, { label: "Biomécanique", href: "#" }, { label: "Titre du chapitre" }] },
+      pager: { prev: { title: "Introduction" }, next: { title: "Chapitre suivant" } },
+      capacites: { items: ["Première capacité attendue.", "Deuxième capacité attendue.", "Troisième capacité attendue."] },
+      qcm: { options: [{ label: "Première proposition" }, { label: "Bonne réponse", correct: true }, { label: "Distracteur" }], explanation: "Justification affichée après la réponse." },
+      code: "F <- 240      # force, en N\nd <- 0.032    # bras de levier, en m\nM <- F * d    # moment, en N.m"
+    };
+  }
+}
+</script>
+</body>
+</html>

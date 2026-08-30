@@ -1,0 +1,112 @@
+---
+id: 2-3-decrire-une-force-le-vecteur-force
+title: "2.3 Décrire une force : le vecteur force"
+sidebar_label: "2.3 Décrire une force : le vecteur force"
+sidebar_position: 3
+slug: /biomecanique-marche-seniors/2-3-decrire-une-force-le-vecteur-force
+description: "Une force se décrit complètement par trois informations : son point d'application, sa direction et son sens, et son intensité, mesurée en newtons. Cette…"
+---
+
+{/* Page générée par `npm run sync` depuis le vault Obsidian.
+    Source : contenu/support-ecrit-ch2-cinetique.md
+    Ne pas éditer ici — les modifications seraient écrasées à la prochaine
+    synchronisation. Corriger le chapitre dans le vault, puis resynchroniser. */}
+
+<SectionLead>
+
+Une force se décrit complètement par trois informations : son point d'application, sa direction et son sens, et son intensité, mesurée en newtons. Cette section les présente une à une, puis montre comment une simple flèche — le vecteur force — les porte toutes les trois. À la fin de cette section, vous devez être capable de citer les trois informations qui décrivent une force, de lire chacune d'elles sur une flèche, et de retrouver l'intensité d'un vecteur force dans un repère gradué en newtons.
+
+</SectionLead>
+
+## 2.3.1 Trois informations, pas une de moins
+
+<Ressource>
+
+Visionnez l'animation : d'abord, Marcel pousse le cube bloqué contre le mur, plus ou moins fort, et le cube répond par une déformation plus ou moins marquée ; puis la séquence est rejouée en affichant, pour chaque main, le point d'application de la force, puis son orientation, et enfin son intensité — la flèche grandit avec la force de poussée. *(lien YouTube — à venir)*
+
+</Ressource>
+
+Reprenons Marcel et son cube bloqué contre le mur, et demandons-nous ce qu'il faudrait préciser pour décrire complètement sa poussée. Trois informations suffisent — mais il les faut toutes les trois.
+
+La première est son **point d'application** : à quel endroit exactement la force s'exerce-t-elle ? La poussée de Marcel est une force de contact, elle s'applique donc là où il y a contact — ses deux mains. Et là, une précision : une main ne touche pas le cube en un point, elle appuie sur toute une surface, et la force se répartit sur chacun de ses points. On ne va pas dessiner une flèche pour chaque point de la surface — on en trace une seule, au centre de la surface (cette façon de résumer plusieurs appuis en une seule flèche resservira au §2.5).
+
+La deuxième est sa **direction**, et son **sens** : vers où pousse-t-il ? Ici, la direction est horizontale, et le sens va vers le mur. La distinction est celle du chapitre 1 (§1.5) : la direction est la ligne le long de laquelle la force agit, le sens est l'une des deux orientations possibles le long de cette ligne.
+
+La troisième est son **intensité**, aussi appelée magnitude : la quantité de force appliquée. Elle se voit directement dans l'animation : quand Marcel pousse doucement, le cube se déforme à peine ; quand il pousse fort, il s'écrase nettement plus. C'est elle qu'on mesure en newtons.
+
+Les trois sont nécessaires. La phrase « une force de 200 N s'exerce sur le cube » ne porte pas assez d'informations pour prédire l'effet de la force sur le mouvement ou la déformation du cube : il faut aussi connaître l'endroit où elle s'applique, sa direction et son sens.
+
+## 2.3.2 Une flèche qui dit tout : le vecteur force
+
+Ces trois informations se représentent d'un seul trait, par une flèche[^vecteur-force] :
+
+- son **origine** est le point d'application — l'endroit d'où la flèche part ;
+- son **orientation** donne la direction et le sens (la direction se mesure en degrés, par rapport à un axe de référence) ;
+- sa **longueur** donne l'intensité — plus la flèche est longue, plus la force est grande.
+
+Les vecteurs, vous les avez déjà rencontrés au chapitre 1 : pour décrire un déplacement, il fallait une distance et une direction, et on les représentait par une flèche — le vecteur déplacement (§1.5). Même flèche, autre grandeur : la longueur s'y lisait en mètres, elle se lit ici en newtons. Cette flèche est le **vecteur force**.
+
+<Admonition kind="note">
+
+Une différence tout de même : le vecteur déplacement du chapitre 1 se définissait sans point d'application, alors que le vecteur force est attaché au point où la force s'exerce.
+
+</Admonition>
+
+Ces flèches, vous allez les retrouver sur tous les schémas de biomécanique — dans les articles, dans les manuels, dans les logiciels d'analyse du mouvement. Savoir les lire, c'est savoir lire un schéma de forces : c'est l'une des compétences les plus directement utiles de ce chapitre.
+
+<Figure number="2.3" caption="La flèche du vecteur force et ses trois lectures : origine (point d'application), orientation (direction et sens), longueur (intensité)." source="diaporama CM2, dia 13 — figure à ré-exporter." />
+
+## 2.3.3 Mesurer la longueur de la flèche : bref rappel
+
+Dans un repère dont les axes sont gradués en newtons, l'intensité d'une force se retrouve exactement comme la longueur du vecteur déplacement au §1.5, par le théorème de Pythagore :
+
+1. projetez l'origine et la pointe de la flèche sur l'axe X, soustrayez les deux valeurs, élevez le résultat au carré : vous obtenez Δx² ;
+2. faites la même opération sur l'axe Y : vous obtenez Δy² ;
+3. additionnez les deux termes et prenez la racine carrée de la somme.
+
+$$
+F = \sqrt{\Delta x^{2} + \Delta y^{2}}
+$$
+
+- $F$ : l'intensité de la force, en newtons (N) ;
+- $\Delta x$, $\Delta y$ : les composantes du vecteur sur les axes du repère, en newtons (N).
+
+La seule différence avec le chapitre 1 est l'unité des axes : ils sont gradués en newtons et non en mètres, donc le résultat est bien une intensité de force, en newtons.
+
+<Figure number="2.4" caption="Un vecteur force dans un repère gradué en newtons : ses composantes et son intensité (235 N)." source="diaporama CM2, dia 14 — figure à ré-exporter." />
+
+<Glossaire>
+  <Terme nom="Intensité (d'une force)">La quantité de force appliquée, mesurée en newtons (N). Sur un schéma, elle se lit à la longueur de la flèche. Synonyme : magnitude.</Terme>
+  <Terme nom="Point d'application">L'endroit où la force s'exerce sur le corps qui la reçoit. Pour une force de contact répartie sur une surface, on trace une seule flèche, au centre de la surface.</Terme>
+  <Terme nom="Vecteur force">La flèche qui représente une force : son origine donne le point d'application, son orientation la direction et le sens, sa longueur l'intensité.</Terme>
+</Glossaire>
+
+<Capacites>
+  <Capacite>Citer les trois informations nécessaires pour décrire complètement une force.</Capacite>
+  <Capacite>Lire chacune des trois sur une flèche de force : origine, orientation, longueur.</Capacite>
+  <Capacite>Retrouver l'intensité d'un vecteur force dans un repère gradué en newtons, sur un cas simple.</Capacite>
+</Capacites>
+
+<Verification>
+
+  <Reveal index="a." question="« Une force de 200 N s'exerce sur le cube. » Pourquoi cette phrase ne permet-elle pas de prédire ce qui va arriver au cube ?">
+
+Il manque deux des trois informations : la direction et le sens (200 N à l'horizontale et 200 N vers le bas ne produisent pas le même effet), et le point d'application (sur quel corps, et à quel endroit, cette force s'exerce-t-elle ?). Sans elles, on ne peut même pas dessiner la flèche, donc pas raisonner sur ses effets.
+
+  </Reveal>
+
+  <Reveal index="b." question="Sur un schéma de forces, deux flèches partent du même point avec la même orientation, mais l'une est deux fois plus longue que l'autre. Qu'est-ce que cela signifie ?">
+
+Les deux forces ont le même point d'application, la même direction et le même sens ; seule l'intensité diffère — la flèche deux fois plus longue représente une force deux fois plus intense, puisque la longueur code l'intensité.
+
+  </Reveal>
+
+  <Reveal index="c." question="Dans un repère gradué en newtons, un vecteur force a pour composantes Δx = 3 N et Δy = 4 N. Quelle est son intensité ?">
+
+F = √(3² + 4²) = √(9 + 16) = √25 = 5 N.
+
+  </Reveal>
+
+</Verification>
+
+[^vecteur-force]: Les forces se représentent par des flèches, comme les autres vecteurs — OpenStax, *College Physics 2e*, §4.1 *Development of Force Concept* (CC BY). https://openstax.org/books/college-physics-2e/pages/4-1-development-of-force-concept#:~:text=represented%20by%20arrows — verbatim : « Forces, like other vectors, are represented by arrows ».

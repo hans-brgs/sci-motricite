@@ -1,0 +1,16 @@
+<!-- @dsCard group="Brand" viewport="700x220" name="Fond signature" subtitle="Grille centrée fondue vers les bords + halo teal (haut gauche) et violet (bas droite)" -->
+<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css"><style>body{margin:0;padding:18px;background:var(--bg-page);color:var(--text-body);font:var(--type-body)}*{box-sizing:border-box}
+.surf{position:relative;border-radius:var(--radius-md);overflow:hidden;padding:22px;height:100%}
+.surf::before{content:"";position:absolute;inset:0;background-size:64px 64px;background-position:center center;
+-webkit-mask-image:var(--grid-mask);mask-image:var(--grid-mask)}
+.surf>*{position:relative;z-index:1}
+.dark{background:radial-gradient(50% 60% at 8% 0%,rgba(21,184,167,.30) 0,rgba(21,184,167,0) 72%),radial-gradient(45% 60% at 97% 100%,rgba(167,86,246,.26) 0,rgba(167,86,246,0) 72%),#0e1622;color:#eaf0f7}
+.dark::before{background-image:linear-gradient(rgba(234,240,247,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(234,240,247,.06) 1px,transparent 1px)}
+.light{border:1px solid var(--border-subtle);background:radial-gradient(55% 65% at 6% 0%,rgba(21,184,167,.14) 0,rgba(21,184,167,0) 70%),radial-gradient(45% 60% at 98% 100%,rgba(167,86,246,.13) 0,rgba(167,86,246,0) 70%),#fff}
+.light::before{background-image:linear-gradient(rgba(14,22,34,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(14,22,34,.07) 1px,transparent 1px)}</style></head>
+<body><div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;height:100%">
+<div class="surf dark"><div style="font:var(--type-eyebrow);text-transform:uppercase;letter-spacing:var(--ls-caps);color:var(--brand-teal)">Sombre · héros, pied de page</div>
+<div style="font-family:var(--font-display);font-weight:700;font-size:26px;letter-spacing:-.03em;margin-top:12px">Étudier les forces.</div></div>
+<div class="surf light"><div style="font:var(--type-eyebrow);text-transform:uppercase;letter-spacing:var(--ls-caps);color:var(--text-faint)">Clair · bandeau de respiration</div>
+<div style="font-family:var(--font-display);font-weight:700;font-size:26px;letter-spacing:-.03em;margin-top:12px;color:var(--text-title)">Observer leurs effets.</div></div></div>
+</body></html>

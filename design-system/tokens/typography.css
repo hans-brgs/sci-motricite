@@ -1,0 +1,28 @@
+:root{
+--fs-xs:0.75rem;--fs-sm:0.875rem;--fs-base:1rem;--fs-md:1.0625rem;--fs-lg:1.25rem;
+--fs-xl:1.5rem;--fs-2xl:1.875rem;--fs-3xl:2.375rem;--fs-4xl:3rem;--fs-5xl:4rem;
+--lh-tight:1.15; /* @kind other */
+--lh-snug:1.3; /* @kind other */
+--lh-normal:1.6; /* @kind other */
+--lh-loose:1.75; /* @kind other */
+--fw-light:300; /* @kind other */
+--fw-regular:400; /* @kind other */
+--fw-medium:500; /* @kind other */
+--fw-semibold:600; /* @kind other */
+--fw-bold:700; /* @kind other */
+--ls-tight:-0.02em; /* @kind other */
+--ls-normal:0; /* @kind other */
+--ls-wide:0.04em; /* @kind other */
+--ls-caps:0.08em; /* @kind other */
+/* Rôles typographiques (shorthand font:) */
+--type-hero:var(--fw-bold) var(--fs-5xl)/1.05 var(--font-display);
+--type-display:var(--fw-bold) var(--fs-4xl)/var(--lh-tight) var(--font-display);
+--type-h1:var(--fw-semibold) var(--fs-3xl)/var(--lh-tight) var(--font-display);
+--type-h2:var(--fw-semibold) var(--fs-2xl)/var(--lh-snug) var(--font-display);
+--type-h3:var(--fw-semibold) var(--fs-xl)/var(--lh-snug) var(--font-sans);
+--type-body:var(--fw-regular) var(--fs-md)/var(--lh-normal) var(--font-sans);
+--type-small:var(--fw-regular) var(--fs-sm)/var(--lh-normal) var(--font-sans);
+--type-code:var(--fw-regular) var(--fs-sm)/var(--lh-normal) var(--font-mono);
+--type-eyebrow:var(--fw-medium) var(--fs-xs)/1.2 var(--font-mono);
+--type-stat:var(--fw-medium) var(--fs-4xl)/1 var(--font-mono);
+}

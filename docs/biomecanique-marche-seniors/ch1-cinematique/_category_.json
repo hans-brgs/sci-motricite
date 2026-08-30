@@ -1,0 +1,10 @@
+{
+  "label": "Chapitre 1 · Cinématique",
+  "position": 1,
+  "collapsible": true,
+  "collapsed": false,
+  "link": {
+    "type": "doc",
+    "id": "biomecanique-marche-seniors/ch1-cinematique/index"
+  }
+}

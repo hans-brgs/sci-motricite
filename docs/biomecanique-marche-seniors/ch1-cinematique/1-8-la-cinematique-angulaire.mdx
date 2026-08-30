@@ -1,0 +1,113 @@
+---
+id: 1-8-la-cinematique-angulaire
+title: "1.8 La cinématique angulaire"
+sidebar_label: "1.8 La cinématique angulaire"
+sidebar_position: 8
+slug: /biomecanique-marche-seniors/1-8-la-cinematique-angulaire
+description: "Les sections 1.5 à 1.7 ont décrit la translation ; cette section décrit la rotation, en introduisant les grandeurs angulaires : l'angle y remplace la…"
+---
+
+{/* Page générée par `npm run sync` depuis le vault Obsidian.
+    Source : contenu/support-ecrit-ch1-cinematique.md
+    Ne pas éditer ici — les modifications seraient écrasées à la prochaine
+    synchronisation. Corriger le chapitre dans le vault, puis resynchroniser. */}
+
+<SectionLead>
+
+Les sections 1.5 à 1.7 ont décrit la translation ; cette section décrit la rotation, en introduisant les grandeurs angulaires : l'**angle** y remplace la distance, et tous les paramètres suivent — angle articulaire, amplitude, vitesse et accélération angulaires. Vous verrez qu'il n'y a presque rien de nouveau à apprendre : mêmes définitions, mêmes calculs, seule l'unité change. À la fin de cette section, vous devez être capable d'expliquer pourquoi l'angle décrit correctement une rotation là où la distance échoue, et de donner l'équivalent angulaire de chaque grandeur linéaire avec son unité.
+
+</SectionLead>
+
+## 1.8.1 Pourquoi l'angle remplace le mètre
+
+Les sections 1.5 à 1.7 ont fait le tour des paramètres de la cinématique linéaire : trajectoire, distance, direction, vitesse, accélération — de quoi décrire complètement un point qui se déplace dans l'espace. Mais la section 1.4 l'a montré : le mouvement humain n'est pas seulement une translation. Il est aussi fait de rotations — des segments qui pivotent autour des articulations. Il faut donc de quoi les décrire : c'est la **cinématique angulaire**.
+
+Pourquoi ne pas réutiliser les mètres ? Parce que, quand un segment tourne, la distance parcourue dépend du point que l'on choisit sur ce segment. Observez un curl biceps : l'avant-bras pivote autour de l'axe du coude. Un point situé juste sous l'articulation parcourt quelques centimètres ; un point situé au poignet en parcourt beaucoup plus (cf. Figure 1.11). Même mouvement, deux distances différentes — la section 1.4 l'avait déjà établi pour le gymnaste à la barre fixe. Impossible, donc, de dire « l'avant-bras a bougé de tant de centimètres » : la réponse dépendrait du point choisi.
+
+La grandeur qui convient est l'**angle**, car il vaut la même chose en tout point du segment : quand l'avant-bras se fléchit, le point proche du coude et le point du poignet balaient exactement le même angle. Une seule valeur décrit le mouvement — c'est la grandeur qui décrit correctement une rotation. L'angle se mesure en **degrés (°)**.
+
+<Figure number="1.11" caption="Un curl biceps : deux points du même avant-bras parcourent des distances très différentes, mais balaient le même angle." source="diaporama CM1, dia 64 — figure à ré-exporter." />
+
+<Ressource>
+
+Animation « L'angle du coude pendant un curl » *(lien YouTube — à venir)*.
+
+</Ressource>
+
+## 1.8.2 La correspondance terme à terme
+
+La bonne nouvelle : nous ne repartons pas de zéro. Chaque paramètre linéaire possède son équivalent angulaire — mêmes définitions, mêmes calculs, seule l'unité change.
+
+La position d'un point devient un angle : l'**angle articulaire**, c'est-à-dire l'angle formé entre deux segments adjacents — celui du coude entre le bras et l'avant-bras, celui du genou entre la cuisse et la jambe — exprimé en degrés. Pour décrire le chemin parcouru, on ne parle plus de distance et de sens le long d'une droite, mais d'**amplitude** — le nombre de degrés balayés par le segment — et de sens de rotation, **horaire** ou **anti-horaire**. La variation de l'angle au cours du temps définit la **vitesse angulaire**, en degrés par seconde (°/s)[^vitesse-ang] : la même division que pour la vitesse, l'angle remplaçant la distance. Et la variation de la vitesse angulaire par unité de temps définit l'**accélération angulaire**, en degrés par seconde carrée (°/s²).
+
+| Paramètre linéaire (translation) | Équivalent angulaire (rotation) |
+| --- | --- |
+| Position — où se trouve le point · m | **Angle articulaire** — l'angle entre deux segments · ° |
+| Distance + direction et sens — le déplacement · m | **Amplitude** — les degrés balayés + sens horaire / anti-horaire · ° |
+| Vitesse — `v = d / t` · m/s | **Vitesse angulaire** — variation d'angle ÷ durée · °/s |
+| Accélération — `a = Δv / Δt` · m/s² | **Accélération angulaire** — variation de vitesse angulaire ÷ durée · °/s² |
+
+Tout ce qui a été appris sur les grandeurs linéaires se transfère : si vous savez lire une courbe de vitesse — pentes, plateaux, phases —, vous savez déjà lire une courbe d'angle du genou.
+
+<FurtherReading>
+
+**Le radian et la longueur d'arc.** Les physiciens utilisent une autre unité d'angle que le degré : le **radian** (1 rad ≈ 57,3°). Son intérêt : l'angle relie directement rotation et translation par la longueur d'arc — un point situé à une distance r de l'axe qui balaie un angle θ, **exprimé en radians**, parcourt la distance s = θ · r (et réciproquement θ = s / r)[^radian]. La formule n'est valable qu'en radians : un angle mesuré en degrés doit d'abord être converti, en le divisant par 57,3. C'est la formalisation de ce que le curl a montré : à angle égal, la distance parcourue croît avec l'éloignement de l'axe.
+
+<Figure number="1.12" caption="La longueur d'arc : un angle θ (en radians) balayé à une distance r de l'axe correspond à un arc de longueur s = θ · r. (Schéma à produire — contenu hors diaporama.)" />
+
+**Des rotations qui produisent de la vitesse linéaire.** La même logique relie les vitesses : v = r · ω (ω en rad/s) — la vitesse linéaire d'un point vaut sa distance à l'axe multipliée par la vitesse angulaire du segment[^v-r-omega]. En pratique : une vitesse angulaire mesurée en °/s se convertit en rad/s en la divisant par 57,3, puis se multiplie par r. Un avant-bras qui tourne à 200 °/s (≈ 3,5 rad/s) déplace ainsi un poignet situé à 30 cm du coude à environ 1,05 m/s. C'est pourquoi, à vitesse angulaire de hanche égale, une jambe plus longue fait avancer le pied plus vite. La relation vaut aussi pour les accélérations : a = r · α.
+
+<Figure number="1.13" caption="De la rotation à la vitesse linéaire : à vitesse angulaire ω égale, le point le plus éloigné de l'axe se déplace le plus vite (v = r · ω). (Schéma à produire — contenu hors diaporama.)" />
+
+</FurtherReading>
+
+<Application title="l'amplitude articulaire, future alliée de votre œil">
+
+Dans le tri de la section 1.3, vos observations sur la marche de Mémé Jacqueline comportaient déjà des grandeurs angulaires : « son genou et sa hanche se plient moins » est un jugement d'**amplitude articulaire**. L'objectiver suit exactement la démarche de la section 1.2 : mesurer l'angle en degrés, suivre son évolution dans le temps, comparer aux valeurs attendues. L'analyse de la marche trace ainsi, pour chaque articulation, la courbe de l'angle au fil du temps — et tout ce que vous savez faire sur une courbe de vitesse s'y transfère : repérer où l'angle croît, plafonne ou décroît, lire la pente comme une vitesse angulaire.
+
+</Application>
+
+<Glossaire>
+  <Terme nom="Cinématique angulaire">Description des rotations : les mêmes paramètres que la cinématique linéaire, exprimés en angles plutôt qu'en mètres.</Terme>
+  <Terme nom="Angle articulaire">Angle formé entre deux segments adjacents (l'angle du coude entre bras et avant-bras, celui du genou entre cuisse et jambe), en degrés (°). L'équivalent angulaire de la position.</Terme>
+  <Terme nom="Amplitude articulaire">Nombre de degrés balayés par un segment au cours d'un mouvement, complété par le sens de rotation (horaire ou anti-horaire). L'équivalent angulaire du déplacement. En évaluation articulaire, le terme — souvent noté **ROM** (*range of motion*) — désigne l'étendue totale de mouvement dont une articulation est capable[^rom].</Terme>
+  <Terme nom="Vitesse angulaire">Variation de l'angle divisée par la durée, en degrés par seconde (°/s). L'équivalent angulaire de la vitesse.</Terme>
+  <Terme nom="Accélération angulaire">Variation de la vitesse angulaire divisée par la durée, en degrés par seconde carrée (°/s²). L'équivalent angulaire de l'accélération.</Terme>
+</Glossaire>
+
+<Capacites>
+  <Capacite>Expliquer pourquoi la distance en mètres ne décrit pas correctement une rotation, et pourquoi l'angle y parvient.</Capacite>
+  <Capacite>Donner l'équivalent angulaire de chaque grandeur linéaire (position, déplacement, vitesse, accélération) avec son unité.</Capacite>
+  <Capacite>Identifier l'angle articulaire et l'amplitude sur un mouvement concret (un curl, une flexion de genou pendant la marche).</Capacite>
+  <Capacite>Transférer la lecture d'une courbe de vitesse à une courbe d'angle articulaire.</Capacite>
+</Capacites>
+
+<Verification>
+
+  <Reveal index="a." question="Pendant un curl, un point situé près du coude parcourt 5 cm quand un point du poignet en parcourt 40. Lequel des deux a balayé le plus grand angle ? Justifiez.">
+
+Aucun des deux : ils ont balayé exactement le même angle. C'est la propriété fondatrice de la grandeur angulaire — l'angle est identique en tout point du segment, là où la distance parcourue dépend de l'éloignement à l'axe.
+
+  </Reveal>
+
+  <Reveal index="b." question="Pendant un curl, l'angle du coude passe de 10° à 130° en 0,6 s. Calculez la vitesse angulaire moyenne du mouvement.">
+
+Variation d'angle : 130 − 10 = 120°. Vitesse angulaire moyenne : 120 / 0,6 = **200 °/s**.
+
+  </Reveal>
+
+  <Reveal index="c." question="Un collègue note dans un dossier : « flexion du genou : 60 ». Pourquoi cette note est-elle inutilisable en l'état ?">
+
+Il manque l'unité — 60 quoi ? Sans elle, la valeur ne se transmet pas (cf. 1.2) : « 60° de flexion » est une mesure exploitable, « 60 » n'est qu'un nombre. Toute grandeur s'écrit avec son unité.
+
+  </Reveal>
+
+</Verification>
+
+[^vitesse-ang]: OpenStax, *College Physics 2e*, §6.1 Rotation Angle and Angular Velocity (CC BY). https://openstax.org/books/college-physics-2e/pages/6-1-rotation-angle-and-angular-velocity#:~:text=Angular%20velocity%20%CF%89%20is%20defined%20as%20the%20rate%20of%20change%20of%20an%20angle — verbatim : « Angular velocity ω is defined as the rate of change of an angle » ; « ω=Δθ/Δt ».
+
+[^radian]: OpenStax, ibid., §6.1. https://openstax.org/books/college-physics-2e/pages/6-1-rotation-angle-and-angular-velocity#:~:text=the%20ratio%20of%20the%20arc%20length%20to%20the%20radius — verbatim : « We define the rotation angle Δθ to be the ratio of the arc length to the radius of curvature: Δθ=Δs/r » ; « 1 rad=360º/2π≈57.3º ».
+
+[^v-r-omega]: OpenStax, ibid., §6.1. https://openstax.org/books/college-physics-2e/pages/6-1-rotation-angle-and-angular-velocity#:~:text=v%3Dr%CF%89 — verbatim : « The relationship between linear and angular velocity is expressed as v=rω or ω=v/r ».
+
+[^rom]: Physiopedia, *Range of Motion*, Introduction. https://www.physio-pedia.com/Range_of_Motion#:~:text=the%20extent%20or%20limit%20to%20which%20a%20part%20of%20the%20body%20can%20be%20moved — verbatim : « the extent or limit to which a part of the body can be moved around a joint or a fixed point ».

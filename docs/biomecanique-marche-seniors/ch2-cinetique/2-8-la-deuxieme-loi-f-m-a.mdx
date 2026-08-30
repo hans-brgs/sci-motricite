@@ -1,0 +1,131 @@
+---
+id: 2-8-la-deuxieme-loi-f-m-a
+title: "2.8 La deuxième loi : F = m·a"
+sidebar_label: "2.8 La deuxième loi : F = m·a"
+sidebar_position: 8
+slug: /biomecanique-marche-seniors/2-8-la-deuxieme-loi-f-m-a
+description: "La première loi a dit quand l'état du mouvement change ; la deuxième dit de combien : la résultante des forces exercées sur un corps est égale au produit…"
+---
+
+{/* Page générée par `npm run sync` depuis le vault Obsidian.
+    Source : contenu/support-ecrit-ch2-cinetique.md
+    Ne pas éditer ici — les modifications seraient écrasées à la prochaine
+    synchronisation. Corriger le chapitre dans le vault, puis resynchroniser. */}
+
+<SectionLead>
+
+La première loi a dit quand l'état du mouvement change ; la deuxième dit de combien : la résultante des forces exercées sur un corps est égale au produit de sa masse par son accélération, et l'accélération produite a la même direction et le même sens que cette résultante. Cette section déplie la formule F = m·a, la lit dans les deux sens sur des exemples chiffrés, et en tire enfin la définition du newton, promise depuis le début du chapitre. À la fin de cette section, vous devez être capable de comprendre la deuxième loi et de savoir l'expliquer, de calculer une force nette ou une accélération sur un cas simple, et de préciser ce que désigne le F de la formule.
+
+</SectionLead>
+
+## 2.8.1 La relation exacte entre force et accélération
+
+La section 2.2 a affirmé qu'une force produit une accélération, sans la quantifier. La deuxième loi donne la relation exacte entre les deux[^loi2] : « La résultante des forces exercées sur un corps est égale au produit de sa masse par son accélération. L'accélération produite a la même direction et le même sens que cette résultante. »
+
+Le pont avec le chapitre 1 est direct : l'accélération, vous savez déjà la décrire — c'est la variation de vitesse au cours du temps, en m/s² (§1.7). Ce qui manquait, c'est sa cause ; la voici, avec sa formule :
+
+$$
+F = m \times a
+$$
+
+- $F$ : la **résultante** des forces exercées sur le corps — la force nette du §2.5, pas n'importe quelle force appliquée —, en newtons (N) ;
+- $m$ : la masse du corps, en kilogrammes (kg) ;
+- $a$ : l'accélération produite, en mètres par seconde carrée (m/s²).
+
+La formule se lit dans les deux sens. Si je connais la masse et l'accélération, j'obtiens la force : F = m × a. En réorganisant les termes, si je connais la force et la masse, j'obtiens l'accélération : a = F / m. Les deux écritures disent exactement la même chose ; on emploie l'une ou l'autre selon ce qu'on cherche.
+
+## 2.8.2 Deux lectures, deux observations
+
+<Ressource>
+
+Visionnez l'animation : un gardien de but effectue quatre lancers au même angle — même ballon avec une force simple puis doublée, puis même force avec un ballon ordinaire et un médecine-ball de 3 kg. Vitesse au lâcher et distance s'affichent à chaque lancer. *(lien YouTube — à venir)*
+
+</Ressource>
+
+**Première observation — à masse égale, plus la force est grande, plus l'accélération est grande.** Le gardien lance deux fois le même ballon, avec un geste identique, à une exception près : la force qu'il y met. Déplions la chaîne, maillon par maillon :
+
+- au deuxième lancer, la résultante des forces sur le ballon pendant le geste est plus grande ;
+- par la deuxième loi, l'accélération du ballon pendant le geste est donc plus grande ;
+- accéléré plus fort sur le même geste, le ballon quitte la main avec une vitesse plus grande ;
+- lancé plus vite, au même angle, il va plus loin (la résistance de l'air est négligée, ici comme dans toute la section).
+
+Et la relation entre les deux premiers maillons est une proportionnalité exacte : à masse égale, une résultante double produit une accélération double[^loi2].
+
+<Figure number="2.12" caption="Même ballon, même geste, seule la force change : l'accélération et la vitesse au lâcher suivent." source="diaporama CM2, dia 32 — figure à ré-exporter." />
+
+**Seconde observation — à force égale, plus la masse est grande, plus l'accélération est petite.** Même geste, même force — mais cette fois un médecine-ball de trois kilogrammes :
+
+- la résultante est identique, la masse est plus grande ;
+- par la deuxième loi, lue dans l'autre sens (a = F/m), l'accélération pendant le geste est donc plus faible ;
+- le médecine-ball quitte la main avec une vitesse plus faible ;
+- lancé moins vite, au même angle, il atterrit moins loin.
+
+Là encore, la proportionnalité est exacte : à résultante égale, une masse double subit une accélération moitié[^loi2].
+
+<Figure number="2.13" caption="Même force, seule la masse change : le médecine-ball de 3 kg part moins vite et va moins loin." source="diaporama CM2, dia 33 — figure à ré-exporter." />
+
+<Admonition kind="note">
+
+La seconde observation est la version quantitative de l'inertie du §2.7. Ce paragraphe disait : plus la masse d'un corps est grande, plus il résiste au changement. La formule a = F/m dit maintenant de combien : à force égale, un corps de masse double accélère exactement deux fois moins — sa résistance au changement est exactement deux fois plus grande. Cette relation est si fiable que la physique s'en sert pour définir la masse : appliquer la même force à deux corps et comparer leurs accélérations, c'est comparer leurs masses — celui qui accélère deux fois moins est deux fois plus massif.
+
+</Admonition>
+
+**Exemple résolu** *(méthode → calcul → interprétation)* :
+
+1. **Méthode** — on cherche la résultante nécessaire pour donner à une personne une accélération donnée : F = m × a.
+2. **Calcul** — une résidente de 60 kg démarre sa marche avec une accélération de 0,5 m/s² : F = 60 × 0,5 = 30 N.
+3. **Interprétation** — pour lancer sa marche, la résultante des forces sur son corps doit valoir 30 N, dirigée vers l'avant. Viser une accélération plus franche, ou déplacer une masse plus grande, demande une résultante plus grande — la formule chiffre l'effort des transitions décrites au §2.7.
+
+<Admonition kind="note">
+
+Ce calcul traite le corps de la résidente comme un seul bloc de 60 kg, sans se demander en quel point du corps la résultante s'applique — le bout-à-bout du §2.5 ne fournit d'ailleurs pas ce point. Traiter ainsi un corps articulé comme un bloc est une simplification ; le point qui la rend légitime est le centre de masse, présenté à la fin de ce chapitre (§2.11) et décrit au chapitre 4.
+
+</Admonition>
+
+## 2.8.3 Le newton, enfin défini
+
+La promesse faite au §2.2 peut être tenue. Reprenez F = m × a, et regardez cette fois les unités plutôt que les nombres : la masse m se mesure en kilogrammes (kg), l'accélération a en mètres par seconde carrée (m/s²). Quand on multiplie les deux grandeurs, on multiplie aussi leurs unités — l'unité d'une force est donc le kg·m/s². Ce nom étant peu maniable, les physiciens l'ont renommé : c'est le **newton**.
+
+$$
+1 \ N = 1 \ kg \cdot m/s^{2}
+$$
+
+Repassez maintenant des unités à la phrase, et la définition s'écrit d'elle-même : un newton est la force nécessaire pour communiquer à une masse de 1 kilogramme une accélération de 1 mètre par seconde carrée[^newton-def]. Le newton n'est donc pas une unité de plus à retenir : c'est la formule de la deuxième loi, écrite avec des unités. Pour l'ordre de grandeur, retenez qu'un newton correspond à peu près à la force qu'une pomme de cent grammes exerce sur votre main quand elle y repose.
+
+<Glossaire>
+  <Terme nom="Deuxième loi de Newton">La résultante des forces exercées sur un corps est égale au produit de sa masse par son accélération (F = m·a) ; l'accélération produite a la même direction et le même sens que cette résultante.</Terme>
+  <Terme nom="Newton (N)">Unité de mesure de la force : la force nécessaire pour communiquer à une masse de 1 kg une accélération de 1 m/s². 1 N = 1 kg·m/s².</Terme>
+</Glossaire>
+
+<Capacites>
+  <Capacite>Expliquer la deuxième loi de Newton en mots simples et écrire sa formule, avec l'unité de chaque grandeur.</Capacite>
+  <Capacite>Préciser ce que désigne le F de la formule : la résultante des forces, pas n'importe quelle force appliquée.</Capacite>
+  <Capacite>Lire la formule dans les deux sens (F = m·a et a = F/m) et calculer de tête sur des cas simples.</Capacite>
+  <Capacite>Retrouver l'unité de la force à partir des unités de la formule (kg·m/s², renommé newton), et en donner la signification.</Capacite>
+</Capacites>
+
+<Verification>
+
+  <Reveal index="a." question="Un geste de lancer communique une accélération de 20 m/s² à une balle de 0,5 kg. Quelle est la résultante des forces sur la balle pendant le lancer ?">
+
+F = m × a = 0,5 × 20 = 10 N. La résultante des forces sur la balle vaut 10 N, dans la direction et le sens du lancer.
+
+  </Reveal>
+
+  <Reveal index="b." question="La même résultante de 10 N s'applique maintenant à un médecine-ball de 2 kg. Quelle accélération produit-elle, et qu'est-ce que cela illustre ?">
+
+a = F / m = 10 / 2 = 5 m/s². La masse est passée de 0,5 à 2 kg (quatre fois plus), et l'accélération de 20 à 5 m/s² (quatre fois moins) : à force égale, l'accélération est inversement proportionnelle à la masse — c'est la seconde observation de la section.
+
+  </Reveal>
+
+  <Reveal index="c." question="Dans F = m·a, le F désigne-t-il n'importe quelle force appliquée au corps ? Justifiez.">
+
+Non. F désigne la résultante — la force nette : la somme de toutes les forces appliquées au corps (§2.5). Une force isolée ne détermine pas l'accélération ; c'est ce qui reste une fois toutes les forces additionnées qui la détermine.
+
+  </Reveal>
+
+</Verification>
+
+[^loi2]: Deuxième loi de Newton — Hamm K. (OpenStax / BCcampus), §6.3 *Newton's Second Law of Motion: Concept of a System*. https://pressbooks.bccampus.ca/humanbiomechanics/chapter/4-4-newtons-second-law-of-motion-concept-of-a-system-2/#:~:text=directly%20proportional%20to%20and%20in%20the%20same%20direction%20as%20the%20net%20external%20force — verbatim : « directly proportional to and in the same direction as the net external force acting on the system, and inversely proportional to its mass ».
+
+[^newton-def]: Définition du newton — OpenStax, *College Physics 2e*, §4.3 *Newton's Second Law of Motion: Concept of a System* (CC BY). https://openstax.org/books/college-physics-2e/pages/4-3-newtons-second-law-of-motion-concept-of-a-system#:~:text=the%20force%20needed%20to%20accelerate%20a%201%2Dkg%20system — verbatim : « The SI unit of force is called the newton (abbreviated N) and is the force needed to accelerate a 1-kg system at the rate of 1 m/s² », avec « 1 N = 1 kg⋅m/s² ».

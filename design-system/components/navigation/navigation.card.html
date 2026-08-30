@@ -1,0 +1,24 @@
+<!-- @dsCard group="Components" viewport="700x380" name="Navigation — Sidebar, Tabs, Breadcrumb, DocNav" subtitle="Structure de navigation du site de cours" -->
+<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.js"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0;padding:20px;background:var(--bg-page);font:var(--type-body);color:var(--text-body)}</style></head>
+<body><div id="root"></div>
+<script type="text/babel">
+const {SidebarNav,Tabs,Breadcrumb,DocNav,ThemeToggle,Badge}=window.MotricitDesignSystem_ea5604;
+ReactDOM.createRoot(document.getElementById('root')).render(
+<div style={{display:'grid',gridTemplateColumns:'240px 1fr',gap:28}}>
+<SidebarNav activeId="p2" sections={[
+ {label:'Partie 1 · Bases',items:[{id:'p1',label:'Introduction'},{id:'p2',label:'Leviers osseux',badge:<Badge tone="neutral">CM</Badge>},{id:'p3',label:'Moments de force'}]},
+ {label:'Partie 2 · Travaux dirigés',items:[{id:'p4',label:'Analyse vidéo'},{id:'p5',label:'Plateforme de force'}]}]}/>
+<div style={{display:'flex',flexDirection:'column',gap:20}}>
+<div style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
+<Breadcrumb items={[{label:'L2 STAPS',href:'#'},{label:'Biomécanique',href:'#'},{label:'Leviers osseux'}]}/>
+<ThemeToggle/></div>
+<Tabs items={[{value:'cm',label:'Cours'},{value:'td',label:'TD'},{value:'ref',label:'Ressources'}]} defaultValue="cm"/>
+<DocNav prev={{title:'Introduction à la biomécanique'}} next={{title:'Moments de force'}}/>
+</div></div>);
+</script></body></html>

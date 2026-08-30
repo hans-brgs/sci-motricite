@@ -1,0 +1,13 @@
+:root{
+--sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:20px;--sp-6:24px;
+--sp-8:32px;--sp-10:40px;--sp-12:48px;--sp-16:64px;--sp-20:80px;--sp-24:96px;
+--radius-xs:4px;--radius-sm:6px;--radius-md:10px;--radius-lg:14px;--radius-xl:20px;--radius-pill:999px;
+--border-hairline:1px; /* @kind spacing */
+--border-thick:2px; /* @kind spacing */
+--border-rule:3px; /* @kind spacing */
+--measure:68ch; /* @kind spacing */
+--content-max:820px; /* @kind spacing */
+--page-max:1320px; /* @kind spacing */
+--sidebar-w:280px; /* @kind spacing */
+--toc-w:220px; /* @kind spacing */
+}

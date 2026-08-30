@@ -1,0 +1,409 @@
+/* ---------------------------------------------------------------------------
+   Sci Motricité — feuille de style du site
+   ---------------------------------------------------------------------------
+   Trois couches, dans cet ordre :
+     1. les tokens du design system (source de vérité : design-system/tokens/) ;
+     2. le pont Infima → tokens, pour que le châssis Docusaurus adopte la marque ;
+     3. les quelques règles propres au site (colonne de lecture, notes, KaTeX).
+
+   Règle à ne pas enfreindre — héritée du design system : la colonne de lecture
+   reste claire et calme. La surface nuit à grille centrée est réservée aux héros,
+   pieds de page, panneaux de figure et blocs de code.
+--------------------------------------------------------------------------- */
+
+/* KaTeX, servi depuis node_modules — pas de CDN : le rendu des formules ne doit
+   dépendre d'aucun tiers. Webpack embarque aussi les polices .woff2 qu'il
+   référence. */
+@import "katex/dist/katex.min.css";
+
+@import url("./tokens/fonts.css");
+@import url("./tokens/colors.css");
+@import url("./tokens/typography.css");
+@import url("./tokens/spacing.css");
+@import url("./tokens/elevation.css");
+@import url("./tokens/motion.css");
+@import url("./tokens/effects.css");
+@import url("./tokens/semantic.css");
+
+/* ===========================================================================
+   2. Pont Infima → tokens
+   Docusaurus bascule les thèmes avec [data-theme="dark"] sur <html> : c'est
+   exactement la portée qu'utilise tokens/semantic.css, donc le mode sombre
+   fonctionne sans câblage supplémentaire.
+   ======================================================================== */
+
+:root {
+  --ifm-color-primary: var(--teal-600);
+  --ifm-color-primary-dark: var(--teal-700);
+  --ifm-color-primary-darker: var(--teal-700);
+  --ifm-color-primary-darkest: var(--teal-800, var(--teal-700));
+  --ifm-color-primary-light: var(--teal-500);
+  --ifm-color-primary-lighter: var(--teal-400);
+  --ifm-color-primary-lightest: var(--teal-300);
+
+  --ifm-background-color: var(--bg-page);
+  --ifm-background-surface-color: var(--surface-card);
+
+  --ifm-font-family-base: var(--font-sans);
+  --ifm-heading-font-family: var(--font-display);
+  --ifm-font-family-monospace: var(--font-mono);
+
+  --ifm-font-color-base: var(--text-body);
+  --ifm-heading-color: var(--text-title);
+  --ifm-link-color: var(--text-link);
+  --ifm-link-hover-color: var(--text-link-hover);
+
+  --ifm-font-size-base: var(--fs-md);
+  --ifm-line-height-base: var(--lh-normal);
+  --ifm-h1-font-size: var(--fs-3xl);
+  --ifm-h2-font-size: var(--fs-2xl);
+  --ifm-h3-font-size: var(--fs-xl);
+  --ifm-heading-font-weight: var(--fw-semibold);
+
+  --ifm-global-radius: var(--radius-md);
+  --ifm-toc-border-color: var(--border-subtle);
+  --ifm-hr-border-color: var(--border-subtle);
+  --ifm-table-border-color: var(--border-subtle);
+  --ifm-table-stripe-background: var(--bg-subtle);
+  --ifm-blockquote-color: var(--text-muted);
+  --ifm-blockquote-border-color: var(--accent);
+  --ifm-code-font-size: 0.9em;
+  --ifm-navbar-height: 64px;
+  --ifm-container-width-xl: var(--page-max);
+  --ifm-spacing-horizontal: var(--sp-6);
+
+  /* Le châssis Docusaurus, aligné sur la marque */
+  --ifm-navbar-background-color: color-mix(in srgb, var(--bg-page) 82%, transparent);
+  --ifm-navbar-shadow: none;
+  --ifm-footer-background-color: var(--ink-900);
+  --ifm-footer-color: var(--ink-300);
+  --ifm-footer-link-color: var(--ink-300);
+  --ifm-footer-title-color: var(--ink-50);
+
+  --docusaurus-highlighted-code-line-bg: rgba(21, 184, 167, 0.14);
+  --doc-sidebar-width: var(--sidebar-w);
+}
+
+[data-theme="dark"] {
+  --ifm-color-primary: var(--teal-300);
+  --ifm-color-primary-dark: var(--teal-400);
+  --ifm-color-primary-darker: var(--teal-500);
+  --ifm-color-primary-darkest: var(--teal-600);
+  --ifm-color-primary-light: var(--teal-200);
+  --ifm-color-primary-lighter: var(--teal-100);
+  --ifm-color-primary-lightest: var(--teal-50);
+}
+
+/* ===========================================================================
+   3. Le site
+   ======================================================================== */
+
+html {
+  background: var(--bg-page);
+}
+
+body {
+  font: var(--type-body);
+  color: var(--text-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Châssis ------------------------------------------------------------ */
+
+.navbar {
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.navbar__title {
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  letter-spacing: -0.025em;
+  font-size: 18px;
+}
+
+.navbar__logo {
+  height: 22px;
+  margin-inline-end: 11px; /* le gap du lockup */
+}
+
+.navbar__link {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+}
+
+.navbar__link:hover,
+.navbar__link--active {
+  color: var(--text-link);
+}
+
+.footer--dark {
+  background: var(--ink-900);
+  border-top: 1px solid rgba(234, 240, 247, 0.08);
+}
+
+.footer__title {
+  font: var(--type-eyebrow);
+  letter-spacing: var(--ls-caps);
+  text-transform: uppercase;
+  color: var(--ink-400);
+}
+
+.footer__link-item {
+  font-size: var(--fs-sm);
+}
+
+.footer__copyright {
+  font: var(--type-code);
+  font-size: 12px;
+  color: var(--ink-500);
+}
+
+/* --- Colonne de lecture ------------------------------------------------- */
+
+.markdown {
+  --ifm-h2-vertical-rhythm-top: 2.4;
+  --ifm-h3-vertical-rhythm-top: 1.8;
+  max-width: var(--measure);
+}
+
+.markdown > h1 {
+  font: var(--type-h1);
+  letter-spacing: var(--ls-tight);
+}
+
+/* Pas de filet pleine largeur au-dessus : le filet dégradé ci-dessous suffit à
+   marquer la rupture, et deux séparateurs superposés font du bruit. */
+.markdown > h2 {
+  font: var(--type-h2);
+  letter-spacing: var(--ls-tight);
+  padding-top: var(--sp-4);
+}
+
+.markdown > h3 {
+  font: var(--type-h3);
+  color: var(--text-title);
+}
+
+.markdown p,
+.markdown li {
+  font: var(--type-body);
+  color: var(--text-body);
+}
+
+.markdown a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.markdown a:hover {
+  text-decoration: underline;
+}
+
+/* Un filet dégradé teal→violet au-dessus de chaque titre de section : le
+   dispositif récurrent du design system. */
+.markdown > h2::before {
+  content: "";
+  display: block;
+  width: 44px;
+  height: 3px;
+  border-radius: 2px;
+  margin-bottom: var(--sp-4);
+  background: linear-gradient(90deg, var(--teal-400), var(--violet-400));
+}
+
+/* --- Sommaire, sidebar, fil d'Ariane ------------------------------------ */
+
+.table-of-contents__link {
+  font: var(--type-code);
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+
+.table-of-contents__link--active,
+.table-of-contents__link:hover {
+  color: var(--text-link);
+}
+
+.menu__link {
+  font-size: var(--fs-sm);
+  border-radius: var(--radius-sm);
+}
+
+.menu__link--active {
+  background: var(--accent-soft);
+  color: var(--text-link);
+  font-weight: var(--fw-semibold);
+}
+
+.menu__list-item-collapsible > .menu__link {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: var(--ls-wide);
+}
+
+.breadcrumbs__item,
+.breadcrumbs__link {
+  font: var(--type-code);
+  font-size: 12px;
+}
+
+.pagination-nav__label {
+  font-family: var(--font-display);
+  font-weight: var(--fw-semibold);
+}
+
+.pagination-nav__sublabel {
+  font: var(--type-eyebrow);
+  letter-spacing: var(--ls-caps);
+  text-transform: uppercase;
+}
+
+/* --- Code : toujours sur la surface nuit, dans les deux thèmes ---------- */
+
+.theme-code-block {
+  border-radius: var(--radius-lg);
+}
+
+/* --- Notes de bas de page ----------------------------------------------- */
+
+.footnotes {
+  margin-top: var(--sp-16);
+  padding-top: var(--sp-6);
+  border-top: 2px solid var(--border-default);
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+
+.footnotes h2 {
+  font: var(--type-eyebrow);
+  letter-spacing: var(--ls-caps);
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border: none;
+  padding: 0;
+}
+
+.footnotes h2::before {
+  display: none;
+}
+
+.footnotes li {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  overflow-wrap: anywhere;
+}
+
+.footnotes li p {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  margin-bottom: var(--sp-2);
+}
+
+[data-footnote-ref] {
+  font-family: var(--font-mono);
+  font-size: 0.78em;
+  font-weight: var(--fw-semibold);
+  padding: 0 2px;
+  text-decoration: none;
+}
+
+/* --- KaTeX --------------------------------------------------------------- */
+
+.katex-display {
+  margin: var(--sp-6) 0;
+  padding: var(--sp-4) 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.katex {
+  font-size: 1.05em;
+}
+
+/* Une formule affichée est le sujet de son encadré : elle ne doit pas hériter du
+   corps réduit de l'encadré qui la porte. */
+.katex-display > .katex {
+  font-size: 1.45em;
+}
+
+/* --- Blocs pédagogiques : réglages fins de la prose imbriquée ------------ */
+
+/* Les composants du design system reçoivent du MDX, donc des <p>. On rabote la
+   marge basse du dernier paragraphe pour que les encadrés ne soient pas
+   déséquilibrés. */
+.sm-block > *:last-child,
+.sm-block dd > *:last-child,
+.sm-block li > *:last-child {
+  margin-bottom: 0;
+}
+
+.sm-block p:last-child {
+  margin-bottom: 0;
+}
+
+/* Espacement vertical commun à tous les blocs pédagogiques. */
+.sm-block {
+  margin: var(--sp-8) 0;
+}
+
+/* --- Grilles des pages autonomes ---------------------------------------- */
+/* Les composants du design system sont en styles en ligne, qui ne portent pas
+   de media queries : les quelques grilles qui doivent respirer sur mobile
+   vivent donc ici. */
+
+.sm-two-col {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: var(--sp-16);
+  align-items: start;
+}
+
+.sm-feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-4);
+}
+
+.sm-course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--sp-4);
+}
+
+@media (max-width: 996px) {
+  .sm-two-col {
+    grid-template-columns: 1fr;
+    gap: var(--sp-10);
+  }
+}
+
+@media (max-width: 600px) {
+  .sm-feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Sur un écran étroit, la colonne du terme mangerait la moitié de la place :
+     on empile terme puis définition. */
+  .sm-glossary-row {
+    grid-template-columns: 1fr !important;
+    gap: var(--sp-2) !important;
+  }
+}
+
+/* --- Accessibilité ------------------------------------------------------- */
+
+:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus, 0 0 0 3px rgba(21, 184, 167, 0.35));
+  border-radius: var(--radius-sm);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

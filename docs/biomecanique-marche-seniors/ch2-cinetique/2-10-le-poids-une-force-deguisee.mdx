@@ -1,0 +1,103 @@
+---
+id: 2-10-le-poids-une-force-deguisee
+title: "2.10 Le poids, une force déguisée"
+sidebar_label: "2.10 Le poids, une force déguisée"
+sidebar_position: 10
+slug: /biomecanique-marche-seniors/2-10-le-poids-une-force-deguisee
+description: "Cette section définit le poids : la force gravitationnelle exercée sur un corps, égale au produit de sa masse par l'accélération due à la gravité — P =…"
+---
+
+{/* Page générée par `npm run sync` depuis le vault Obsidian.
+    Source : contenu/support-ecrit-ch2-cinetique.md
+    Ne pas éditer ici — les modifications seraient écrasées à la prochaine
+    synchronisation. Corriger le chapitre dans le vault, puis resynchroniser. */}
+
+<SectionLead>
+
+Cette section définit le **poids** : la force gravitationnelle exercée sur un corps, égale au produit de sa masse par l'accélération due à la gravité — P = m·g, en newtons. Elle donne enfin un nom et une valeur à la force qu'on dessine depuis le début du chapitre, puis désamorce la confusion la plus répandue du vocabulaire courant : le poids n'est pas la masse. À la fin de cette section, vous devez être capable de calculer un poids à partir d'une masse, de distinguer masse et poids — grandeur, unité, ce qui change selon le lieu — et d'expliquer pourquoi le pèse-personne entretient la confusion.
+
+</SectionLead>
+
+## 2.10.1 La force qu'on dessine depuis le début
+
+Revenez aux diagrammes de forces de ce chapitre : sur le cube (§2.5), sur le personnage assis, une flèche descend à chaque fois — la force gravitationnelle. Nous l'avons nommée, dessinée, additionnée, mais jamais définie ni chiffrée. Cette force porte un nom que vous employez tous les jours : le **poids**.
+
+Le poids est une force ; on repart donc de F = m × a (§2.8). Sur Terre, tout corps lâché tombe avec la même accélération, quelle que soit sa masse : g ≈ 9,81 m/s² — c'est l'accélération constante de la chute libre, déjà rencontrée au chapitre 1 avec la mamie tombant du toit d'un immeuble (§1.7). Une masse multipliée par une accélération donne une force : le **poids** est la force gravitationnelle exercée sur un corps[^poids], et il vaut :
+
+$$
+P = m \times g
+$$
+
+- $P$ : le poids du corps, en newtons (N) ;
+- $m$ : sa masse, en kilogrammes (kg) ;
+- $g$ : l'accélération due à la gravité — environ 9,81 m/s² à la surface de la Terre.
+
+**Exemple résolu** *(méthode → calcul → interprétation)* :
+
+1. **Méthode** — le poids est une force : masse × accélération due à la gravité.
+2. **Calcul** — une résidente de 70 kg : P = 70 × 9,81 ≈ 690 N.
+3. **Interprétation** — à chaque appui de sa marche, c'est cet ordre de grandeur — plusieurs centaines de newtons — qui s'exerce sur son corps et sur le sol. Combien exactement, et comment on le mesure : ce sera l'objet du chapitre 3.
+
+<Figure number="2.16" caption="Le poids : P = m·g, et l'exemple de la résidente de 70 kg (≈ 690 N)." source="diaporama CM2, dia 39 — figure à ré-exporter." />
+
+## 2.10.2 Masse ou poids : le piège central
+
+<Admonition kind="attention" title="Attention — masse ≠ poids">
+
+La **masse** est une quantité de matière (§2.7). Elle se mesure en **kilogrammes**, et elle ne change pas selon le lieu[^masse-poids]. Le **poids** est une **force**. Il se mesure en **newtons**, et il dépend de la gravité du lieu — de l'astre sur lequel on se trouve. L'exemple qui tranche : sur la Lune, l'accélération due à la gravité ne vaut que 1,67 m/s²[^masse-poids] — emportez-y votre corps, votre masse est identique, et pourtant votre poids est environ six fois plus faible. Ce qui a changé n'est pas vous : c'est l'astre avec lequel vous interagissez. Le poids n'est donc pas une caractéristique du corps — c'est le résultat d'une interaction entre deux corps, exactement comme toute force (§2.2).
+
+</Admonition>
+
+D'où vient la confusion, alors ? De l'appareil posé dans votre salle de bain. Un pèse-personne mesure une **force** : vous montez dessus, il se déforme — le second effet d'une force, §2.2. Il devrait donc afficher des newtons. Mais la valeur terrestre de g est encodée dans son électronique, et il fait la conversion tout seul : il divise la force mesurée par g, et affiche le résultat en kilogrammes. **La balance affiche des kilogrammes, mais elle mesure une force.** C'est l'appareil lui-même qui entretient la confusion du langage courant : « je fais 70 kilos » parle de la masse ; « mon poids est de 70 kg » est, au sens strict, une double erreur — le poids correspondant vaut environ 690 N.
+
+<Figure number="2.17" caption="Masse et poids : la même personne sur Terre et sur la Lune — même masse, poids divisé par six." source="diaporama CM2, dia 40 — figure à ré-exporter." />
+
+Ce vocabulaire n'est pas un détail de physicien. Dans les structures où vous travaillerez, « perdre du poids » et « perdre de la masse musculaire » ne désignent pas la même chose : la seconde, appelée **sarcopénie** — la perte progressive de masse et de fonction musculaires associée à l'avancée en âge[^sarcopenie] —, est une préoccupation centrale des équipes qui accompagnent les personnes âgées, et les confondre brouille la communication avec elles.
+
+<FurtherReading title="9,81 n'est pas une constante universelle">
+
+La valeur « normale » g = 9,806 65 m/s² a été fixée par convention en 1901, par la 3ᵉ Conférence générale des poids et mesures[^gn] — ce n'est pas une mesure en un lieu donné. Car g varie à la surface de la Terre : environ 9,780 à l'équateur, 9,832 aux pôles — la Terre est aplatie, sa rotation allège les corps à l'équateur, et la densité du sous-sol joue localement. À Perpignan, g vaut environ 9,804 : l'écart avec les 9,81 du cours, sur une personne de 70 kg, représente 0,4 newton — le poids de cinq pièces de deux euros. Négligeable pour l'analyse du mouvement ; décisif pour une balance de précision, qui se règle selon la latitude de son lieu d'installation.
+
+</FurtherReading>
+
+<Glossaire>
+  <Terme nom="Poids">La force gravitationnelle exercée sur un corps : P = m·g. C'est une force, mesurée en newtons (N) ; elle dépend de la gravité du lieu. À ne pas confondre avec la masse (kg), qui ne change pas selon le lieu.</Terme>
+  <Terme nom="g (accélération due à la gravité)">L'accélération de tout corps en chute libre près de la surface de la Terre : environ 9,81 m/s², quelle que soit la masse du corps.</Terme>
+</Glossaire>
+
+<Capacites>
+  <Capacite>Définir le poids comme une force et le calculer à partir de la masse : P = m·g, en newtons.</Capacite>
+  <Capacite>Distinguer masse et poids : la grandeur, l'unité, et ce qui change — ou non — selon le lieu.</Capacite>
+  <Capacite>Expliquer pourquoi le pèse-personne affiche des kilogrammes alors qu'il mesure une force.</Capacite>
+  <Capacite>Corriger une formulation courante du type « mon poids est de 70 kg ».</Capacite>
+</Capacites>
+
+<Verification>
+
+  <Reveal index="a." question="Une résidente a une masse de 60 kg. Quel est son poids, et dans quelle unité ?">
+
+Le poids est une force : P = m × g = 60 × 9,81 ≈ 590 N. Il s'exprime en newtons — 60 kg est sa masse, pas son poids.
+
+  </Reveal>
+
+  <Reveal index="b." question="Vrai ou faux : « sur la Lune, votre masse diminue ». Justifiez.">
+
+Faux. La masse est une quantité de matière : elle ne change pas selon le lieu. Ce qui diminue sur la Lune, c'est le poids — la force gravitationnelle — parce que l'accélération due à la gravité y est environ six fois plus faible.
+
+  </Reveal>
+
+  <Reveal index="c." question="Pourquoi peut-on dire qu'un pèse-personne « affiche des kilogrammes, mais mesure une force » ?">
+
+Parce que ce que l'appareil mesure physiquement est la force exercée sur lui — il se déforme sous cette force, ce qui est le second effet d'une force (§2.2). L'affichage en kilogrammes est un calcul : l'électronique divise la force mesurée par la valeur terrestre de g. La mesure est une force (des newtons) ; l'affichage est une masse déduite (des kilogrammes) — et la conversion n'est juste que là où g vaut la valeur encodée.
+
+  </Reveal>
+
+</Verification>
+
+[^poids]: Le poids comme force gravitationnelle, et la valeur de g — Hamm K. (OpenStax / BCcampus), §6.3, sous-section *Weight and the Gravitational Force*. https://pressbooks.bccampus.ca/humanbiomechanics/chapter/4-4-newtons-second-law-of-motion-concept-of-a-system-2/#:~:text=the%20weight%20of%20an%20object%20is%20the%20gravitational%20force — verbatim : « the weight of an object is the gravitational force on it from the nearest large body », avec « g = 9.80 m/s² on Earth ». *(Valeur usuelle en France métropolitaine : g ≈ 9,81 m/s² ; l'écart est sans effet à notre niveau d'exigence.)*
+
+[^masse-poids]: Distinction masse / poids et exemple lunaire — Hamm K. (OpenStax / BCcampus), §6.3, même sous-section. https://pressbooks.bccampus.ca/humanbiomechanics/chapter/4-4-newtons-second-law-of-motion-concept-of-a-system-2/#:~:text=Mass%20is%20the%20quantity%20of%20matter — verbatim : « Mass is the quantity of matter (how much "stuff") and does not vary in classical physics, whereas weight is the gravitational force and does vary depending on gravity » ; Lune : https://pressbooks.bccampus.ca/humanbiomechanics/chapter/4-4-newtons-second-law-of-motion-concept-of-a-system-2/#:~:text=On%20the%20Moon%2C%20for%20example — verbatim : « On the Moon, for example, the acceleration due to gravity is only 1.67 m/s². A 1.0-kg mass thus has a weight of 9.8 N on Earth and only about 1.7 N on the Moon ».
+
+[^sarcopenie]: Physiopedia, *Sarcopenia*. https://www.physio-pedia.com/Sarcopenia#:~:text=Sarcopenia%20is%20a%20progression%20of%20loss%20of%20skeletal%20muscle%20mass — verbatim : « Sarcopenia is a progression of loss of skeletal muscle mass and function commonly, but not exclusively, associated with advancing age ».
+
+[^gn]: *Accélération normale de la pesanteur terrestre* — Wikipédia. https://fr.wikipedia.org/wiki/Acc%C3%A9l%C3%A9ration_normale_de_la_pesanteur_terrestre#:~:text=La%20valeur%20de%20la%20pesanteur%20normale%20a%20%C3%A9t%C3%A9%20fix%C3%A9e%20en%201901 — verbatim : « La valeur de la pesanteur normale a été fixée en 1901 par la 3e Conférence générale des poids et mesures », gₙ = 9,806 65 m/s². Résolution d'origine : Declaration 2 of the 3rd CGPM (1901), BIPM, https://www.bipm.org/en/committees/cg/cgpm/3-1901/resolution-2.

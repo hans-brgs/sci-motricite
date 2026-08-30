@@ -1,0 +1,141 @@
+---
+id: 1-6-la-vitesse
+title: "1.6 La vitesse"
+sidebar_label: "1.6 La vitesse"
+sidebar_position: 6
+slug: /biomecanique-marche-seniors/1-6-la-vitesse
+description: "Après la trajectoire, la distance et la direction, cette section introduit la vitesse, définie comme la distance parcourue divisée par la durée du…"
+---
+
+{/* Page générée par `npm run sync` depuis le vault Obsidian.
+    Source : contenu/support-ecrit-ch1-cinematique.md
+    Ne pas éditer ici — les modifications seraient écrasées à la prochaine
+    synchronisation. Corriger le chapitre dans le vault, puis resynchroniser. */}
+
+<SectionLead>
+
+Après la trajectoire, la distance et la direction, cette section introduit la **vitesse**, définie comme la distance parcourue divisée par la durée du parcours. Vous y apprendrez à la calculer, puis à distinguer la vitesse moyenne — un seul chiffre pour tout un trajet — de la vitesse instantanée, que l'on approche en échantillonnant le mouvement. À la fin de cette section, vous devez être capable de calculer une vitesse et d'exprimer son unité, d'expliquer la différence entre vitesse moyenne et vitesse instantanée, et de lire une courbe de vitesse en fonction du temps.
+
+</SectionLead>
+
+## 1.6.1 Rapporter la distance au temps
+
+La distance mesurée à la section 1.5 ne dit rien de la durée du parcours ; or parcourir 30 mètres en 6 secondes ou en 1 minute ne décrit pas le même mouvement. Il faut donc une grandeur qui combine les deux : la **vitesse**, définie comme la distance parcourue divisée par la durée du parcours[^vitesse-def]. On la note `v`, et son unité se lit directement dans sa définition : des mètres divisés par des secondes donnent des **mètres par seconde (m/s)**.
+
+<Formule title="Vitesse">
+
+$$
+v = \frac{d}{t}
+$$
+
+- `v` : vitesse, en mètres par seconde (m/s)
+- `d` : distance parcourue, en mètres (m)
+- `t` : durée du parcours, en secondes (s)
+
+</Formule>
+
+<ExempleResolu number="1.6.1" title="La vitesse moyenne d'un coureur">
+
+*Un coureur s'élance départ arrêté sur une piste graduée ; le chronomètre part à son premier mouvement. Il parcourt 30 m en 6,0 s. Quelle est sa vitesse ?*
+
+**Méthode.** On dispose d'une distance et d'une durée : ce sont les deux grandeurs de la formule. On vérifie que les unités sont les bonnes (mètres, secondes), puis on divise.
+
+**Calcul.**
+- Données : `d = 30 m` ; `t = 6,0 s`
+- Application : `v = d / t = 30 / 6,0`
+- Résultat : **`v = 5,0 m/s`**
+
+**Interprétation.** Le coureur a parcouru, en moyenne, 5 mètres à chaque seconde. Ce « en moyenne » est essentiel : un seul chiffre résume ici les 6 secondes de la course — la sous-section suivante examine ce que ce résumé cache.
+
+</ExempleResolu>
+
+## 1.6.2 La vitesse moyenne : un seul chiffre pour tout le trajet
+
+La valeur calculée ci-dessus est une **vitesse moyenne** : la distance totale divisée par le temps total, soit un chiffre unique pour l'ensemble du trajet. Ce chiffre suffit-il à décrire la course ? Au départ, le coureur était à l'arrêt : sa vitesse était nulle. En plein élan, il allait nettement plus vite que 5,0 m/s. À l'arrivée, il a freiné jusqu'à s'arrêter : sa vitesse est redevenue nulle. La vitesse moyenne ne décrit aucun de ces trois instants — elle ne dit rien de ce qui se passe entre le départ et l'arrivée[^moyenne-limite].
+
+Il existe un cas où la moyenne décrit fidèlement le mouvement : le mouvement **uniforme**, dont la vitesse ne change pas au cours du temps. Une voiture qui maintient 130 km/h sur 100 km d'autoroute est parfaitement résumée par sa moyenne. Mais le mouvement humain n'est presque jamais uniforme : il démarre, varie, s'arrête. Pour le décrire, il faut d'autres valeurs que la moyenne.
+
+## 1.6.3 Échantillonner le temps pour approcher la vitesse instantanée
+
+Le principe a été posé à la section 1.5 : quand une grandeur varie, on l'échantillonne. Appliqué à la vitesse, l'échantillonnage consiste à découper le temps de course en intervalles courts et réguliers — toutes les 0,25 s, par exemple — et à calculer la vitesse moyenne de chaque intervalle : la distance parcourue pendant l'intervalle, divisée par sa durée. On n'obtient plus un chiffre unique, mais une suite de vitesses, qui révèle comment l'allure évolue au fil de la course.
+
+Plus l'intervalle est court, plus la vitesse moyenne calculée sur cet intervalle se rapproche de la **vitesse instantanée** : la vitesse du coureur à un instant précis du mouvement[^vitesse-instant] — celle qu'indique, dans une voiture, le compteur.
+
+Reportées sur un graphique, ces vitesses se lisent d'un coup d'œil (cf. Figure 1.8) : en abscisse le temps, en ordonnée la vitesse ; une barre par intervalle de 0,25 s, la courbe de la vitesse instantanée, et la droite horizontale de la vitesse moyenne. Trois phases apparaissent, que la moyenne masquait : les barres montent — le coureur va de plus en plus vite ; elles forment un plateau proche de 8 m/s — il tient sa vitesse maximale ; elles chutent — il ralentit jusqu'à l'arrêt.
+
+<Figure number="1.8" caption="Vitesse du coureur en fonction du temps : en barres, les vitesses moyennes par intervalle de 0,25 s ; en trait plein, la vitesse instantanée ; en pointillés, la vitesse moyenne de la course (5,0 m/s)." source="diaporama CM1, dia 54 — figure à ré-exporter." />
+
+<Ressource>
+
+Animation « Vitesse moyenne et vitesse instantanée » *(lien YouTube — à venir)*.
+
+</Ressource>
+
+Ce graphique montre ce que la moyenne cachait : la vitesse varie au cours du temps. Cette variation porte un nom — l'accélération — et c'est l'objet de la section suivante.
+
+<FurtherReading>
+
+**Convertir des m/s en km/h.** Un mètre par seconde vaut 3,6 kilomètres par heure (1 m/s = 3600 m/h = 3,6 km/h) : pour convertir, on multiplie par 3,6. Les 5,0 m/s du coureur valent 18 km/h ; une marche à 1,2 m/s vaut environ 4,3 km/h.
+
+**La vitesse instantanée est une limite.** Réduire l'intervalle d'échantillonnage rapproche la vitesse moyenne de la vitesse instantanée, sans jamais l'atteindre tout à fait. En mathématiques, ce passage à la limite — quand la durée de l'intervalle tend vers zéro — s'appelle la **dérivée** : la vitesse instantanée est la dérivée de la position par rapport au temps. Ce formalisme n'est pas au programme, mais il explique pourquoi les systèmes d'analyse du mouvement échantillonnent à des fréquences de l'ordre de la centaine de hertz et plus, quand une montre GPS se contente d'un relevé par seconde (cf. §1.5).
+
+</FurtherReading>
+
+<Application title="la vitesse de marche, un indicateur de santé">
+
+La vitesse de marche est le paramètre biomécanique le plus utilisé de ce cours, parce qu'elle est bien plus qu'une simple grandeur de la cinématique : chez la personne âgée, c'est un **marqueur de santé**, parfois qualifié de « sixième signe vital ». Une méta-analyse portant sur près de 35 000 personnes de 65 ans et plus a montré qu'une vitesse de marche plus élevée est associée à une meilleure survie — au sens des études de mortalité : chaque tranche de 0,1 m/s supplémentaire correspond à une réduction d'environ 12 % du risque de décès[^studenski]. Sur le terrain, un seuil d'alerte autour de **0,8 m/s** est retenu comme prédicteur d'évolutions défavorables (fragilité, chutes, perte d'autonomie)[^seuil08], et une valeur se lit par rapport aux données normatives : environ **1,2 à 1,4 m/s** pour un adulte sain, **1,0 à 1,3 m/s** pour un sénior[^vitesse-marche].
+
+La mesure, elle, applique directement les notions de cette section. Ce qui est informatif, c'est la vitesse de croisière — pas les phases de démarrage et d'arrêt, qui abaisseraient la moyenne. Le protocole standardisé prévoit ainsi un couloir de 9 m dont les 2,5 premiers et derniers mètres servent de zones d'accélération et de décélération : seuls les 4 m centraux, parcourus à allure confortable et quasi constante, sont chronométrés[^protocole-4m].
+
+</Application>
+
+<Glossaire>
+  <Terme nom="Vitesse moyenne">Distance totale divisée par le temps total : un chiffre unique qui résume tout le trajet. Ne décrit fidèlement qu'un mouvement **uniforme**.</Terme>
+  <Terme nom="Vitesse instantanée">Vitesse à un instant précis du mouvement, en m/s. On l'approche en échantillonnant le temps en intervalles de plus en plus courts.</Terme>
+  <Terme nom="Mouvement uniforme">Mouvement dont la vitesse ne change pas au cours du temps.</Terme>
+  <Terme nom="Repères chiffrés à connaître">Marche d'un adulte sain ≈ **1,2 à 1,4 m/s** · marche d'un sénior ≈ **1,0 à 1,3 m/s** · seuil d'alerte ≈ **0,8 m/s** · conversion **1 m/s = 3,6 km/h**.</Terme>
+</Glossaire>
+
+<Capacites>
+  <Capacite>Énoncer la définition de la vitesse et donner son unité.</Capacite>
+  <Capacite>Calculer une vitesse à partir d'une distance et d'une durée, et exprimer le résultat avec son unité.</Capacite>
+  <Capacite>Expliquer la différence entre vitesse moyenne et vitesse instantanée, et le rôle de l'échantillonnage pour passer de l'une à l'autre.</Capacite>
+  <Capacite>Lire une courbe de vitesse en fonction du temps et y repérer les phases où l'allure augmente, se maintient ou diminue.</Capacite>
+  <Capacite>Situer une vitesse de marche mesurée par rapport aux repères de référence, et justifier les zones d'accélération et de décélération du protocole.</Capacite>
+</Capacites>
+
+<Verification>
+
+  <Reveal index="a." question="Une résidente parcourt 6 m en 5 s à allure confortable. Quelle est sa vitesse de marche ? Ce résultat vous semble-t-il préoccupant ?">
+
+`v = 6 / 5 = 1,2 m/s`. Cette valeur se situe dans la fourchette attendue chez un sénior (≈ 1,0-1,3 m/s) et reste nettement au-dessus du seuil d'alerte de 0,8 m/s : rien de préoccupant sur ce seul critère.
+
+  </Reveal>
+
+  <Reveal index="b." question="Vrai ou faux : « une vitesse moyenne de 5,0 m/s signifie que le coureur allait à 5,0 m/s à mi-course ». Justifiez.">
+
+Faux. La vitesse moyenne résume l'ensemble du trajet et ne correspond à aucun instant particulier — à mi-course, ce coureur était en plein élan, proche de 8 m/s, bien au-dessus de sa moyenne.
+
+  </Reveal>
+
+  <Reveal index="c." question="Sur la Figure 1.8, les barres forment un plateau entre 3 et 4 secondes. Que nous apprend ce plateau sur la course ?">
+
+La vitesse ne varie plus d'un intervalle à l'autre : le coureur tient une allure quasi constante, proche de son maximum. Son mouvement est momentanément uniforme.
+
+  </Reveal>
+
+</Verification>
+
+[^vitesse-def]: Hamm K., *Biomechanics of Human Movement* (OpenStax / BCcampus), §2.3 Time, Velocity, and Speed. https://pressbooks.bccampus.ca/humanbiomechanics/chapter/2-3-time-velocity-and-speed/#:~:text=Average%20speed%20is%20the%20distance%20traveled%20divided%20by%20elapsed%20time — verbatim : « Average speed is the distance traveled divided by elapsed time ».
+
+[^moyenne-limite]: Hamm K., ibid., §2.3. https://pressbooks.bccampus.ca/humanbiomechanics/chapter/2-3-time-velocity-and-speed/#:~:text=does%20not%20tell%20us%20anything%20about%20what%20happens — verbatim : « The average velocity of an object does not tell us anything about what happens to it between the starting point and ending point ».
+
+[^vitesse-instant]: Hamm K., ibid., §2.3. https://pressbooks.bccampus.ca/humanbiomechanics/chapter/2-3-time-velocity-and-speed/#:~:text=the%20average%20velocity%20at%20a%20specific%20instant%20in%20time — verbatim : « the average velocity at a specific instant in time (or over an infinitesimally small time interval) » ; à la limite du découpage : « the average velocity becomes the instantaneous velocity ».
+
+[^studenski]: Studenski S. et al. (2011), *Gait Speed and Survival in Older Adults*, JAMA 305(1):50-58, DOI 10.1001/jama.2010.1923. https://jamanetwork.com/journals/jama/fullarticle/644554#:~:text=pooled%20hazard%20ratio%20per%200.1%20m%2Fs%2C%200.88 — verbatim : « pooled hazard ratio per 0.1 m/s, 0.88; 95% CI, 0.87-0.90 ». Fiche : [[fiche-studenski-2011]].
+
+[^seuil08]: Physiopedia, *Gait Speed as an Objective Measure*, « Predictive values for community-dwelling older adults » (d'après Abellan van Kan et al., 2009). https://www.physio-pedia.com/Gait_Speed_as_an_Objective_Measure#:~:text=predictive%20of%20poor%20clinical%20outcomes — verbatim : « &lt;0.8 m/s – predictive of poor clinical outcomes ».
+
+[^vitesse-marche]: Bohannon R.W. (1997), *Comfortable and maximum walking speed of adults aged 20-79 years*, Age and Ageing 26(1):15-19, https://doi.org/10.1093/ageing/26.1.15 ; valeurs séniors : Physiopedia, *Gait Speed as an Objective Measure*, section « Normative and Predictive Data ». https://www.physio-pedia.com/Gait_Speed_as_an_Objective_Measure#:~:text=1.13%20m%2Fs
+
+[^protocole-4m]: Physiopedia, *Gait Speed as an Objective Measure*, protocole recommandé (d'après Mehmet et al., 2020). https://www.physio-pedia.com/Gait_Speed_as_an_Objective_Measure#:~:text=first%20and%20last%202.5%20meters — verbatim : « 9-meter total distance, with the first and last 2.5 meters used for acceleration and deceleration » ; « Time recorded for the middle 4 meters » ; marche « at a comfortable pace ».

@@ -1,0 +1,30 @@
+<!-- @dsCard group="Components" viewport="700x600" name="Content — Encadrés, figure, auto-évaluation" subtitle="Cinq traitements distincts : chapeau, application, détour replié, glossaire, checklist" -->
+<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.js"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0;padding:20px;background:var(--bg-page);font:var(--type-body);color:var(--text-body)}</style></head>
+<body><div id="root"></div>
+<script type="text/babel">
+const {Admonition,SectionLead,Application,FurtherReading,Checklist,GlossaryBox,FigurePanel,Reveal,Quiz,Reference}=window.MotricitDesignSystem_ea5604;
+ReactDOM.createRoot(document.getElementById('root')).render(
+<div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:18}}>
+<div style={{display:'flex',flexDirection:'column',gap:12}}>
+<SectionLead>Ce que la section apporte, et ce que vous saurez faire à la fin. Texte de tête, sans encadré.</SectionLead>
+<Application subject="du « il saute moins » au suivi de la détente">Le même raisonnement, transposé au terrain.</Application>
+<FurtherReading>Un détour historique ou technique, replié par défaut.</FurtherReading>
+<Admonition kind="attention">Ne pas confondre force et moment de force.</Admonition>
+<Checklist items={["Expliquer ce qu'objectiver veut dire.","Citer les quatre limites de l'impression."]}/>
+</div>
+<div style={{display:'flex',flexDirection:'column',gap:12}}>
+<Reveal index="a." question="Complétez : « la biomécanique est l'étude des … »" defaultOpen>…des <b>forces</b> et de leurs <b>effets</b> sur le <b>vivant</b>.</Reveal>
+<Reveal index="b." tone="violet" question="Vrai ou faux : une impression n'a aucune valeur professionnelle.">Faux — c'est le signal d'alerte qui déclenche la mesure.</Reveal>
+<Quiz index="1" question="« Objectiver », c'est :" explanation="Passer d'un jugement qualitatif à une grandeur exprimée dans une unité."
+ options={[{label:'donner son avis de professionnel'},{label:'transformer une impression en mesure',correct:true}]}/>
+<FigurePanel src="../../assets/illustrations/patineuse-translation-rectiligne.jpg" ratio="16/10" number="1.7" caption="Translation rectiligne." source="diaporama CM1"/>
+<GlossaryBox entries={[{term:'Objectiver',def:'Transformer une impression en mesure.'},{term:'Cinématique',def:"L'étude des valeurs descriptives du mouvement."}]}/>
+<Reference year="1974" authors="Hatze H." title="The meaning of the term biomechanics" source="J. Biomech." href="#"/>
+</div></div>);
+</script></body></html>

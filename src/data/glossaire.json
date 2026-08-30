@@ -1,0 +1,865 @@
+[
+  {
+    "term": "Accélération angulaire",
+    "definition": "Variation de la vitesse angulaire divisée par la durée, en degrés par seconde carrée (°/s²). L'équivalent angulaire de l'accélération.",
+    "chapter": 1,
+    "occurrences": [
+      {
+        "section": "1.8",
+        "sectionTitle": "La cinématique angulaire",
+        "chapterLabel": "Chapitre 1 · Cinématique",
+        "href": "/cours/biomecanique-marche-seniors/1-8-la-cinematique-angulaire"
+      }
+    ]
+  },
+  {
+    "term": "Amplitude articulaire",
+    "definition": "Nombre de degrés balayés par un segment au cours d'un mouvement, complété par le sens de rotation (horaire ou anti-horaire). L'équivalent angulaire du déplacement. En évaluation articulaire, le terme — souvent noté ROM (range of motion) — désigne l'étendue totale de mouvement dont une articulation est capable.",
+    "chapter": 1,
+    "occurrences": [
+      {
+        "section": "1.8",
+        "sectionTitle": "La cinématique angulaire",
+        "chapterLabel": "Chapitre 1 · Cinématique",
+        "href": "/cours/biomecanique-marche-seniors/1-8-la-cinematique-angulaire"
+      }
+    ]
+  },
+  {
+    "term": "Angle articulaire",
+    "definition": "Angle formé entre deux segments adjacents (l'angle du coude entre bras et avant-bras, celui du genou entre cuisse et jambe), en degrés (°). L'équivalent angulaire de la position.",
+    "chapter": 1,
+    "occurrences": [
+      {
+        "section": "1.8",
+        "sectionTitle": "La cinématique angulaire",
+        "chapterLabel": "Chapitre 1 · Cinématique",
+        "href": "/cours/biomecanique-marche-seniors/1-8-la-cinematique-angulaire"
+      }
+    ]
+  },
+  {
+    "term": "Axe de rotation",
+    "definition": "Ligne fixe autour de laquelle s'effectue une rotation. Aux articulations, c'est l'axe autour duquel tourne le segment (le genou pour la jambe, la hanche pour la cuisse).",
+    "chapter": 1,
+    "occurrences": [
+      {
+        "section": "1.4",
+        "sectionTitle": "Les deux natures du mouvement",
+        "chapterLabel": "Chapitre 1 · Cinématique",
+        "href": "/cours/biomecanique-marche-seniors/1-4-les-deux-natures-du-mouvement"
+      }
+    ]
+  },
+  {
+    "term": "Biais de confirmation",
+    "definition": "Tendance à rechercher et à interpréter l'information dans le sens de ce que l'on croit déjà. Il fausse l'observation non instrumentée.",
+    "chapter": 1,
+    "occurrences": [
+      {
+        "section": "1.2",
+        "sectionTitle": "Pourquoi mesurer ? De l'impression à la donnée",
+        "chapterLabel": "Chapitre 1 · Cinématique",
+        "href": "/cours/biomecanique-marche-seniors/1-2-pourquoi-mesurer-de-l-impression-a-la-donnee"
+      }
+    ]
+  },
+  {
+    "term": "Biomécanique",
+    "definition": "Étude de la structure et de la fonction des systèmes biologiques par les méthodes de la mécanique (Hatze, 1974). En clair : l'étude des forces et de leurs effets sur le vivant.",
+    "chapter": 1,
+    "occurrences": [
+      {
+        "section": "1.1",
+        "sectionTitle": "Qu'est-ce que la biomécanique ?",
+        "chapterLabel": "Chapitre 1 · Cinématique",
+        "href": "/cours/biomecanique-marche-seniors/1-1-qu-est-ce-que-la-biomecanique"
+      }
+    ]
+  },
+  {
+    "term": "Biomécanique du mouvement",
+    "definition": "Biomécanique à l'échelle du corps entier : étude du mouvement humain et des forces qui s'y appliquent. Deux finalités : améliorer la performance sportive ; préserver ou restaurer la santé (prévention des blessures et des troubles, rééducation).",
+    "chapter": 1,
+    "occurrences": [
+      {
+        "section": "1.1",
+        "sectionTitle": "Qu'est-ce que la biomécanique ?",
+        "chapterLabel": "Chapitre 1 · Cinématique",
+        "href": "/cours/biomecanique-marche-seniors/1-1-qu-est-ce-que-la-biomecanique"
+      }
+    ]
+  },
+  {
+    "term": "Boucle de l'intervention",
+    "definition": "Mesurer → interpréter → cibler → intervenir → re-mesurer. Démarche professionnelle qui transforme une intuition en décision argumentée, vérifiée par la mesure.",
+    "chapter": 1,
+    "occurrences": [
+      {
+        "section": "1.2",
+        "sectionTitle": "Pourquoi mesurer ? De l'impression à la donnée",
+        "chapterLabel": "Chapitre 1 · Cinématique",
+        "href": "/cours/biomecanique-marche-seniors/1-2-pourquoi-mesurer-de-l-impression-a-la-donnee"
+      }
+    ]
+  },
+  {
+    "term": "Centre de masse",
+    "definition": "Le point d'application de la résultante du poids : tout se passe comme si le poids du corps s'appliquait en ce point, alors qu'il s'exerce en réalité sur chaque atome de matière. « Centre de gravité » en est le synonyme courant ; sur Terre, les deux coïncident.",
+    "chapter": 2,
+    "occurrences": [
+      {
+        "section": "2.11",
+        "sectionTitle": "Le centre de masse : où s'applique le poids",
+        "chapterLabel": "Chapitre 2 · Cinétique",
+        "href": "/cours/biomecanique-marche-seniors/2-11-le-centre-de-masse-ou-s-applique-le-poids"
+      }
+    ]
+  },
+  {
+    "term": "Chute libre",
+    "definition": "Mouvement d'un corps soumis à la seule force gravitationnelle, quand plus rien ne la compense.",
+    "chapter": 2,
+    "occurrences": [
+      {
+        "section": "2.7",
+        "sectionTitle": "La première loi : l'inertie",
+        "chapterLabel": "Chapitre 2 · Cinétique",
+        "href": "/cours/biomecanique-marche-seniors/2-7-la-premiere-loi-l-inertie"
+      }
+    ]
+  },
+  {
+    "term": "Cinématique",
+    "definition": "Branche de la biomécanique qui décrit le mouvement (positions, distances, vitesses, accélérations, angles) sans considérer les forces qui l'ont causé. C'est l'étude des effets.",
+    "chapter": 1,
+    "occurrences": [
+      {
+        "section": "1.3",
+        "sectionTitle": "Cinématique ou cinétique : décrire ou expliquer",
+        "chapterLabel": "Chapitre 1 · Cinématique",
+        "href": "/cours/biomecanique-marche-seniors/1-3-cinematique-ou-cinetique-decrire-ou-expliquer"
+      },
+      {
+        "section": "2.1",
+        "sectionTitle": "De l'effet à la cause",
+        "chapterLabel": "Chapitre 2 · Cinétique",
+        "href": "/cours/biomecanique-marche-seniors/2-1-de-l-effet-a-la-cause"
+      }
+    ]
+  },
+  {
+    "term": "Cinématique angulaire",
+    "definition": "Description des rotations : les mêmes paramètres que la cinématique linéaire, exprimés en angles plutôt qu'en mètres.",
+    "chapter": 1,
+    "occurrences": [
+      {
+        "section": "1.8",
+        "sectionTitle": "La cinématique angulaire",
+        "chapterLabel": "Chapitre 1 · Cinématique",
+        "href": "/cours/biomecanique-marche-seniors/1-8-la-cinematique-angulaire"
+      }
+    ]
+  },
+  {
+    "term": "Cinétique",
+    "definition": "Branche de la biomécanique qui étudie les forces à l'origine du mouvement : celles qui le produisent ou le modifient. C'est l'étude des causes.",
+    "chapter": 1,
+    "occurrences": [
+      {
+        "section": "1.3",
+        "sectionTitle": "Cinématique ou cinétique : décrire ou expliquer",
+        "chapterLabel": "Chapitre 1 · Cinématique",
+        "href": "/cours/biomecanique-marche-seniors/1-3-cinematique-ou-cinetique-decrire-ou-expliquer"
+      },
+      {
+        "section": "2.1",
+        "sectionTitle": "De l'effet à la cause",
+        "chapterLabel": "Chapitre 2 · Cinétique",
+        "href": "/cours/biomecanique-marche-seniors/2-1-de-l-effet-a-la-cause"
+      }
+    ]
+  },
+  {
+    "term": "Déformation",
+    "definition": "Changement de forme d'un corps provoqué par l'application d'une force. Réversible tant qu'elle reste sous la limite de résistance du corps.",
+    "chapter": 2,
+    "occurrences": [
+      {
+        "section": "2.2",
+        "sectionTitle": "Qu'est-ce qu'une force ?",
+        "chapterLabel": "Chapitre 2 · Cinétique",
+        "href": "/cours/biomecanique-marche-seniors/2-2-qu-est-ce-qu-une-force"
+      }
+    ]
+  },
+  {
+    "term": "Deuxième loi de Newton",
+    "definition": "La résultante des forces exercées sur un corps est égale au produit de sa masse par son accélération (F = m·a) ; l'accélération produite a la même direction et le même sens que cette résultante.",
+    "chapter": 2,
+    "occurrences": [
+      {
+        "section": "2.8",
+        "sectionTitle": "La deuxième loi : F = m·a",
+        "chapterLabel": "Chapitre 2 · Cinétique",
+        "href": "/cours/biomecanique-marche-seniors/2-8-la-deuxieme-loi-f-m-a"
+      }
+    ]
+  },
+  {
+    "term": "Diagramme de forces",
+    "definition": "Schéma où l'on isole le corps étudié et où l'on dessine toutes les forces externes qui s'exercent sur lui. On n'y représente jamais ni les forces internes, ni les forces que ce corps exerce sur d'autres.",
+    "chapter": 2,
+    "occurrences": [
+      {
+        "section": "2.5",
+        "sectionTitle": "Le diagramme de forces et la résultante",
+        "chapterLabel": "Chapitre 2 · Cinétique",
+        "href": "/cours/biomecanique-marche-seniors/2-5-le-diagramme-de-forces-et-la-resultante"
+      }
+    ]
+  },
+  {
+    "term": "Direction",
+    "definition": "Orientation géométrique selon laquelle s'effectue un mouvement ou agit une grandeur vectorielle : la droite le long de laquelle on se déplace. Le sens précise vers laquelle des deux extrémités de cette droite on va. Dans un plan, direction et sens sont portés par les signes des écarts Δx et Δy.",
+    "chapter": 1,
+    "occurrences": [
+      {
+        "section": "1.5",
+        "sectionTitle": "Décrire un déplacement : trajectoire, distance, direction",
+        "chapterLabel": "Chapitre 1 · Cinématique",
+        "href": "/cours/biomecanique-marche-seniors/1-5-decrire-un-deplacement-trajectoire-distance-direction"
+      }
+    ]
+  },
+  {
+    "term": "Données normatives",
+    "definition": "Valeurs habituellement mesurées dans un groupe de référence (même âge, même sexe…). C'est l'écart à ces valeurs — et l'amplitude d'une perte rapportée au temps (de combien, en combien de temps) — qui constitue une véritable alerte, pas une valeur isolée.",
+    "chapter": 1,
+    "occurrences": [
+      {
+        "section": "1.2",
+        "sectionTitle": "Pourquoi mesurer ? De l'impression à la donnée",
+        "chapterLabel": "Chapitre 1 · Cinématique",
+        "href": "/cours/biomecanique-marche-seniors/1-2-pourquoi-mesurer-de-l-impression-a-la-donnee"
+      }
+    ]
+  },
+  {
+    "term": "Dynamique",
+    "definition": "L'étude des corps dont le mouvement change sous l'effet des forces (résultante non nulle). À ne pas confondre avec la cinétique, qui nomme l'ensemble de l'étude des forces : statique et dynamique en sont les deux régimes.",
+    "chapter": 2,
+    "occurrences": [
+      {
+        "section": "2.5",
+        "sectionTitle": "Le diagramme de forces et la résultante",
+        "chapterLabel": "Chapitre 2 · Cinétique",
+        "href": "/cours/biomecanique-marche-seniors/2-5-le-diagramme-de-forces-et-la-resultante"
+      }
+    ]
+  },
+  {
+    "term": "Échantillonnage",
+    "definition": "Relevé d'une grandeur (position, vitesse…) à intervalles de temps réguliers : le phénomène mesuré est découpé en une suite de valeurs que l'on peut analyser segment par segment. Principe général de la mesure du mouvement.",
+    "chapter": 1,
+    "occurrences": [
+      {
+        "section": "1.5",
+        "sectionTitle": "Décrire un déplacement : trajectoire, distance, direction",
+        "chapterLabel": "Chapitre 1 · Cinématique",
+        "href": "/cours/biomecanique-marche-seniors/1-5-decrire-un-deplacement-trajectoire-distance-direction"
+      }
+    ]
+  },
+  {
+    "term": "Équilibre",
+    "definition": "État d'un corps dont la résultante des forces est nulle.",
+    "chapter": 2,
+    "occurrences": [
+      {
+        "section": "2.5",
+        "sectionTitle": "Le diagramme de forces et la résultante",
+        "chapterLabel": "Chapitre 2 · Cinétique",
+        "href": "/cours/biomecanique-marche-seniors/2-5-le-diagramme-de-forces-et-la-resultante"
+      }
+    ]
+  },
+  {
+    "term": "Force",
+    "definition": "Action mécanique exercée par un objet sur un autre ; elle peut modifier le mouvement du corps qui la reçoit ou provoquer sa déformation. Unité : le newton (N). Elle se décrit toujours en nommant les deux corps : « la force exercée par … sur … ».",
+    "chapter": 2,
+    "occurrences": [
+      {
+        "section": "2.2",
+        "sectionTitle": "Qu'est-ce qu'une force ?",
+        "chapterLabel": "Chapitre 2 · Cinétique",
+        "href": "/cours/biomecanique-marche-seniors/2-2-qu-est-ce-qu-une-force"
+      }
+    ]
+  },
+  {
+    "term": "Force à distance (ou d'attraction)",
+    "definition": "Force qui s'exerce sans contact, par l'interaction entre les masses. Dans ce cours : la force gravitationnelle.",
+    "chapter": 2,
+    "occurrences": [
+      {
+        "section": "2.4",
+        "sectionTitle": "Deux façons de classer les forces",
+        "chapterLabel": "Chapitre 2 · Cinétique",
+        "href": "/cours/biomecanique-marche-seniors/2-4-deux-facons-de-classer-les-forces"
+      }
+    ]
+  },
+  {
+    "term": "Force de contact",
+    "definition": "Force qui s'exerce quand deux corps se touchent, sur leur surface de contact. Si le contact est rompu, elle disparaît instantanément.",
+    "chapter": 2,
+    "occurrences": [
+      {
+        "section": "2.4",
+        "sectionTitle": "Deux façons de classer les forces",
+        "chapterLabel": "Chapitre 2 · Cinétique",
+        "href": "/cours/biomecanique-marche-seniors/2-4-deux-facons-de-classer-les-forces"
+      }
+    ]
+  },
+  {
+    "term": "Force de réaction",
+    "definition": "La force qu'un corps B exerce en retour sur le corps A qui agit sur lui : même intensité, même direction, sens opposé.",
+    "chapter": 2,
+    "occurrences": [
+      {
+        "section": "2.9",
+        "sectionTitle": "La troisième loi : l'action et la réaction",
+        "chapterLabel": "Chapitre 2 · Cinétique",
+        "href": "/cours/biomecanique-marche-seniors/2-9-la-troisieme-loi-l-action-et-la-reaction"
+      }
+    ]
+  },
+  {
+    "term": "Force externe",
+    "definition": "Force exercée sur le corps étudié par quelque chose d'extérieur à lui, une fois ses limites délimitées. Seule une force externe peut modifier le mouvement d'ensemble de ce corps.",
+    "chapter": 2,
+    "occurrences": [
+      {
+        "section": "2.4",
+        "sectionTitle": "Deux façons de classer les forces",
+        "chapterLabel": "Chapitre 2 · Cinétique",
+        "href": "/cours/biomecanique-marche-seniors/2-4-deux-facons-de-classer-les-forces"
+      }
+    ]
+  },
+  {
+    "term": "Force interne",
+    "definition": "Force exercée entre les éléments du corps étudié (les muscles sur les os, pour une personne entière). Les forces internes réorganisent les segments du corps étudié, mais ne modifient pas son mouvement d'ensemble. La même force peut être interne ou externe selon le corps qu'on délimite.",
+    "chapter": 2,
+    "occurrences": [
+      {
+        "section": "2.4",
+        "sectionTitle": "Deux façons de classer les forces",
+        "chapterLabel": "Chapitre 2 · Cinétique",
+        "href": "/cours/biomecanique-marche-seniors/2-4-deux-facons-de-classer-les-forces"
+      }
+    ]
+  },
+  {
+    "term": "Force normale",
+    "definition": "Force de contact qu'une surface exerce, perpendiculairement à elle-même, sur le corps qui repose dessus. Elle le soutient.",
+    "chapter": 2,
+    "occurrences": [
+      {
+        "section": "2.4",
+        "sectionTitle": "Deux façons de classer les forces",
+        "chapterLabel": "Chapitre 2 · Cinétique",
+        "href": "/cours/biomecanique-marche-seniors/2-4-deux-facons-de-classer-les-forces"
+      }
+    ]
+  },
+  {
+    "term": "Fréquence d'échantillonnage",
+    "definition": "Nombre de relevés effectués par seconde, en hertz (Hz). Plus elle est élevée, plus la mesure épouse le phénomène réel.",
+    "chapter": 1,
+    "occurrences": [
+      {
+        "section": "1.5",
+        "sectionTitle": "Décrire un déplacement : trajectoire, distance, direction",
+        "chapterLabel": "Chapitre 1 · Cinématique",
+        "href": "/cours/biomecanique-marche-seniors/1-5-decrire-un-deplacement-trajectoire-distance-direction"
+      }
+    ]
+  },
+  {
+    "term": "Frottement",
+    "definition": "Force de contact qui s'oppose au glissement entre deux surfaces en contact.",
+    "chapter": 2,
+    "occurrences": [
+      {
+        "section": "2.5",
+        "sectionTitle": "Le diagramme de forces et la résultante",
+        "chapterLabel": "Chapitre 2 · Cinétique",
+        "href": "/cours/biomecanique-marche-seniors/2-5-le-diagramme-de-forces-et-la-resultante"
+      }
+    ]
+  },
+  {
+    "term": "g (accélération due à la gravité)",
+    "definition": "L'accélération de tout corps en chute libre près de la surface de la Terre : environ 9,81 m/s², quelle que soit la masse du corps.",
+    "chapter": 2,
+    "occurrences": [
+      {
+        "section": "2.10",
+        "sectionTitle": "Le poids, une force déguisée",
+        "chapterLabel": "Chapitre 2 · Cinétique",
+        "href": "/cours/biomecanique-marche-seniors/2-10-le-poids-une-force-deguisee"
+      }
+    ]
+  },
+  {
+    "term": "Hypertrophie musculaire",
+    "definition": "Augmentation de la taille des cellules musculaires, notamment en réponse à la tension mécanique répétée d'un entraînement contre charge.",
+    "chapter": 1,
+    "occurrences": [
+      {
+        "section": "1.1",
+        "sectionTitle": "Qu'est-ce que la biomécanique ?",
+        "chapterLabel": "Chapitre 1 · Cinématique",
+        "href": "/cours/biomecanique-marche-seniors/1-1-qu-est-ce-que-la-biomecanique"
+      }
+    ]
+  },
+  {
+    "term": "Impression",
+    "definition": "Jugement qualitatif fourni par les sens et la mémoire. Utile comme signal d'alerte, mais non quantifiée, influencée par le contexte, infidèle dans le temps et non transmissible.",
+    "chapter": 1,
+    "occurrences": [
+      {
+        "section": "1.2",
+        "sectionTitle": "Pourquoi mesurer ? De l'impression à la donnée",
+        "chapterLabel": "Chapitre 1 · Cinématique",
+        "href": "/cours/biomecanique-marche-seniors/1-2-pourquoi-mesurer-de-l-impression-a-la-donnee"
+      }
+    ]
+  },
+  {
+    "term": "Inertie",
+    "definition": "Propriété d'un corps : sa tendance à conserver son état de mouvement, repos ou mouvement rectiligne uniforme. Elle dépend de la masse : plus la masse est grande, plus le corps résiste au changement.",
+    "chapter": 2,
+    "occurrences": [
+      {
+        "section": "2.7",
+        "sectionTitle": "La première loi : l'inertie",
+        "chapterLabel": "Chapitre 2 · Cinétique",
+        "href": "/cours/biomecanique-marche-seniors/2-7-la-premiere-loi-l-inertie"
+      }
+    ]
+  },
+  {
+    "term": "Intensité (d'une force)",
+    "definition": "La quantité de force appliquée, mesurée en newtons (N). Sur un schéma, elle se lit à la longueur de la flèche. Synonyme : magnitude.",
+    "chapter": 2,
+    "occurrences": [
+      {
+        "section": "2.3",
+        "sectionTitle": "Décrire une force : le vecteur force",
+        "chapterLabel": "Chapitre 2 · Cinétique",
+        "href": "/cours/biomecanique-marche-seniors/2-3-decrire-une-force-le-vecteur-force"
+      }
+    ]
+  },
+  {
+    "term": "Limite de résistance",
+    "definition": "Niveau de contrainte au-delà duquel la déformation d'un corps devient irréversible (terme des physiciens : limite d'élasticité), jusqu'au point de rupture. Appliquée aux tissus : au-delà de cette limite, la déformation devient une blessure (élongation, déchirure, fracture).",
+    "chapter": 2,
+    "occurrences": [
+      {
+        "section": "2.2",
+        "sectionTitle": "Qu'est-ce qu'une force ?",
+        "chapterLabel": "Chapitre 2 · Cinétique",
+        "href": "/cours/biomecanique-marche-seniors/2-2-qu-est-ce-qu-une-force"
+      }
+    ]
+  },
+  {
+    "term": "Masse",
+    "definition": "Quantité de matière d'un corps, mesurée en kilogrammes (kg). L'inertie d'un corps dépend de sa masse.",
+    "chapter": 2,
+    "occurrences": [
+      {
+        "section": "2.7",
+        "sectionTitle": "La première loi : l'inertie",
+        "chapterLabel": "Chapitre 2 · Cinétique",
+        "href": "/cours/biomecanique-marche-seniors/2-7-la-premiere-loi-l-inertie"
+      }
+    ]
+  },
+  {
+    "term": "Mécanique",
+    "definition": "Branche de la physique qui étudie les mouvements et les forces, c'est-à-dire les effets des forces sur les corps.",
+    "chapter": 1,
+    "occurrences": [
+      {
+        "section": "1.1",
+        "sectionTitle": "Qu'est-ce que la biomécanique ?",
+        "chapterLabel": "Chapitre 1 · Cinématique",
+        "href": "/cours/biomecanique-marche-seniors/1-1-qu-est-ce-que-la-biomecanique"
+      }
+    ]
+  },
+  {
+    "term": "Mécanobiologie",
+    "definition": "Étude de la façon dont les cellules perçoivent les forces mécaniques qui s'exercent sur elles et y répondent. Biomécanique à l'échelle de la cellule.",
+    "chapter": 1,
+    "occurrences": [
+      {
+        "section": "1.1",
+        "sectionTitle": "Qu'est-ce que la biomécanique ?",
+        "chapterLabel": "Chapitre 1 · Cinématique",
+        "href": "/cours/biomecanique-marche-seniors/1-1-qu-est-ce-que-la-biomecanique"
+      }
+    ]
+  },
+  {
+    "term": "Mesure",
+    "definition": "Valeur d'une grandeur, obtenue par un protocole défini. Reproductible (le même protocole redonne une valeur proche), transmissible (elle garde le même sens pour tous, partout, dans le temps) et comparable (à des mesures antérieures et aux valeurs de référence).",
+    "chapter": 1,
+    "occurrences": [
+      {
+        "section": "1.2",
+        "sectionTitle": "Pourquoi mesurer ? De l'impression à la donnée",
+        "chapterLabel": "Chapitre 1 · Cinématique",
+        "href": "/cours/biomecanique-marche-seniors/1-2-pourquoi-mesurer-de-l-impression-a-la-donnee"
+      }
+    ]
+  },
+  {
+    "term": "Mouvement combiné",
+    "definition": "Combinaison d'une translation et d'une ou plusieurs rotations. C'est le cas de la plupart des mouvements humains : à la marche, le corps se translate grâce à des segments qui tournent.",
+    "chapter": 1,
+    "occurrences": [
+      {
+        "section": "1.4",
+        "sectionTitle": "Les deux natures du mouvement",
+        "chapterLabel": "Chapitre 1 · Cinématique",
+        "href": "/cours/biomecanique-marche-seniors/1-4-les-deux-natures-du-mouvement"
+      }
+    ]
+  },
+  {
+    "term": "Mouvement rectiligne uniforme",
+    "definition": "Mouvement en ligne droite, à vitesse constante : l'état que conserve un corps en mouvement tant que la résultante des forces qui s'exercent sur lui est nulle.",
+    "chapter": 2,
+    "occurrences": [
+      {
+        "section": "2.7",
+        "sectionTitle": "La première loi : l'inertie",
+        "chapterLabel": "Chapitre 2 · Cinétique",
+        "href": "/cours/biomecanique-marche-seniors/2-7-la-premiere-loi-l-inertie"
+      }
+    ]
+  },
+  {
+    "term": "Mouvement uniforme",
+    "definition": "Mouvement dont la vitesse ne change pas au cours du temps.",
+    "chapter": 1,
+    "occurrences": [
+      {
+        "section": "1.6",
+        "sectionTitle": "La vitesse",
+        "chapterLabel": "Chapitre 1 · Cinématique",
+        "href": "/cours/biomecanique-marche-seniors/1-6-la-vitesse"
+      }
+    ]
+  },
+  {
+    "term": "Newton (N)",
+    "definition": "Unité de mesure de la force : la force nécessaire pour communiquer à une masse de 1 kg une accélération de 1 m/s². 1 N = 1 kg·m/s².",
+    "chapter": 2,
+    "occurrences": [
+      {
+        "section": "2.2",
+        "sectionTitle": "Qu'est-ce qu'une force ?",
+        "chapterLabel": "Chapitre 2 · Cinétique",
+        "href": "/cours/biomecanique-marche-seniors/2-2-qu-est-ce-qu-une-force"
+      },
+      {
+        "section": "2.8",
+        "sectionTitle": "La deuxième loi : F = m·a",
+        "chapterLabel": "Chapitre 2 · Cinétique",
+        "href": "/cours/biomecanique-marche-seniors/2-8-la-deuxieme-loi-f-m-a"
+      }
+    ]
+  },
+  {
+    "term": "Objectiver",
+    "definition": "Transformer une impression en mesure : une grandeur définie, exprimée dans une unité.",
+    "chapter": 1,
+    "occurrences": [
+      {
+        "section": "1.2",
+        "sectionTitle": "Pourquoi mesurer ? De l'impression à la donnée",
+        "chapterLabel": "Chapitre 1 · Cinématique",
+        "href": "/cours/biomecanique-marche-seniors/1-2-pourquoi-mesurer-de-l-impression-a-la-donnee"
+      }
+    ]
+  },
+  {
+    "term": "Paire action-réaction",
+    "definition": "Les deux forces d'une même interaction. Elles s'appliquent toujours à deux corps différents, et ne peuvent donc jamais s'annuler entre elles.",
+    "chapter": 2,
+    "occurrences": [
+      {
+        "section": "2.9",
+        "sectionTitle": "La troisième loi : l'action et la réaction",
+        "chapterLabel": "Chapitre 2 · Cinétique",
+        "href": "/cours/biomecanique-marche-seniors/2-9-la-troisieme-loi-l-action-et-la-reaction"
+      }
+    ]
+  },
+  {
+    "term": "Paramètre biomécanique",
+    "definition": "Grandeur mesurable qui décrit le mouvement ou les forces qui le produisent : vitesse de marche (m/s), longueur de pas (cm), angle articulaire (°)…",
+    "chapter": 1,
+    "occurrences": [
+      {
+        "section": "1.2",
+        "sectionTitle": "Pourquoi mesurer ? De l'impression à la donnée",
+        "chapterLabel": "Chapitre 1 · Cinématique",
+        "href": "/cours/biomecanique-marche-seniors/1-2-pourquoi-mesurer-de-l-impression-a-la-donnee"
+      }
+    ]
+  },
+  {
+    "term": "Pente (de la courbe de vitesse)",
+    "definition": "Inclinaison de la courbe : la variation verticale (de vitesse) rapportée à l'avancée horizontale (de temps). La pente de la courbe de vitesse est l'accélération.",
+    "chapter": 1,
+    "occurrences": [
+      {
+        "section": "1.7",
+        "sectionTitle": "L'accélération",
+        "chapterLabel": "Chapitre 1 · Cinématique",
+        "href": "/cours/biomecanique-marche-seniors/1-7-l-acceleration"
+      }
+    ]
+  },
+  {
+    "term": "Poids",
+    "definition": "La force gravitationnelle exercée sur un corps : P = m·g. C'est une force, mesurée en newtons (N) ; elle dépend de la gravité du lieu. À ne pas confondre avec la masse (kg), qui ne change pas selon le lieu.",
+    "chapter": 2,
+    "occurrences": [
+      {
+        "section": "2.10",
+        "sectionTitle": "Le poids, une force déguisée",
+        "chapterLabel": "Chapitre 2 · Cinétique",
+        "href": "/cours/biomecanique-marche-seniors/2-10-le-poids-une-force-deguisee"
+      }
+    ]
+  },
+  {
+    "term": "Point d'application",
+    "definition": "L'endroit où la force s'exerce sur le corps qui la reçoit. Pour une force de contact répartie sur une surface, on trace une seule flèche, au centre de la surface.",
+    "chapter": 2,
+    "occurrences": [
+      {
+        "section": "2.3",
+        "sectionTitle": "Décrire une force : le vecteur force",
+        "chapterLabel": "Chapitre 2 · Cinétique",
+        "href": "/cours/biomecanique-marche-seniors/2-3-decrire-une-force-le-vecteur-force"
+      }
+    ]
+  },
+  {
+    "term": "Position",
+    "definition": "Endroit où se trouve un point à un instant donné, exprimé par rapport à un repère choisi. Dans un plan, elle se donne par deux coordonnées (x ; y).",
+    "chapter": 1,
+    "occurrences": [
+      {
+        "section": "1.5",
+        "sectionTitle": "Décrire un déplacement : trajectoire, distance, direction",
+        "chapterLabel": "Chapitre 1 · Cinématique",
+        "href": "/cours/biomecanique-marche-seniors/1-5-decrire-un-deplacement-trajectoire-distance-direction"
+      }
+    ]
+  },
+  {
+    "term": "Propriétés à connaître",
+    "definition": "Accélération nulle → vitesse constante (que l'on soit à l'arrêt ou lancé) · accélération constante et non nulle → vitesse qui croît linéairement (cas de la chute libre).",
+    "chapter": 1,
+    "occurrences": [
+      {
+        "section": "1.7",
+        "sectionTitle": "L'accélération",
+        "chapterLabel": "Chapitre 1 · Cinématique",
+        "href": "/cours/biomecanique-marche-seniors/1-7-l-acceleration"
+      }
+    ]
+  },
+  {
+    "term": "Repères chiffrés à connaître",
+    "definition": "Marche d'un adulte sain ≈ 1,2 à 1,4 m/s · marche d'un sénior ≈ 1,0 à 1,3 m/s · seuil d'alerte ≈ 0,8 m/s · conversion 1 m/s = 3,6 km/h.",
+    "chapter": 1,
+    "occurrences": [
+      {
+        "section": "1.6",
+        "sectionTitle": "La vitesse",
+        "chapterLabel": "Chapitre 1 · Cinématique",
+        "href": "/cours/biomecanique-marche-seniors/1-6-la-vitesse"
+      }
+    ]
+  },
+  {
+    "term": "Résultante (ou force nette)",
+    "definition": "La somme de toutes les forces appliquées à un corps : la force unique qui remplacerait toutes les autres. Elle seule détermine ce qui arrive au mouvement d'ensemble du corps.",
+    "chapter": 2,
+    "occurrences": [
+      {
+        "section": "2.5",
+        "sectionTitle": "Le diagramme de forces et la résultante",
+        "chapterLabel": "Chapitre 2 · Cinétique",
+        "href": "/cours/biomecanique-marche-seniors/2-5-le-diagramme-de-forces-et-la-resultante"
+      }
+    ]
+  },
+  {
+    "term": "Rotation (mouvement angulaire)",
+    "definition": "Mouvement où le corps ou un segment tourne autour d'un axe : tous les points tournent du même angle, dans le même temps, mais parcourent des distances d'autant plus grandes qu'ils sont éloignés de l'axe.",
+    "chapter": 1,
+    "occurrences": [
+      {
+        "section": "1.4",
+        "sectionTitle": "Les deux natures du mouvement",
+        "chapterLabel": "Chapitre 1 · Cinématique",
+        "href": "/cours/biomecanique-marche-seniors/1-4-les-deux-natures-du-mouvement"
+      }
+    ]
+  },
+  {
+    "term": "Statique",
+    "definition": "L'étude des forces qui s'exercent sur les corps en équilibre (résultante nulle).",
+    "chapter": 2,
+    "occurrences": [
+      {
+        "section": "2.5",
+        "sectionTitle": "Le diagramme de forces et la résultante",
+        "chapterLabel": "Chapitre 2 · Cinétique",
+        "href": "/cours/biomecanique-marche-seniors/2-5-le-diagramme-de-forces-et-la-resultante"
+      }
+    ]
+  },
+  {
+    "term": "Tension mécanique",
+    "definition": "Contrainte exercée sur une structure biologique (cellule, fibre, tendon) par une force. À l'échelle de la cellule musculaire, elle est l'un des principaux stimulus de l'hypertrophie.",
+    "chapter": 1,
+    "occurrences": [
+      {
+        "section": "1.1",
+        "sectionTitle": "Qu'est-ce que la biomécanique ?",
+        "chapterLabel": "Chapitre 1 · Cinématique",
+        "href": "/cours/biomecanique-marche-seniors/1-1-qu-est-ce-que-la-biomecanique"
+      }
+    ]
+  },
+  {
+    "term": "Trajectoire",
+    "definition": "Tracé des positions successives d'un point au cours du temps : le chemin suivi. C'est une forme, pas un nombre.",
+    "chapter": 1,
+    "occurrences": [
+      {
+        "section": "1.5",
+        "sectionTitle": "Décrire un déplacement : trajectoire, distance, direction",
+        "chapterLabel": "Chapitre 1 · Cinématique",
+        "href": "/cours/biomecanique-marche-seniors/1-5-decrire-un-deplacement-trajectoire-distance-direction"
+      }
+    ]
+  },
+  {
+    "term": "Translation (mouvement linéaire)",
+    "definition": "Mouvement où tous les points du corps parcourent la même distance, dans la même direction, en même temps ; l'orientation du corps ne change pas. Rectiligne si la ligne suivie est droite, curviligne si elle est courbe.",
+    "chapter": 1,
+    "occurrences": [
+      {
+        "section": "1.4",
+        "sectionTitle": "Les deux natures du mouvement",
+        "chapterLabel": "Chapitre 1 · Cinématique",
+        "href": "/cours/biomecanique-marche-seniors/1-4-les-deux-natures-du-mouvement"
+      }
+    ]
+  },
+  {
+    "term": "Troisième loi de Newton (principe d'action-réaction)",
+    "definition": "Lorsqu'un corps A exerce une force sur un corps B, le corps B exerce simultanément sur A une force de même intensité, de même direction et de sens opposé.",
+    "chapter": 2,
+    "occurrences": [
+      {
+        "section": "2.9",
+        "sectionTitle": "La troisième loi : l'action et la réaction",
+        "chapterLabel": "Chapitre 2 · Cinétique",
+        "href": "/cours/biomecanique-marche-seniors/2-9-la-troisieme-loi-l-action-et-la-reaction"
+      }
+    ]
+  },
+  {
+    "term": "Vecteur déplacement",
+    "definition": "Flèche menant du point de départ au point d'arrivée : son intensité est la distance en ligne directe, sa direction et son sens donnent l'orientation du déplacement. Un vecteur est une grandeur qui possède une intensité, une direction et un sens ; un scalaire n'a qu'une intensité.",
+    "chapter": 1,
+    "occurrences": [
+      {
+        "section": "1.5",
+        "sectionTitle": "Décrire un déplacement : trajectoire, distance, direction",
+        "chapterLabel": "Chapitre 1 · Cinématique",
+        "href": "/cours/biomecanique-marche-seniors/1-5-decrire-un-deplacement-trajectoire-distance-direction"
+      }
+    ]
+  },
+  {
+    "term": "Vecteur force",
+    "definition": "La flèche qui représente une force : son origine donne le point d'application, son orientation la direction et le sens, sa longueur l'intensité.",
+    "chapter": 2,
+    "occurrences": [
+      {
+        "section": "2.3",
+        "sectionTitle": "Décrire une force : le vecteur force",
+        "chapterLabel": "Chapitre 2 · Cinétique",
+        "href": "/cours/biomecanique-marche-seniors/2-3-decrire-une-force-le-vecteur-force"
+      }
+    ]
+  },
+  {
+    "term": "Vitesse angulaire",
+    "definition": "Variation de l'angle divisée par la durée, en degrés par seconde (°/s). L'équivalent angulaire de la vitesse.",
+    "chapter": 1,
+    "occurrences": [
+      {
+        "section": "1.8",
+        "sectionTitle": "La cinématique angulaire",
+        "chapterLabel": "Chapitre 1 · Cinématique",
+        "href": "/cours/biomecanique-marche-seniors/1-8-la-cinematique-angulaire"
+      }
+    ]
+  },
+  {
+    "term": "Vitesse instantanée",
+    "definition": "Vitesse à un instant précis du mouvement, en m/s. On l'approche en échantillonnant le temps en intervalles de plus en plus courts.",
+    "chapter": 1,
+    "occurrences": [
+      {
+        "section": "1.6",
+        "sectionTitle": "La vitesse",
+        "chapterLabel": "Chapitre 1 · Cinématique",
+        "href": "/cours/biomecanique-marche-seniors/1-6-la-vitesse"
+      }
+    ]
+  },
+  {
+    "term": "Vitesse moyenne",
+    "definition": "Distance totale divisée par le temps total : un chiffre unique qui résume tout le trajet. Ne décrit fidèlement qu'un mouvement uniforme.",
+    "chapter": 1,
+    "occurrences": [
+      {
+        "section": "1.6",
+        "sectionTitle": "La vitesse",
+        "chapterLabel": "Chapitre 1 · Cinématique",
+        "href": "/cours/biomecanique-marche-seniors/1-6-la-vitesse"
+      }
+    ]
+  }
+]

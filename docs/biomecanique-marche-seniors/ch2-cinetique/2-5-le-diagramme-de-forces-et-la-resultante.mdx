@@ -1,0 +1,146 @@
+---
+id: 2-5-le-diagramme-de-forces-et-la-resultante
+title: "2.5 Le diagramme de forces et la résultante"
+sidebar_label: "2.5 Le diagramme de forces et la résultante"
+sidebar_position: 5
+slug: /biomecanique-marche-seniors/2-5-le-diagramme-de-forces-et-la-resultante
+description: "Un corps ne subit presque jamais une seule force. Cette section donne les deux outils pour s'y retrouver : le diagramme de forces, qui rassemble sur un…"
+---
+
+{/* Page générée par `npm run sync` depuis le vault Obsidian.
+    Source : contenu/support-ecrit-ch2-cinetique.md
+    Ne pas éditer ici — les modifications seraient écrasées à la prochaine
+    synchronisation. Corriger le chapitre dans le vault, puis resynchroniser. */}
+
+<SectionLead>
+
+Un corps ne subit presque jamais une seule force. Cette section donne les deux outils pour s'y retrouver : le diagramme de forces, qui rassemble sur un schéma toutes les forces externes exercées sur le corps étudié, et la résultante — aussi appelée force nette —, définie comme la force qui reste une fois qu'on a additionné toutes les forces appliquées au corps, et qui seule détermine ce qui va arriver au mouvement de ce corps. À la fin de cette section, vous devez être capable de construire le diagramme de forces d'un cas simple, de tracer la résultante par la méthode du bout-à-bout, et d'en tirer la conclusion : équilibre si elle est nulle, changement de mouvement si elle ne l'est pas.
+
+</SectionLead>
+
+## 2.5.1 Le diagramme de forces
+
+Pour raisonner sur plusieurs forces à la fois, la biomécanique utilise toujours le même outil : le **diagramme de forces**. Le principe est simple : on **isole** le corps étudié de son décor, et on dessine, une par une, toutes les forces qui s'exercent **sur lui**. Seules les forces **externes** y figurent, jamais les internes (§2.4)[^diagramme].
+
+Construisons-le sur le cube que Marcel fait glisser (la scène du premier effet, §2.2). Quelles forces s'exercent sur le cube ?
+
+- La **poussée des mains** : deux mains, donc deux forces — on trace une seule flèche, leur somme, comme au §2.3.
+- La **force gravitationnelle**, qui tire le cube vers le bas.
+- La **force du sol**, qui le porte et pousse vers le haut — c'est la force normale du §2.4. Sans elle, le cube s'enfoncerait dans le sol.
+- Le **frottement**, une force de contact qui s'oppose au glissement entre deux surfaces en contact[^frottement] — dirigée ici vers l'arrière, contre l'avancée du cube. Répartie sur toute la surface de contact, elle se trace, elle aussi, en une seule flèche.
+
+Quatre flèches, et le diagramme est complet. Notez bien ce qu'on vient de construire : c'est le diagramme de forces **du cube**. On aurait tout aussi bien pu faire celui de Marcel — mais les forces dessinées auraient été différentes, puisque ce ne sont pas les mêmes forces qui s'exercent sur lui.
+
+<Figure number="2.7" caption="Le diagramme de forces du cube : poussée des mains, force gravitationnelle, force du sol, frottement." source="diaporama CM2, dia 15 — figure à ré-exporter." />
+
+## 2.5.2 La résultante : la force qui reste
+
+Le diagramme dresse l'inventaire des forces, et sert un second objectif : **prédire** si l'état du mouvement du corps va changer en réponse à toutes ces forces — et si oui, dans quelle direction, dans quel sens et avec quelle intensité.
+
+Pour cela, il n'y a qu'une chose à chercher : la force unique qui remplacerait toutes les autres. Elle porte un nom — la **résultante**, aussi appelée **force nette** : la somme de toutes les forces appliquées à un corps[^resultante]. C'est elle, et elle seule, qui détermine ce qui va arriver au mouvement de ce corps.
+
+Commençons par le cas le plus simple : les deux mains de Marcel, deux forces de même direction et de même sens. La méthode s'appelle le **bout-à-bout** : on place les flèches bout à bout, la pointe de la première contre le départ de la seconde ; la résultante est la flèche qui relie le départ de la première à la pointe de la dernière. Comme les deux forces vont dans le même sens, le résultat est immédiat : une flèche plus longue, dont l'intensité est la somme des deux — deux mains à 500 N donnent une résultante de 1 000 N.
+
+<Figure number="2.8" caption="Deux forces alignées mises bout à bout : 500 N + 500 N = une résultante de 1 000 N." source="diaporama CM2, dia 21 — figure à ré-exporter." />
+
+## 2.5.3 Le cas général : les flèches bout à bout
+
+<Ressource>
+
+Visionnez l'animation : le décor s'efface, les quatre flèches du diagramme du cube migrent une à une dans un repère et se placent bout à bout, puis la résultante se trace du départ de la première à la pointe de la dernière. *(lien YouTube — à venir)*
+
+</Ressource>
+
+Même méthode, quatre forces — sauf qu'elles ne sont plus alignées, et c'est le cas général. On redessine les quatre flèches du diagramme dans un repère, bout à bout — la pointe de l'une contre le départ de la suivante. L'**ordre est libre** : quelle que soit la flèche par laquelle on commence, le résultat est le même[^resultante].
+
+Lisons le tracé. Verticalement, tout se compense : la force gravitationnelle tire vers le bas, le sol pousse vers le haut, avec la même intensité et la même direction mais des sens opposés — leur somme est nulle. Horizontalement, rien ne se compense entièrement : la poussée des mains est plus grande que le frottement. Le tracé ne se referme donc pas — le **polygone reste ouvert** — et la flèche qui relie le départ de la première force à la pointe de la dernière est la résultante : **non nulle**, orientée vers l'avant.
+
+La résultante n'est pas nulle : les forces appliquées au cube ne se compensent pas toutes, et ce qui reste de leur somme modifie l'état du mouvement — le cube accélère, il avance. Ce régime porte un nom : quand la résultante n'est pas nulle, on est dans le domaine de la **dynamique**, l'étude du mouvement des corps en relation avec les forces qui s'exercent sur eux[^dynamique].
+
+<Admonition kind="note">
+
+La construction est montrée à plat, en deux dimensions, pour la lisibilité ; dans la réalité, un corps se déplace dans l'espace, et la même construction se fait en trois dimensions. Autre limite à connaître : le bout-à-bout donne l'intensité, la direction et le sens de la résultante, pas son point d'application.
+
+</Admonition>
+
+<Figure number="2.9" caption="Les quatre flèches du cube mises bout à bout : le vertical se compense, l'horizontal non — le polygone reste ouvert, la résultante n'est pas nulle." source="diaporama CM2, dia 22 — figure à ré-exporter." />
+
+## 2.5.4 La résultante nulle : l'équilibre
+
+<Ressource>
+
+Visionnez l'animation : le même dispositif, rejoué sur un personnage assis — le diagramme, le décor qui s'efface, les flèches bout à bout, et le tracé qui se referme. *(lien YouTube — à venir)*
+
+</Ressource>
+
+Refaisons exactement la même chose sur un cas que vous connaissez bien : vous, assis. Le diagramme compte trois forces : la force gravitationnelle vous tire vers le bas ; l'assise vous pousse vers le haut ; le sol pousse vos pieds vers le haut. (Le dossier, lui, pousse horizontalement — si vous vous tenez droit, il n'a presque rien à faire, et on le laisse de côté.)
+
+Bout à bout, le tracé réserve une surprise : la dernière flèche retombe exactement sur le départ de la première. Le **polygone se referme**. Il n'y a plus rien à relier : la résultante est **nulle**. Et le tracé montre au passage que ce n'est pas l'assise seule qui compense la force gravitationnelle — c'est l'assise plus le sol, additionnées : les deux flèches montantes s'empilent jusqu'à atteindre la longueur de la descendante.
+
+La résultante est nulle : l'action de l'ensemble des forces s'équilibre, et le corps est donc **en équilibre**. C'est le domaine de la **statique**, l'étude des forces qui s'exercent sur les corps en équilibre[^statique].
+
+C'est le message le plus important de cette section : **la présence de forces ne produit pas forcément un mouvement.** Des forces s'exercent sur vous en ce moment même, de partout — et vous ne bougez pas. Ce qui compte, pour le mouvement, c'est ce qui reste une fois qu'on les a toutes additionnées.
+
+<Admonition kind="note">
+
+Résultante nulle ne veut pas dire qu'il ne se passe rien. La résultante gouverne le mouvement d'ensemble (§2.4) ; elle ne dit rien de ce qui se passe à l'intérieur du corps. Assis, votre résultante est nulle — et vos fessiers sont écrasés, vos disques intervertébraux comprimés : les forces continuent de déformer (§2.2). La résultante n'est l'outil que du premier effet d'une force.
+
+</Admonition>
+
+<Admonition kind="note">
+
+Vocabulaire : le chapitre 1 a fixé « cinétique » pour nommer l'étude des forces (§1.3), et ce cours s'y tient. Statique et dynamique n'y contredisent rien : ce sont les deux régimes à l'intérieur de cette étude — résultante nulle d'un côté, non nulle de l'autre.
+
+</Admonition>
+
+<Figure number="2.10" caption="Les trois flèches du personnage assis mises bout à bout : le polygone se referme, la résultante est nulle." source="diaporama CM2, dia 23 — figure à ré-exporter." />
+
+Récapitulons le chemin parcouru depuis le début du chapitre : trois informations → une flèche (§2.3) ; plusieurs forces → un diagramme (§2.5) ; leur somme → la résultante, nulle (équilibre, statique) ou non nulle (le mouvement change, dynamique). Reste la vraie question, celle qui occupe tout le reste du chapitre : comment, précisément, une force modifie-t-elle l'état du mouvement ? C'est l'objet de la section 2.6.
+
+<Glossaire>
+  <Terme nom="Diagramme de forces">Schéma où l'on isole le corps étudié et où l'on dessine toutes les forces externes qui s'exercent sur lui. On n'y représente jamais ni les forces internes, ni les forces que ce corps exerce sur d'autres.</Terme>
+  <Terme nom="Frottement">Force de contact qui s'oppose au glissement entre deux surfaces en contact.</Terme>
+  <Terme nom="Résultante (ou force nette)">La somme de toutes les forces appliquées à un corps : la force unique qui remplacerait toutes les autres. Elle seule détermine ce qui arrive au mouvement d'ensemble du corps.</Terme>
+  <Terme nom="Équilibre">État d'un corps dont la résultante des forces est nulle.</Terme>
+  <Terme nom="Statique">L'étude des forces qui s'exercent sur les corps en équilibre (résultante nulle).</Terme>
+  <Terme nom="Dynamique">L'étude des corps dont le mouvement change sous l'effet des forces (résultante non nulle). À ne pas confondre avec la cinétique, qui nomme l'ensemble de l'étude des forces : statique et dynamique en sont les deux régimes.</Terme>
+</Glossaire>
+
+<Capacites>
+  <Capacite>Construire le diagramme de forces d'un cas simple : isoler le corps étudié et dessiner les forces externes qui s'exercent sur lui.</Capacite>
+  <Capacite>Définir la résultante (force nette) et la tracer par la méthode du bout-à-bout.</Capacite>
+  <Capacite>Conclure à partir de la résultante : nulle → équilibre (statique) ; non nulle → le mouvement change (dynamique).</Capacite>
+  <Capacite>Expliquer pourquoi la présence de forces ne suffit pas à produire un mouvement.</Capacite>
+</Capacites>
+
+<Verification>
+
+  <Reveal index="a." question="Sur le diagramme de forces du cube, pourquoi ne dessine-t-on ni la force exercée par le cube sur le sol, ni les forces des muscles de Marcel ?">
+
+Un diagramme de forces ne contient que les forces exercées **sur** le corps étudié. La force exercée par le cube sur le sol s'applique au sol : elle appartient au diagramme du sol, pas à celui du cube. Quant aux forces des muscles de Marcel, elles s'exercent sur les os de Marcel, pas sur le cube ; la seule force que Marcel exerce sur le cube est la poussée de ses mains — et elle, elle figure bien sur le diagramme.
+
+  </Reveal>
+
+  <Reveal index="b." question="Vous êtes assis, en équilibre. Trois forces s'exercent sur vous. Que vaut leur résultante, et comment le voit-on sur le tracé bout à bout ?">
+
+Elle est nulle. Mis bout à bout, les trois vecteurs forment un tracé qui se referme : la pointe de la dernière flèche retombe exactement sur le départ de la première, il ne reste aucune flèche à tracer — le corps est en équilibre.
+
+  </Reveal>
+
+  <Reveal index="c." question="Un cube reçoit une poussée de 300 N vers l'avant et un frottement de 100 N vers l'arrière ; verticalement, la force gravitationnelle vaut 50 N vers le bas et la force du sol 50 N vers le haut. Donnez la résultante — intensité, direction, sens — et concluez.">
+
+Verticalement, 50 N vers le bas et 50 N vers le haut se compensent : même intensité, même direction, sens opposés. Horizontalement, 300 N vers l'avant moins 100 N vers l'arrière laissent 200 N. La résultante vaut donc 200 N, de direction horizontale, dirigée vers l'avant. Elle n'est pas nulle : l'état du mouvement du cube va changer — il accélère vers l'avant.
+
+  </Reveal>
+
+</Verification>
+
+[^diagramme]: Le diagramme de forces (*free-body diagram*) — Hamm K., *Biomechanics of Human Movement* (OpenStax / BCcampus, CC BY), §6.1 *Development of Force Concept*. https://pressbooks.bccampus.ca/humanbiomechanics/chapter/4-1-development-of-force-concept-2/#:~:text=a%20technique%20used%20to%20illustrate%20all%20the%20external%20forces%20acting%20on%20a%20body — verbatim : « a technique used to illustrate all the external forces acting on a body. The body is represented by a single isolated point (or free body), and only those forces acting on the body from the outside (external forces) are shown ».
+
+[^frottement]: OpenStax, *College Physics 2e*, §5.1 *Friction* (CC BY). https://openstax.org/books/college-physics-2e/pages/5-1-friction#:~:text=Friction%20is%20a%20force%20that%20opposes%20relative%20motion — verbatim : « Friction is a force that opposes relative motion between surfaces in contact ».
+
+[^resultante]: La force nette comme somme vectorielle des forces externes, calculable par le bout-à-bout ou par composantes — Hamm K. (OpenStax / BCcampus), §6.3 *Newton's Second Law: Concept of a System*. https://pressbooks.bccampus.ca/humanbiomechanics/chapter/4-4-newtons-second-law-of-motion-concept-of-a-system-2/#:~:text=vector%20sum%20of%20all%20external%20forces — verbatim : « The net external force is the vector sum of all external forces and can be determined graphically, using the head-to-tail method, or analytically, using components ».
+
+[^dynamique]: Encyclopædia Britannica, *Dynamics*. https://www.britannica.com/science/dynamics-physics#:~:text=concerned%20with%20the%20motion%20of%20material%20objects — verbatim : « branch of physical science and subdivision of mechanics that is concerned with the motion of material objects in relation to the physical factors that affect them ».
+
+[^statique]: Encyclopædia Britannica, *Statics*. https://www.britannica.com/science/statics#:~:text=concerned%20with%20the%20forces%20that%20act%20on%20bodies%20at%20rest — verbatim : « the subdivision of mechanics that is concerned with the forces that act on bodies at rest under equilibrium conditions ».

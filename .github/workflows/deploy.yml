@@ -1,0 +1,64 @@
+name: Déploiement GitHub Pages
+
+# Le site est reconstruit à chaque poussée sur `main`. Le contenu des chapitres
+# étant généré depuis le vault Obsidian par `npm run sync` (qui n'existe que sur
+# le poste de l'auteur), c'est bien le résultat commité dans `docs/` qui est
+# publié — la CI ne resynchronise rien.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Une seule publication à la fois ; on laisse finir celle qui est en cours
+# plutôt que de l'annuler au milieu d'un déploiement.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Docusaurus lit la date du dernier commit de chaque page pour
+          # afficher « dernière mise à jour » : il lui faut tout l'historique.
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Construire le site
+        run: npm run build
+        env:
+          # DocSearch n'est branché que si ces trois secrets existent ; tant que
+          # la candidature Algolia n'est pas acceptée, le site se construit et se
+          # déploie sans champ de recherche.
+          ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
+          ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
+          ALGOLIA_INDEX_NAME: ${{ secrets.ALGOLIA_INDEX_NAME }}
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

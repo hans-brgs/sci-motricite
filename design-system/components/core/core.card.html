@@ -1,0 +1,33 @@
+<!-- @dsCard group="Components" viewport="700x300" name="Core — Button, Badge, Tag, Card" subtitle="Actions, métadonnées et surfaces" -->
+<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.js"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0;padding:20px;background:var(--bg-page);font:var(--type-body);color:var(--text-body)}.row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:14px}</style></head>
+<body><div id="root"></div>
+<script type="text/babel">
+const {Button,Badge,Tag,Card,Icon}=window.MotricitDesignSystem_ea5604;
+ReactDOM.createRoot(document.getElementById('root')).render(<>
+<div className="row">
+<Button>Commencer</Button>
+<Button variant="secondary">Télécharger le poly</Button>
+<Button variant="outline">Voir le TD</Button>
+<Button variant="ghost">Annuler</Button>
+<Button variant="danger" size="sm">Supprimer</Button>
+<Button disabled>Bientôt</Button>
+</div>
+<div className="row">
+<Button size="sm" iconRight={<Icon name="arrow-right" size={14}/>}>sm</Button>
+<Button size="md" iconLeft={<Icon name="download" size={16}/>}>md</Button>
+<Button size="lg">lg</Button>
+<Badge>CM 02</Badge><Badge tone="violet">TD 04</Badge><Badge tone="neutral">L2 STAPS</Badge>
+<Badge tone="success">à jour</Badge><Badge tone="warning">brouillon</Badge>
+<Tag active>biomécanique</Tag><Tag>contrôle moteur</Tag><Tag onRemove={()=>{}}>filtre</Tag>
+</div>
+<div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:16}}>
+<Card eyebrow="Chapitre 03" title="Leviers osseux" accent="teal" interactive meta={<><Badge tone="neutral">CM</Badge><Tag>statique</Tag></>} footer="Mis à jour le 12 mars">Bras de levier, moments de force et efficacité mécanique.</Card>
+<Card eyebrow="Séance 04" title="Analyse vidéo" accent="violet" meta={<Badge tone="violet">TD</Badge>}>Mesure d'angles articulaires sur séquence filmée.</Card>
+</div></>);
+</script></body></html>

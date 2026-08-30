@@ -1,0 +1,22 @@
+:root{
+/* Halos du diaporama : teal en haut à gauche, violet en bas à droite */
+--glow-teal:radial-gradient(60% 60% at 12% 8%,rgba(21,184,167,.16) 0%,rgba(21,184,167,0) 70%); /* @kind other */
+--glow-violet:radial-gradient(55% 55% at 92% 96%,rgba(167,86,246,.16) 0%,rgba(167,86,246,0) 70%); /* @kind other */
+--glow-teal-strong:radial-gradient(50% 50% at 10% 0%,rgba(21,184,167,.30) 0%,rgba(21,184,167,0) 72%); /* @kind other */
+--glow-violet-strong:radial-gradient(45% 55% at 96% 100%,rgba(167,86,246,.26) 0%,rgba(167,86,246,0) 72%); /* @kind other */
+/* Grille de fond, 64 px, quasi invisible — signature du diaporama */
+--grid-line-dark:rgba(234,240,247,.035); /* @kind color */
+--grid-line-light:rgba(14,22,34,.045); /* @kind color */
+--grid-size:64px; /* @kind spacing */
+/* La grille est centrée et s'efface vers les bords — jamais coupée net */
+--grid-mask:radial-gradient(ellipse 54% 58% at 50% 50%,#000 0%,rgba(0,0,0,.55) 40%,rgba(0,0,0,.12) 70%,transparent 92%); /* @kind other */
+--grid-dark:linear-gradient(var(--grid-line-dark) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line-dark) 1px,transparent 1px); /* @kind other */
+--grid-light:linear-gradient(var(--grid-line-light) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line-light) 1px,transparent 1px); /* @kind other */
+/* Fond composite prêt à l'emploi */
+--backdrop-dark:var(--glow-teal-strong),var(--glow-violet-strong),var(--grid-dark),var(--brand-night); /* @kind other */
+--backdrop-light:var(--glow-teal),var(--glow-violet),var(--grid-light),var(--ink-0); /* @kind other */
+/* Filet dégradé teal → violet, utilisé en soulignement de titre */
+--rule-gradient:linear-gradient(90deg,var(--brand-teal),var(--brand-violet)); /* @kind other */
+--ring-teal:0 0 0 1px rgba(21,184,167,.35),0 0 24px rgba(21,184,167,.18); /* @kind shadow */
+--ring-violet:0 0 0 1px rgba(167,86,246,.35),0 0 24px rgba(167,86,246,.18); /* @kind shadow */
+}
