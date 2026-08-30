@@ -171,9 +171,16 @@ html.plugin-docs .container {
   max-width: 1160px;
 }
 
+/* La mesure s'applique aux enfants de la colonne, pas à la colonne elle-même :
+   le texte reste à une longueur de ligne lisible, mais le bandeau d'ouverture —
+   une surface, pas du texte — occupe toute la largeur disponible. */
 .markdown {
   --ifm-h2-vertical-rhythm-top: 2.4;
   --ifm-h3-vertical-rhythm-top: 1.8;
+  max-width: none;
+}
+
+.markdown > *:not(header) {
   max-width: var(--measure);
 }
 
@@ -217,16 +224,28 @@ html.plugin-docs .container {
   text-decoration: underline;
 }
 
-/* Un filet dégradé teal→violet au-dessus de chaque titre de section : le
-   dispositif récurrent du design system. */
+/* Le design system marquait chaque titre de sous-section d'un filet dégradé
+   teal→violet. Il est écarté : la numérotation (1.6.1, 1.6.2…) donne déjà le
+   rythme, et un ornement de moins rend la colonne plus calme. Reste un filet
+   fin pleine largeur et de l'air au-dessus — la respiration fait le travail
+   d'un trait, sans le bruit. */
+.markdown > h2 + *,
+.markdown > h2 {
+  scroll-margin-top: calc(var(--ifm-navbar-height) + var(--sp-6));
+}
+
 .markdown > h2::before {
   content: "";
   display: block;
-  width: 44px;
-  height: 3px;
-  border-radius: 2px;
-  margin-bottom: var(--sp-4);
-  background: linear-gradient(90deg, var(--teal-400), var(--violet-400));
+  width: 100%;
+  max-width: var(--measure);
+  height: 1px;
+  margin-bottom: var(--sp-6);
+  background: var(--border-subtle);
+}
+
+.markdown > h2:first-child::before {
+  display: none;
 }
 
 /* --- Sommaire, sidebar, fil d'Ariane ------------------------------------ */
@@ -265,15 +284,39 @@ html.plugin-docs .container {
   font-size: 12px;
 }
 
+/* Le pied de page d'une section est le moment où l'on décide de continuer ou
+   de s'arrêter : ces deux liens méritent d'être des cartes, pas des renvois
+   discrets. */
+.pagination-nav__link {
+  border-color: var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-5) var(--sp-6);
+  background: var(--surface-card);
+  box-shadow: var(--shadow-1);
+  transition:
+    transform var(--dur-base, 200ms) var(--ease-standard, ease),
+    box-shadow var(--dur-base, 200ms) var(--ease-standard, ease),
+    border-color var(--dur-base, 200ms) var(--ease-standard, ease);
+}
+
+.pagination-nav__link:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-3);
+  transform: translateY(-2px);
+}
+
 .pagination-nav__label {
   font-family: var(--font-display);
   font-weight: var(--fw-semibold);
+  font-size: var(--fs-base);
 }
 
 .pagination-nav__sublabel {
   font: var(--type-eyebrow);
   letter-spacing: var(--ls-caps);
   text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: var(--sp-2);
 }
 
 /* --- Code : toujours sur la surface nuit, dans les deux thèmes ---------- */

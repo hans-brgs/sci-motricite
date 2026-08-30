@@ -924,6 +924,7 @@ function renderQuizPage(chapter, questions, sectionHrefs) {
    ======================================================================== */
 
 function renderChapterIndex(chapter, pages) {
+  const totalMinutes = pages.reduce((total, p) => total + p.ctx.minutes, 0);
   const rows = pages
     .map(
       ({ section, ctx }) =>
@@ -942,15 +943,26 @@ function renderChapterIndex(chapter, pages) {
     "sidebar_position: 0",
     `slug: /${COURSE.slug}/${chapter.dir}`,
     `description: ${JSON.stringify(truncate(chapter.lead))}`,
+    "hide_title: true",
     "---",
     "",
     GENERATED_BANNER(chapter),
     "",
-    `<SectionLead label="Ce chapitre en deux phrases">`,
+    "<ChapterHeader",
+    `  title=${JSON.stringify(chapter.title)}`,
+    `  meta={<>${[
+      ...(chapter.tags || []).map(
+        (tag, i) => `<Badge tone="${i === 0 ? "violet" : "teal"}">${attr(tag)}</Badge>`
+      ),
+      `<Badge tone="neutral">${pages.length} sections</Badge>`,
+      `<span style={{font:"var(--type-code)",fontSize:12,color:"var(--ink-400)"}}>${totalMinutes} min de lecture</span>`,
+    ].join("")}</>}`,
+    `  objectivesLabel="Ce chapitre en deux phrases"`,
+    ">",
     "",
     chapter.lead,
     "",
-    "</SectionLead>",
+    "</ChapterHeader>",
     "",
     "## Les sections de ce chapitre",
     "",

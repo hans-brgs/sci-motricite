@@ -1,10 +1,11 @@
 import React from "react";
+import { Icon } from "../mdx/Icon";
 
 export function GlossaryBox({ entries = [], title = "Glossaire de la section", style, ...rest }) {
   return (
     <section style={{ ...style }} {...rest}>
       <div style={{ display: "flex", alignItems: "center", gap: "var(--sp-2)", paddingBottom: "var(--sp-3)", borderBottom: "2px solid var(--border-default)" }}>
-        <span style={{ fontSize: 14, lineHeight: 1 }}>📖</span>
+        <Icon name="book-marked" size={15} />
         <span style={{ font: "var(--type-eyebrow)", letterSpacing: "var(--ls-caps)", textTransform: "uppercase", color: "var(--text-muted)", fontWeight: "var(--fw-semibold)" }}>{title}</span>
         <span style={{ marginLeft: "auto", font: "var(--type-code)", fontSize: 11, color: "var(--text-faint)" }}>{entries.length} termes</span>
       </div>

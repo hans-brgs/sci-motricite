@@ -1,12 +1,13 @@
 import React from "react";
+import { Icon } from "./Icon";
 
 /**
- * Encadré « 🔗 Ressource numérique » — le renvoi vers une animation, une vidéo
+ * Encadré « Ressource numérique » — le renvoi vers une animation, une vidéo
  * ou un fichier. Sur le poly papier c'est un lien ou un QR code ; ici, c'est
  * une ligne d'appel, éventuellement suivie d'un lecteur (<Animation />).
  *
- * Le marqueur 🔗 est repris du support écrit ; il n'apparaît nulle part
- * ailleurs sur le site.
+ * Le support écrit marquait ce bloc d'un émoji ; sur le site, c'est une icône
+ * au trait — décision de l'auteur, appliquée à tous les blocs.
  */
 export function Ressource({ children, style, ...rest }) {
   return (
@@ -24,9 +25,7 @@ export function Ressource({ children, style, ...rest }) {
       }}
       {...rest}
     >
-      <span style={{ fontSize: 14, lineHeight: 1.6, flex: "0 0 auto" }} aria-hidden="true">
-        🔗
-      </span>
+      <Icon name="link-2" size={16} style={{ marginTop: 3, color: "var(--text-muted)" }} />
       <div
         style={{
           font: "var(--type-small)",

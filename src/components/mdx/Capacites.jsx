@@ -2,7 +2,7 @@ import React from "react";
 import { Checklist } from "../content/Checklist";
 
 /**
- * Adaptateur MDX de `Checklist` — le bloc « ✅ À la fin de cette section, je
+ * Adaptateur MDX de `Checklist` — le bloc « À la fin de cette section, je
  * dois être capable de… ».
  *
  *     <Capacites>

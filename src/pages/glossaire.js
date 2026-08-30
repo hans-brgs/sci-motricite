@@ -53,7 +53,7 @@ export default function Glossaire() {
             width: 44,
             height: 3,
             borderRadius: 2,
-            background: "linear-gradient(90deg, var(--teal-400), var(--violet-400))",
+            background: "var(--brand-teal)",
             marginBottom: "var(--sp-5)",
           }}
         />

@@ -1,4 +1,5 @@
 import React from "react";
+import { Icon } from "../mdx/Icon";
 
 export function FurtherReading({ title = "Pour aller plus loin", note = "hors programme, non évalué", defaultOpen = false, children, style, ...rest }) {
   const [open, setOpen] = React.useState(defaultOpen);
@@ -13,7 +14,7 @@ export function FurtherReading({ title = "Pour aller plus loin", note = "hors pr
         width: "100%", display: "flex", alignItems: "center", gap: "var(--sp-2)", textAlign: "left",
         padding: "var(--sp-3) var(--sp-5)", background: "none", border: "none", cursor: "pointer"
       }}>
-        <span style={{ fontSize: 13, lineHeight: 1 }}>🔎</span>
+        <Icon name="telescope" size={14} style={{ color: "var(--support-blue)" }} />
         <span style={{ font: "var(--type-eyebrow)", letterSpacing: "var(--ls-caps)", textTransform: "uppercase", color: "var(--support-blue)", fontWeight: "var(--fw-semibold)" }}>{title}</span>
         {note && <span style={{ font: "var(--type-code)", fontSize: 11, color: "var(--text-faint)", fontStyle: "italic" }}>— {note}</span>}
         <span style={{ marginLeft: "auto", font: "var(--type-code)", fontSize: 11, color: "var(--text-faint)" }}>{open ? "replier" : "déplier"}</span>
