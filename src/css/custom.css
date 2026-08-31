@@ -110,9 +110,33 @@ body {
 
 /* --- Châssis ------------------------------------------------------------ */
 
+/* Le flou du bandeau collant est porté par un pseudo-élément, jamais par la
+   barre elle-même.
+   `backdrop-filter` fait de son porteur un **bloc conteneur** pour ses
+   descendants en `position: fixed`. Le menu mobile est un enfant de la barre :
+   posé sur `.navbar`, le flou l'enfermait dans les 64 px de hauteur de celle-ci.
+   Le burger s'ouvrait donc sur une bande vide — le menu était bien là, haut de
+   63 px au lieu de 812. */
 .navbar {
-  backdrop-filter: blur(14px);
+  background-color: transparent;
+  backdrop-filter: none;
   border-bottom: 1px solid var(--border-subtle);
+}
+
+.navbar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: var(--ifm-navbar-background-color);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* Le menu mobile, lui, doit être opaque : il recouvre la page. */
+.navbar-sidebar,
+.navbar-sidebar__items {
+  background-color: var(--bg-page);
 }
 
 .navbar__title {
