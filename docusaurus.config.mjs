@@ -56,6 +56,12 @@ const config = {
     hooks: {
       onBrokenMarkdownLinks: "throw",
     },
+    // Sans cela, le bloc des notes de bas de page s'intitule « Footnotes », en
+    // anglais, sur toutes les pages d'un site francophone.
+    remarkRehypeOptions: {
+      footnoteLabel: "Sources",
+      footnoteBackLabel: "Revenir au texte",
+    },
   },
 
   presets: [
