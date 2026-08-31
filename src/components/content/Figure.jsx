@@ -64,10 +64,17 @@ export function Figure({
             <div
               key={one}
               style={{
-                background: "var(--bg-subtle)",
-                border: "1px solid var(--border-subtle)",
+                // La surface nuit dans les deux thèmes — c'est la règle du
+                // design system pour les panneaux de figure, et ici elle est
+                // vitale : les figures sont exportées du diaporama, donc
+                // transparentes à 95 % avec des traits et des étiquettes
+                // clairs. Sur un fond clair, elles se délavent au point d'être
+                // illisibles. En mode sombre, rien ne change à l'œil.
+                background: "var(--brand-night)",
+                border: "1px solid rgba(234, 240, 247, 0.1)",
                 borderRadius: "var(--radius-lg)",
                 overflow: "hidden",
+                padding: "var(--sp-4)",
               }}
             >
               {/* `height: auto` : une figure de cours se lit en entier. La
