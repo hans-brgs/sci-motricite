@@ -18,6 +18,9 @@ import { GlowSurface } from "../surfaces/GlowSurface";
  */
 export function Figure({
   src,
+  // Une figure peut porter plusieurs planches — la Figure 1.2 réunit les
+  // gravures de Borelli et le mannequin articulé sous une seule légende.
+  srcs,
   alt = "",
   caption,
   number,
@@ -27,6 +30,7 @@ export function Figure({
   style,
   ...rest
 }) {
+  const images = srcs && srcs.length ? srcs : src ? [src] : [];
   const legend = (caption || number || source) && (
     <figcaption
       style={{
@@ -46,23 +50,36 @@ export function Figure({
     </figcaption>
   );
 
-  if (src) {
+  if (images.length) {
     return (
       <figure style={{ margin: 0, ...style }} {...rest}>
         <div
           style={{
-            aspectRatio: ratio,
-            background: "var(--bg-subtle)",
-            border: "1px solid var(--border-subtle)",
-            borderRadius: "var(--radius-lg)",
-            overflow: "hidden",
+            display: "grid",
+            gridTemplateColumns: `repeat(${Math.min(images.length, 2)}, minmax(0, 1fr))`,
+            gap: "var(--sp-3)",
           }}
         >
-          <img
-            src={src}
-            alt={alt}
-            style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-          />
+          {images.map((one) => (
+            <div
+              key={one}
+              style={{
+                background: "var(--bg-subtle)",
+                border: "1px solid var(--border-subtle)",
+                borderRadius: "var(--radius-lg)",
+                overflow: "hidden",
+              }}
+            >
+              {/* `height: auto` : une figure de cours se lit en entier. La
+                  rogner à un format fixe couperait une courbe ou une légende. */}
+              <img
+                src={one}
+                alt={alt}
+                loading="lazy"
+                style={{ width: "100%", height: "auto", display: "block" }}
+              />
+            </div>
+          ))}
         </div>
         {legend}
       </figure>

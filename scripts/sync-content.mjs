@@ -460,6 +460,59 @@ function asSymbolList(text) {
     .join("\n\n");
 }
 
+/**
+ * Résout une image de figure et la copie vers le site.
+ *
+ * Le chapitre appelle ses figures par un lien Markdown relatif. Obsidian
+ * retrouve un fichier sur son seul nom, où qu'il soit dans le vault ; Docusaurus
+ * non — il lui faut un chemin qui existe. On essaie donc le chemin tel quel,
+ * puis, à défaut, on cherche le nom de fichier dans l'arborescence `figures/`
+ * du chapitre, en le signalant : ça marche, mais le vault documente
+ * `figures/ch1/…` et c'est cette forme qui devrait être écrite.
+ *
+ * @returns {string|null} l'adresse publique, ou null si l'image reste introuvable.
+ */
+function resolveFigure(src, chapter, ctx) {
+  const from = path.dirname(path.join(VAULT, chapter.source));
+  const name = path.basename(src);
+
+  let file = path.resolve(from, src);
+  if (!fs.existsSync(file)) {
+    const found = findFile(path.join(from, "figures"), name);
+    if (!found) {
+      warn(`${ctx} — image introuvable dans le vault : ${src}`);
+      return null;
+    }
+    warn(
+      `${ctx} — « ${src} » retrouvée par son nom seul ; le vault attend ` +
+        `« ${path.relative(from, found).split(path.sep).join("/")} »`
+    );
+    file = found;
+  }
+
+  const target = path.join(ROOT, "static", "img", "figures", chapter.dir);
+  if (!CHECK_ONLY) {
+    fs.mkdirSync(target, { recursive: true });
+    fs.copyFileSync(file, path.join(target, name));
+  }
+  return `/img/figures/${chapter.dir}/${name}`;
+}
+
+/** Cherche récursivement un fichier par son nom. */
+function findFile(dir, name) {
+  if (!fs.existsSync(dir)) return null;
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      const found = findFile(full, name);
+      if (found) return found;
+    } else if (entry.name === name) {
+      return full;
+    }
+  }
+  return null;
+}
+
 function renderQuote(lines, ctx) {
   const text = lines.join("\n");
   const first = lines.find((l) => l.trim()) || "";
@@ -614,9 +667,52 @@ function renderCapacites(lines, first, scope, ctx) {
  * Prose : promotion des sous-titres, figures et notes en italique, retrait des
  * filets horizontaux (les composants portent déjà la séparation).
  */
+/**
+ * Isole les blocs de figure d'un paragraphe.
+ *
+ * En Markdown, une image doit être séparée du texte qui la précède par une
+ * ligne vide, sans quoi elle appartient au paragraphe précédent. Le vault, lui,
+ * colle souvent l'image et sa légende à la fin de la prose, voire à la suite
+ * d'un tableau — Obsidian l'affiche quand même, la norme non.
+ *
+ * On découpe donc : une ligne d'image ouvre un bloc, la légende « *Figure N…* »
+ * le referme. On accepte aussi l'image et la légende sur une même ligne, en les
+ * séparant d'abord. Chaque découpe est signalée : ça marche, mais c'est une
+ * ligne vide à ajouter dans le vault.
+ */
+function splitFigureBlocks(para, ctx) {
+  const normalised = para.replace(/\)\s*(\*Figure\s)/g, ")\n$1");
+  const blocks = [];
+  let current = [];
+  let hasImage = false;
+
+  const flush = () => {
+    if (current.length) blocks.push(current.join("\n"));
+    current = [];
+    hasImage = false;
+  };
+
+  for (const line of normalised.split("\n")) {
+    const isImage = /^\s*!\[[^\]]*\]\(/.test(line);
+    const isCaption = /^\s*\*Figure\s/.test(line);
+
+    if ((isImage || isCaption) && !hasImage) {
+      if (current.length) {
+        ctx.figuresRecollees += 1;
+        flush();
+      }
+    }
+    current.push(line);
+    if (isImage) hasImage = true;
+    if (isCaption && hasImage) flush();
+  }
+  flush();
+  return blocks;
+}
+
 function renderProse(lines, ctx) {
   const out = [];
-  for (const para of paragraphs(lines)) {
+  for (const para of paragraphs(lines).flatMap((p) => splitFigureBlocks(p, ctx))) {
     if (/^-{3,}$/.test(para.trim())) continue;
 
     // Le vault écrit ses formules sur une seule ligne — `$$ v = d/t $$`. Pour
@@ -638,19 +734,63 @@ function renderProse(lines, ctx) {
       continue;
     }
 
-    // « *Figure 1.3 — légende (Source : …)* »
-    const fig = para.match(/^\*Figure\s+([\d.]+)\s*—\s*([\s\S]+?)\*$/);
+    // Une figure : ses images éventuelles, puis sa légende. Le vault les écrit
+    // tantôt sur deux lignes, tantôt collées — on accepte les deux, et on
+    // déduplique : une même image citée deux fois dans une figure est toujours
+    // un accident de copier-coller.
+    const images = [
+      ...new Set([...para.matchAll(/!\[[^\]]*\]\(([^)]+)\)/g)].map((m) => m[1].trim())),
+    ];
+    const withoutImages = para.replace(/!\[[^\]]*\]\([^)]+\)/g, "").trim();
+
+    // Le numéro accepte un suffixe (« 1.3bis »). L'astérisque de fermeture est
+    // facultative : il en manque dans le vault, et perdre une figure entière —
+    // voire casser la compilation — pour une astérisque serait disproportionné.
+    const fig = withoutImages.match(/^\*Figure\s+([\d.]+(?:bis|ter)?)\s*—\s*([\s\S]+?)(\*)?$/);
     if (fig) {
-      const [, number, remainder] = fig;
-      const src = remainder.match(/^([\s\S]*?)\s*\(((?:Source|Fichiers attendus)\s*:[\s\S]*)\)\s*$/);
-      const caption = plain(src ? src[1] : remainder);
-      const source = src ? plain(src[2].replace(/^(?:Source|Fichiers attendus)\s*:\s*/, "")) : "";
+      const [, number, remainder, closed] = fig;
+      if (!closed) {
+        warn(`${ctx.id} — légende de la Figure ${number} : astérisque de fermeture manquante`);
+      }
+      const split = remainder.match(
+        /^([\s\S]*?)\s*\(((?:Source|Fichiers attendus)\s*:[\s\S]*)\)\s*$/
+      );
+      const caption = plain(split ? split[1] : remainder);
+      const source = split
+        ? plain(split[2].replace(/^(?:Source|Fichiers attendus)\s*:\s*/, ""))
+        : "";
+      const resolved = images
+        .map((one) => resolveFigure(one, ctx.chapter, `${ctx.id} — Figure ${number}`))
+        .filter(Boolean);
+
       ctx.figures += 1;
+      if (resolved.length) ctx.figuresAvecImage += 1;
+
+      const srcAttr =
+        resolved.length > 1
+          ? ` srcs={${JSON.stringify(resolved)}}`
+          : resolved.length === 1
+            ? ` src="${attr(resolved[0])}"`
+            : "";
+
       out.push(
-        `<Figure number="${attr(number)}" caption="${attr(caption)}"` +
+        `<Figure number="${attr(number)}"${srcAttr} alt="${attr(caption)}" caption="${attr(caption)}"` +
           (source ? ` source="${attr(source)}"` : "") +
           ` />`
       );
+      continue;
+    }
+
+    // Des images sans légende : on ne les perd pas, mais on le signale — une
+    // figure de cours doit être numérotée et légendée.
+    if (images.length && !withoutImages) {
+      warn(`${ctx.id} — image(s) sans légende « Figure N — … » : ${images.join(", ")}`);
+      const resolved = images
+        .map((one) => resolveFigure(one, ctx.chapter, ctx.id))
+        .filter(Boolean);
+      if (resolved.length) {
+        out.push(`<Figure srcs={${JSON.stringify(resolved)}} alt="" />`);
+      }
       continue;
     }
 
@@ -683,6 +823,11 @@ function renderSection(section, chapter, corriges, footnotes, dates) {
     missingAnswers: 0,
     glossary: [],
     minutes: readingTime(section.lines),
+    // Le chapitre voyage avec le contexte : c'est lui qui dit où chercher les
+    // images dans le vault et sous quel dossier les publier.
+    chapter,
+    figuresAvecImage: 0,
+    figuresRecollees: 0,
   };
 
   const parts = [];
@@ -1127,11 +1272,13 @@ function main() {
     const stat = pages.reduce(
       (acc, p) => ({
         figures: acc.figures + p.ctx.figures,
+        avecImage: acc.avecImage + p.ctx.figuresAvecImage,
+        recollees: acc.recollees + p.ctx.figuresRecollees,
         questions: acc.questions + p.ctx.questions,
         media: acc.media + p.ctx.mediaCalls,
         missingAnswers: acc.missingAnswers + p.ctx.missingAnswers,
       }),
-      { figures: 0, questions: 0, media: 0, missingAnswers: 0 }
+      { figures: 0, avecImage: 0, recollees: 0, questions: 0, media: 0, missingAnswers: 0 }
     );
 
     totals.pages += pages.length;
@@ -1144,7 +1291,7 @@ function main() {
 
     console.log(
       `  ${chapter.label.padEnd(28)} ${String(pages.length).padStart(2)} sections · ` +
-        `${String(stat.figures).padStart(2)} figures · ` +
+        `${String(stat.figures).padStart(2)} figures (${stat.avecImage} illustrées) · ` +
         `${String(stat.questions).padStart(2)} questions · ` +
         `${String(stat.media).padStart(2)} renvois média` +
         (quiz.length ? ` · ${quiz.length} questions de quiz` : "")
