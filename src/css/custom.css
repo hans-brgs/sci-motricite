@@ -184,11 +184,72 @@ html.plugin-docs .container {
   max-width: var(--measure);
 }
 
-/* Le bandeau d'ouverture partage la largeur de la colonne de lecture — bandeau
-   et texte alignés sur la même marge —, mais il lui faut de l'air avant que la
-   première sous-section ne commence. */
-.markdown > header {
+/* --- Le bandeau d'ouverture --------------------------------------------- */
+/* Le fond du héros, transposé dans les deux thèmes. En sombre c'est la surface
+   nuit de la marque ; en clair, le même dispositif en clair — une carte nuit
+   posée sur une page blanche cassait la page, et les pastilles y perdaient leur
+   contraste puisqu'elles lisent, elles, le thème du document. */
+
+.sm-banner {
+  --banner-ground: var(--ink-25);
+  --banner-grid: rgba(14, 22, 34, 0.055);
+  --banner-glow-teal: rgba(21, 184, 167, 0.22);
+  --banner-glow-violet: rgba(167, 86, 246, 0.16);
+  --banner-title: var(--text-title);
+  --banner-body: var(--text-body);
+  --banner-rule: var(--border-default);
+  --banner-eyebrow: var(--teal-700);
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   margin-bottom: var(--sp-10);
+  padding: var(--sp-10) var(--sp-8) var(--sp-8);
+  border: 1px solid var(--border-subtle);
+  border-top: 3px solid var(--brand-teal);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-1);
+  background:
+    radial-gradient(50% 62% at 8% 0%, var(--banner-glow-teal) 0%, transparent 72%),
+    radial-gradient(45% 60% at 96% 100%, var(--banner-glow-violet) 0%, transparent 72%),
+    var(--banner-ground);
+}
+
+[data-theme="dark"] .sm-banner {
+  --banner-ground: var(--brand-night);
+  --banner-grid: rgba(234, 240, 247, 0.06);
+  --banner-glow-teal: rgba(21, 184, 167, 0.3);
+  --banner-glow-violet: rgba(167, 86, 246, 0.26);
+  --banner-title: var(--ink-50);
+  --banner-body: var(--ink-300);
+  --banner-rule: rgba(234, 240, 247, 0.14);
+  --banner-eyebrow: var(--teal-300);
+
+  border-color: rgba(234, 240, 247, 0.08);
+  border-top-color: var(--brand-teal);
+  box-shadow: var(--shadow-3);
+}
+
+/* Le quadrillage : toujours centré sur la surface et fondu vers les bords —
+   il ne doit jamais toucher un bord ni y être coupé net. */
+.sm-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--banner-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--banner-grid) 1px, transparent 1px);
+  background-size: 64px 64px;
+  background-position: center center;
+  -webkit-mask-image: var(--grid-mask);
+  mask-image: var(--grid-mask);
+}
+
+.sm-banner > * {
+  position: relative;
+  z-index: 1;
 }
 
 .markdown > h1 {

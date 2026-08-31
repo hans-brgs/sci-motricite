@@ -4,12 +4,12 @@ title: "1.7 L'accélération"
 sidebar_label: "1.7 L'accélération"
 sidebar_position: 7
 slug: /biomecanique-marche-seniors/1-7-l-acceleration
-description: "La section 1.6 s'est conclue sur un constat : la vitesse varie au cours du temps. Cette section introduit la grandeur qui mesure cette variation :…"
+description: "La section 1.6 s'est conclue sur un constat : la vitesse varie au cours du temps. Cette section introduit la grandeur qui mesure cette variation :…"
 hide_title: true
 ---
 
 {/* Page générée par `npm run sync` depuis le vault Obsidian.
-    Source : contenu/support-ecrit-ch1-cinematique.md
+    Source : contenu/support-ecrit/support-ecrit-ch1-cinematique.md
     Ne pas éditer ici — les modifications seraient écrasées à la prochaine
     synchronisation. Corriger le chapitre dans le vault, puis resynchroniser. */}
 
@@ -18,13 +18,13 @@ hide_title: true
   meta={<><Badge tone="violet">Biomécanique</Badge><Badge tone="teal">Cinématique</Badge><Badge tone="neutral">Section 1.7</Badge><span style={{font:"var(--type-code)",fontSize:12,color:"var(--text-muted)"}}>8 min de lecture</span><span style={{font:"var(--type-code)",fontSize:12,color:"var(--text-muted)"}}>mis à jour le 28 août 2026</span></>}
 >
 
-La section 1.6 s'est conclue sur un constat : la vitesse varie au cours du temps. Cette section introduit la grandeur qui mesure cette variation : l'**accélération**, définie comme la variation de vitesse divisée par la durée pendant laquelle elle se produit. Vous y apprendrez à la calculer entre deux instants, puis à la lire directement sur une courbe de vitesse, comme une pente. À la fin de cette section, vous devez être capable de calculer une accélération et d'exprimer son unité, d'identifier les phases d'accélération et de décélération d'une course, et d'expliquer pourquoi aller vite et accélérer sont deux choses différentes.
+La section 1.6 s'est conclue sur un constat : la vitesse varie au cours du temps. Cette section introduit la grandeur qui mesure cette variation : l'**accélération**, définie comme la variation de vitesse divisée par la durée pendant laquelle elle se produit. Vous y apprendrez à la calculer entre deux instants, puis à la lire directement sur une courbe de vitesse, comme une pente. À la fin de cette section, vous devez être capable de calculer une accélération et d'exprimer son unité, d'identifier les phases d'accélération et de décélération d'une course, et d'expliquer pourquoi aller vite et accélérer sont deux choses différentes.
 
 </ChapterHeader>
 
 ## 1.7.1 La variation de vitesse par unité de temps
 
-L'**accélération** est la variation de la vitesse divisée par la durée pendant laquelle elle se produit[^acc-def]. La mécanique du calcul est la même que pour la vitesse : on divise une variation par une durée. Pour la vitesse, on divisait une variation de position par un temps ; ici, on divise une variation de vitesse par un temps.
+L'**accélération** est la variation de la vitesse divisée par la durée pendant laquelle elle se produit[^acc-def]. La mécanique du calcul est la même que pour la vitesse : on divise une variation par une durée. Pour la vitesse, on divisait une variation de position par un temps ; ici, on divise une variation de vitesse par un temps.
 
 <Formule title="Accélération">
 
@@ -32,115 +32,115 @@ $$
 a = \frac{\Delta v}{\Delta t}
 $$
 
-- `a` : accélération, en mètres par seconde carrée (m/s²)
-- `Δv` : variation de vitesse entre deux instants, en mètres par seconde (m/s)
-- `Δt` : durée séparant ces deux instants, en secondes (s)
+- `a` : accélération, en mètres par seconde carrée (m/s²)
+- `Δv` : variation de vitesse entre deux instants, en mètres par seconde (m/s)
+- `Δt` : durée séparant ces deux instants, en secondes (s)
 
 </Formule>
 
-L'unité se lit dans la définition : des mètres par seconde divisés par des secondes donnent des **mètres par seconde carrée (m/s²)**. Ne vous laissez pas impressionner par le « carré » : il signifie simplement que la vitesse gagne — ou perd — un certain nombre de mètres par seconde, à chaque seconde[^acc-unite]. Une accélération de 3 m/s² veut dire : chaque seconde qui passe, la vitesse augmente de 3 m/s.
+L'unité se lit dans la définition : des mètres par seconde divisés par des secondes donnent des **mètres par seconde carrée (m/s²)**. Ne vous laissez pas impressionner par le « carré » : il signifie simplement que la vitesse gagne — ou perd — un certain nombre de mètres par seconde, à chaque seconde[^acc-unite]. Une accélération de 3 m/s² veut dire : chaque seconde qui passe, la vitesse augmente de 3 m/s.
 
 <ExempleResolu number="1.7.1" title="L'accélération du coureur au départ">
 
-*Sur la course échantillonnée à la section 1.6, la vitesse du coureur passe de 0,24 m/s à l'instant 0,25 s à 1,77 m/s à l'instant 0,50 s. Quelle est son accélération sur cet intervalle ?*
+*Sur la course échantillonnée à la section 1.6, la vitesse du coureur passe de 0,24 m/s à l'instant 0,25 s à 1,77 m/s à l'instant 0,50 s. Quelle est son accélération sur cet intervalle ?*
 
 **Méthode.** On calcule la variation de vitesse entre les deux instants, puis on la divise par la durée de l'intervalle.
 
 **Calcul.**
-- Données : `v₁ = 0,24 m/s` à `t₁ = 0,25 s` ; `v₂ = 1,77 m/s` à `t₂ = 0,50 s`
-- Variation : `Δv = 1,77 − 0,24 = 1,53 m/s` ; durée : `Δt = 0,50 − 0,25 = 0,25 s`
-- Application : `a = Δv / Δt = 1,53 / 0,25`
-- Résultat : **`a = 6,12 m/s²`**
+- Données : `v₁ = 0,24 m/s` à `t₁ = 0,25 s` ; `v₂ = 1,77 m/s` à `t₂ = 0,50 s`
+- Variation : `Δv = 1,77 − 0,24 = 1,53 m/s` ; durée : `Δt = 0,50 − 0,25 = 0,25 s`
+- Application : `a = Δv / Δt = 1,53 / 0,25`
+- Résultat : **`a = 6,12 m/s²`**
 
-**Interprétation.** Au tout début de sa course, le coureur gagne environ 6 m/s de vitesse par seconde : c'est un démarrage explosif. À ce rythme, une seule seconde suffirait pour passer de l'arrêt à une allure de sprint.
+**Interprétation.** Au tout début de sa course, le coureur gagne environ 6 m/s de vitesse par seconde : c'est un démarrage explosif. À ce rythme, une seule seconde suffirait pour passer de l'arrêt à une allure de sprint.
 
 </ExempleResolu>
 
-## 1.7.2 Lire l'accélération sur la courbe de vitesse : la pente
+## 1.7.2 Lire l'accélération sur la courbe de vitesse : la pente
 
-Le calcul que nous venons de faire — une variation de vitesse divisée par une durée — porte un nom en mathématiques : c'est le calcul d'une **pente**, l'inclinaison de la courbe de vitesse, c'est-à-dire la variation verticale rapportée à l'avancée horizontale. Il n'est donc pas nécessaire de calculer pour repérer les phases d'une course : il suffit de regarder où la courbe de vitesse monte, se couche, reste plate ou plonge (cf. Figure 1.9).
+Le calcul que nous venons de faire — une variation de vitesse divisée par une durée — porte un nom en mathématiques : c'est le calcul d'une **pente**, l'inclinaison de la courbe de vitesse, c'est-à-dire la variation verticale rapportée à l'avancée horizontale. Il n'est donc pas nécessaire de calculer pour repérer les phases d'une course : il suffit de regarder où la courbe de vitesse monte, se couche, reste plate ou plonge (cf. Figure 1.9).
 
-Sur la course du coureur, quatre phases se lisent ainsi :
+Sur la course du coureur, quatre phases se lisent ainsi :
 
-- **Première seconde** — la pente est très inclinée : la vitesse gagne 5 m/s en 1 s, soit environ 5 m/s². Le coureur accélère fort au démarrage.
-- **De 1 à 3 secondes** — la pente est faiblement inclinée : la vitesse gagne encore 2 m/s, mais en 2 s, soit environ 1 m/s². Il continue d'accélérer, cinq fois moins fort.
-- **De 3 à 5 secondes** — la courbe est plate, la pente est nulle : accélération nulle. C'est la phase où il court le plus vite, près de 8 m/s, et sa vitesse ne varie plus.
-- **Dernière seconde** — la courbe décline brutalement, la pente est descendante : 8 m/s perdus en 1 s, soit −8 m/s². L'accélération est négative, le coureur freine — et c'est la variation la plus brutale de toute la course : il freine plus fort qu'il n'a démarré.
+- **Première seconde** — la pente est très inclinée : la vitesse gagne 5 m/s en 1 s, soit environ 5 m/s². Le coureur accélère fort au démarrage.
+- **De 1 à 3 secondes** — la pente est faiblement inclinée : la vitesse gagne encore 2 m/s, mais en 2 s, soit environ 1 m/s². Il continue d'accélérer, cinq fois moins fort.
+- **De 3 à 5 secondes** — la courbe est plate, la pente est nulle : accélération nulle. C'est la phase où il court le plus vite, près de 8 m/s, et sa vitesse ne varie plus.
+- **Dernière seconde** — la courbe décline brutalement, la pente est descendante : 8 m/s perdus en 1 s, soit −8 m/s². L'accélération est négative, le coureur freine — et c'est la variation la plus brutale de toute la course : il freine plus fort qu'il n'a démarré.
 
-Une accélération qui réduit la vitesse porte un nom : la **décélération**[^deceleration]. Démarrage, maintien, freinage : la pente raconte la course entière.
+Une accélération qui réduit la vitesse porte un nom : la **décélération**[^deceleration]. Démarrage, maintien, freinage : la pente raconte la course entière.
 
-<Figure number="1.9" caption="La courbe de vitesse du coureur et ses quatre phases : la pente de la courbe est l'accélération." source="diaporama CM1, dia 60 — figure à ré-exporter." />
+<Figure number="1.9" caption="La courbe de vitesse du coureur et ses quatre phases : la pente de la courbe est l'accélération." source="diaporama CM1, dia 60 — figure à ré-exporter." />
 
 ## 1.7.3 Deux propriétés à maîtriser
 
 Deux propriétés de la relation entre vitesse et accélération doivent être comprises — et toutes deux sont contre-intuitives.
 
-**Accélération nulle → vitesse constante.** Quand l'accélération est nulle, la vitesse ne varie plus : elle est constante[^acc-nulle]. Nous venons de le voir : c'est précisément au moment où le coureur va le plus vite qu'il n'accélère plus du tout. Et ce trait horizontal de la vitesse peut se placer à n'importe quelle hauteur — une accélération nulle vaut aussi bien pour une personne à l'arrêt que pour un coureur qui maintient son allure maximale.
+**Accélération nulle → vitesse constante.** Quand l'accélération est nulle, la vitesse ne varie plus : elle est constante[^acc-nulle]. Nous venons de le voir : c'est précisément au moment où le coureur va le plus vite qu'il n'accélère plus du tout. Et ce trait horizontal de la vitesse peut se placer à n'importe quelle hauteur — une accélération nulle vaut aussi bien pour une personne à l'arrêt que pour un coureur qui maintient son allure maximale.
 
-**Accélération constante et non nulle → la vitesse croît linéairement.** Si l'accélération garde la même valeur, la vitesse gagne la même quantité à chaque seconde : sa courbe est une droite qui monte. C'est ce qui se passe en chute libre — la mamie de l'animation, tombant du toit d'un immeuble, subit l'accélération de la gravité terrestre, constante, et sa vitesse ne cesse d'augmenter à mesure qu'elle tombe.
+**Accélération constante et non nulle → la vitesse croît linéairement.** Si l'accélération garde la même valeur, la vitesse gagne la même quantité à chaque seconde : sa courbe est une droite qui monte. C'est ce qui se passe en chute libre — la mamie de l'animation, tombant du toit d'un immeuble, subit l'accélération de la gravité terrestre, constante, et sa vitesse ne cesse d'augmenter à mesure qu'elle tombe.
 
-<Figure number="1.10" caption="Les deux propriétés sur la courbe de vitesse : accélération nulle → vitesse constante (droite horizontale, à n'importe quelle hauteur) ; accélération constante et non nulle → vitesse qui croît linéairement (droite montante)." source="diaporama CM1, dias 61-62 — figure à ré-exporter." />
+<Figure number="1.10" caption="Les deux propriétés sur la courbe de vitesse : accélération nulle → vitesse constante (droite horizontale, à n'importe quelle hauteur) ; accélération constante et non nulle → vitesse qui croît linéairement (droite montante)." source="diaporama CM1, dias 61-62 — figure à ré-exporter." />
 
 <Admonition kind="attention" title="Attention — idée reçue">
 
-**« Aller vite, c'est accélérer. »** Non. L'accélération mesure le *changement* de vitesse, pas la vitesse elle-même[^acc-def]. On peut marcher ou courir très vite avec une accélération rigoureusement nulle — il suffit que l'allure ne change pas — et, à l'inverse, accélérer très fort en allant encore lentement, comme le coureur dans sa première seconde. Associer « vitesse maximale » et « accélération maximale » est exactement l'inverse de la réalité : au sommet de sa vitesse, le coureur n'accélère plus du tout. Cette confusion entre vitesse et accélération est l'une des plus documentées chez les étudiants[^misconception].
+**« Aller vite, c'est accélérer. »** Non. L'accélération mesure le *changement* de vitesse, pas la vitesse elle-même[^acc-def]. On peut marcher ou courir très vite avec une accélération rigoureusement nulle — il suffit que l'allure ne change pas — et, à l'inverse, accélérer très fort en allant encore lentement, comme le coureur dans sa première seconde. Associer « vitesse maximale » et « accélération maximale » est exactement l'inverse de la réalité : au sommet de sa vitesse, le coureur n'accélère plus du tout. Cette confusion entre vitesse et accélération est l'une des plus documentées chez les étudiants[^misconception].
 
 </Admonition>
 
 <FurtherReading>
 
-**L'aire sous la courbe redonne la distance.** La pente de la courbe de vitesse donne l'accélération ; l'opération inverse existe aussi : l'aire comprise entre la courbe de vitesse et l'axe du temps redonne la distance parcourue. Sur un intervalle où l'on court à 8 m/s pendant 2 s, cette aire est un rectangle de 8 × 2 = 16 m — exactement la distance couverte. Pente et aire sont les deux faces d'un même lien mathématique entre position, vitesse et accélération.
+**L'aire sous la courbe redonne la distance.** La pente de la courbe de vitesse donne l'accélération ; l'opération inverse existe aussi : l'aire comprise entre la courbe de vitesse et l'axe du temps redonne la distance parcourue. Sur un intervalle où l'on court à 8 m/s pendant 2 s, cette aire est un rectangle de 8 × 2 = 16 m — exactement la distance couverte. Pente et aire sont les deux faces d'un même lien mathématique entre position, vitesse et accélération.
 
 </FurtherReading>
 
-<Application title="une course, trois qualités ; une marche, un protocole">
+<Application title="une course, trois qualités ; une marche, un protocole">
 
-Relisez la course du coureur avec les yeux d'un éducateur : le même 30 m chronométré contient en réalité trois qualités distinctes — démarrer (accélérer fort), maintenir une vitesse élevée (accélération nulle), freiner (décélérer). Deux athlètes peuvent signer le même temps avec des profils opposés, l'un explosif au départ, l'autre fort en vitesse maximale : la courbe de vitesse les distingue là où le chronomètre les confond, et le travail à proposer n'est pas le même dans les deux cas.
+Relisez la course du coureur avec les yeux d'un éducateur : le même 30 m chronométré contient en réalité trois qualités distinctes — démarrer (accélérer fort), maintenir une vitesse élevée (accélération nulle), freiner (décélérer). Deux athlètes peuvent signer le même temps avec des profils opposés, l'un explosif au départ, l'autre fort en vitesse maximale : la courbe de vitesse les distingue là où le chronomètre les confond, et le travail à proposer n'est pas le même dans les deux cas.
 
-Côté marche, vous comprenez maintenant pleinement le protocole de la section 1.6 : si l'on écarte les premiers et les derniers mètres du couloir, c'est parce que ce sont les phases où l'accélération n'est pas nulle — démarrage et freinage. Ne chronométrer que la portion centrale, c'est mesurer la marche là où elle est stable : vitesse quasi constante, accélération quasi nulle.
+Côté marche, vous comprenez maintenant pleinement le protocole de la section 1.6 : si l'on écarte les premiers et les derniers mètres du couloir, c'est parce que ce sont les phases où l'accélération n'est pas nulle — démarrage et freinage. Ne chronométrer que la portion centrale, c'est mesurer la marche là où elle est stable : vitesse quasi constante, accélération quasi nulle.
 
 </Application>
 
 <Glossaire>
-  <Terme nom="Pente (de la courbe de vitesse)">Inclinaison de la courbe : la variation verticale (de vitesse) rapportée à l'avancée horizontale (de temps). La pente de la courbe de vitesse est l'accélération.</Terme>
+  <Terme nom="Pente (de la courbe de vitesse)">Inclinaison de la courbe : la variation verticale (de vitesse) rapportée à l'avancée horizontale (de temps). La pente de la courbe de vitesse est l'accélération.</Terme>
   <Terme nom="Propriétés à connaître">Accélération nulle → vitesse constante (que l'on soit à l'arrêt ou lancé) · accélération constante et non nulle → vitesse qui croît linéairement (cas de la chute libre).</Terme>
 </Glossaire>
 
 <Capacites>
-  <Capacite>Définir l'accélération et donner son unité, en expliquant ce que signifie le « carré » de m/s².</Capacite>
+  <Capacite>Définir l'accélération et donner son unité, en expliquant ce que signifie le « carré » de m/s².</Capacite>
   <Capacite>Calculer une accélération entre deux instants et interpréter le signe du résultat.</Capacite>
   <Capacite>Lire les phases d'une course sur une courbe de vitesse, en associant pente et accélération.</Capacite>
-  <Capacite>Énoncer les deux propriétés (accélération nulle → vitesse constante ; accélération constante → vitesse linéaire) et expliquer pourquoi aller vite et accélérer sont deux choses différentes.</Capacite>
+  <Capacite>Énoncer les deux propriétés (accélération nulle → vitesse constante ; accélération constante → vitesse linéaire) et expliquer pourquoi aller vite et accélérer sont deux choses différentes.</Capacite>
 </Capacites>
 
 <Verification>
 
-  <Reveal index="a." question="Un marcheur maintient exactement 1,3 m/s pendant 20 secondes. Quelle est son accélération pendant cette phase ?">
+  <Reveal index="a." question="Un marcheur maintient exactement 1,3 m/s pendant 20 secondes. Quelle est son accélération pendant cette phase ?">
 
-Nulle : a = 0 m/s². Sa vitesse ne varie pas — aller vite (ou non) n'y change rien, seule compte la variation de vitesse.
-
-  </Reveal>
-
-  <Reveal index="b." question="Vrai ou faux : « au moment où le coureur atteint sa vitesse maximale, son accélération est maximale ». Justifiez.">
-
-Faux. À sa vitesse maximale, la vitesse du coureur ne varie plus : son accélération est nulle. Les deux grandeurs ne racontent pas la même chose — l'accélération maximale de la course se situe au démarrage.
+Nulle : a = 0 m/s². Sa vitesse ne varie pas — aller vite (ou non) n'y change rien, seule compte la variation de vitesse.
 
   </Reveal>
 
-  <Reveal index="c." question="Entre les instants 5,0 s et 5,5 s, la vitesse d'un coureur passe de 7,8 à 6,2 m/s. Calculez son accélération et interprétez le signe du résultat.">
+  <Reveal index="b." question="Vrai ou faux : « au moment où le coureur atteint sa vitesse maximale, son accélération est maximale ». Justifiez.">
 
-a = (6,2 − 7,8) / 0,5 = −1,6 / 0,5 = **−3,2 m/s²**. Le signe négatif indique que la vitesse diminue : le coureur décélère — il freine.
+Faux. À sa vitesse maximale, la vitesse du coureur ne varie plus : son accélération est nulle. Les deux grandeurs ne racontent pas la même chose — l'accélération maximale de la course se situe au démarrage.
+
+  </Reveal>
+
+  <Reveal index="c." question="Entre les instants 5,0 s et 5,5 s, la vitesse d'un coureur passe de 7,8 à 6,2 m/s. Calculez son accélération et interprétez le signe du résultat.">
+
+a = (6,2 − 7,8) / 0,5 = −1,6 / 0,5 = **−3,2 m/s²**. Le signe négatif indique que la vitesse diminue : le coureur décélère — il freine.
 
   </Reveal>
 
 </Verification>
 
-[^acc-def]: Hamm K., *Biomechanics of Human Movement* (OpenStax / BCcampus), §2.4 Acceleration. https://pressbooks.bccampus.ca/humanbiomechanics/chapter/2-4-acceleration/#:~:text=Average%20acceleration%20is%20the%20rate%20at%20which%20velocity%20changes — verbatim : « Average acceleration is the rate at which velocity changes ».
+[^acc-def]: Hamm K., *Biomechanics of Human Movement* (OpenStax / BCcampus), §2.4 Acceleration. https://pressbooks.bccampus.ca/humanbiomechanics/chapter/2-4-acceleration/#:~:text=Average%20acceleration%20is%20the%20rate%20at%20which%20velocity%20changes — verbatim : « Average acceleration is the rate at which velocity changes ».
 
-[^acc-unite]: Hamm K., ibid., §2.4. https://pressbooks.bccampus.ca/humanbiomechanics/chapter/2-4-acceleration/#:~:text=by%20how%20many%20meters%20per%20second%20the%20velocity%20changes%20every%20second — verbatim : « by how many meters per second the velocity changes every second » ; unité : « The standard unit for acceleration is m/s2 ».
+[^acc-unite]: Hamm K., ibid., §2.4. https://pressbooks.bccampus.ca/humanbiomechanics/chapter/2-4-acceleration/#:~:text=by%20how%20many%20meters%20per%20second%20the%20velocity%20changes%20every%20second — verbatim : « by how many meters per second the velocity changes every second » ; unité : « The standard unit for acceleration is m/s2 ».
 
-[^deceleration]: Hamm K., ibid., §2.4. https://pressbooks.bccampus.ca/humanbiomechanics/chapter/2-4-acceleration/#:~:text=Deceleration%20always%20refers%20to%20acceleration%20in%20the%20direction%20opposite — verbatim : « Deceleration always refers to acceleration in the direction opposite to the direction of the velocity ». Nuance : une accélération négative n'est un freinage que si le mouvement s'effectue dans le sens positif du repère — cas de toutes les courses de ce chapitre.
+[^deceleration]: Hamm K., ibid., §2.4. https://pressbooks.bccampus.ca/humanbiomechanics/chapter/2-4-acceleration/#:~:text=Deceleration%20always%20refers%20to%20acceleration%20in%20the%20direction%20opposite — verbatim : « Deceleration always refers to acceleration in the direction opposite to the direction of the velocity ». Nuance : une accélération négative n'est un freinage que si le mouvement s'effectue dans le sens positif du repère — cas de toutes les courses de ce chapitre.
 
-[^acc-nulle]: Physics LibreTexts, *Acceleration* (Boundless Physics). https://phys.libretexts.org/Bookshelves/University_Physics/Physics_(Boundless)/2%3A_Kinematics/2.3%3A_Acceleration#:~:text=the%20acceleration%20was%200 — verbatim : « when the object was changing position at a constant velocity, the acceleration was 0 ».
+[^acc-nulle]: Physics LibreTexts, *Acceleration* (Boundless Physics). https://phys.libretexts.org/Bookshelves/University_Physics/Physics_(Boundless)/2%3A_Kinematics/2.3%3A_Acceleration#:~:text=the%20acceleration%20was%200 — verbatim : « when the object was changing position at a constant velocity, the acceleration was 0 ».
 
-[^misconception]: Beichner R. (1994), *Testing student interpretation of kinematics graphs*, American Journal of Physics 62(8):750-762 (accès restreint) — les confusions entre grandeurs cinématiques (dont vitesse/accélération) y sont documentées et fondent le test diagnostique TUG-K. Présentation du test : PhysPort, https://www.physport.org/assessments/assessment.cfm?A=TUGK
+[^misconception]: Beichner R. (1994), *Testing student interpretation of kinematics graphs*, American Journal of Physics 62(8):750-762 (accès restreint) — les confusions entre grandeurs cinématiques (dont vitesse/accélération) y sont documentées et fondent le test diagnostique TUG-K. Présentation du test : PhysPort, https://www.physport.org/assessments/assessment.cfm?A=TUGK

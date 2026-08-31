@@ -1,38 +1,38 @@
 ---
 id: 1-5-decrire-un-deplacement-trajectoire-distance-direction
-title: "1.5 Décrire un déplacement : trajectoire, distance, direction"
-sidebar_label: "1.5 Décrire un déplacement : trajectoire, distance, direction"
+title: "1.5 Décrire un déplacement : trajectoire, distance, direction"
+sidebar_label: "1.5 Décrire un déplacement : trajectoire, distance, direction"
 sidebar_position: 5
 slug: /biomecanique-marche-seniors/1-5-decrire-un-deplacement-trajectoire-distance-direction
-description: "Pour décrire la composante linéaire d'un mouvement — la translation —, la cinématique commence par trois paramètres : la trajectoire (où passe le…"
+description: "Pour décrire la composante linéaire d'un mouvement — la translation —, la cinématique commence par trois paramètres : la trajectoire (où passe le…"
 hide_title: true
 ---
 
 {/* Page générée par `npm run sync` depuis le vault Obsidian.
-    Source : contenu/support-ecrit-ch1-cinematique.md
+    Source : contenu/support-ecrit/support-ecrit-ch1-cinematique.md
     Ne pas éditer ici — les modifications seraient écrasées à la prochaine
     synchronisation. Corriger le chapitre dans le vault, puis resynchroniser. */}
 
 <ChapterHeader
-  title="1.5 Décrire un déplacement : trajectoire, distance, direction"
+  title="1.5 Décrire un déplacement : trajectoire, distance, direction"
   meta={<><Badge tone="violet">Biomécanique</Badge><Badge tone="teal">Cinématique</Badge><Badge tone="neutral">Section 1.5</Badge><span style={{font:"var(--type-code)",fontSize:12,color:"var(--text-muted)"}}>11 min de lecture</span><span style={{font:"var(--type-code)",fontSize:12,color:"var(--text-muted)"}}>mis à jour le 17 août 2026</span></>}
 >
 
-Pour décrire la composante linéaire d'un mouvement — la translation —, la cinématique commence par trois paramètres : la **trajectoire** (où passe le mouvement), la **distance** (combien il parcourt) et la **direction** (vers où il va). Cette section les définit un à un, montre comment se calcule une distance à partir de positions mesurées, et réunit distance et direction en une seule notion : le vecteur déplacement. À la fin de cette section, vous devez être capable de définir ces trois paramètres, de calculer une distance entre deux points à partir de leurs coordonnées, et d'expliquer pourquoi la distance seule ne suffit pas à décrire un déplacement.
+Pour décrire la composante linéaire d'un mouvement — la translation —, la cinématique commence par trois paramètres : la **trajectoire** (où passe le mouvement), la **distance** (combien il parcourt) et la **direction** (vers où il va). Cette section les définit un à un, montre comment se calcule une distance à partir de positions mesurées, et réunit distance et direction en une seule notion : le vecteur déplacement. À la fin de cette section, vous devez être capable de définir ces trois paramètres, de calculer une distance entre deux points à partir de leurs coordonnées, et d'expliquer pourquoi la distance seule ne suffit pas à décrire un déplacement.
 
 </ChapterHeader>
 
-## 1.5.1 La trajectoire : le chemin suivi
+## 1.5.1 La trajectoire : le chemin suivi
 
-La **trajectoire** est le tracé des positions successives d'un point au cours du temps — autrement dit, le chemin qu'il a suivi. La **position** est l'endroit où se situe un point dans l'espace à un moment donné ; elle s'exprime par rapport à un point de référence choisi[^position] — dire qu'une marcheuse se trouve « à 9,50 m » n'a de sens que par rapport à un zéro fixé, sa ligne de départ par exemple.
+La **trajectoire** est le tracé des positions successives d'un point au cours du temps — autrement dit, le chemin qu'il a suivi. La **position** est l'endroit où se situe un point dans l'espace à un moment donné ; elle s'exprime par rapport à un point de référence choisi[^position] — dire qu'une marcheuse se trouve « à 9,50 m » n'a de sens que par rapport à un zéro fixé, sa ligne de départ par exemple.
 
-Deux exemples. Le premier vous est familier : le tracé GPS d'une sortie de course à pied. À intervalles réguliers, le récepteur GPS de votre montre ou de votre téléphone enregistre votre position ; reliés les uns aux autres, ces points dessinent votre parcours sur la carte. Le second a été rencontré à la section précédente : la trajectoire de la cheville pendant la marche, cette courbe ondulée produite par la combinaison de translation et de rotations.
+Deux exemples. Le premier vous est familier : le tracé GPS d'une sortie de course à pied. À intervalles réguliers, le récepteur GPS de votre montre ou de votre téléphone enregistre votre position ; reliés les uns aux autres, ces points dessinent votre parcours sur la carte. Le second a été rencontré à la section précédente : la trajectoire de la cheville pendant la marche, cette courbe ondulée produite par la combinaison de translation et de rotations.
 
-## 1.5.2 La distance : la longueur du chemin
+## 1.5.2 La distance : la longueur du chemin
 
-La trajectoire est une forme ; la **distance** est un nombre : la longueur totale du chemin parcouru par le point, exprimée en **mètres (m)**[^distance-def].
+La trajectoire est une forme ; la **distance** est un nombre : la longueur totale du chemin parcouru par le point, exprimée en **mètres (m)**[^distance-def].
 
-Le cas le plus simple est celui d'un déplacement en ligne droite le long d'un axe gradué. Une marcheuse avance sur une piste dont le zéro est placé au départ : pour connaître la distance parcourue, il suffit de lire la graduation au point de départ et celle au point d'arrivée, puis d'en faire la différence — partie de 0 m et arrivée à 9,50 m, elle a parcouru 9,50 − 0 = 9,50 m.
+Le cas le plus simple est celui d'un déplacement en ligne droite le long d'un axe gradué. Une marcheuse avance sur une piste dont le zéro est placé au départ : pour connaître la distance parcourue, il suffit de lire la graduation au point de départ et celle au point d'arrivée, puis d'en faire la différence — partie de 0 m et arrivée à 9,50 m, elle a parcouru 9,50 − 0 = 9,50 m.
 
 <Formule title="Distance le long d'un axe gradué">
 
@@ -40,33 +40,33 @@ $$
 d = p_{arrivée} - p_{départ}
 $$
 
-- `d` : distance parcourue, en mètres (m)
-- `p_arrivée`, `p_départ` : positions lues sur l'axe, en mètres (m)
+- `d` : distance parcourue, en mètres (m)
+- `p_arrivée`, `p_départ` : positions lues sur l'axe, en mètres (m)
 
 </Formule>
 
-Cette méthode suppose toutefois que le point se déplace en ligne droite, dans une seule direction, le long d'un seul axe. Or la section 1.4 a montré que ce n'est presque jamais le cas : la trajectoire de la cheville, par exemple, est ondulée. Mesurer d'un point A à un point B en ligne droite couperait à travers les ondulations et sous-estimerait la longueur réellement parcourue.
+Cette méthode suppose toutefois que le point se déplace en ligne droite, dans une seule direction, le long d'un seul axe. Or la section 1.4 a montré que ce n'est presque jamais le cas : la trajectoire de la cheville, par exemple, est ondulée. Mesurer d'un point A à un point B en ligne droite couperait à travers les ondulations et sous-estimerait la longueur réellement parcourue.
 
-La solution consiste à relever la position du point non pas seulement au départ et à l'arrivée, mais à intervalles réguliers tout au long du trajet — par exemple toutes les demi-secondes. On mesure ensuite la longueur de chaque segment reliant deux relevés consécutifs, puis on additionne le tout. Le résultat épouse d'autant mieux le chemin réel que les segments sont courts. Ce relevé à intervalles de temps réguliers porte un nom : l'**échantillonnage** ; le nombre de relevés effectués par seconde est la **fréquence d'échantillonnage**, exprimée en **hertz (Hz)**. Le principe est général — il se réutilisera pour d'autres grandeurs que la position. Plus la fréquence est élevée, plus la mesure est fidèle — une montre GPS, qui enregistre en général une position par seconde, sous-estime ainsi les parcours sinueux : elle coupe les virages.
+La solution consiste à relever la position du point non pas seulement au départ et à l'arrivée, mais à intervalles réguliers tout au long du trajet — par exemple toutes les demi-secondes. On mesure ensuite la longueur de chaque segment reliant deux relevés consécutifs, puis on additionne le tout. Le résultat épouse d'autant mieux le chemin réel que les segments sont courts. Ce relevé à intervalles de temps réguliers porte un nom : l'**échantillonnage** ; le nombre de relevés effectués par seconde est la **fréquence d'échantillonnage**, exprimée en **hertz (Hz)**. Le principe est général — il se réutilisera pour d'autres grandeurs que la position. Plus la fréquence est élevée, plus la mesure est fidèle — une montre GPS, qui enregistre en général une position par seconde, sous-estime ainsi les parcours sinueux : elle coupe les virages.
 
 <Ressource>
 
-Animation « Mesurer une distance le long d'une trajectoire courbe : l'échantillonnage » *(lien YouTube — à venir)*.
+Animation « Mesurer une distance le long d'une trajectoire courbe : l'échantillonnage » *(lien YouTube — à venir)*.
 
 </Ressource>
 
 ## 1.5.3 Calculer une distance à partir des coordonnées
 
-Reste à savoir mesurer la longueur d'un segment entre deux relevés. Le long d'un axe unique, une différence de graduations suffit. Mais sur une carte — un plan à deux axes, X et Y —, chaque point est repéré par deux **coordonnées**, et le segment qui relie deux points est en général oblique. Le calcul se construit alors en quatre étapes :
+Reste à savoir mesurer la longueur d'un segment entre deux relevés. Le long d'un axe unique, une différence de graduations suffit. Mais sur une carte — un plan à deux axes, X et Y —, chaque point est repéré par deux **coordonnées**, et le segment qui relie deux points est en général oblique. Le calcul se construit alors en quatre étapes :
 
-1. mesurer l'écart entre les deux points sur l'axe X : Δx = xB − xA ;
-2. mesurer l'écart entre les deux points sur l'axe Y : Δy = yB − yA ;
-3. élever chaque écart au carré, ce qui supprime son signe — un carré est toujours positif, et une longueur ne peut pas être négative ;
+1. mesurer l'écart entre les deux points sur l'axe X : Δx = xB − xA ;
+2. mesurer l'écart entre les deux points sur l'axe Y : Δy = yB − yA ;
+3. élever chaque écart au carré, ce qui supprime son signe — un carré est toujours positif, et une longueur ne peut pas être négative ;
 4. additionner les deux carrés, puis appliquer la racine carrée pour revenir à une longueur en mètres.
 
 <Figure number="1.4" caption="Les quatre étapes du calcul, en images. (Suite d'images à produire à partir des dias 29-35, ou animation — lien YouTube à venir.)" />
 
-Cette construction n'est autre que le théorème de Pythagore : l'écart Δx et l'écart Δy sont les deux côtés d'un triangle rectangle, et le trajet direct entre A et B en est l'hypoténuse.
+Cette construction n'est autre que le théorème de Pythagore : l'écart Δx et l'écart Δy sont les deux côtés d'un triangle rectangle, et le trajet direct entre A et B en est l'hypoténuse.
 
 <Formule title="Distance entre deux points (plan à deux axes)">
 
@@ -74,75 +74,75 @@ $$
 d = \sqrt{\Delta x^2 + \Delta y^2}
 $$
 
-- `d` : distance entre les deux points, en mètres (m)
-- `Δx = xB − xA` : écart entre les deux points sur l'axe X, en mètres (m)
-- `Δy = yB − yA` : écart entre les deux points sur l'axe Y, en mètres (m)
+- `d` : distance entre les deux points, en mètres (m)
+- `Δx = xB − xA` : écart entre les deux points sur l'axe X, en mètres (m)
+- `Δy = yB − yA` : écart entre les deux points sur l'axe Y, en mètres (m)
 
 </Formule>
 
 <ExempleResolu number="1.5.1" title="Distance entre deux relevés GPS">
 
-*Sur un tracé GPS, le point A a pour coordonnées (1000 ; 400) et le point B (929 ; 624), en mètres. Quelle distance sépare A de B ?*
+*Sur un tracé GPS, le point A a pour coordonnées (1000 ; 400) et le point B (929 ; 624), en mètres. Quelle distance sépare A de B ?*
 
 **Méthode.** On calcule l'écart sur chaque axe, on élève les deux écarts au carré, on les additionne, puis on applique la racine carrée.
 
 **Calcul.**
 - Δx² = (929 − 1000)² = (−71)² = 5041
 - Δy² = (624 − 400)² = (224)² = 50176
-- d = √(5041 + 50176) = √55217 ≈ **235 m**
+- d = √(5041 + 50176) = √55217 ≈ **235 m**
 
-**Interprétation.** Les deux relevés sont distants d'environ 235 mètres en ligne directe. Le passage au carré a joué son rôle : l'écart de −71 m sur l'axe X est devenu positif, et le résultat est bien une longueur. Notez que ces signes, effacés par le calcul, portaient une information — nous y revenons à la sous-section suivante.
+**Interprétation.** Les deux relevés sont distants d'environ 235 mètres en ligne directe. Le passage au carré a joué son rôle : l'écart de −71 m sur l'axe X est devenu positif, et le résultat est bien une longueur. Notez que ces signes, effacés par le calcul, portaient une information — nous y revenons à la sous-section suivante.
 
 </ExempleResolu>
 
-Pour obtenir la distance totale d'un trajet, on répète ce calcul pour chaque segment entre relevés consécutifs et on additionne les résultats : c'est la **distance cumulée** — celle qu'affiche votre montre à la fin d'une sortie. Le tableau ci-dessous illustre le principe sur un tracé de quatre segments (cf. Figure 1.5).
+Pour obtenir la distance totale d'un trajet, on répète ce calcul pour chaque segment entre relevés consécutifs et on additionne les résultats : c'est la **distance cumulée** — celle qu'affiche votre montre à la fin d'une sortie. Le tableau ci-dessous illustre le principe sur un tracé de quatre segments (cf. Figure 1.5).
 
 | Segment | Distance du segment | Distance cumulée |
 | --- | --- | --- |
-| A → B | 235 m | 235 m |
-| B → C | 180 m | 415 m |
-| C → D | 210 m | 625 m |
-| D → E | 160 m | 785 m |
+| A → B | 235 m | 235 m |
+| B → C | 180 m | 415 m |
+| C → D | 210 m | 625 m |
+| D → E | 160 m | 785 m |
 
-<Figure number="1.5" caption="Un tracé découpé en quatre segments : chaque segment est mesuré avec la formule ci-dessus, et la distance cumulée est la somme des segments. (Figure à produire à partir du tracé GPS du diaporama, dias 24 et 37.)" />
+<Figure number="1.5" caption="Un tracé découpé en quatre segments : chaque segment est mesuré avec la formule ci-dessus, et la distance cumulée est la somme des segments. (Figure à produire à partir du tracé GPS du diaporama, dias 24 et 37.)" />
 
-## 1.5.4 La direction : ce que la distance ne dit pas
+## 1.5.4 La direction : ce que la distance ne dit pas
 
-La distance renseigne sur la longueur d'un déplacement, mais pas sur son orientation. Supposons que l'on ne connaisse que le point A et la distance parcourue, 235 m : cela suffit-il pour retrouver le point B ? Non. Tous les points situés à 235 m de A forment un cercle, et B peut se trouver n'importe où sur ce cercle : vers l'ouest, vers le nord-est ou vers le sud-est, 235 m auront été parcourus dans tous les cas, sans garantie d'arriver au bon endroit. Il manque une information : la **direction**, c'est-à-dire l'orientation géométrique selon laquelle s'effectue le déplacement — la droite à suivre —, complétée par le **sens**, qui précise vers où l'on va le long de cette droite.
+La distance renseigne sur la longueur d'un déplacement, mais pas sur son orientation. Supposons que l'on ne connaisse que le point A et la distance parcourue, 235 m : cela suffit-il pour retrouver le point B ? Non. Tous les points situés à 235 m de A forment un cercle, et B peut se trouver n'importe où sur ce cercle : vers l'ouest, vers le nord-est ou vers le sud-est, 235 m auront été parcourus dans tous les cas, sans garantie d'arriver au bon endroit. Il manque une information : la **direction**, c'est-à-dire l'orientation géométrique selon laquelle s'effectue le déplacement — la droite à suivre —, complétée par le **sens**, qui précise vers où l'on va le long de cette droite.
 
-Cette information, le calcul de distance la possédait — puis l'a volontairement effacée. Les écarts valaient Δx = −71 m et Δy = +224 m : le signe « − » indiquait un déplacement vers les X négatifs (l'ouest, sur une carte orientée au nord), le signe « + » un déplacement vers les Y positifs (le nord). En élevant au carré, ces signes ont disparu — c'était voulu, une distance est toujours positive — mais ce sont eux qui portaient la direction : pour retrouver B depuis A, il faut se déplacer de 71 m vers l'ouest et de 224 m vers le nord.
+Cette information, le calcul de distance la possédait — puis l'a volontairement effacée. Les écarts valaient Δx = −71 m et Δy = +224 m : le signe « − » indiquait un déplacement vers les X négatifs (l'ouest, sur une carte orientée au nord), le signe « + » un déplacement vers les Y positifs (le nord). En élevant au carré, ces signes ont disparu — c'était voulu, une distance est toujours positive — mais ce sont eux qui portaient la direction : pour retrouver B depuis A, il faut se déplacer de 71 m vers l'ouest et de 224 m vers le nord.
 
-On représente l'ensemble par une flèche menant de A à B : sa longueur est la distance, la droite qu'elle suit est la direction, et sa pointe indique le sens — de A vers B. Ce couple distance + direction forme le **vecteur déplacement** — un **vecteur** étant, de façon générale, une grandeur qui possède une intensité, une direction et un sens[^vecteur], là où un simple nombre comme la distance (une grandeur **scalaire**) n'en a pas. Retenez ce mot : il reviendra dans la suite du cours.
+On représente l'ensemble par une flèche menant de A à B : sa longueur est la distance, la droite qu'elle suit est la direction, et sa pointe indique le sens — de A vers B. Ce couple distance + direction forme le **vecteur déplacement** — un **vecteur** étant, de façon générale, une grandeur qui possède une intensité, une direction et un sens[^vecteur], là où un simple nombre comme la distance (une grandeur **scalaire**) n'en a pas. Retenez ce mot : il reviendra dans la suite du cours.
 
 <Ressource>
 
-Animation dédiée « La distance ne suffit pas : direction et vecteur déplacement » *(lien YouTube — à venir)*.
+Animation dédiée « La distance ne suffit pas : direction et vecteur déplacement » *(lien YouTube — à venir)*.
 
 </Ressource>
 
-<Figure number="1.6" caption="Le cercle des points situés à 235 m de A : sans direction, B peut se trouver n'importe où sur ce cercle. (Illustration à produire, d'après les dias 41-44.)" />
+<Figure number="1.6" caption="Le cercle des points situés à 235 m de A : sans direction, B peut se trouver n'importe où sur ce cercle. (Illustration à produire, d'après les dias 41-44.)" />
 
-<Figure number="1.7" caption="La flèche de A vers B et ses composantes Δx et Δy : le vecteur déplacement. (Illustration à produire, d'après les dias 45-46.)" />
+<Figure number="1.7" caption="La flèche de A vers B et ses composantes Δx et Δy : le vecteur déplacement. (Illustration à produire, d'après les dias 45-46.)" />
 
 <FurtherReading>
 
-**La formule se généralise à trois axes.** Si le point suivi ne se déplace pas sur un plan mais dans l'espace — un parcours en montagne qui monte et descend en tournant —, on ajoute une troisième coordonnée, Z, et le principe reste identique : d = √(Δx² + Δy² + Δz²). Rien de nouveau à comprendre — un terme de plus sous la racine.
+**La formule se généralise à trois axes.** Si le point suivi ne se déplace pas sur un plan mais dans l'espace — un parcours en montagne qui monte et descend en tournant —, on ajoute une troisième coordonnée, Z, et le principe reste identique : d = √(Δx² + Δy² + Δz²). Rien de nouveau à comprendre — un terme de plus sous la racine.
 
 </FurtherReading>
 
 <Application title="le parcours de motricité, mesuré au plus près">
 
-En séance collective, vous installez un parcours de marche avec un slalom entre plots, et vous souhaitez savoir quelle distance chaque participant parcourt réellement. Mesurer au mètre ruban la ligne droite entre le départ et l'arrivée sous-estimerait l'effort : le chemin réel serpente entre les plots. La bonne mesure suit la logique de cette section — décomposer le parcours en segments, d'un plot au suivant, mesurer chaque segment, puis additionner.
+En séance collective, vous installez un parcours de marche avec un slalom entre plots, et vous souhaitez savoir quelle distance chaque participant parcourt réellement. Mesurer au mètre ruban la ligne droite entre le départ et l'arrivée sous-estimerait l'effort : le chemin réel serpente entre les plots. La bonne mesure suit la logique de cette section — décomposer le parcours en segments, d'un plot au suivant, mesurer chaque segment, puis additionner.
 
 </Application>
 
 <Glossaire>
-  <Terme nom="Position">Endroit où se trouve un point à un instant donné, exprimé par rapport à un repère choisi. Dans un plan, elle se donne par deux **coordonnées** (x ; y).</Terme>
-  <Terme nom="Trajectoire">Tracé des positions successives d'un point au cours du temps : le chemin suivi. C'est une forme, pas un nombre.</Terme>
-  <Terme nom="Échantillonnage">Relevé d'une grandeur (position, vitesse…) à intervalles de temps réguliers : le phénomène mesuré est découpé en une suite de valeurs que l'on peut analyser segment par segment. Principe général de la mesure du mouvement.</Terme>
+  <Terme nom="Position">Endroit où se trouve un point à un instant donné, exprimé par rapport à un repère choisi. Dans un plan, elle se donne par deux **coordonnées** (x ; y).</Terme>
+  <Terme nom="Trajectoire">Tracé des positions successives d'un point au cours du temps : le chemin suivi. C'est une forme, pas un nombre.</Terme>
+  <Terme nom="Échantillonnage">Relevé d'une grandeur (position, vitesse…) à intervalles de temps réguliers : le phénomène mesuré est découpé en une suite de valeurs que l'on peut analyser segment par segment. Principe général de la mesure du mouvement.</Terme>
   <Terme nom="Fréquence d'échantillonnage">Nombre de relevés effectués par seconde, en **hertz (Hz)**. Plus elle est élevée, plus la mesure épouse le phénomène réel.</Terme>
-  <Terme nom="Direction">Orientation géométrique selon laquelle s'effectue un mouvement ou agit une grandeur vectorielle : la droite le long de laquelle on se déplace. Le **sens** précise vers laquelle des deux extrémités de cette droite on va. Dans un plan, direction et sens sont portés par les signes des écarts Δx et Δy.</Terme>
-  <Terme nom="Vecteur déplacement">Flèche menant du point de départ au point d'arrivée : son intensité est la distance en ligne directe, sa direction et son sens donnent l'orientation du déplacement. Un **vecteur** est une grandeur qui possède une intensité, une direction et un sens ; un **scalaire** n'a qu'une intensité.</Terme>
+  <Terme nom="Direction">Orientation géométrique selon laquelle s'effectue un mouvement ou agit une grandeur vectorielle : la droite le long de laquelle on se déplace. Le **sens** précise vers laquelle des deux extrémités de cette droite on va. Dans un plan, direction et sens sont portés par les signes des écarts Δx et Δy.</Terme>
+  <Terme nom="Vecteur déplacement">Flèche menant du point de départ au point d'arrivée : son intensité est la distance en ligne directe, sa direction et son sens donnent l'orientation du déplacement. Un **vecteur** est une grandeur qui possède une intensité, une direction et un sens ; un **scalaire** n'a qu'une intensité.</Terme>
 </Glossaire>
 
 <Capacites>
@@ -154,28 +154,28 @@ En séance collective, vous installez un parcours de marche avec un slalom entre
 
 <Verification>
 
-  <Reveal index="a." question="Sur un axe gradué, une marcheuse passe de la graduation 2,0 m à la graduation 8,0 m. Quelle distance a-t-elle parcourue ? Quelle hypothèse cette mesure suppose-t-elle ?">
+  <Reveal index="a." question="Sur un axe gradué, une marcheuse passe de la graduation 2,0 m à la graduation 8,0 m. Quelle distance a-t-elle parcourue ? Quelle hypothèse cette mesure suppose-t-elle ?">
 
-8,0 − 2,0 = **6,0 m**. La mesure suppose un déplacement en ligne droite, dans une seule direction, le long de l'axe — sans détour ni demi-tour.
-
-  </Reveal>
-
-  <Reveal index="b." question="Le point A a pour coordonnées (3 ; 4) et le point B (6 ; 8), en mètres. Calculez la distance entre A et B.">
-
-Δx = 6 − 3 = 3 m ; Δy = 8 − 4 = 4 m ; d = √(3² + 4²) = √25 = **5 m**.
+8,0 − 2,0 = **6,0 m**. La mesure suppose un déplacement en ligne droite, dans une seule direction, le long de l'axe — sans détour ni demi-tour.
 
   </Reveal>
 
-  <Reveal index="c." question="Deux montres GPS enregistrent la même sortie de course en forêt, l'une à une position par seconde, l'autre à dix positions par seconde. Laquelle affichera la distance la plus proche de la réalité, et pourquoi ?">
+  <Reveal index="b." question="Le point A a pour coordonnées (3 ; 4) et le point B (6 ; 8), en mètres. Calculez la distance entre A et B.">
 
-Celle à dix positions par seconde : ses segments sont dix fois plus courts et épousent mieux les courbes du parcours. La montre à une position par seconde coupe les virages et sous-estime la distance.
+Δx = 6 − 3 = 3 m ; Δy = 8 − 4 = 4 m ; d = √(3² + 4²) = √25 = **5 m**.
+
+  </Reveal>
+
+  <Reveal index="c." question="Deux montres GPS enregistrent la même sortie de course en forêt, l'une à une position par seconde, l'autre à dix positions par seconde. Laquelle affichera la distance la plus proche de la réalité, et pourquoi ?">
+
+Celle à dix positions par seconde : ses segments sont dix fois plus courts et épousent mieux les courbes du parcours. La montre à une position par seconde coupe les virages et sous-estime la distance.
 
   </Reveal>
 
 </Verification>
 
-[^position]: Hamm K., *Biomechanics of Human Movement* (OpenStax / BCcampus), §2.1 Displacement. https://pressbooks.bccampus.ca/humanbiomechanics/chapter/2-1-displacement/#:~:text=you%20need%20to%20specify%20its%20position%20relative%20to%20a%20convenient%20reference%20frame — verbatim : « you need to specify its position relative to a convenient reference frame ».
+[^position]: Hamm K., *Biomechanics of Human Movement* (OpenStax / BCcampus), §2.1 Displacement. https://pressbooks.bccampus.ca/humanbiomechanics/chapter/2-1-displacement/#:~:text=you%20need%20to%20specify%20its%20position%20relative%20to%20a%20convenient%20reference%20frame — verbatim : « you need to specify its position relative to a convenient reference frame ».
 
-[^distance-def]: Hamm K., ibid., §2.1 Displacement. https://pressbooks.bccampus.ca/humanbiomechanics/chapter/2-1-displacement/#:~:text=Distance%20traveled%20is%20the%20total%20length%20of%20the%20path%20traveled%20between%20two%20positions — verbatim : « Distance traveled is the total length of the path traveled between two positions ».
+[^distance-def]: Hamm K., ibid., §2.1 Displacement. https://pressbooks.bccampus.ca/humanbiomechanics/chapter/2-1-displacement/#:~:text=Distance%20traveled%20is%20the%20total%20length%20of%20the%20path%20traveled%20between%20two%20positions — verbatim : « Distance traveled is the total length of the path traveled between two positions ».
 
-[^vecteur]: Hamm K., ibid., §2.2 Vectors, Scalars, and Coordinate Systems. https://pressbooks.bccampus.ca/humanbiomechanics/chapter/2-2-vectors-scalars-and-coordinate-systems/#:~:text=A%20vector%20is%20any%20quantity%20with%20both%20magnitude%20and%20direction — verbatim : « A vector is any quantity with both magnitude and direction » ; « A scalar is any quantity that has a magnitude, but no direction ». NB : la formulation anglophone regroupe direction et sens dans « direction » ; la tradition française distingue intensité (norme), direction et sens.
+[^vecteur]: Hamm K., ibid., §2.2 Vectors, Scalars, and Coordinate Systems. https://pressbooks.bccampus.ca/humanbiomechanics/chapter/2-2-vectors-scalars-and-coordinate-systems/#:~:text=A%20vector%20is%20any%20quantity%20with%20both%20magnitude%20and%20direction — verbatim : « A vector is any quantity with both magnitude and direction » ; « A scalar is any quantity that has a magnitude, but no direction ». NB : la formulation anglophone regroupe direction et sens dans « direction » ; la tradition française distingue intensité (norme), direction et sens.

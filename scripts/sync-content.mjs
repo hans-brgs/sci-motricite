@@ -54,10 +54,10 @@ const COURSE = {
       title: "Chapitre 1 — Cinématique : décrire le mouvement",
       // Catégories affichées dans le bandeau de chaque section.
       tags: ["Biomécanique", "Cinématique"],
-      source: "contenu/support-ecrit-ch1-cinematique.md",
+      source: "contenu/support-ecrit/support-ecrit-ch1-cinematique.md",
       // Quiz d'entraînement, publié. La banque d'examen ne doit JAMAIS être
       // référencée ici : tout ce que ce script lit part dans un dépôt public.
-      quiz: "contenu/quiz-ch1-cinematique.md",
+      quiz: "contenu/evaluation/quiz-ch1-cinematique.md",
       lead: "Décrire un mouvement sans encore en chercher les causes : trajectoire, distance, vitesse, accélération, angles articulaires. C'est le socle de vocabulaire sur lequel tout le reste du cours s'appuie.",
     },
     {
@@ -66,11 +66,23 @@ const COURSE = {
       label: "Chapitre 2 · Cinétique",
       title: "Chapitre 2 — Cinétique : les causes du mouvement",
       tags: ["Biomécanique", "Cinétique"],
-      source: "contenu/support-ecrit-ch2-cinetique.md",
+      source: "contenu/support-ecrit/support-ecrit-ch2-cinetique.md",
       lead: "Remonter des effets aux causes. Ce qu'est une force, comment on la décrit, et comment les trois lois de Newton relient les forces au mouvement qu'elles produisent.",
     },
   ],
 };
+
+/**
+ * Pages écrites à la main. Le script ne les régénère pas — il n'y applique que
+ * la typographie française, pour que la règle vaille sur tout le site et pas
+ * seulement sur les chapitres. L'opération est idempotente : une espace déjà
+ * insécable n'est plus candidate.
+ */
+const PAGES_MANUELLES = [
+  "docs/index.mdx",
+  "docs/biomecanique-marche-seniors/index.mdx",
+  "src/pages/a-propos.mdx",
+];
 
 const OUT = path.join(ROOT, "docs", COURSE.slug);
 const CHECK_ONLY = process.argv.includes("--check");
@@ -99,7 +111,10 @@ function plain(text) {
     .replace(/\*(.+?)\*/g, "$1")
     .replace(/`(.+?)`/g, "$1")
     .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")
-    .replace(/\s+/g, " ")
+    // Normalise les blancs, mais épargne les espaces insécables : `\s` les
+    // contient, et un `\s+ → " "` détruirait toute la typographie posée par
+    // frenchSpacing juste avant.
+    .replace(/[^\S  ]+/g, " ")
     .trim();
 }
 
@@ -176,6 +191,45 @@ function escapeAngles(text) {
     .join("");
 }
 
+/**
+ * Typographie française.
+ *
+ * Le navigateur coupe une ligne sur n'importe quelle espace ordinaire : sans
+ * précaution, « 12 % » se retrouve à cheval sur deux lignes, « 174 824 » aussi,
+ * et un point d'interrogation part seul en début de ligne. Ces espaces-là
+ * doivent être insécables.
+ *
+ *   U+202F  espace fine insécable — devant : ; ? ! %, et à l'intérieur des
+ *           guillemets ; c'est aussi le séparateur de milliers du français.
+ *   U+00A0  espace insécable — entre un nombre et son unité.
+ *
+ * Ce qui a sa propre grammaire est épargné : blocs de code, `code en ligne`,
+ * formules $…$ et $$…$$. Une adresse web n'est jamais concernée, puisque la
+ * règle exige une espace *avant* le signe et qu'une URL n'en contient pas.
+ */
+const UNITES = "m/s²|m/s|km/h|N·m|m²|cm|mm|km|kg|Hz|ms|°|m|s|N|g";
+
+function frenchSpacing(text) {
+  const parts = text.split(/(`[^`]*`|\$\$[\s\S]*?\$\$|\$[^$\n]+\$)/g);
+  return parts
+    .map((part, i) => {
+      if (i % 2) return part; // code ou formule : on n'y touche pas
+      let out = part;
+      // Espace fine insécable devant la ponctuation haute.
+      out = out.replace(/ ([;?!%:])/g, " $1");
+      // Guillemets français : l'espace colle au chevron.
+      out = out.replace(/«[ ]/g, "« ").replace(/[ ]»/g, " »");
+      // Séparateur de milliers : « 174 824 », « 35 000 ».
+      out = out.replace(/(\d) (\d{3})(?!\d)/g, "$1 $2");
+      // Un nombre ne se sépare pas de son unité.
+      // Chaine ordinaire, pas de litteral gabarit : dans un gabarit, \d vaut
+      // « d » et  vaut un retour arriere — la regle ne s'appliquerait jamais.
+      out = out.replace(new RegExp("(\\d) (?=(?:" + UNITES + ")\\b)", "g"), "$1 ");
+      return out;
+    })
+    .join("");
+}
+
 function sanitizeSource(body) {
   let inFence = false;
   return body
@@ -187,7 +241,7 @@ function sanitizeSource(body) {
       }
       if (inFence) return line;
       const [, quoteMarkers, rest] = line.match(/^((?:>\s?)*)([\s\S]*)$/);
-      return quoteMarkers + escapeAngles(rest);
+      return quoteMarkers + frenchSpacing(escapeAngles(rest));
     })
     .join("\n");
 }
@@ -1095,6 +1149,35 @@ function main() {
         `${String(stat.media).padStart(2)} renvois média` +
         (quiz.length ? ` · ${quiz.length} questions de quiz` : "")
     );
+  }
+
+  // Typographie des pages écrites à la main.
+  let retouchees = 0;
+  for (const relative of PAGES_MANUELLES) {
+    const file = path.join(ROOT, relative);
+    if (!fs.existsSync(file)) {
+      warn(`page manuelle introuvable : ${relative}`);
+      continue;
+    }
+    const before = fs.readFileSync(file, "utf8");
+    let inFence = false;
+    const after = before
+      .split(/\r?\n/)
+      .map((line) => {
+        if (/^\s*```/.test(line)) {
+          inFence = !inFence;
+          return line;
+        }
+        return inFence ? line : frenchSpacing(line);
+      })
+      .join("\n");
+    if (after !== before) {
+      retouchees += 1;
+      if (!CHECK_ONLY) fs.writeFileSync(file, after, "utf8");
+    }
+  }
+  if (retouchees) {
+    console.log(`\n  typographie : ${retouchees} page(s) écrite(s) à la main retouchée(s)`);
   }
 
   // Le glossaire général du site : la compilation, triée, de tous les
