@@ -1287,6 +1287,14 @@ function main() {
     totals.media += stat.media;
     totals.missingAnswers += stat.missingAnswers;
 
+    if (stat.recollees) {
+      warn(
+        `chapitre ${chapter.number} — ${stat.recollees} figure(s) collée(s) au bloc qui ` +
+          `les précède, faute de ligne vide : détachées pour la publication, mais la ligne ` +
+          `vide manque toujours dans le vault`
+      );
+    }
+
     totals.quiz += quiz.length;
 
     console.log(

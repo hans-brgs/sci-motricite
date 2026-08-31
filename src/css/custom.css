@@ -468,6 +468,16 @@ html.plugin-docs .container {
   margin: var(--sp-8) 0;
 }
 
+/* Les composants recopiés du design system ne portent pas de marge : ils
+   comptaient sur la mise en page qui les entoure. Dans la colonne de lecture,
+   le texte qui suit une note, une application ou une figure s'y retrouvait
+   collé. On leur donne le même rythme qu'aux autres blocs. */
+.markdown > aside,
+.markdown > figure,
+.markdown > section:not(.sm-block) {
+  margin-block: var(--sp-8);
+}
+
 /* --- Grilles des pages autonomes ---------------------------------------- */
 /* Les composants du design system sont en styles en ligne, qui ne portent pas
    de media queries : les quelques grilles qui doivent respirer sur mobile
