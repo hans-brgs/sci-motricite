@@ -63,19 +63,17 @@ export function Figure({
           {images.map((one) => (
             <div
               key={one}
-              style={{
-                // La surface nuit dans les deux thèmes — c'est la règle du
-                // design system pour les panneaux de figure, et ici elle est
-                // vitale : les figures sont exportées du diaporama, donc
-                // transparentes à 95 % avec des traits et des étiquettes
-                // clairs. Sur un fond clair, elles se délavent au point d'être
-                // illisibles. En mode sombre, rien ne change à l'œil.
-                background: "var(--brand-night)",
-                border: "1px solid rgba(234, 240, 247, 0.1)",
-                borderRadius: "var(--radius-lg)",
-                overflow: "hidden",
-                padding: "var(--sp-4)",
-              }}
+              // Le fond du cadre suit le thème : blanc en mode clair, surface
+              // nuit en mode sombre. Il vit dans `custom.css` — un style en
+              // ligne ne sait pas exprimer une bascule de thème.
+              //
+              // ⚠ Les figures sont exportées du diaporama : transparentes, avec
+              // des encres pensées pour le fond nuit. Mesurés, leurs contrastes
+              // sur blanc tombent à 2,49:1 pour le teal et 3,10:1 pour le gris
+              // clair — sous le minimum de 4,5:1. Sur la surface nuit ils
+              // valent 7,30 et 5,86. Le fond clair est un choix de l'auteur ;
+              // il suppose de ré-exporter les figures avec des encres foncées.
+              className="sm-figure-plate"
             >
               {/* `height: auto` : une figure de cours se lit en entier. La
                   rogner à un format fixe couperait une courbe ou une légende. */}

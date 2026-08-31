@@ -184,6 +184,27 @@ html.plugin-docs .container {
   max-width: var(--measure);
 }
 
+/* --- Le cadre d'une figure ------------------------------------------------ */
+/* Blanc en mode clair, surface nuit en mode sombre.
+   Les figures sont exportées du diaporama : transparentes, avec des encres
+   dessinées pour le fond nuit. Sur blanc, le teal des courbes tombe à 2,49:1 et
+   le gris des étiquettes à 3,10:1, sous le minimum de 4,5:1 ; sur la surface
+   nuit ils valent 7,30 et 5,86. Le fond clair suppose donc de ré-exporter les
+   figures avec des encres foncées. */
+
+.sm-figure-plate {
+  background: var(--ink-0);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  padding: var(--sp-4);
+}
+
+[data-theme="dark"] .sm-figure-plate {
+  background: var(--brand-night);
+  border-color: rgba(234, 240, 247, 0.1);
+}
+
 /* --- Le bandeau d'ouverture --------------------------------------------- */
 /* Le fond du héros, transposé dans les deux thèmes. En sombre c'est la surface
    nuit de la marque ; en clair, le même dispositif en clair — une carte nuit
