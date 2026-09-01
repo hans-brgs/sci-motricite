@@ -18,9 +18,21 @@ import React from "react";
  *                           accessible à l'iframe).
  * @param {string}  [ref]    Repère du plan de production, ex. « A4 — §1.5 ».
  * @param {string}  [poster] Vignette locale ; à défaut, celle de YouTube.
+ * @param {string}  [ratio]  Format de la source, ex. « 1200 / 1256 ». Le lecteur
+ *                           YouTube inscrit toujours la vidéo *dans* le cadre
+ *                           qu'on lui donne : un format faux ne déforme rien,
+ *                           il ajoute des bandes noires. C'est donc à l'appelant
+ *                           de déclarer le format réel du rendu.
  */
 export function Animation({ id, title, reference, poster, ratio = "16 / 9", style, ...rest }) {
   const [playing, setPlaying] = React.useState(false);
+
+  // Une vidéo verticale occupée sur toute la largeur de la colonne de texte
+  // dépasserait la hauteur de l'écran : on la borne. Le seuil est large — un
+  // rendu carré (1:1) compte déjà comme vertical de ce point de vue.
+  const [num, den] = String(ratio).split("/");
+  const ratioValue = den ? Number(num) / Number(den) : Number(num);
+  const vertical = Number.isFinite(ratioValue) && ratioValue < 1.2;
 
   const frame = {
     position: "relative",
@@ -50,9 +62,13 @@ export function Animation({ id, title, reference, poster, ratio = "16 / 9", styl
     </figcaption>
   );
 
+  // Un format vertical se lit aussi bien à 420 px de large, et laisse la page
+  // respirer autour de lui.
+  const bounds = vertical ? { maxWidth: "min(100%, 420px)" } : null;
+
   if (!id) {
     return (
-      <figure className="sm-block" style={{ margin: 0, ...style }} {...rest}>
+      <figure className="sm-block" style={{ margin: 0, ...bounds, ...style }} {...rest}>
         <div
           style={{
             ...frame,
@@ -80,10 +96,13 @@ export function Animation({ id, title, reference, poster, ratio = "16 / 9", styl
     );
   }
 
-  const thumb = poster || `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`;
+  // `maxresdefault` est toujours recadrée en 16/9 : sur une source verticale
+  // elle amputerait la façade. `oardefault` — *original aspect ratio* — rend la
+  // vignette au format du tournage (mesuré : 1080×1130 pour un Short 1200×1256).
+  const thumb = poster || `https://i.ytimg.com/vi/${id}/${vertical ? "oardefault" : "maxresdefault"}.jpg`;
 
   return (
-    <figure className="sm-block" style={{ margin: 0, ...style }} {...rest}>
+    <figure className="sm-block" style={{ margin: 0, ...bounds, ...style }} {...rest}>
       <div style={frame}>
         {playing ? (
           <iframe
