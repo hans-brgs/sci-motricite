@@ -9,11 +9,24 @@ import React from "react";
  * décide de regarder, et le domaine `youtube-nocookie.com` évite le dépôt de
  * cookies de suivi tant que la lecture n'a pas commencé.
  *
- * Sans `id`, le composant affiche honnêtement que l'animation n'est pas encore
- * produite plutôt que de laisser un trou : c'est la règle maison — on ne
+ * Le composant accepte **deux sources**, et une seule à la fois :
+ *
+ *  - `id`  — un identifiant YouTube. La vidéo ne pèse rien dans le dépôt, et
+ *    YouTube se charge du ré-encodage, des débits adaptatifs et des sous-titres.
+ *  - `src` — un fichier servi par le site lui-même. Aucun tiers n'est contacté,
+ *    aucun cookie, aucune recommandation en fin de lecture ; en contrepartie
+ *    le fichier compte dans le gigaoctet de GitHub Pages et dans sa bande
+ *    passante.
+ *
+ * Les deux passent par le même cadre et la même légende : basculer de l'un à
+ * l'autre est un changement d'attribut, pas de mise en page.
+ *
+ * Sans source, le composant affiche honnêtement que l'animation n'est pas
+ * encore produite plutôt que de laisser un trou : c'est la règle maison — on ne
  * maquille jamais un manque.
  *
  * @param {string}  [id]     Identifiant YouTube de la vidéo.
+ * @param {string}  [src]    URL d'un fichier vidéo servi par le site.
  * @param {string}  title    Titre de l'animation (obligatoire — sert de nom
  *                           accessible à l'iframe).
  * @param {string}  [ref]    Repère du plan de production, ex. « A4 — §1.5 ».
@@ -24,7 +37,7 @@ import React from "react";
  *                           il ajoute des bandes noires. C'est donc à l'appelant
  *                           de déclarer le format réel du rendu.
  */
-export function Animation({ id, title, reference, poster, ratio = "16 / 9", style, ...rest }) {
+export function Animation({ id, src, title, reference, poster, ratio = "16 / 9", style, ...rest }) {
   const [playing, setPlaying] = React.useState(false);
 
   // Une vidéo verticale occupée sur toute la largeur de la colonne de texte
@@ -62,13 +75,45 @@ export function Animation({ id, title, reference, poster, ratio = "16 / 9", styl
     </figcaption>
   );
 
-  // Un format vertical se lit aussi bien à 420 px de large, et laisse la page
-  // respirer autour de lui.
-  const bounds = vertical ? { maxWidth: "min(100%, 420px)" } : null;
+  // Un format vertical se lit aussi bien à 420 px de large, et le cadre est
+  // centré dans sa colonne : borné mais collé à gauche, il laisserait à droite
+  // un vide qui se lit comme un défaut de mise en page.
+  //
+  // `marginBlock` / `marginInline` plutôt que le raccourci `margin` : mêler un
+  // raccourci et une propriété détaillée dans un même style en ligne fait
+  // effacer par React les côtés que le raccourci ne nomme pas.
+  const bounds = {
+    marginBlock: 0,
+    marginInline: "auto",
+    ...(vertical ? { maxWidth: "min(100%, 420px)" } : null),
+  };
+
+  // Fichier servi par le site : la balise native suffit. `preload="metadata"`
+  // ne télécharge que l'en-tête tant que personne n'a cliqué — sans quoi une
+  // page portant quatre animations tirerait soixante mégaoctets à l'ouverture.
+  if (src) {
+    return (
+      <figure className="sm-block" style={{ ...bounds, ...style }} {...rest}>
+        <video
+          src={src}
+          poster={poster}
+          controls
+          playsInline
+          preload="metadata"
+          style={{ ...frame, display: "block", width: "100%" }}
+        >
+          {/* Le repli n'arrive qu'aux navigateurs sans <video> ; il vaut mieux
+              qu'un cadre noir muet. */}
+          <a href={src}>Télécharger l'animation : {title}</a>
+        </video>
+        {legend}
+      </figure>
+    );
+  }
 
   if (!id) {
     return (
-      <figure className="sm-block" style={{ margin: 0, ...bounds, ...style }} {...rest}>
+      <figure className="sm-block" style={{ ...bounds, ...style }} {...rest}>
         <div
           style={{
             ...frame,
@@ -102,7 +147,7 @@ export function Animation({ id, title, reference, poster, ratio = "16 / 9", styl
   const thumb = poster || `https://i.ytimg.com/vi/${id}/${vertical ? "oardefault" : "maxresdefault"}.jpg`;
 
   return (
-    <figure className="sm-block" style={{ margin: 0, ...bounds, ...style }} {...rest}>
+    <figure className="sm-block" style={{ ...bounds, ...style }} {...rest}>
       <div style={frame}>
         {playing ? (
           <iframe

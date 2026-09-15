@@ -28,49 +28,27 @@
  *   npm run sync:check    analyse et rapporte, sans rien écrire
  */
 
+import { execFileSync } from "node:child_process";
 import fs from "node:fs";
+import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+
+import { VAULT, COURSE } from "./lib/cours.mjs";
+import {
+  toutesLignesVideo,
+  estIdentifiantYouTube,
+  estURLAbsolue,
+  nomPublie,
+} from "./lib/video.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
 /* ===========================================================================
-   Configuration — la seule partie à toucher pour ajouter un chapitre
+   Configuration — elle vit maintenant dans `scripts/lib/cours.mjs`, partagée
+   avec `encode-video.mjs` : les deux scripts doivent lire la même liste de
+   chapitres, sans quoi les pages et les vidéos publiées divergeraient.
    ======================================================================== */
-
-const VAULT = path.join(
-  process.env.USERPROFILE || process.env.HOME || "",
-  "OneDrive/Documents/Hans/Travail/Missions/Vacataire - UPVD/2026-2027",
-  "Cours/teaching-vault/cours/biomecanique-marche-seniors"
-);
-
-const COURSE = {
-  slug: "biomecanique-marche-seniors",
-  chapters: [
-    {
-      number: 1,
-      dir: "ch1-cinematique",
-      label: "Chapitre 1 · Cinématique",
-      title: "Chapitre 1 — Cinématique : décrire le mouvement",
-      // Catégories affichées dans le bandeau de chaque section.
-      tags: ["Biomécanique", "Cinématique"],
-      source: "contenu/support-ecrit/support-ecrit-ch1-cinematique.md",
-      // Quiz d'entraînement, publié. La banque d'examen ne doit JAMAIS être
-      // référencée ici : tout ce que ce script lit part dans un dépôt public.
-      quiz: "contenu/evaluation/quiz-ch1-cinematique.md",
-      lead: "Décrire un mouvement sans encore en chercher les causes : trajectoire, distance, vitesse, accélération, angles articulaires. C'est le socle de vocabulaire sur lequel tout le reste du cours s'appuie.",
-    },
-    {
-      number: 2,
-      dir: "ch2-cinetique",
-      label: "Chapitre 2 · Cinétique",
-      title: "Chapitre 2 — Cinétique : les causes du mouvement",
-      tags: ["Biomécanique", "Cinétique"],
-      source: "contenu/support-ecrit/support-ecrit-ch2-cinetique.md",
-      lead: "Remonter des effets aux causes. Ce qu'est une force, comment on la décrit, et comment les trois lois de Newton relient les forces au mouvement qu'elles produisent.",
-    },
-  ],
-};
 
 /**
  * Pages écrites à la main. Le script ne les régénère pas — il n'y applique que
@@ -460,6 +438,146 @@ function asSymbolList(text) {
     .join("\n\n");
 }
 
+/* ===========================================================================
+   Publication des images — réduites, et exactement celles qui sont appelées
+   ======================================================================== */
+
+/**
+ * Largeur maximale d'une image publiée, en pixels.
+ *
+ * La colonne de cours affiche une figure sur 703 px ; un écran haute densité en
+ * demande le double. Les exports du vault vont bien au-delà — jusqu'à 5 279 px
+ * pour la figure 3.1, soit 4,8 Mo pour une image vue à 703 px. Réduite à
+ * 1 600 px, elle pèse 0,54 Mo et reste indiscernable à deux fois la taille
+ * d'affichage, texte et tracés fins compris.
+ *
+ * Les originaux du vault ne sont jamais touchés : le poly imprimé peut avoir
+ * besoin de la haute définition. Seule la copie publiée est réduite.
+ */
+const LARGEUR_MAX = 1600;
+
+/** Chemins absolus des images publiées par ce passage — tout le reste est périmé. */
+const imagesPubliees = new Set();
+const bilanImages = { reduites: 0, copiees: 0, ajour: 0, avant: 0, apres: 0 };
+
+/** Largeur d'une image : lue dans l'en-tête pour un PNG, par ffprobe sinon. */
+function largeurImage(file) {
+  const fd = fs.openSync(file, "r");
+  const tete = Buffer.alloc(24);
+  fs.readSync(fd, tete, 0, 24, 0);
+  fs.closeSync(fd);
+  if (tete.toString("ascii", 1, 4) === "PNG") return tete.readUInt32BE(16);
+  try {
+    const sortie = execFileSync("ffprobe", [
+      "-v", "error", "-select_streams", "v:0",
+      "-show_entries", "stream=width", "-of", "csv=p=0", file,
+    ]);
+    return Number(sortie.toString().trim()) || 0;
+  } catch {
+    return 0;
+  }
+}
+
+/**
+ * Publie une image du vault dans `static/`, réduite si elle dépasse LARGEUR_MAX.
+ *
+ * Une copie déjà à jour n'est pas refaite : sans ce test, chaque `npm run sync`
+ * relancerait ffmpeg sur toutes les figures. Est à jour une copie plus récente
+ * que sa source et qui est, soit déjà réduite (pas plus large que la limite),
+ * soit la source elle-même, gardée telle quelle parce que la réduire l'aurait
+ * alourdie — c'est le cas des PNG à palette, que ffmpeg réécrit en couleurs
+ * pleines.
+ */
+function publierImage(source, cible) {
+  const absolue = path.resolve(cible);
+  if (imagesPubliees.has(absolue)) return; // appelée deux fois dans le passage
+  imagesPubliees.add(absolue);
+  if (CHECK_ONLY) return;
+
+  const tailleSource = fs.statSync(source).size;
+  bilanImages.avant += tailleSource;
+
+  if (
+    fs.existsSync(cible) &&
+    fs.statSync(cible).mtimeMs >= fs.statSync(source).mtimeMs &&
+    (largeurImage(cible) <= LARGEUR_MAX || fs.statSync(cible).size === tailleSource)
+  ) {
+    bilanImages.ajour += 1;
+    bilanImages.apres += fs.statSync(cible).size;
+    return;
+  }
+
+  fs.mkdirSync(path.dirname(cible), { recursive: true });
+  const ext = path.extname(source).toLowerCase();
+
+  if ([".png", ".jpg", ".jpeg"].includes(ext) && largeurImage(source) > LARGEUR_MAX) {
+    // Le fichier intermédiaire s'écrit hors de `static/` : s'il survit à un
+    // incident, il ne doit jamais pouvoir être publié.
+    const temporaire = path.join(os.tmpdir(), `sci-motricite-${process.pid}-${path.basename(cible)}`);
+    execFileSync("ffmpeg", [
+      "-nostdin", "-y", "-v", "error",
+      "-i", source,
+      "-vf", `scale=w=${LARGEUR_MAX}:h=-1:flags=lanczos`,
+      // PNG : prédiction mixte et compression maximale, sans perte ; la
+      // transparence (rgba) est conservée — le fond blanc du mode clair en
+      // dépend. JPEG : qualité élevée.
+      ...(ext === ".png" ? ["-c:v", "png", "-pred", "mixed", "-compression_level", "9"] : ["-q:v", "3"]),
+      temporaire,
+    ]);
+    // Copie puis suppression plutôt que renommage : le dossier temporaire peut
+    // vivre sur un autre volume, où un renommage échoue.
+    const reduite = fs.statSync(temporaire).size < tailleSource;
+    fs.copyFileSync(reduite ? temporaire : source, cible);
+    try {
+      fs.unlinkSync(temporaire);
+    } catch {
+      // un reste dans le dossier temporaire du système est sans conséquence
+    }
+    bilanImages[reduite ? "reduites" : "copiees"] += 1;
+  } else {
+    fs.copyFileSync(source, cible);
+    bilanImages.copiees += 1;
+  }
+  bilanImages.apres += fs.statSync(cible).size;
+}
+
+/**
+ * Retire des dossiers gérés par ce script les images qu'aucune page n'appelle
+ * plus — une figure renommée dans le vault laissait sinon l'ancienne copie en
+ * place, publiée pour rien et versionnée pour toujours.
+ *
+ * Trois garde-fous :
+ *  - seuls les dossiers que ce script écrit sont concernés : ceux des chapitres
+ *    **chargés avec succès** dans ce passage, et celui des images de quiz. Un
+ *    chapitre dont la source manque ne voit pas ses figures effacées ;
+ *  - rien ne disparaît en silence : chaque retrait est nommé ;
+ *  - la suppression est vérifiée. Sous Windows, un fichier que le serveur de
+ *    développement garde ouvert ne disparaît pas, sans que l'appel échoue.
+ */
+function retirerImagesPerimees(dossiers) {
+  const retirees = [];
+  const bloquees = [];
+  for (const dossier of dossiers) {
+    if (!fs.existsSync(dossier)) continue;
+    for (const nom of fs.readdirSync(dossier)) {
+      const chemin = path.resolve(dossier, nom);
+      if (!fs.statSync(chemin).isFile() || imagesPubliees.has(chemin)) continue;
+      const relatif = path.relative(ROOT, chemin).split(path.sep).join("/");
+      if (CHECK_ONLY) {
+        retirees.push(relatif);
+        continue;
+      }
+      try {
+        fs.unlinkSync(chemin);
+      } catch {
+        // rapporté par la vérification ci-dessous
+      }
+      (fs.existsSync(chemin) ? bloquees : retirees).push(relatif);
+    }
+  }
+  return { retirees, bloquees };
+}
+
 /**
  * Résout une image de figure et la copie vers le site.
  *
@@ -490,11 +608,7 @@ function resolveFigure(src, chapter, ctx) {
     file = found;
   }
 
-  const target = path.join(ROOT, "static", "img", "figures", chapter.dir);
-  if (!CHECK_ONLY) {
-    fs.mkdirSync(target, { recursive: true });
-    fs.copyFileSync(file, path.join(target, name));
-  }
+  publierImage(file, path.join(ROOT, "static", "img", "figures", chapter.dir, name));
   return `/img/figures/${chapter.dir}/${name}`;
 }
 
@@ -583,9 +697,63 @@ function renderQuote(lines, ctx) {
   // 🔗 Ressource numérique — deux écritures cohabitent dans le vault
   m = text.match(/^(?:###\s*)?\*{0,2}🔗\s*Ressource numérique\*{0,2}\s*(?:—\s*)?([\s\S]*)$/);
   if (m) {
-    const body = m[1].trim() || paragraphs(lines.slice(1)).join("\n\n");
+    let body = m[1].trim() || paragraphs(lines.slice(1)).join("\n\n");
     ctx.mediaCalls += 1;
-    return `<Ressource>\n\n${body}\n\n</Ressource>`;
+
+    // Chaque ligne « Vidéo : <source> (<largeur>×<hauteur>) » de l'encadré monte
+    // un lecteur sous l'appel — un encadré peut en déclarer plusieurs. La source
+    // est soit un identifiant YouTube, soit un fichier servi par le site. Le
+    // format se déclare : le lecteur inscrit toujours la vidéo *dans* le cadre
+    // qu'on lui donne, et un cadre faux ne déforme rien — il ajoute des bandes
+    // noires.
+    //
+    // Le titre du lecteur sert de nom accessible : il ne peut être ni vide, ni
+    // identique pour deux animations d'une même section. L'encadré les nomme
+    // entre guillemets, dans l'ordre des lignes « Vidéo : » — « Visionnez
+    // l'animation « A », puis l'animation « B » » — : la n-ième vidéo prend le
+    // n-ième titre. Sans guillemets (écriture du premier jet du chapitre 2), on
+    // retombe sur la phrase de description, débarrassée de son amorce.
+    const titres = [...body.matchAll(/«[\s  ]*(.+?)[\s  ]*»/g)].map((t) => t[1]);
+    const decrite = body
+      .split(/\n\s*\n/)[0]
+      .replace(/^Visionnez\s+(?:l['’]|les\s+)?animations?\s*:\s*/iu, "")
+      .split(/(?<=[.!?])\s/)[0]
+      .trim();
+
+    const players = [];
+    body = body
+      .replace(toutesLignesVideo(), (whole, source, w, h) => {
+        const rang = players.length;
+        let label = plain(titres[rang] ?? titres[0] ?? (decrite || "Animation — " + ctx.id))
+          .replace(/\s*\.$/, "");
+        // Un nom accessible qui dépasse la centaine de caractères n'aide plus
+        // personne : on coupe au dernier mot entier.
+        if (label.length > 100) {
+          label = label.slice(0, 100).replace(/\s+\S*$/, "") + "…";
+        }
+        const ratio = w && h ? ' ratio="' + w + " / " + h + '"' : "";
+        const attribut = estIdentifiantYouTube(source)
+          ? 'id="' + attr(source) + '"'
+          : 'src="' +
+            attr(estURLAbsolue(source) ? source : "/video/" + nomPublie(source)) +
+            '"';
+        players.push("\n\n<Animation " + attribut + ratio + ' title="' + attr(label) + '" />');
+        ctx.players = (ctx.players || 0) + 1;
+        return "";
+      })
+      .trim();
+
+    // Plusieurs vidéos, moins de titres que de vidéos : les suivantes héritent
+    // du premier titre, et deux lecteurs portent le même nom. Ça se voit à peine
+    // à l'écran, beaucoup pour un lecteur d'écran — on le signale.
+    if (players.length > 1 && titres.length < players.length) {
+      warn(
+        `${ctx.id} — encadré à ${players.length} vidéos pour ${titres.length} titre(s) « » : ` +
+          "nommez chaque animation entre guillemets, dans l'ordre des lignes « Vidéo : »"
+      );
+    }
+
+    return "<Ressource>\n\n" + body + players.join("") + "\n\n</Ressource>";
   }
 
   // Formule. Le vault écrit la légende des symboles en lignes consécutives —
@@ -710,9 +878,37 @@ function splitFigureBlocks(para, ctx) {
   return blocks;
 }
 
+/**
+ * Recolle une image et sa légende quand une ligne vide les sépare.
+ *
+ * Deux écritures cohabitent dans le vault. Le chapitre 1 pose la légende sur la
+ * ligne qui suit l'image ; à partir du chapitre 2, le skill de rédaction laisse
+ * une ligne vide entre les deux — ce qu'Obsidian affiche de la même façon. Sans
+ * ce recollement, l'image et sa légende tombent dans deux paragraphes : l'image
+ * sortait en figure muette, et la légende orpheline en cadre « figure à
+ * produire », si bien que chaque figure paraissait deux fois.
+ *
+ * On ne recolle que le cas exact : un paragraphe fait uniquement d'images,
+ * suivi d'un paragraphe qui commence par « *Figure ».
+ */
+function joinFigureCaptions(paras) {
+  const IMAGE_SEULE = /^(?:\s*!\[[^\]]*\]\([^)]+\)\s*)+$/;
+  const out = [];
+  for (const para of paras) {
+    const prev = out[out.length - 1];
+    if (prev !== undefined && IMAGE_SEULE.test(prev) && /^\s*\*Figure\s/.test(para)) {
+      out[out.length - 1] = `${prev}\n${para}`;
+    } else {
+      out.push(para);
+    }
+  }
+  return out;
+}
+
 function renderProse(lines, ctx) {
   const out = [];
-  for (const para of paragraphs(lines).flatMap((p) => splitFigureBlocks(p, ctx))) {
+  const paras = joinFigureCaptions(paragraphs(lines).flatMap((p) => splitFigureBlocks(p, ctx)));
+  for (const para of paras) {
     if (/^-{3,}$/.test(para.trim())) continue;
 
     // Le vault écrit ses formules sur une seule ligne — `$$ v = d/t $$`. Pour
@@ -755,7 +951,23 @@ function renderProse(lines, ctx) {
       const split = remainder.match(
         /^([\s\S]*?)\s*\(((?:Source|Fichiers attendus)\s*:[\s\S]*)\)\s*$/
       );
-      const caption = plain(split ? split[1] : remainder);
+      // Une note de production — « (Illustration à produire, d'après les dias
+      // 41-44.) » — n'a de sens que tant que l'image manque. Une fois l'image
+      // posée, la laisser dans la légende affirme au lecteur une chose fausse.
+      // On la retire de la légende publiée, et on le dit : c'est le vault
+      // qu'il faut nettoyer, le site ne fait que ne pas propager l'erreur.
+      let legende = split ? split[1] : remainder;
+      // (Pas de `\b` devant « à » : sans le drapeau `u`, JavaScript ne tient pas
+      // « à » pour une lettre, et la frontière de mot n'existe jamais.)
+      const noteProduction = legende.match(/\s*\(([^()]*(?:^|\s)à produire(?=[\s,.;—)])[^()]*)\)\s*\*?\s*$/);
+      if (noteProduction && images.length) {
+        legende = legende.slice(0, noteProduction.index);
+        warn(
+          `${ctx.id} — Figure ${number} illustrée, mais sa légende porte encore ` +
+            `« (${truncate(noteProduction[1].trim(), 60)}) » : retirée du site, à retirer du vault`
+        );
+      }
+      const caption = plain(legende);
       const source = split
         ? plain(split[2].replace(/^(?:Source|Fichiers attendus)\s*:\s*/, ""))
         : "";
@@ -1044,10 +1256,7 @@ function copyQuizImages(questions, quizPath, ctx) {
       continue;
     }
     const name = path.basename(source);
-    if (!CHECK_ONLY) {
-      fs.mkdirSync(to, { recursive: true });
-      fs.copyFileSync(source, path.join(to, name));
-    }
+    publierImage(source, path.join(to, name));
     q.figure.public = `/img/quiz/${name}`;
   }
 }
@@ -1199,6 +1408,9 @@ function main() {
 
   const totals = { pages: 0, figures: 0, questions: 0, media: 0, missingAnswers: 0, quiz: 0 };
   const glossary = [];
+  // Dossiers d'images que ce passage a le droit de nettoyer : ceux des
+  // chapitres effectivement chargés, et celui des quiz.
+  const dossiersImages = [path.join(ROOT, "static", "img", "quiz")];
 
   for (const [i, chapter] of COURSE.chapters.entries()) {
     const source = path.join(VAULT, chapter.source);
@@ -1219,6 +1431,7 @@ function main() {
 
     const pages = sections.map((s) => renderSection(s, chapter, corriges, footnotes, dates));
     const dir = path.join(OUT, chapter.dir);
+    dossiersImages.push(path.join(ROOT, "static", "img", "figures", chapter.dir));
 
     // Table « numéro de section → adresse », pour que chaque question du quiz
     // puisse renvoyer vers la section à relire.
@@ -1389,6 +1602,32 @@ function main() {
 
   if (totals.missingAnswers) {
     console.log(`  ${totals.missingAnswers} question(s) sans corrigé — affichées comme telles.`);
+  }
+
+  const mo = (o) => (o / 1048576).toFixed(1);
+  if (!CHECK_ONLY) {
+    const { reduites, copiees, ajour, avant, apres } = bilanImages;
+    console.log(
+      `  ${imagesPubliees.size} images publiées · ${reduites} réduites à ${LARGEUR_MAX} px, ` +
+        `${copiees} copiées telles quelles, ${ajour} déjà à jour · ${mo(avant)} Mo → ${mo(apres)} Mo`
+    );
+  }
+
+  const { retirees, bloquees } = retirerImagesPerimees(dossiersImages);
+  if (retirees.length) {
+    console.log(
+      `\n  ${retirees.length} image(s) plus appelée(s) par aucune page — ` +
+        `${CHECK_ONLY ? "seraient retirées" : "RETIRÉES"} :`
+    );
+    for (const r of retirees) console.log(`    ${r}`);
+  }
+  if (bloquees.length) {
+    console.log(
+      `\n  ${bloquees.length} image(s) périmée(s) n'ont PAS pu être retirées — un processus ` +
+        "les garde ouvertes. Arrêtez le serveur de développement, puis relancez :"
+    );
+    for (const b of bloquees) console.log(`    ${b}`);
+    process.exitCode = 1;
   }
 
   if (warnings.length) {
