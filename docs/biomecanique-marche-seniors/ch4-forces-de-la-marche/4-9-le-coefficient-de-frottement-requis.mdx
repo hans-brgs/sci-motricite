@@ -1,0 +1,122 @@
+---
+id: 4-9-le-coefficient-de-frottement-requis
+title: "4.9 Le coefficient de frottement requis"
+sidebar_label: "4.9 Le coefficient de frottement requis"
+sidebar_position: 9
+slug: /biomecanique-marche-seniors/4-9-le-coefficient-de-frottement-requis
+description: "Les sections précédentes ont établi ce que le contact entre la semelle et le sol peut fournir : une force de frottement qui ne peut pas dépasser $\\mu…"
+hide_title: true
+---
+
+{/* Page générée par `npm run sync` depuis le vault Obsidian.
+    Source : contenu/support-ecrit/support-ecrit-ch4-forces-de-la-marche.md
+    Ne pas éditer ici — les modifications seraient écrasées à la prochaine
+    synchronisation. Corriger le chapitre dans le vault, puis resynchroniser. */}
+
+<ChapterHeader
+  title="4.9 Le coefficient de frottement requis"
+  meta={<><Badge tone="violet">Biomécanique</Badge><Badge tone="teal">Marche</Badge><Badge tone="neutral">Section 4.9</Badge><span style={{font:"var(--type-code)",fontSize:12,color:"var(--text-muted)"}}>7 min de lecture</span><span style={{font:"var(--type-code)",fontSize:12,color:"var(--text-muted)"}}>mis à jour le 15 septembre 2026</span></>}
+>
+
+Les sections précédentes ont établi ce que le contact entre la semelle et le sol peut fournir : une force de frottement qui ne peut pas dépasser $\mu \times N$. Reste à savoir quelle force de frottement la marche met en jeu à chaque instant de l'appui, et à quel moment du pas elle s'approche le plus de cette limite. En divisant la composante horizontale par la composante verticale à chaque instant de l'appui, on obtient une grandeur directement comparable au coefficient de frottement des surfaces : le **coefficient de frottement requis**. À la fin de cette section, vous devez être capable de définir cette grandeur, de situer sur sa courbe l'instant le plus critique de l'appui et d'en donner les deux raisons, et d'énoncer la règle qui décide du glissement.
+
+</ChapterHeader>
+
+## 4.9.1 Pourquoi diviser l'horizontale par la verticale
+
+L'expérience de la main a établi une condition : le glissement ne se produit pas tant que la force de frottement reste inférieure à la force de frottement maximale. Sous le pied, la force de frottement est la composante horizontale $H$ de la force de réaction du sol (§4.5.2). La condition de non-glissement s'écrit donc :
+
+$$
+H \leq f_{\text{max}}
+$$
+
+Déroulons-la en trois étapes.
+
+1. **Remplacer la force de frottement maximale par son expression.** Elle vaut $\mu \times N$ (§4.7.4) :
+
+$$
+H \leq \mu \times N
+$$
+
+2. **Remplacer la force normale par la composante verticale.** Le sol est plat, et sur un sol plat la composante normale est la composante verticale (§4.4.2), c'est-à-dire $N = V$ :
+
+$$
+H \leq \mu \times V
+$$
+
+3. **Diviser les deux membres par la composante verticale.** Elle est positive pendant tout l'appui, le sens de l'inégalité est donc conservé :
+
+$$
+\frac{H}{V} \leq \frac{\mu \times V}{V} \qquad \text{d'où} \qquad \frac{H}{V} \leq \mu
+$$
+
+- $H$ : la composante horizontale de la force de réaction du sol, en newtons (N) ;
+- $V$ : sa composante verticale, en newtons (N) ;
+- $\mu$ : le coefficient de frottement des deux surfaces en contact, sans unité.
+
+Ce rapport a une propriété précieuse : c'est un rapport de deux forces, donc un nombre sans unité, **de même nature que le coefficient de frottement**. Il devient ainsi possible de comparer directement la force de frottement que le pas met en jeu à ce que les surfaces peuvent fournir — et il suffit, pour l'obtenir, de diviser l'une par l'autre les deux courbes du §4.5.3, à chaque instant de l'appui.
+
+## 4.9.2 La courbe, et l'instant le plus critique
+
+Le rapport ainsi calculé porte un nom : c'est le **coefficient de frottement requis**. À chaque instant de l'appui, il donne le coefficient de frottement minimal que le contact entre la semelle et le sol **devrait présenter** pour que le glissement ne se produise pas[^rcof]. Le conditionnel est important : c'est une exigence calculée à partir du mouvement, et non une propriété du contact. Le coefficient de frottement requis change d'un instant à l'autre de l'appui ; celui des deux surfaces en contact, lui, ne change pas.
+
+<Figure number="4.12" src="/img/figures/ch4-forces-de-la-marche/fig-4-12-courbe-du-coefficient-de-frottement-requis.png" alt="En haut, les deux composantes de la force de réaction du sol sur un appui complet ; en bas, leur rapport à chaque instant : la courbe du coefficient de frottement requis. Elle présente deux maximums, le premier peu après le contact initial, le second en fin d'appui." caption="En haut, les deux composantes de la force de réaction du sol sur un appui complet ; en bas, leur rapport à chaque instant : la courbe du coefficient de frottement requis. Elle présente deux maximums, le premier peu après le contact initial, le second en fin d'appui." source="diaporama CM3.2, dia 32." />
+
+Sa forme se lit en deux temps. **Deux maximums** d'abord : le premier peu après le contact initial, le second en fin d'appui, pendant la phase propulsive. Le glissement n'est pas réservé à ces deux instants : il se produit dès que le coefficient de frottement requis dépasse celui des deux surfaces en contact, ce qui peut arriver à n'importe quel moment de l'appui. Mais c'est à ces deux maximums que le contact en est le plus proche, et donc là que le glissement est le plus susceptible de survenir — ce sont les deux instants que la littérature sur les chutes désigne comme critiques[^phases-critiques].
+
+**Et le premier est le plus élevé.** La phase la plus critique de la marche est donc le contact initial du talon, pour deux raisons qui se cumulent, l'une au numérateur, l'autre au dénominateur.
+
+- Le membre inférieur est à son inclinaison maximale : le point de contact est au plus loin devant le centre de masse, et la composante horizontale y est donc élevée.
+- La mise en charge n'est pas achevée : le transfert du poids sur ce pied est en cours, et la composante verticale y est donc encore faible.
+
+Une composante horizontale élevée divisée par une composante verticale faible : le rapport est à son maximum, et c'est là que le risque de glissade est le plus grand. C'est un cas défavorable sur les deux tableaux à la fois — une composante verticale faible abaisse la force de frottement maximale au moment précis où la composante horizontale est la plus forte.
+
+## 4.9.3 Disponible et requis
+
+Deux nombres se font désormais face, de même nature et de statuts opposés. **Chaque pas exige un coefficient de frottement requis** ; **le sol, lui, offre un coefficient de frottement disponible** — celui de la paire de surfaces, lu dans la table du §4.8. Pour une marche à plat, le coefficient de frottement requis atteint environ **0,20** à son maximum[^rcof].
+
+<Figure number="4.13" src="/img/figures/ch4-forces-de-la-marche/fig-4-13-disponible-contre-requis-beton-et-glace.png" alt="La même marcheuse sur deux sols. Sur le béton sec, le coefficient de frottement disponible vaut 1,0 pour un coefficient requis de 0,20 : cinq fois plus que nécessaire. Sur la glace, le disponible tombe à 0,1, soit la moitié du requis." caption="La même marcheuse sur deux sols. Sur le béton sec, le coefficient de frottement disponible vaut 1,0 pour un coefficient requis de 0,20 : cinq fois plus que nécessaire. Sur la glace, le disponible tombe à 0,1, soit la moitié du requis." source="diaporama CM3.2, dias 33 et 34." />
+
+Sur le **béton sec**, le coefficient de frottement disponible vaut 1,0 et le requis 0,20 : le disponible est **cinq fois supérieur** au requis, et le glissement ne peut pas se produire. Sur la **glace**, le disponible vaut 0,1 pour le même requis de 0,20 : il en représente la **moitié**. La demande dépasse l'offre, et les deux surfaces glissent l'une sur l'autre.
+
+D'où la règle, qui tient en une phrase : **pour éviter la glissade, le coefficient de frottement disponible doit être au moins égal au coefficient de frottement requis.** Dès que le requis dépasse le disponible, le glissement se produit.
+
+Reste une dernière question. Le coefficient disponible dépend des surfaces, et la section précédente a montré comment le préserver. Le coefficient requis, lui, dépend de la manière de marcher — c'est l'objet de la section suivante.
+
+<Glossaire>
+  <Terme nom="Coefficient de frottement requis">À chaque instant de l'appui, le coefficient de frottement minimal que le contact entre la semelle et le sol devrait présenter pour que le glissement ne se produise pas. Il se calcule en divisant la composante horizontale de la force de réaction du sol par sa composante verticale, et vaut environ 0,20 au maximum pour une marche à plat.</Terme>
+  <Terme nom="Coefficient de frottement disponible">Le coefficient de frottement de la paire de surfaces réellement en présence, celui que donnent les tables. C'est ce que le contact peut fournir, à opposer à ce que le pas demande.</Terme>
+</Glossaire>
+
+<Capacites>
+  <Capacite>Justifier pourquoi on divise la composante horizontale par la composante verticale, et pourquoi le résultat est comparable à un coefficient de frottement.</Capacite>
+  <Capacite>Définir le coefficient de frottement requis, et expliquer pourquoi sa définition s'énonce au conditionnel.</Capacite>
+  <Capacite>Situer l'instant le plus critique de l'appui, et donner les deux raisons qui s'y cumulent.</Capacite>
+  <Capacite>Énoncer la règle qui décide du glissement, et l'appliquer à un couple de valeurs disponible / requis.</Capacite>
+</Capacites>
+
+<Verification>
+
+  <Reveal index="a." question="À un instant de l'appui, la composante verticale vaut 600 N et la composante horizontale 120 N. Que vaut le coefficient de frottement requis à cet instant ? Le glissement se produit-il sur du béton mouillé ?">
+
+Le coefficient de frottement requis vaut H ÷ V = 120 ÷ 600 = 0,20. Sur du béton mouillé, le coefficient de frottement disponible vaut 0,7 : le disponible est très supérieur au requis, et le glissement ne se produit pas.
+
+  </Reveal>
+
+  <Reveal index="b." question="Pourquoi le contact initial du talon est-il l'instant le plus critique de l'appui, alors que la force de réaction du sol n'y est pas maximale ?">
+
+Parce que le coefficient de frottement requis n'est pas l'intensité de la force de réaction du sol, c'est le rapport de ses deux composantes. Au contact initial, le membre inférieur est à son inclinaison maximale, donc la composante horizontale est élevée ; et la mise en charge n'est pas achevée, donc la composante verticale est encore faible. Un numérateur élevé divisé par un dénominateur faible donne le rapport le plus grand de tout l'appui, alors même que la force totale n'y est pas à son maximum.
+
+  </Reveal>
+
+  <Reveal index="c." question="Deux personnes marchent côte à côte sur le même sol, et l'une glisse, l'autre non. Lequel des deux coefficients diffère nécessairement entre elles, et lequel peut être identique ?">
+
+Le coefficient de frottement requis diffère nécessairement : il dépend de la manière de marcher, et celle qui glisse met en jeu un rapport plus élevé que celle qui ne glisse pas. Le coefficient de frottement disponible peut être identique — même sol —, mais il ne l'est que si les deux personnes portent des semelles de même nature et de même état d'usure : le coefficient appartient à la paire de surfaces, et la semelle en fait partie.
+
+  </Reveal>
+
+</Verification>
+
+[^rcof]: Redfern M. S., Cham R., Gielo-Perczak K., Grönqvist R., Hirvonen M., Lanshammar H., Marpet M., Pai C. Y.-C. & Powers C. (2001), *Biomechanics of slips*, *Ergonomics* 44(13):1138-1166, https://doi.org/10.1080/00140130110085547 (texte payant ; PDF au dossier `litterature/Redfern2001.pdf`), **p. 1142** — verbatim : « One GRF measure that has been used to quantify and understand the biomechanics of slips has been the ratio of shear to normal GRF components. During normal locomotion on dry surfaces, i.e. no-slip conditions, this ratio has been described as the "required coefficient of friction" (RCOF) » ; et, pour la valeur du maximum : « the RCOF has a peak value occurring at about the same time as the peak shear force. This peak value is about 0.20 (McVay and Redfern 1994) ». *Shear* désigne la composante horizontale, *normal* la composante verticale.
+
+[^phases-critiques]: Grönqvist R., Chang W.-R., Courtney T. K., Leamon T. B., Redfern M. S. & Strandberg L. (2001), *Measurement of slipperiness: fundamental concepts and definitions*, *Ergonomics* 44(13):1102-1117, https://doi.org/10.1080/00140130110085529 (texte payant ; PDF au dossier `litterature/Gronqvist et al. (2001).pdf`), **p. 1105** — verbatim : « From the safety point of view, there are two critical gait phases in level walking. First, the early heel contact — when only the rear part of the heel region is in contact with the ground and, second, the moment of toe-off — when there is only sole forepart contact. The heel contact phase is considered to be more challenging for stability and more hazardous from the slipping point of view than the toe-off phase, because the forward momentum maintains the body weight on the leading foot causing a forward slide of the foot ».

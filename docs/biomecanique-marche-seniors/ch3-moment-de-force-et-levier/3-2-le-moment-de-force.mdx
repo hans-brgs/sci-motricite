@@ -1,0 +1,122 @@
+---
+id: 3-2-le-moment-de-force
+title: "3.2 Le moment de force"
+sidebar_label: "3.2 Le moment de force"
+sidebar_position: 2
+slug: /biomecanique-marche-seniors/3-2-le-moment-de-force
+description: "Cette section nomme et définit la cause du mouvement angulaire : le moment de force, défini comme la tendance d'une force à produire une rotation. Elle…"
+hide_title: true
+---
+
+{/* Page générée par `npm run sync` depuis le vault Obsidian.
+    Source : contenu/support-ecrit/support-ecrit-ch3-moment-de-force-et-levier.md
+    Ne pas éditer ici — les modifications seraient écrasées à la prochaine
+    synchronisation. Corriger le chapitre dans le vault, puis resynchroniser. */}
+
+<ChapterHeader
+  title="3.2 Le moment de force"
+  meta={<><Badge tone="violet">Biomécanique</Badge><Badge tone="teal">Cinétique angulaire</Badge><Badge tone="neutral">Section 3.2</Badge><span style={{font:"var(--type-code)",fontSize:12,color:"var(--text-muted)"}}>7 min de lecture</span><span style={{font:"var(--type-code)",fontSize:12,color:"var(--text-muted)"}}>mis à jour le 13 septembre 2026</span></>}
+>
+
+Cette section nomme et définit la cause du mouvement angulaire : le **moment de force**, défini comme la tendance d'une force à produire une rotation. Elle donne ensuite sa formule, M = F × d⊥, et son unité, le newton-mètre. À la fin de cette section, vous devez être capable de définir le moment de force et de savoir l'expliquer, d'écrire sa formule en nommant chaque grandeur avec son unité, et de dire pourquoi une force ne suffit pas à décrire ce qui met un segment en rotation.
+
+</ChapterHeader>
+
+## 3.2.1 La cause de la rotation porte un nom
+
+Ce qui provoque la rotation d'un segment, ce n'est pas la force toute seule. C'est le **moment de force** : la tendance d'une force à produire une rotation d'un corps autour d'un point ou d'un axe[^moment-def].
+
+Le mot « tendance » est à prendre au sérieux : il dit que le moment de force ne décrit pas une rotation qui a lieu, mais la capacité d'une force à en provoquer une. Un moment de force peut donc s'exercer sur un segment qui ne bouge pas — c'est le cas dès qu'un autre moment le compense, situation que la section suivante chiffre sur un exemple.
+
+Le moment de force occupe, pour la rotation, exactement la place que la force occupe pour la translation[^moment-equivalent] :
+
+- une **force** appliquée à un corps est à l'origine de son **accélération linéaire** — c'est la deuxième loi de Newton, F = m·a (§2.8) ;
+- un **moment de force** appliqué à un corps est à l'origine de son **accélération angulaire** — l'accélération angulaire étant la variation de la vitesse angulaire au cours du temps, décrite au chapitre 1 (§1.8).
+
+La case vide du tableau a donc son occupant, et le tableau des deux premiers chapitres est complet :
+
+| | Mouvement linéaire (translation) | Mouvement angulaire (rotation) |
+| --- | --- | --- |
+| **Décrire** — la cinématique (chapitre 1) | distance, vitesse, accélération | angle, vitesse angulaire, accélération angulaire |
+| **Expliquer** — la cinétique (chapitre 2 et chapitre 3) | la force, et les trois lois de Newton | **le moment de force** |
+
+<Admonition kind="note">
+
+Vous rencontrerez la même grandeur sous plusieurs noms. Beaucoup d'ouvrages disent simplement « moment » ; la littérature anglophone dit* torque[^moment-def] *; dans ce cours, on dira toujours **moment de force**.
+
+</Admonition>
+
+## 3.2.2 La formule, et son unité
+
+Le moment de force est égal au produit de deux grandeurs : l'intensité de la force, et la plus courte distance entre l'axe de rotation et la ligne d'action de cette force[^moment-formule].
+
+Un mot sur ce second terme, car il contient une notion nouvelle. La **ligne d'action** d'une force est la droite qui prolonge son vecteur des deux côtés, dans la direction de la force[^ligne-action] : le vecteur force a une longueur, qui représente son intensité (§2.3) ; sa ligne d'action, elle, est infinie et ne retient que la direction. La distance qui entre dans la formule se mesure entre l'axe de rotation et cette droite — c'est la **plus courte** des distances qui les séparent[^d-perp], ce que rappelle le petit symbole ⊥ (« perpendiculaire ») placé en indice.
+
+$$
+M = F \times d_{\perp}
+$$
+
+- $M$ : le moment de force, en newtons-mètres (N·m) ;
+- $F$ : l'intensité de la force, en newtons (N) ;
+- $d_{\perp}$ : la plus courte distance entre l'axe de rotation et la ligne d'action de la force, en mètres (m).
+
+L'unité se retrouve comme celle du newton au chapitre 2 (§2.8.3), en regardant les unités plutôt que les nombres : une force en newtons multipliée par une distance en mètres donne des newtons-mètres. C'est l'unité du moment de force, et elle s'écrit **N·m**[^moment-unite].
+
+Retenez enfin ce que la formule dit, avant même tout calcul : le moment de force dépend de **deux** grandeurs, pas d'une seule. Connaître l'intensité d'une force ne suffit donc pas à savoir ce qu'elle fait tourner, ni à quel point — il faut aussi savoir où elle s'applique par rapport à l'axe. La section suivante rend cette distance visible en la construisant sur un cas concret : un haltère tenu au creux de la main, coude fléchi.
+
+<FurtherReading title="de combien un moment de force fait-il tourner ?">
+
+La formule donne la cause de la rotation ; elle ne dit pas encore de combien de degrés le segment tourne. Le passage complet emprunte le même chemin qu'au chapitre 2, en version angulaire. Le moment résultant appliqué à un corps — la somme de tous les moments qui s'exercent sur lui — est égal au produit de son **moment d'inertie** par son **accélération angulaire** : c'est la deuxième loi de Newton écrite pour la rotation, et elle dit que plus le moment est grand, plus l'accélération angulaire l'est aussi[^loi2-angulaire]. Le moment d'inertie joue ici le rôle que la masse joue dans F = m·a : il mesure la résistance du corps au changement de son état de rotation. Mais il ne dépend pas seulement de la masse : il dépend aussi de **la façon dont cette masse est répartie autour de l'axe** — plus la masse est éloignée de l'axe, plus le moment d'inertie est grand, et plus il est difficile de mettre le corps en rotation[^moment-inertie]. Il en découle directement, pour un segment corporel, que le membre inférieur tendu oppose autour de la hanche un moment d'inertie plus grand que le même membre genou fléchi : la masse de la jambe et du pied y est, en moyenne, plus proche de l'axe. Le reste de la chaîne est celui du chapitre 1 : l'accélération angulaire accumule de la vitesse angulaire, qui accumule de l'angle (§1.8) — autrement dit, le moment de force produit l'accélération angulaire, et l'accélération angulaire produit tout le reste.
+
+</FurtherReading>
+
+<Glossaire>
+  <Terme nom="Moment de force">La tendance d'une force à produire une rotation d'un corps autour d'un point ou d'un axe. Il est égal au produit de l'intensité de la force par la plus courte distance entre l'axe de rotation et la ligne d'action de cette force : M = F × d⊥. Unité : le newton-mètre (N·m).</Terme>
+  <Terme nom="Ligne d'action d'une force">La droite qui prolonge le vecteur force des deux côtés, dans la direction de la force. Elle ne retient que la direction de la force, pas son intensité.</Terme>
+  <Terme nom="Newton-mètre (N·m)">Unité de mesure du moment de force : une force d'un newton dont la ligne d'action passe à un mètre de l'axe de rotation produit un moment de force d'un newton-mètre.</Terme>
+</Glossaire>
+
+<Capacites>
+  <Capacite>Définir le moment de force et savoir l'expliquer : la tendance d'une force à produire une rotation.</Capacite>
+  <Capacite>Énoncer le parallèle avec le chapitre 2 : la force est à l'origine de l'accélération linéaire, le moment de force à l'origine de l'accélération angulaire.</Capacite>
+  <Capacite>Écrire M = F × d⊥ en nommant chaque grandeur et son unité, et retrouver le newton-mètre à partir des unités.</Capacite>
+  <Capacite>Définir la ligne d'action d'une force, et dire entre quels éléments se mesure la distance d⊥.</Capacite>
+</Capacites>
+
+<Verification>
+
+  <Reveal index="a." question="Deux personnes poussent une porte avec la même intensité de force, l'une près de la poignée, l'autre près des charnières. Les deux forces sont identiques : pourquoi leurs effets sur la rotation de la porte ne le sont-ils pas ?">
+
+Parce que le moment de force ne dépend pas seulement de l'intensité de la force, mais aussi de la plus courte distance entre l'axe de rotation — ici, la ligne des charnières — et la ligne d'action de la force. Près de la poignée, cette distance est grande, donc le moment de force est grand et la porte tourne facilement ; près des charnières, la distance est petite, le moment de force est petit, et la même intensité de force ne produit presque rien.
+
+  </Reveal>
+
+  <Reveal index="b." question="Une force de 10 N s'exerce sur un segment ; la plus courte distance entre l'axe de rotation et sa ligne d'action vaut 0,2 m. Calculez le moment de force produit, sans oublier son unité.">
+
+M = F × d⊥ = 10 × 0,2 = 2 N·m.
+
+  </Reveal>
+
+  <Reveal index="c." question="Vrai ou faux : « un segment immobile ne subit aucun moment de force ». Justifiez à partir de la définition.">
+
+Faux. Le moment de force est une *tendance* à produire une rotation, pas une rotation observée. Un segment immobile peut subir plusieurs moments de force qui se compensent : chacun existe bel et bien, et c'est leur effet combiné qui est nul. L'avant-bras qui maintient un haltère sans bouger en est l'exemple traité à la section suivante.
+
+  </Reveal>
+
+</Verification>
+
+[^moment-def]: Baker D. W. & Haynes W., *Engineering Statics: Open and Interactive*, §4.1 *Direction of a Moment* (ressource éducative libre). https://engineeringstatics.org/moment-of-force.html#:~:text=tendency%20of%20that%20force%20to%20rotate%20a%20body — verbatim : « A moment of force, or torque, is a measure of the tendency of that force to rotate a body about a selected point or axis, called the moment center ».
+
+[^moment-equivalent]: OpenStax, *College Physics 2e*, §9.2 *The Second Condition for Equilibrium* (CC BY). https://openstax.org/books/college-physics-2e/pages/9-2-the-second-condition-for-equilibrium#:~:text=the%20rotational%20equivalent%20of%20a%20force — verbatim : « Torque is the rotational equivalent of a force. It is a measure of the effectiveness of a force in changing or accelerating a rotation ».
+
+[^moment-formule]: Baker D. W. & Haynes W., ibid., §4.1. https://engineeringstatics.org/moment-of-force.html#:~:text=multiplying%20the%20magnitude%20of%20the%20force%20by%20the%20distance%20between%20the%20line%20of%20action — verbatim : « The magnitude of a moment is found by multiplying the magnitude of the force by the distance between the line of action of the force and the center of rotation […] This distance called the moment arm or the perpendicular distance, d⊥. M = F d⊥ ». Même formule chez OpenStax §9.2, écrite τ = r⊥F.
+
+[^ligne-action]: Davis L., *Body Physics: Motion to Metabolism*, ch. 55 (Open Oregon Pressbooks, CC BY-NC-SA 4.0). https://openoregon.pressbooks.pub/bodyphysics/chapter/equilibrium-tension-in-the-bicep/#:~:text=draw%20the%20line%20of%20action%20of%20the%20force — verbatim : « first draw the line of action of the force, which just means to extend a line from both ends of the force arrow (vector) in both directions ».
+
+[^d-perp]: Davis L., ibid. https://openoregon.pressbooks.pub/bodyphysics/chapter/equilibrium-tension-in-the-bicep/#:~:text=the%20shortest%20line%20is%20called%20the%20perpendicular%20distance — verbatim : « Next you draw the shortest line that you can from the pivot point to the line of action of the force. This shortest line and the line of action of the force will always be at 90° to each other, so the shortest line is called the perpendicular distance (d⊥) ». Même définition chez OpenStax §9.2 : https://openstax.org/books/college-physics-2e/pages/9-2-the-second-condition-for-equilibrium#:~:text=the%20shortest%20distance%20from%20the%20pivot%20point%20to%20the%20line — verbatim : « the shortest distance from the pivot point to the line along which F acts ».
+
+[^moment-unite]: OpenStax, *College Physics 2e*, §9.2. https://openstax.org/books/college-physics-2e/pages/9-2-the-second-condition-for-equilibrium#:~:text=newtons%20times%20meters — verbatim : « The SI unit of torque is newtons times meters, usually written as N·m ».
+
+[^loi2-angulaire]: OpenStax, *College Physics 2e*, §10.3 *Dynamics of Rotational Motion: Rotational Inertia* (CC BY). https://openstax.org/books/college-physics-2e/pages/10-3-dynamics-of-rotational-motion-rotational-inertia#:~:text=The%20larger%20the%20torque%20is%2C%20the%20larger%20the%20angular%20acceleration%20is — verbatim : « The larger the torque is, the larger the angular acceleration is ». La relation s'écrit net τ = Iα, avec I le moment d'inertie.
+
+[^moment-inertie]: OpenStax, ibid. https://openstax.org/books/college-physics-2e/pages/10-3-dynamics-of-rotational-motion-rotational-inertia#:~:text=depends%20not%20only%20on%20the%20mass%20of%20an%20object — verbatim : « The moment of inertia depends not only on the mass of an object, but also on its distribution of mass relative to the axis around which it rotates », illustré par un manège : « it will be much easier to accelerate a merry-go-round full of children if they stand close to its axis than if they all stand at the outer edge ».

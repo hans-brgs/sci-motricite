@@ -1,0 +1,169 @@
+---
+id: quiz
+title: "Quiz d'entraînement — Moment de force et levier"
+sidebar_label: "Quiz d'entraînement"
+sidebar_position: 99
+slug: /biomecanique-marche-seniors/ch3-moment-de-force-et-levier/quiz
+description: "12 questions pour vérifier ce que vous retenez du chapitre. Entraînement, corrigé, sans note."
+---
+
+{/* Page générée par `npm run sync` depuis le vault Obsidian.
+    Source : contenu/evaluation/quiz-ch3-moment-de-force-et-levier.md
+    Ne pas éditer ici — les modifications seraient écrasées à la prochaine
+    synchronisation. Corriger le chapitre dans le vault, puis resynchroniser. */}
+
+<SectionLead label="Comment s'en servir">
+
+Répondez à toutes les questions, puis demandez la correction : vous verrez
+votre score, la bonne réponse à chaque question et pourquoi c'est celle-là.
+Rien n'est enregistré, rien n'est noté — recommencez autant de fois que vous
+voulez. Ces questions sont un **entraînement** : elles ne sont pas celles de
+l'examen.
+
+</SectionLead>
+
+<QuizSet>
+  <QuizItem question="Pourquoi la rotation est-elle le régime normal du mouvement dans le corps humain ?" renvoi="3.1" href="/cours/biomecanique-marche-seniors/3-1-la-case-qui-manque-qu-est-ce-qui-provoque-la-rotation">
+    <QuizOption>Parce que les muscles tirent toujours en décrivant un arc de cercle</QuizOption>
+    <QuizOption correct>Parce que chaque segment est tenu par une articulation, autour de laquelle il ne peut qu'effectuer une rotation</QuizOption>
+    <QuizOption>Parce que le corps humain se déplace rarement en ligne droite</QuizOption>
+    <QuizOption>Parce que les grandeurs angulaires sont plus faciles à mesurer que les grandeurs linéaires</QuizOption>
+    <QuizExplanation>
+
+**Justification.** L'argument est mécanique, pas descriptif : les os se comportent comme des **leviers rigides** et les articulations comme les **pivots** autour desquels ils tournent. Par rapport à l'articulation qui le tient, un segment ne peut pas se translater — il ne peut que tourner. C'est bien pour cela que la marche, translation en ligne droite du corps entier, est **produite** par des rotations : la cuisse autour de la hanche, la jambe autour du genou. Retirez l'avancée du corps de la trajectoire de la cheville, et il ne reste qu'une boucle fermée.
+
+    </QuizExplanation>
+  </QuizItem>
+
+  <QuizItem question="Qu'est-ce que le moment de force ?" renvoi="3.2" href="/cours/biomecanique-marche-seniors/3-2-le-moment-de-force">
+    <QuizOption>La rotation qu'une force fait effectivement subir à un corps</QuizOption>
+    <QuizOption>La force qu'un muscle doit produire pour faire tourner un segment</QuizOption>
+    <QuizOption>La vitesse à laquelle un segment tourne autour de son articulation</QuizOption>
+    <QuizOption correct>La tendance d'une force à produire une rotation d'un corps autour d'un point ou d'un axe</QuizOption>
+    <QuizExplanation>
+
+**Justification.** Le mot **tendance** est à prendre au sérieux : le moment de force ne décrit pas une rotation qui a lieu, mais la capacité d'une force à en provoquer une. C'est pourquoi un moment de force peut parfaitement s'exercer sur un segment immobile — dès qu'un autre moment le compense, comme le biceps qui retient l'haltère. Le moment de force n'est pas non plus une force : c'est le produit d'une force par une distance, en newtons-mètres. Il occupe, pour la rotation, la place que la force occupe pour la translation — il est à l'origine de l'**accélération angulaire**.
+
+    </QuizExplanation>
+  </QuizItem>
+
+  <QuizItem question="Entre quels éléments se mesure la distance d⊥ de la formule M = F × d⊥ ?" renvoi="3.2" href="/cours/biomecanique-marche-seniors/3-2-le-moment-de-force">
+    <QuizOption correct>Entre l'axe de rotation et la ligne d'action de la force</QuizOption>
+    <QuizOption>Entre l'axe de rotation et le point d'application de la force</QuizOption>
+    <QuizOption>Entre le point d'application de la force et l'extrémité du segment</QuizOption>
+    <QuizOption>Entre les deux extrémités du vecteur force</QuizOption>
+    <QuizExplanation>
+
+**Justification.** La **ligne d'action** d'une force est la droite qui prolonge son vecteur des deux côtés : elle est infinie et ne retient que la direction, pas l'intensité. C'est d'elle, et non du point d'application, que se mesure la distance — et c'est la **plus courte** de toutes celles qui la séparent de l'axe, ce que rappelle le symbole ⊥. La confusion avec le point d'application est le piège de la section : les deux distances ne coïncident que si le segment est perpendiculaire à la ligne d'action.
+
+    </QuizExplanation>
+  </QuizItem>
+
+  <QuizItem question="Une force de 20 N s'exerce sur un segment ; la plus courte distance entre l'axe de rotation et sa ligne d'action vaut 0,30 m. Que vaut le moment de force ?" renvoi="3.2" href="/cours/biomecanique-marche-seniors/3-2-le-moment-de-force">
+    <QuizOption>20 N·m</QuizOption>
+    <QuizOption>0,015 N·m</QuizOption>
+    <QuizOption correct>6 N·m</QuizOption>
+    <QuizOption>6 N</QuizOption>
+    <QuizExplanation>
+
+**Justification.** `M = F × d⊥ = 20 × 0,30 = 6`, et l'unité se retrouve en regardant les unités plutôt que les nombres : des newtons multipliés par des mètres donnent des **newtons-mètres (N·m)**. Répondre `6 N` revient à donner un moment de force pour une force : ce sont deux grandeurs distinctes, et c'est justement ce que la formule enseigne — connaître l'intensité d'une force ne suffit pas à savoir ce qu'elle fait tourner. `0,015` est la division inversée.
+
+    </QuizExplanation>
+  </QuizItem>
+
+  <QuizItem question="Un haltère est tenu dans la main, coude fléchi, l'avant-bras incliné à 45° au-dessus de l'horizontale. Pourquoi le bras de levier de l'haltère ne vaut-il pas la longueur de l'avant-bras ?" renvoi="3.3" href="/cours/biomecanique-marche-seniors/3-3-le-calcul-sur-l-haltere-les-deux-premieres-lois-cote-rotation">
+    <QuizOption>Parce que l'haltère est tenu au creux de la main, un peu en avant de l'extrémité de l'avant-bras</QuizOption>
+    <QuizOption correct>Parce que l'avant-bras n'est pas perpendiculaire à la ligne d'action du poids : la perpendiculaire commune est alors plus courte que le segment</QuizOption>
+    <QuizOption>Parce qu'il faut retrancher de la longueur de l'avant-bras la distance qui sépare le coude de l'insertion du biceps</QuizOption>
+    <QuizOption>Parce que le bras de levier se mesure toujours entre l'axe et le centre de masse du segment</QuizOption>
+    <QuizExplanation>
+
+**Justification.** Le bras de levier se construit en trois traits : la **ligne d'action** du poids, verticale ; la **parallèle** à cette ligne passant par le coude ; la **perpendiculaire** commune, dont la longueur est d⊥. Sur l'avant-bras long de 35 cm incliné à 45°, cette perpendiculaire mesure 25 cm. Les deux valeurs ne seraient égales que si l'avant-bras était exactement **horizontal**, donc perpendiculaire au poids. Dans toutes les autres positions, d⊥ est plus courte que le segment : elle se construit sur le dessin, elle ne se déduit pas de la longueur du membre.
+
+    </QuizExplanation>
+  </QuizItem>
+
+  <QuizItem question="Que signifie exactement « le moment résultant qui s'exerce sur un segment est nul » ?" renvoi="3.3" href="/cours/biomecanique-marche-seniors/3-3-le-calcul-sur-l-haltere-les-deux-premieres-lois-cote-rotation">
+    <QuizOption>Qu'aucun moment de force ne s'exerce sur ce segment</QuizOption>
+    <QuizOption>Que le segment est nécessairement immobile</QuizOption>
+    <QuizOption>Que le segment tourne à vitesse angulaire nulle, donc qu'il va s'arrêter</QuizOption>
+    <QuizOption correct>Que l'état de rotation du segment ne change pas : il reste au repos, ou poursuit sa rotation à vitesse angulaire constante</QuizOption>
+    <QuizExplanation>
+
+**Justification.** C'est la première loi de Newton, écrite avec des moments de force — et le piège de formulation est exactement celui du chapitre 2. Un moment résultant nul ne veut pas dire « rien ne tourne », mais « l'**état** de rotation ne change pas » : un avant-bras déjà en rotation à vitesse angulaire constante poursuivrait sa rotation. Il ne veut pas dire non plus qu'aucun moment ne s'exerce : sur l'avant-bras qui tient l'haltère, deux moments importants se compensent — 12 N·m de chaque côté — et leur somme est nulle sans qu'aucun des deux ne soit nul.
+
+    </QuizExplanation>
+  </QuizItem>
+
+  <QuizItem question="Pourquoi la force que le bras exerce sur l'avant-bras, au niveau du coude, n'apparaît-elle pas dans le bilan des moments pris autour du coude ?" renvoi="3.3" href="/cours/biomecanique-marche-seniors/3-3-le-calcul-sur-l-haltere-les-deux-premieres-lois-cote-rotation">
+    <QuizOption correct>Parce que sa ligne d'action passe par l'axe de rotation : son bras de levier est nul, donc son moment aussi</QuizOption>
+    <QuizOption>Parce qu'elle est interne au corps étudié, et qu'un bilan de moments ne retient que les forces externes</QuizOption>
+    <QuizOption>Parce qu'elle forme avec le poids de l'avant-bras une paire action-réaction, et que les deux s'annulent</QuizOption>
+    <QuizOption>Parce que son intensité est négligeable devant celle du poids de l'haltère</QuizOption>
+    <QuizExplanation>
+
+**Justification.** C'est une conséquence directe de la formule : `M = F × d⊥`, et si d⊥ vaut zéro, le moment vaut zéro quelle que soit l'intensité de la force — laquelle est loin d'être négligeable. Une **force articulaire** n'apparaît donc jamais dans un bilan de moments pris autour de son articulation. Attention à la troisième proposition : le poids de l'avant-bras et la traction du biceps ne forment pas non plus une paire action-réaction, puisqu'ils s'exercent tous deux sur le même corps, l'avant-bras.
+
+    </QuizExplanation>
+  </QuizItem>
+
+  <QuizItem question="Bras tendu à l'horizontale, un sac est accroché au pli du coude, puis tenu dans la main. Qu'est-ce qui a changé entre les deux essais ?" renvoi="3.4" href="/cours/biomecanique-marche-seniors/3-4-le-bras-de-levier">
+    <QuizOption>Le poids du sac, qui s'applique plus loin du corps et pèse donc davantage</QuizOption>
+    <QuizOption>Le pivot de la rotation, qui passe de l'épaule au coude</QuizOption>
+    <QuizOption correct>Le bras de levier du poids du sac par rapport à l'épaule, qui passe d'environ 26 cm à environ 52 cm</QuizOption>
+    <QuizOption>Le bras de levier des muscles de l'épaule, qui diminue de moitié</QuizOption>
+    <QuizExplanation>
+
+**Justification.** C'est ce qui rend l'expérience concluante : **une seule chose** varie. La force appliquée par le sac est rigoureusement identique — c'est son poids, et sa masse n'a pas changé. Le pivot reste l'épaule dans les deux essais, et le bras de levier des muscles de l'épaule ne bouge pas non plus, puisque la position du bras est la même. Seule la distance entre l'épaule et la ligne d'action du poids double, et avec elle le moment de force du sac.
+
+    </QuizExplanation>
+  </QuizItem>
+
+  <QuizItem question="Dans cette même expérience du sac, pourquoi peut-on affirmer que les muscles de l'épaule ont produit un moment deux fois plus grand au second essai ?" renvoi="3.4" href="/cours/biomecanique-marche-seniors/3-4-le-bras-de-levier">
+    <QuizOption>Parce qu'on ressent nettement l'effort doubler entre les deux essais</QuizOption>
+    <QuizOption correct>Parce que le bras est resté à l'horizontale dans les deux essais : rien n'a tourné, les moments s'équilibraient donc, et celui à compenser a doublé</QuizOption>
+    <QuizOption>Parce que le moment produit par un muscle est toujours proportionnel à la distance qui sépare la charge de l'articulation</QuizOption>
+    <QuizOption>Parce que la force du sac a doublé, et que le moment musculaire suit la force qu'il compense</QuizOption>
+    <QuizExplanation>
+
+**Justification.** L'argument est la condition d'équilibre, pas la sensation — la sensation confirme, elle ne démontre pas. Le bras est resté à l'horizontale : l'état de rotation n'a pas changé, donc le moment résultant était nul, donc le moment musculaire égalait à chaque essai celui qu'il devait compenser. Ce dernier ayant doublé, le moment musculaire a doublé — et comme le bras de levier des muscles, lui, n'a pas changé, leur **force** a doublé elle aussi. Notez que la force du sac, elle, n'a jamais varié : c'est tout l'intérêt du dispositif.
+
+    </QuizExplanation>
+  </QuizItem>
+
+  <QuizItem question="Vous montez sur la pointe des pieds. De quelle classe de levier s'agit-il, et pourquoi ?" renvoi="3.5" href="/cours/biomecanique-marche-seniors/3-5-le-levier-et-ses-trois-classes">
+    <QuizOption>Première classe : le pivot, à l'avant du pied, se trouve entre le talon et la charge</QuizOption>
+    <QuizOption>Troisième classe : la force motrice des fléchisseurs plantaires s'applique entre le pivot et la résistance</QuizOption>
+    <QuizOption>Deuxième classe : la force motrice se trouve entre le pivot et la résistance</QuizOption>
+    <QuizOption correct>Deuxième classe : la résistance — le poids du corps, qui descend par la cheville — se trouve entre le pivot et la force motrice</QuizOption>
+    <QuizExplanation>
+
+**Justification.** Une seule chose sépare les trois classes : lequel des trois éléments occupe le **milieu**. Ici, le pivot est à l'avant du pied, sous l'appui au sol ; la force motrice est la traction des **fléchisseurs plantaires**, les mollets, qui tirent le talon vers le haut ; et entre les deux, à la cheville, arrive la résistance. Résistance au milieu : **deuxième classe**. La troisième proposition donne la bonne classe avec la mauvaise définition — c'est la position de la résistance, pas celle de la force motrice, qui caractérise la deuxième classe.
+
+    </QuizExplanation>
+  </QuizItem>
+
+  <QuizItem question="Qu'est-ce qui distingue, et cela seulement, les trois classes de leviers ?" renvoi="3.5" href="/cours/biomecanique-marche-seniors/3-5-le-levier-et-ses-trois-classes">
+    <QuizOption correct>Lequel des trois éléments — pivot, force motrice, résistance — se trouve entre les deux autres</QuizOption>
+    <QuizOption>Le rapport entre l'intensité de la force motrice et celle de la résistance</QuizOption>
+    <QuizOption>La nature du pivot : articulation, appui au sol, ou charnière mécanique</QuizOption>
+    <QuizOption>Le sens de la rotation que la force motrice tend à produire</QuizOption>
+    <QuizExplanation>
+
+**Justification.** Tout levier — un corps rigide en rotation autour d'un axe — comporte les trois mêmes éléments : le **pivot**, la **force motrice** qui produit la rotation, la **résistance** qui s'y oppose. Seule leur position relative varie : pivot au milieu pour la première classe (la tête sur la première vertèbre), résistance au milieu pour la deuxième (la montée sur la pointe des pieds), force motrice au milieu pour la troisième (le curl) — la plus répandue dans le corps humain, parce que les muscles s'insèrent en général près de l'articulation qu'ils mobilisent. Les intensités en jeu sont une **conséquence** de la disposition, pas le critère de classement.
+
+    </QuizExplanation>
+  </QuizItem>
+
+  <QuizItem question="Un muscle doit produire un moment de force de 10 N·m, et son bras de levier vaut 0,05 m. Quelle force développe-t-il ?" renvoi="3.6" href="/cours/biomecanique-marche-seniors/3-6-les-deux-bras-de-levier-du-coude-ce-que-la-position-coute-au-muscle">
+    <QuizOption>0,5 N</QuizOption>
+    <QuizOption>20 N</QuizOption>
+    <QuizOption correct>200 N</QuizOption>
+    <QuizOption>200 N·m</QuizOption>
+    <QuizExplanation>
+
+**Justification.** Le moment à produire est connu, le bras de levier aussi : la force est le quotient des deux — `F = M / d⊥ = 10 / 0,05 = 200 N`. Le résultat illustre le **désavantage mécanique** du corps humain : un bras de levier court oblige à une force élevée pour produire un moment donné. C'est le cas du biceps, qui travaille avec 4 cm quand la charge dispose de 25 — six fois moins de bras de levier, donc six fois plus de force : 300 N pour un haltère qui n'en exerce que 49. `0,5` est le produit au lieu du quotient ; `200 N·m` confond la force avec le moment.
+
+    </QuizExplanation>
+  </QuizItem>
+</QuizSet>

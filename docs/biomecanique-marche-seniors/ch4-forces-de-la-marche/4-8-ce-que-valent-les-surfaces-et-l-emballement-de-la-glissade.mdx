@@ -1,0 +1,109 @@
+---
+id: 4-8-ce-que-valent-les-surfaces-et-l-emballement-de-la-glissade
+title: "4.8 Ce que valent les surfaces, et l'emballement de la glissade"
+sidebar_label: "4.8 Ce que valent les surfaces, et l'emballement de la glissade"
+sidebar_position: 8
+slug: /biomecanique-marche-seniors/4-8-ce-que-valent-les-surfaces-et-l-emballement-de-la-glissade
+description: "Le coefficient de frottement se mesure en laboratoire pour une paire de surfaces donnée, et les valeurs obtenues sont tabulées : quatre d'entre elles…"
+hide_title: true
+---
+
+{/* Page générée par `npm run sync` depuis le vault Obsidian.
+    Source : contenu/support-ecrit/support-ecrit-ch4-forces-de-la-marche.md
+    Ne pas éditer ici — les modifications seraient écrasées à la prochaine
+    synchronisation. Corriger le chapitre dans le vault, puis resynchroniser. */}
+
+<ChapterHeader
+  title="4.8 Ce que valent les surfaces, et l'emballement de la glissade"
+  meta={<><Badge tone="violet">Biomécanique</Badge><Badge tone="teal">Marche</Badge><Badge tone="neutral">Section 4.8</Badge><span style={{font:"var(--type-code)",fontSize:12,color:"var(--text-muted)"}}>5 min de lecture</span><span style={{font:"var(--type-code)",fontSize:12,color:"var(--text-muted)"}}>mis à jour le 15 septembre 2026</span></>}
+>
+
+Le coefficient de frottement se mesure en laboratoire pour une paire de surfaces donnée, et les valeurs obtenues sont tabulées : quatre d'entre elles suffisent à situer la marche. Cette section lit cette table, montre que chaque paire de surfaces possède deux coefficients selon qu'elle glisse ou non, et en tire l'explication mécanique d'un fait que tout le monde a constaté : une glissade ne se rattrape pas. À la fin de cette section, vous devez être capable de lire une table de coefficients, de calculer la force de frottement maximale d'un contact, et d'expliquer pourquoi le glissement, une fois commencé, s'entretient.
+
+</ChapterHeader>
+
+## 4.8.1 Quatre paires de surfaces
+
+Les coefficients de frottement se mesurent en laboratoire, paire de surfaces par paire de surfaces, puis se consultent dans des tables[^table-coefficients]. En voici quatre lignes, qui suffisent à situer la marche.
+
+| Paire de surfaces | μ statique | μ cinétique |
+| --- | --- | --- |
+| Caoutchouc sur béton sec | 1,0 | 0,7 |
+| Caoutchouc sur béton mouillé | 0,7 | 0,5 |
+| Chaussures sur glace | 0,1 | 0,05 |
+| Os lubrifié par le liquide synovial | 0,016 | 0,015 |
+
+Lisons d'abord la colonne du frottement statique, celle de l'appui.
+
+**Caoutchouc sur béton sec : 1,0.** C'est la semelle sur le trottoir, et la valeur est remarquable : pour 100 N de force normale, le contact peut opposer jusqu'à 100 N de frottement avant que le glissement ne se produise. Autant qu'il reçoit.
+
+**Caoutchouc sur béton mouillé : 0,7.** Même paire de surfaces, l'eau en plus — et le coefficient baisse d'un tiers sans que rien d'autre ait changé.
+
+**Chaussures sur glace : 0,1.** Dix fois moins que sur le béton sec. Pour 100 N de force normale, le contact n'oppose plus que 10 N avant de glisser : c'est le §4.6.3 en chiffres.
+
+**Os lubrifié par le liquide synovial : 0,016.** La valeur la plus basse de la table, plus de six fois plus faible que la glace. Le frottement, indispensable au contact du sol, est au contraire combattu à l'intérieur d'une articulation, où il faut que les surfaces glissent l'une sur l'autre le plus librement possible. Même grandeur, deux rôles opposés selon l'endroit du corps.
+
+## 4.8.2 Deux coefficients par paire de surfaces
+
+La table donne deux valeurs par ligne, et la seconde colonne est celle du frottement cinétique : le coefficient qui s'applique une fois que les surfaces glissent. Il est **systématiquement plus bas** que le statique[^kinetique-plus-bas].
+
+Les deux régimes s'écrivent d'ailleurs différemment, et l'écriture porte toute la différence. Le frottement statique s'ajuste à ce qu'on lui demande, jusqu'à sa valeur maximale : c'est une inégalité.
+
+$$
+f_s \leq \mu_s \times N
+$$
+
+Une fois le glissement engagé, le frottement ne s'ajuste plus : il vaut le produit, et rien d'autre. C'est une égalité[^regimes].
+
+$$
+f_k = \mu_k \times N
+$$
+
+Les indices *s* et *k* distinguent les deux régimes, statique et cinétique. Et la règle de prudence qui en découle vaut d'être retenue : n'écrivez jamais $f = \mu \times N$ pour l'appui pendant la marche. Cette égalité est celle du régime cinétique, c'est-à-dire d'un pied qui glisse déjà — or pendant l'appui, le pied ne glisse pas (§4.6.2).
+
+## 4.8.3 Pourquoi une glissade ne se rattrape pas
+
+Vous avez déjà senti cette chute du coefficient, sur votre table. Repensez à votre main : au seuil, elle n'est pas partie doucement, elle est partie d'un coup. Votre poussée n'avait pas brusquement augmenté — c'est le coefficient qui est retombé à l'instant du décrochage. La force que vous appliquiez, tout juste suffisante pour atteindre la limite, est devenue plus que suffisante dès le passage en régime cinétique ; et pour entretenir le glissement, il en fallait désormais moins.
+
+Reportez cela sur un pas qui dérape. La composante horizontale que le pas met en jeu, elle, ne baisse pas. Mais le coefficient s'effondre d'un cran à l'instant précis où le glissement commence, et la force de frottement maximale avec lui. Pour reprendre appui, il faudrait justement une force que le contact ne peut plus fournir. **Une glissade n'est pas un événement, c'est un emballement** : le glissement, une fois commencé, rend son propre arrêt plus difficile.
+
+<Application title="ce que vous pouvez observer">
+
+Quand vous encadrez une séance, les chaussures se regardent avant qu'elle commence, et sur deux points. L'**état d'usure** d'abord : une semelle devenue lisse n'a plus grand-chose à engager dans les reliefs du sol, et son coefficient de frottement a baissé d'autant. La **compatibilité de la semelle avec la surface** ensuite, et c'est le point le plus souvent négligé : un coefficient appartient à une paire de surfaces, jamais à une chaussure seule, si bien qu'une semelle qui convient parfaitement à un sol de salle peut ne pas convenir dehors. Des chaussures d'intérieur, souvent lisses, ne sont pas des chaussures de balade en forêt. Le sol se regarde de la même façon : mouillé, c'est la ligne « béton mouillé » au lieu de « béton sec ». Ce sont des observations que vous pouvez faire et signaler à l'équipe : de la mécanique, et de la prévention.
+
+</Application>
+
+<Capacites>
+  <Capacite>Lire une table de coefficients de frottement, et dire pourquoi chaque ligne nomme deux surfaces.</Capacite>
+  <Capacite>Calculer la force de frottement maximale d'un contact à partir du coefficient et de la force normale.</Capacite>
+  <Capacite>Écrire les deux régimes, statique et cinétique, et dire ce que l'inégalité et l'égalité signifient.</Capacite>
+  <Capacite>Expliquer mécaniquement pourquoi une glissade s'entretient une fois commencée.</Capacite>
+</Capacites>
+
+<Verification>
+
+  <Reveal index="a." question="Une personne est en appui, la composante normale sous son pied vaut 700 N. Quelle force de frottement maximale le contact peut-il opposer sur du béton sec, puis sur de la glace ?">
+
+Sur du béton sec, μ_s = 1,0 : f_max = 1,0 × 700 = 700 N. Sur de la glace, μ_s = 0,1 : f_max = 0,1 × 700 = 70 N. Le contact au sol peut donc opposer dix fois moins de frottement sur la glace, à force normale identique — et la composante horizontale disponible pour avancer est plafonnée d'autant.
+
+  </Reveal>
+
+  <Reveal index="b." question="Au moment où le pied commence à glisser sur du béton mouillé, qu'advient-il de la force de frottement maximale, et pourquoi la glissade est-elle alors difficile à interrompre ?">
+
+Elle chute, parce que le coefficient passe de sa valeur statique, 0,7, à sa valeur cinétique, 0,5 : à force normale égale, la force de frottement maximale perd près d'un tiers. La glissade est difficile à interrompre parce que la composante horizontale mise en jeu par le pas, elle, n'a pas baissé : au moment où il faudrait davantage de frottement pour reprendre appui, le contact en fournit moins qu'avant. Le glissement rend son propre arrêt plus difficile.
+
+  </Reveal>
+
+  <Reveal index="c." question="Le coefficient le plus bas de la table est celui de l'articulation. Est-ce un défaut de conception du corps humain ? Justifiez.">
+
+Non, c'est l'inverse : c'est une adaptation. Au contact du sol, le frottement est indispensable — sans lui, aucune composante horizontale, donc aucune progression. À l'intérieur d'une articulation, les surfaces doivent au contraire glisser l'une sur l'autre le plus librement possible, et un coefficient très bas est exactement ce qu'il faut. La même grandeur physique remplit deux rôles opposés selon l'endroit du corps où on l'observe.
+
+  </Reveal>
+
+</Verification>
+
+[^table-coefficients]: Hamm K., *Biomechanics of Human Movement* (OpenStax / BCcampus, CC BY), §6.6 *Friction*, tableau *Coefficients of Static and Kinetic Friction*. https://pressbooks.bccampus.ca/humanbiomechanics/chapter/5-1-friction-2/#:~:text=Rubber%20on%20dry%20concrete — les quatre lignes citées y figurent telles quelles : « Rubber on dry concrete » 1,0 et 0,7 ; « Rubber on wet concrete » 0,7 et 0,5 ; « Shoes on ice » 0,1 et 0,05 ; « Bone lubricated by synovial fluid » 0,016 et 0,015. Le tableau en donne une dizaine d'autres.
+
+[^kinetique-plus-bas]: Hamm K., ibid. https://pressbooks.bccampus.ca/humanbiomechanics/chapter/5-1-friction-2/#:~:text=The%20coefficients%20of%20kinetic%20friction%20are%20less%20than%20their%20static%20counterparts — verbatim : « The coefficients of kinetic friction are less than their static counterparts ».
+
+[^regimes]: OpenStax, *College Physics 2e*, §5.1 *Friction* (CC BY), les deux écritures. Régime statique : https://openstax.org/books/college-physics-2e/pages/5-1-friction#:~:text=the%20magnitude%20of%20static%20friction — verbatim : « When there is no motion between the objects, the magnitude of static friction fs is fs ≤ μsN, where μs is the coefficient of static friction ». Régime cinétique : https://openstax.org/books/college-physics-2e/pages/5-1-friction#:~:text=the%20magnitude%20of%20kinetic%20friction — verbatim : « Once an object is moving, the magnitude of kinetic friction fk is given by fk = μkN, where μk is the coefficient of kinetic friction ». L'inégalité d'un côté, l'égalité de l'autre : c'est toute la différence entre un frottement qui s'ajuste et un frottement qui ne s'ajuste plus.

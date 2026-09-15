@@ -1,0 +1,120 @@
+---
+id: 3-4-le-bras-de-levier
+title: "3.4 Le bras de levier"
+sidebar_label: "3.4 Le bras de levier"
+sidebar_position: 4
+slug: /biomecanique-marche-seniors/3-4-le-bras-de-levier
+description: "La formule M = F × d⊥ contient deux grandeurs : il y a donc deux manières d'augmenter un moment de force — augmenter l'intensité de la force, ou…"
+hide_title: true
+---
+
+{/* Page générée par `npm run sync` depuis le vault Obsidian.
+    Source : contenu/support-ecrit/support-ecrit-ch3-moment-de-force-et-levier.md
+    Ne pas éditer ici — les modifications seraient écrasées à la prochaine
+    synchronisation. Corriger le chapitre dans le vault, puis resynchroniser. */}
+
+<ChapterHeader
+  title="3.4 Le bras de levier"
+  meta={<><Badge tone="violet">Biomécanique</Badge><Badge tone="teal">Cinétique angulaire</Badge><Badge tone="neutral">Section 3.4</Badge><span style={{font:"var(--type-code)",fontSize:12,color:"var(--text-muted)"}}>7 min de lecture</span><span style={{font:"var(--type-code)",fontSize:12,color:"var(--text-muted)"}}>mis à jour le 13 septembre 2026</span></>}
+>
+
+La formule M = F × d⊥ contient deux grandeurs : il y a donc deux manières d'augmenter un moment de force — augmenter l'intensité de la force, ou l'appliquer plus loin de l'axe de rotation. Cette seconde distance porte un nom, le **bras de levier**, et cette section le définit puis le fait éprouver par une expérience simple, un sac tenu au coude puis à bout de bras. À la fin de cette section, vous devez être capable de définir le bras de levier d'une force, de citer les deux manières d'augmenter un moment de force, et d'expliquer pourquoi déplacer une charge sans changer son poids change ce que les muscles doivent produire.
+
+</ChapterHeader>
+
+## 3.4.1 Deux manières d'augmenter un moment de force
+
+Reprenez la formule : un moment de force est le produit d'une force par une distance. Puisque le résultat dépend de deux facteurs, il y a exactement deux manières de l'augmenter.
+
+- **Augmenter l'intensité de la force.** Dans le calcul de la section précédente, un haltère plus lourd aurait appliqué sur l'avant-bras une force plus importante, donc produit un moment de force plus grand — avec un haltère de 10 kg au lieu de 5, à la même position, le moment passerait de 12 à environ 24 N·m.
+- **Appliquer la force plus loin de l'axe de rotation.** À force égale, plus la ligne d'action de la force s'éloigne de l'axe, plus le moment est grand.
+
+Cette seconde distance, utilisée depuis le début du chapitre sous le nom de d⊥ et construite en trois traits sur le curl (§3.3.2), porte un nom : c'est le **bras de levier** de la force. Le **bras de levier** d'une force est la distance, mesurée perpendiculairement, entre la ligne d'action de cette force et la droite parallèle à cette ligne d'action qui passe par l'axe de rotation — autrement dit, la plus courte distance qui sépare l'axe de rotation de la ligne d'action[^bras-de-levier].
+
+<Admonition kind="note">
+
+Les manuels emploient aussi « bras du moment », traduction directe de l'anglais* moment arm*, et parfois « bras de force ». Les trois désignent la même distance ; dans ce cours, on dira toujours* bras de levier*.
+
+</Admonition>
+
+La formule s'écrit donc, avec le mot à la place du symbole : **moment de force = force × bras de levier**. Et les deux manières d'augmenter un moment deviennent lisibles d'un coup : agir sur la force, ou agir sur le bras de levier. La première, vous savez déjà la calculer. La seconde se sent mieux qu'elle ne se démontre — d'où l'expérience qui suit.
+
+## 3.4.2 L'expérience du sac
+
+Prenez un sac d'environ 2 à 4 kg, puis faites successivement les deux essais suivants, une dizaine de secondes chacun.
+
+1. **Essai 1** — tendez un bras sur le côté, à l'horizontale, et accrochez le sac au pli du coude, la sangle posée au creux du bras.
+2. **Essai 2** — tenez le même sac à bout de main, bras toujours tendu à l'horizontale.
+
+<Ressource>
+
+Visionnez l'animation « L'expérience du sac » : le protocole y est présenté en entier — le bras tendu à l'horizontale, le sac accroché au pli du coude, puis le même sac tenu dans la main.
+
+<Animation src="/video/bras_levier_sac_S1_protocole_0001-0690.mp4" ratio="1200 / 1256" title="L'expérience du sac" />
+
+</Ressource>
+
+Vous aurez sûrement ressenti que le second essai vous a demandé plus de force de la part de vos muscles pour maintenir le bras à l'horizontale — et, si vous avez tenu la position, que le bras redescend nettement plus vite au second essai.
+
+## 3.4.3 Ce que l'expérience isole
+
+<Ressource>
+
+Visionnez l'animation « L'expérience du sac, expliquée » : le bras de levier du poids du sac est tracé et coté dans les deux situations, le moment de force est calculé pour chacune, et une flèche marque le facteur deux — le moment du sac ayant doublé, les muscles de l'épaule doivent produire un moment deux fois plus grand.
+
+<Animation src="/video/bras_levier_sac_S2_lecture_0691-1890.mp4" ratio="1200 / 1256" title="L'expérience du sac, expliquée" />
+
+</Ressource>
+
+Une seule chose a changé entre les deux essais, et c'est ce qui rend l'expérience concluante. La force appliquée par le sac est identique dans les deux cas : c'est son poids, et sa masse n'a pas changé. Ce qui a changé, c'est **uniquement** la distance entre l'axe de rotation — votre épaule — et la ligne d'action du poids du sac, c'est-à-dire son bras de levier. Au pli du coude, il valait environ 26 cm ; dans la main, environ 52 cm. Il a donc doublé.
+
+<Figure number="3.3" src="/img/figures/ch3-moment-de-force-et-levier/fig-3-03-sac-au-coude-et-dans-la-main.png" alt="Les deux essais côte à côte : même axe de rotation à l'épaule, flèche du poids du sac rigoureusement identique, et un bras de levier qui passe de 26 cm, sac au pli du coude, à 52 cm, sac dans la main." caption="Les deux essais côte à côte : même axe de rotation à l'épaule, flèche du poids du sac rigoureusement identique, et un bras de levier qui passe de 26 cm, sac au pli du coude, à 52 cm, sac dans la main." source="diaporama CM3, dia 17." />
+
+La suite se déduit, sans rien mesurer de plus :
+
+1. **Le moment de force du sac a doublé.** La force est identique, le bras de levier a doublé : leur produit a doublé.
+2. **Le moment produit par les muscles de l'épaule a doublé lui aussi.** Dans les deux essais, votre bras est resté à l'horizontale : rien n'a tourné, donc les moments s'équilibraient. Les muscles de l'épaule ont donc dû produire ensemble, pour compenser le sac, un moment deux fois plus grand.
+3. **Et la force qu'ils ont développée a doublé.** Leur propre bras de levier, à eux, n'a pas changé d'un essai à l'autre — la position du bras est la même. Force et moment varient donc ensemble : produire un moment deux fois plus grand leur a coûté une force deux fois plus grande. C'est exactement ce que vous avez senti.
+
+<Admonition kind="note">
+
+Le raisonnement ci-dessus est volontairement scopé au sac. Votre bras a lui aussi un poids, qui produit à l'épaule un moment de force identique dans les deux essais : ce que les muscles compensent en réalité, c'est la somme du moment du bras et de celui du sac, et cette somme, elle, ne double pas. Avec des ordres de grandeur — un bras d'environ 3 kg dont le centre de masse est à environ 30 cm de l'épaule produit près de 9 N·m ; un sac de 3 kg produit environ 8 N·m au pli du coude et 15 N·m dans la main — le total passe d'environ 17 à environ 24 N·m, soit une fois et demie plus, et non deux fois. Le doublement porte sur le moment du sac, pas sur le moment total.
+
+</Admonition>
+
+Retenez enfin ce que cette expérience ne démontre pas. Rien n'y tourne : elle ne dit donc pas ce qui provoque la rotation — c'est la définition du moment de force qui l'a dit (§3.2). Ce qu'elle isole, c'est le rôle du **bras de levier**, en le faisant varier du simple au double alors que la force, elle, restait rigoureusement la même.
+
+<Glossaire>
+  <Terme nom="Bras de levier d'une force">La distance, mesurée perpendiculairement, entre la ligne d'action de la force et la droite parallèle à cette ligne d'action qui passe par l'axe de rotation ; c'est la plus courte distance séparant l'axe de la ligne d'action, notée d⊥. Le moment de force est le produit de l'intensité de la force par son bras de levier. Autres noms rencontrés : bras du moment, *moment arm*.</Terme>
+</Glossaire>
+
+<Capacites>
+  <Capacite>Définir le bras de levier d'une force, et le repérer sur un schéma.</Capacite>
+  <Capacite>Citer les deux manières d'augmenter un moment de force, et les rattacher aux deux facteurs de la formule.</Capacite>
+  <Capacite>Expliquer l'expérience du sac : ce qui change, ce qui ne change pas, et ce qu'on en déduit pour les muscles de l'épaule.</Capacite>
+  <Capacite>Expliquer pourquoi, dans cette expérience, la force musculaire varie comme le moment musculaire.</Capacite>
+</Capacites>
+
+<Verification>
+
+  <Reveal index="a." question="Dans l'expérience du sac, pourquoi peut-on affirmer que la force appliquée par le sac est la même dans les deux essais ?">
+
+Parce que cette force est le poids du sac : elle vaut P = m × g, et ni la masse du sac ni g n'ont changé d'un essai à l'autre. Déplacer le sac le long du bras ne modifie ni son poids ni la direction de ce poids — cela ne modifie que son bras de levier.
+
+  </Reveal>
+
+  <Reveal index="b." question="Quelle condition, respectée dans les deux essais, permet d'affirmer que le moment produit par les muscles de l'épaule est égal à celui qu'il faut compenser ?">
+
+Le bras est resté à l'horizontale dans les deux essais : son état de rotation n'a pas changé, donc le moment résultant à l'épaule était nul (§3.3.4), donc le moment produit par les muscles compensait exactement celui qu'exerçait la charge.
+
+  </Reveal>
+
+  <Reveal index="c." question="Une personne porte un carton de 8 kg, d'abord bras tendus devant elle — le bras de levier du poids du carton vaut alors environ 50 cm par rapport à ses épaules —, puis serré contre son buste, où il tombe à environ 20 cm. Par quel facteur le moment de force à compenser est-il divisé ?">
+
+Par 2,5. La force ne change pas — c'est le poids du carton ; seul le bras de levier change, de 50 à 20 cm, soit une division par 2,5. Le moment de force à compenser est donc divisé par 2,5, et les muscles concernés ont d'autant moins à produire. C'est la raison mécanique pour laquelle on porte une charge près du corps.
+
+  </Reveal>
+
+</Verification>
+
+[^bras-de-levier]: Le terme et la construction : Baker D. W. & Haynes W., *Engineering Statics: Open and Interactive*, §4.1. https://engineeringstatics.org/moment-of-force.html#:~:text=This%20distance%20called%20the%20moment%20arm%20or%20the%20perpendicular%20distance — verbatim : « This distance called the moment arm or the perpendicular distance, d⊥ ». Les synonymes : Davis L., *Body Physics: Motion to Metabolism*, ch. 55 (CC BY-NC-SA 4.0). https://openoregon.pressbooks.pub/bodyphysics/chapter/equilibrium-tension-in-the-bicep/#:~:text=lever%20arm%20or%20moment%20arm%20or%20torque%20arm — verbatim : « The perpendicular distance is also sometimes called the lever arm or moment arm or torque arm ». En biomécanique, la même distance est définie comme « the shortest distance between a muscle's line of action and the joint center » — Murray W. M., Buchanan T. S. & Delp S. L. (2000), *J. Biomech.* 33(8):943-952, PDF auteur en accès libre. https://nmbl.stanford.edu/publications/pdf/Murray2000.pdf (introduction).

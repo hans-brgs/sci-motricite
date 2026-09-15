@@ -1,0 +1,140 @@
+---
+id: 3-3-le-calcul-sur-l-haltere-les-deux-premieres-lois-cote-rotation
+title: "3.3 Le calcul sur l'haltère : les deux premières lois, côté rotation"
+sidebar_label: "3.3 Le calcul sur l'haltère : les deux premières lois, côté rotation"
+sidebar_position: 3
+slug: /biomecanique-marche-seniors/3-3-le-calcul-sur-l-haltere-les-deux-premieres-lois-cote-rotation
+description: "Cette section applique la formule M = F × d⊥ à un cas complet : un haltère de 5 kg tenu dans la main, coude fléchi. Elle construit d'abord la distance d⊥…"
+hide_title: true
+---
+
+{/* Page générée par `npm run sync` depuis le vault Obsidian.
+    Source : contenu/support-ecrit/support-ecrit-ch3-moment-de-force-et-levier.md
+    Ne pas éditer ici — les modifications seraient écrasées à la prochaine
+    synchronisation. Corriger le chapitre dans le vault, puis resynchroniser. */}
+
+<ChapterHeader
+  title="3.3 Le calcul sur l'haltère : les deux premières lois, côté rotation"
+  meta={<><Badge tone="violet">Biomécanique</Badge><Badge tone="teal">Cinétique angulaire</Badge><Badge tone="neutral">Section 3.3</Badge><span style={{font:"var(--type-code)",fontSize:12,color:"var(--text-muted)"}}>9 min de lecture</span><span style={{font:"var(--type-code)",fontSize:12,color:"var(--text-muted)"}}>mis à jour le 13 septembre 2026</span></>}
+>
+
+Cette section applique la formule M = F × d⊥ à un cas complet : un haltère de 5 kg tenu dans la main, coude fléchi. Elle construit d'abord la distance d⊥ point par point sur l'image, puis calcule le moment de force produit par l'haltère, et en tire ce que le biceps doit produire pour maintenir la position ou pour fléchir le coude — c'est-à-dire les deux premières lois de Newton, écrites cette fois avec des moments. À la fin de cette section, vous devez être capable de construire graphiquement la distance d⊥ sur un cas simple, de mener le calcul complet d'un moment de force, et d'expliquer les deux premières lois de Newton dans leur version angulaire.
+
+</ChapterHeader>
+
+## 3.3.1 La situation, nommée avant d'être mesurée
+
+Reprenons l'image du chapitre 1 : un curl, un haltère de 5 kg tenu dans la main, le coude fléchi, l'avant-bras incliné d'environ 45° au-dessus de l'horizontale.
+
+L'haltère tend à faire tourner l'avant-bras vers le bas, autour du coude ; le biceps, lui, tire pour lutter contre cette tendance. Autrement dit, l'haltère produit un **moment de force** autour du coude — et c'est celui-là que nous allons calculer. La formule en demande trois éléments, qu'il faut identifier avant tout calcul :
+
+1. **l'axe de rotation** — le coude, puisque c'est autour de lui que l'avant-bras peut tourner ;
+2. **la force** — le poids de l'haltère, vertical, dirigé vers le bas (§2.10) ;
+3. **la distance d⊥** — celle qui sépare l'axe de rotation de la ligne d'action de ce poids. C'est le seul des trois éléments qui ne se lit pas directement sur la situation : il faut le construire.
+
+## 3.3.2 Construire la distance, en trois traits
+
+La construction se fait sur le dessin, en trois traits, et elle vaut pour n'importe quelle force[^d-perp] :
+
+1. tracez la **ligne d'action** de la force, c'est-à-dire la droite qui prolonge le vecteur poids des deux côtés — elle est verticale, comme le poids ;
+2. tracez la **parallèle** à cette ligne d'action qui passe par l'axe de rotation, ici le coude ;
+3. tracez enfin la **perpendiculaire** à ces deux droites parallèles : sa longueur est la distance d⊥ de la formule.
+
+<Figure number="3.2" src="/img/figures/ch3-moment-de-force-et-levier/fig-3-02-haltere-construction-distance.png" alt="La construction de d⊥ sur le curl : l'axe au coude, le poids de l'haltère et sa ligne d'action, la parallèle passant par le coude, et la perpendiculaire commune aux deux droites — 25 cm, pour un avant-bras long de 35 cm." caption="La construction de d⊥ sur le curl : l'axe au coude, le poids de l'haltère et sa ligne d'action, la parallèle passant par le coude, et la perpendiculaire commune aux deux droites — 25 cm, pour un avant-bras long de 35 cm." source="diaporama CM3, dias 10 à 12 — figure à ré-exporter." />
+
+Regardez le résultat : **d⊥ n'est pas la longueur de l'avant-bras**. L'avant-bras mesure 35 cm ; la distance d⊥, dans cette position, en mesure 25. Les deux ne seraient égales que si l'avant-bras était exactement horizontal, c'est-à-dire perpendiculaire à la ligne d'action du poids. Dans toutes les autres positions, d⊥ est plus courte que le segment : c'est pourquoi elle se construit sur le dessin, et ne se déduit pas de la longueur de l'avant-bras.
+
+## 3.3.3 Le calcul
+
+Les trois éléments sont réunis ; le calcul se déroule en trois étapes.
+
+1. **La force.** L'énoncé donne une masse, pas une force : la formule veut des newtons, pas des kilogrammes. On repasse donc par le poids (§2.10) — P = m × g = 5 × 9,81 ≈ **49 N**.
+2. **La distance.** Elle se lit sur la construction : 25 cm, soit **0,25 m**.
+3. **Le moment de force.** M = F × d⊥ = 49 × 0,25 ≈ **12 N·m**.
+
+Ce nombre a un sens précis, et il faut le dire en entier : 12 N·m est la tendance de l'haltère à faire tourner l'avant-bras autour du coude, vers le bas, **dans cette position**. Changez la position du coude, la distance d⊥ change, et le moment de force change avec elle — c'est l'objet de la section suivante.
+
+<Admonition kind="note">
+
+Ce calcul ne compte que l'haltère. L'avant-bras a lui aussi un poids, donc son propre moment de force autour du coude : le moment total qui tend à faire descendre l'avant-bras vaut donc un peu plus que 12 N·m. Le compte complet est fait à la section 3.6, une fois tous les éléments réunis.
+
+</Admonition>
+
+<Ressource>
+
+Visionnez l'animation « Le bras de levier de la charge » : le curl se fige à mi-flexion, puis la construction se fait trait par trait — le poids de l'haltère et son calcul, l'axe au coude, la ligne d'action, la parallèle, la perpendiculaire, la distance, puis le moment. Le film se termine en rejouant le curl complet : la force de l'haltère ne change jamais, et c'est la distance d⊥ qui fait varier le moment.
+
+<Animation src="/video/deux_leviers_E1_charge_0001-1890.mp4" ratio="1200 / 1256" title="Le bras de levier de la charge" />
+
+</Ressource>
+
+## 3.3.4 Ce que ce nombre dit au biceps
+
+Le calcul ne décrit pas seulement l'haltère : il fixe ce que le biceps doit produire.
+
+- Pour **empêcher** la rotation, c'est-à-dire pour maintenir l'avant-bras dans cette position, le biceps doit produire un moment de force **égal**, dans l'autre sens : 12 N·m.
+- Pour **fléchir** le coude, il doit produire un moment **supérieur** — et c'est **l'écart** entre les deux moments qui met l'avant-bras en rotation.
+- Plus cet écart est grand, plus l'**accélération angulaire** de l'avant-bras est grande — pour un même avant-bras — autrement dit, plus l'avant-bras prend de la vitesse.
+
+Ces trois phrases ne sont pas nouvelles : ce sont les deux premières lois de Newton (§2.7 et §2.8), écrites cette fois avec des moments de force au lieu de forces. Le tableau ci-dessous met les deux versions côte à côte.
+
+| | Avec des forces (chapitre 2) | Avec des moments de force (ce chapitre) |
+| --- | --- | --- |
+| **Première loi** | Résultante des forces nulle : l'état du mouvement ne change pas | Moment résultant nul : l'état de rotation ne change pas |
+| **Deuxième loi** | Résultante non nulle : le corps accélère, d'autant plus que la résultante est grande — à masse égale | Moment résultant non nul : le corps accélère en rotation, d'autant plus que le moment résultant est grand — pour un même corps |
+
+Le **moment résultant** est la somme de tous les moments de force qui s'exercent sur le corps étudié — les moments qui tendent à le faire tourner dans un sens comptant positivement, ceux qui tendent à le faire tourner dans l'autre comptant négativement[^signe]. Il joue exactement le rôle que la résultante des forces joue au chapitre 2 : nul, l'état de rotation ne change pas[^equilibre-rotation] ; non nul, il produit une accélération angulaire[^loi2-angulaire]. Une seule différence pratique : la résultante des forces se construisait graphiquement, flèche après flèche (§2.5), alors qu'un moment résultant se calcule — c'est une somme de nombres positifs et négatifs.
+
+Attention à la formulation exacte de la première loi, pour la même raison qu'au chapitre 2 : un moment résultant nul ne veut pas dire « rien ne tourne », mais « l'**état** de rotation ne change pas ». Un avant-bras déjà en rotation à vitesse angulaire constante continuerait sa rotation. Dans le cas de l'haltère, l'avant-bras est au repos, et il reste au repos.
+
+<Admonition kind="note">
+
+L'avant-bras subit en réalité quatre forces, et il vaut la peine de les distinguer, car une seule est calculée ici. Le **poids de l'avant-bras** (exercé par la Terre) et la **poussée de l'haltère sur la main** tendent tous deux à faire descendre l'avant-bras ; la **traction du biceps sur l'avant-bras** tend à le faire monter ; enfin le bras exerce sur l'avant-bras, au coude, une **force articulaire** — et celle-là a un moment nul, parce que sa ligne d'action passe par l'axe de rotation : sa distance d⊥ est nulle, donc son moment aussi[^moment-nul]. C'est pourquoi une force articulaire n'apparaît jamais dans un bilan de moments pris autour de son articulation. Notez au passage que le poids de l'avant-bras et la traction du biceps ne forment pas une paire action-réaction (§2.9) : elles s'exercent toutes les deux sur le même corps, l'avant-bras, et leurs partenaires respectifs sont ailleurs — la Terre pour l'une, le bras pour l'autre.
+
+</Admonition>
+
+Et la troisième loi ? Elle s'applique, comme toujours, mais elle ne se voit pas dans ce calcul : elle met en jeu **deux** corps, alors qu'on n'en étudie ici qu'un seul, l'avant-bras. On la retrouvera au chapitre suivant, du côté du sol.
+
+<Glossaire>
+  <Terme nom="Moment résultant">La somme de tous les moments de force qui s'exercent sur le corps étudié, comptés positivement ou négativement selon le sens de rotation vers lequel ils tendent. Nul, l'état de rotation du corps ne change pas ; non nul, il produit une accélération angulaire.</Terme>
+  <Terme nom="Force articulaire">La force qu'un segment exerce sur le segment voisin au niveau de leur articulation. Son moment autour de cette articulation est nul, puisque sa ligne d'action passe par l'axe de rotation.</Terme>
+</Glossaire>
+
+<Capacites>
+  <Capacite>Identifier les trois éléments d'un calcul de moment de force : l'axe de rotation, la force, la distance d⊥.</Capacite>
+  <Capacite>Construire d⊥ en trois traits — ligne d'action, parallèle par l'axe, perpendiculaire — et expliquer pourquoi ce n'est pas la longueur du segment.</Capacite>
+  <Capacite>Mener le calcul complet d'un moment de force, en repassant de la masse au poids, et donner le résultat avec son unité.</Capacite>
+  <Capacite>Comprendre et savoir expliquer les deux premières lois de Newton en version angulaire, avec le moment résultant.</Capacite>
+</Capacites>
+
+<Verification>
+
+  <Reveal index="a." question="Une personne tient le même haltère de 5 kg, mais avant-bras horizontal : la distance d⊥ vaut alors 35 cm. Calculez le moment de force produit par l'haltère et comparez-le aux 12 N·m de la position fléchie.">
+
+La force ne change pas : P = 5 × 9,81 ≈ 49 N. Seule la distance change : M = 49 × 0,35 ≈ 17 N·m, contre 12 N·m coude fléchi. Le même haltère, tenu par la même personne, produit donc un moment de force nettement plus grand avant-bras horizontal — la position seule fait la différence.
+
+  </Reveal>
+
+  <Reveal index="b." question="Le biceps produit un moment de force de 14 N·m alors que l'haltère en produit 12 dans l'autre sens. Que fait l'avant-bras, et pourquoi ?">
+
+L'avant-bras monte : il se fléchit. Le moment résultant n'est pas nul (14 − 12 = 2 N·m dans le sens de la flexion), et un moment résultant non nul produit une accélération angulaire, dans son sens.
+
+  </Reveal>
+
+  <Reveal index="c." question="Pourquoi la force exercée par le bras sur l'avant-bras au niveau du coude n'apparaît-elle pas dans le bilan des moments autour du coude ?">
+
+Parce que sa ligne d'action passe par l'axe de rotation : la distance d⊥ qui la sépare de l'axe est nulle, donc son moment de force l'est aussi. Elle s'exerce bel et bien sur l'avant-bras, mais elle ne tend pas à le faire tourner autour du coude.
+
+  </Reveal>
+
+</Verification>
+
+[^d-perp]: Davis L., ibid. https://openoregon.pressbooks.pub/bodyphysics/chapter/equilibrium-tension-in-the-bicep/#:~:text=the%20shortest%20line%20is%20called%20the%20perpendicular%20distance — verbatim : « Next you draw the shortest line that you can from the pivot point to the line of action of the force. This shortest line and the line of action of the force will always be at 90° to each other, so the shortest line is called the perpendicular distance (d⊥) ». Même définition chez OpenStax §9.2 : https://openstax.org/books/college-physics-2e/pages/9-2-the-second-condition-for-equilibrium#:~:text=the%20shortest%20distance%20from%20the%20pivot%20point%20to%20the%20line — verbatim : « the shortest distance from the pivot point to the line along which F acts ».
+
+[^signe]: OpenStax, *College Physics 2e*, §9.2. https://openstax.org/books/college-physics-2e/pages/9-2-the-second-condition-for-equilibrium#:~:text=Torques%2C%20which%20are%20in%20opposite%20directions%20are%20assigned%20opposite%20signs — verbatim : « Torques, which are in opposite directions are assigned opposite signs. A common convention is to call counterclockwise (ccw) torques positive and clockwise (cw) torques negative ».
+
+[^equilibre-rotation]: OpenStax, *College Physics 2e*, §9.2. https://openstax.org/books/college-physics-2e/pages/9-2-the-second-condition-for-equilibrium#:~:text=the%20net%20external%20torque%20on%20a%20system%20must%20be%20zero — verbatim : « the net external torque on a system must be zero », condition qui correspond à l'absence de rotation accélérée, « maintaining a constant angular velocity ».
+
+[^loi2-angulaire]: OpenStax, *College Physics 2e*, §10.3 *Dynamics of Rotational Motion: Rotational Inertia* (CC BY). https://openstax.org/books/college-physics-2e/pages/10-3-dynamics-of-rotational-motion-rotational-inertia#:~:text=The%20larger%20the%20torque%20is%2C%20the%20larger%20the%20angular%20acceleration%20is — verbatim : « The larger the torque is, the larger the angular acceleration is ». La relation s'écrit net τ = Iα, avec I le moment d'inertie.
+
+[^moment-nul]: Baker D. W. & Haynes W., ibid., §4.1. https://engineeringstatics.org/moment-of-force.html#:~:text=If%20the%20point%20lies%20upon%20the%20force%27s%20line%20of%20action — verbatim : « If the point lies upon the force's line of action, then the moment arm is zero, making the moment zero as well ».

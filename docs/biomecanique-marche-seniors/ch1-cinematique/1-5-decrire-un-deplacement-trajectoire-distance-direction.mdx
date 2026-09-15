@@ -15,7 +15,7 @@ hide_title: true
 
 <ChapterHeader
   title="1.5 Décrire un déplacement : trajectoire, distance, direction"
-  meta={<><Badge tone="violet">Biomécanique</Badge><Badge tone="teal">Cinématique</Badge><Badge tone="neutral">Section 1.5</Badge><span style={{font:"var(--type-code)",fontSize:12,color:"var(--text-muted)"}}>11 min de lecture</span><span style={{font:"var(--type-code)",fontSize:12,color:"var(--text-muted)"}}>mis à jour le 17 août 2026</span></>}
+  meta={<><Badge tone="violet">Biomécanique</Badge><Badge tone="teal">Cinématique</Badge><Badge tone="neutral">Section 1.5</Badge><span style={{font:"var(--type-code)",fontSize:12,color:"var(--text-muted)"}}>12 min de lecture</span><span style={{font:"var(--type-code)",fontSize:12,color:"var(--text-muted)"}}>mis à jour le 17 août 2026</span></>}
 >
 
 Pour décrire la composante linéaire d'un mouvement — la translation —, la cinématique commence par trois paramètres : la **trajectoire** (où passe le mouvement), la **distance** (combien il parcourt) et la **direction** (vers où il va). Cette section les définit un à un, montre comment se calcule une distance à partir de positions mesurées, et réunit distance et direction en une seule notion : le vecteur déplacement. À la fin de cette section, vous devez être capable de définir ces trois paramètres, de calculer une distance entre deux points à partir de leurs coordonnées, et d'expliquer pourquoi la distance seule ne suffit pas à décrire un déplacement.
@@ -47,11 +47,21 @@ $$
 
 Cette méthode suppose toutefois que le point se déplace en ligne droite, dans une seule direction, le long d'un seul axe. Or la section 1.4 a montré que ce n'est presque jamais le cas : la trajectoire de la cheville, par exemple, est ondulée. Mesurer d'un point A à un point B en ligne droite couperait à travers les ondulations et sous-estimerait la longueur réellement parcourue.
 
+<Ressource>
+
+Animation « La distance mesurée d'un seul tenant » : le trajet est relié du départ à l'arrivée, et sa longueur s'affiche en une valeur unique — celle qui coupe à travers les ondulations.
+
+<Animation src="/video/distance_B2_valeur_globale_0001-0420.mp4" ratio="1200 / 1256" title="La distance mesurée d'un seul tenant" />
+
+</Ressource>
+
 La solution consiste à relever la position du point non pas seulement au départ et à l'arrivée, mais à intervalles réguliers tout au long du trajet — par exemple toutes les demi-secondes. On mesure ensuite la longueur de chaque segment reliant deux relevés consécutifs, puis on additionne le tout. Le résultat épouse d'autant mieux le chemin réel que les segments sont courts. Ce relevé à intervalles de temps réguliers porte un nom : l'**échantillonnage** ; le nombre de relevés effectués par seconde est la **fréquence d'échantillonnage**, exprimée en **hertz (Hz)**. Le principe est général — il se réutilisera pour d'autres grandeurs que la position. Plus la fréquence est élevée, plus la mesure est fidèle — une montre GPS, qui enregistre en général une position par seconde, sous-estime ainsi les parcours sinueux : elle coupe les virages.
 
 <Ressource>
 
-Animation « Mesurer une distance le long d'une trajectoire courbe : l'échantillonnage » *(lien YouTube — à venir)*.
+Animation « Mesurer une distance le long d'une trajectoire courbe : l'échantillonnage ».
+
+<Animation src="/video/distance_B3_echantillonnage_0421-1560.mp4" ratio="1200 / 1256" title="Mesurer une distance le long d'une trajectoire courbe : l'échantillonnage" />
 
 </Ressource>
 
@@ -64,7 +74,7 @@ Reste à savoir mesurer la longueur d'un segment entre deux relevés. Le long d'
 3. élever chaque écart au carré, ce qui supprime son signe — un carré est toujours positif, et une longueur ne peut pas être négative ;
 4. additionner les deux carrés, puis appliquer la racine carrée pour revenir à une longueur en mètres.
 
-<Figure number="1.4" src="/img/figures/ch1-cinematique/fig-1-04-etapes-du-calcul-de-distance.png" alt="Les quatre étapes du calcul, en images. (Suite d'images à produire à partir des dias 29-35, ou animation — lien YouTube à venir.)" caption="Les quatre étapes du calcul, en images. (Suite d'images à produire à partir des dias 29-35, ou animation — lien YouTube à venir.)" />
+<Figure number="1.4" src="/img/figures/ch1-cinematique/fig-1-04-etapes-du-calcul-de-distance.png" alt="Les quatre étapes du calcul, en images." caption="Les quatre étapes du calcul, en images." />
 
 Cette construction n'est autre que le théorème de Pythagore : l'écart Δx et l'écart Δy sont les deux côtés d'un triangle rectangle, et le trajet direct entre A et B en est l'hypoténuse.
 
@@ -104,7 +114,17 @@ Pour obtenir la distance totale d'un trajet, on répète ce calcul pour chaque s
 | C → D | 210 m | 625 m |
 | D → E | 160 m | 785 m |
 
-<Figure number="1.5" src="/img/figures/ch1-cinematique/fig-1-05-distance-cumulee.png" alt="Un tracé découpé en quatre segments : chaque segment est mesuré avec la formule ci-dessus, et la distance cumulée est la somme des segments. (Figure à produire à partir du tracé GPS du diaporama, dias 24 et 37.)" caption="Un tracé découpé en quatre segments : chaque segment est mesuré avec la formule ci-dessus, et la distance cumulée est la somme des segments. (Figure à produire à partir du tracé GPS du diaporama, dias 24 et 37.)" />
+<Figure number="1.5" src="/img/figures/ch1-cinematique/fig-1-05-distance-cumulee.png" alt="Un tracé découpé en quatre segments : chaque segment est mesuré avec la formule ci-dessus, et la distance cumulée est la somme des segments." caption="Un tracé découpé en quatre segments : chaque segment est mesuré avec la formule ci-dessus, et la distance cumulée est la somme des segments." />
+
+Ce calcul se mène dans un plan, à deux axes. Un trajet réel, lui, en occupe trois : un coureur suit les virages de son parcours, ce qui demande déjà deux axes au sol, et il en gravit le relief, qui en ajoute un troisième. La formule ne change pourtant pas de nature — elle prend simplement un terme de plus sous la racine, $\Delta z^2$, et le raisonnement reste le même.
+
+<Ressource>
+
+Animation « La distance en trois dimensions » : un tracé est d'abord vu de face, où il paraît plat, puis la caméra tourne autour de lui et la troisième dimension apparaît. Un tracé en trois dimensions, vu d'un seul point de vue, est indiscernable d'un tracé plat.
+
+<Animation src="/video/infographie_distance_3d_0001-1020.mp4" ratio="1200 / 1256" title="La distance en trois dimensions" />
+
+</Ressource>
 
 ## 1.5.4 La direction : ce que la distance ne dit pas
 
@@ -116,13 +136,13 @@ On représente l'ensemble par une flèche menant de A à B : sa longueur est l
 
 <Ressource>
 
-Animation dédiée « La distance ne suffit pas : direction et vecteur déplacement » *(lien YouTube — à venir)*.
+Animation dédiée « La distance ne suffit pas : direction et vecteur déplacement » .
 
 </Ressource>
 
-<Figure number="1.6" src="/img/figures/ch1-cinematique/fig-1-06-cercle-des-points-equidistants.png" alt="Le cercle des points situés à 235 m de A : sans direction, B peut se trouver n'importe où sur ce cercle. (Illustration à produire, d'après les dias 41-44.)" caption="Le cercle des points situés à 235 m de A : sans direction, B peut se trouver n'importe où sur ce cercle. (Illustration à produire, d'après les dias 41-44.)" />
+<Figure number="1.6" src="/img/figures/ch1-cinematique/fig-1-06-cercle-des-points-equidistants.png" alt="Le cercle des points situés à 235 m de A : sans direction, B peut se trouver n'importe où sur ce cercle." caption="Le cercle des points situés à 235 m de A : sans direction, B peut se trouver n'importe où sur ce cercle." />
 
-<Figure number="1.7" src="/img/figures/ch1-cinematique/fig-1-07-vecteur-deplacement.png" alt="La flèche de A vers B et ses composantes Δx et Δy : le vecteur déplacement. (Illustration à produire, d'après les dias 45-46.)" caption="La flèche de A vers B et ses composantes Δx et Δy : le vecteur déplacement. (Illustration à produire, d'après les dias 45-46.)" />
+<Figure number="1.7" src="/img/figures/ch1-cinematique/fig-1-07-vecteur-deplacement.png" alt="La flèche de A vers B et ses composantes Δx et Δy : le vecteur déplacement." caption="La flèche de A vers B et ses composantes Δx et Δy : le vecteur déplacement." />
 
 <FurtherReading>
 

@@ -39,6 +39,32 @@
     ]
   },
   {
+    "term": "Appui",
+    "definition": "La phase pendant laquelle un pied est en contact avec le sol, du contact initial au décollement des orteils. Elle occupe environ 60 % du cycle de marche ; la phase oscillante, où ce pied est en l'air, occupe le reste.",
+    "chapter": 4,
+    "occurrences": [
+      {
+        "section": "4.3",
+        "sectionTitle": "Une force qui varie pendant l'appui",
+        "chapterLabel": "Chapitre 4 · Les forces de la marche",
+        "href": "/cours/biomecanique-marche-seniors/4-3-une-force-qui-varie-pendant-l-appui"
+      }
+    ]
+  },
+  {
+    "term": "Articulation",
+    "definition": "Au sens mécanique de ce chapitre, le pivot qui tient un segment et autour duquel ce segment effectue sa rotation : elle porte l'axe de rotation du segment (§1.4.2).",
+    "chapter": 3,
+    "occurrences": [
+      {
+        "section": "3.1",
+        "sectionTitle": "La case qui manque : qu'est-ce qui provoque la rotation ?",
+        "chapterLabel": "Chapitre 3 · Moment de force et levier",
+        "href": "/cours/biomecanique-marche-seniors/3-1-la-case-qui-manque-qu-est-ce-qui-provoque-la-rotation"
+      }
+    ]
+  },
+  {
     "term": "Axe de rotation",
     "definition": "Ligne fixe autour de laquelle s'effectue une rotation. Aux articulations, c'est l'axe autour duquel tourne le segment (le genou pour la jambe, la hanche pour la cuisse).",
     "chapter": 1,
@@ -100,6 +126,19 @@
         "sectionTitle": "Pourquoi mesurer ? De l'impression à la donnée",
         "chapterLabel": "Chapitre 1 · Cinématique",
         "href": "/cours/biomecanique-marche-seniors/1-2-pourquoi-mesurer-de-l-impression-a-la-donnee"
+      }
+    ]
+  },
+  {
+    "term": "Bras de levier d'une force",
+    "definition": "La distance, mesurée perpendiculairement, entre la ligne d'action de la force et la droite parallèle à cette ligne d'action qui passe par l'axe de rotation ; c'est la plus courte distance séparant l'axe de la ligne d'action, notée d⊥. Le moment de force est le produit de l'intensité de la force par son bras de levier. Autres noms rencontrés : bras du moment, moment arm.",
+    "chapter": 3,
+    "occurrences": [
+      {
+        "section": "3.4",
+        "sectionTitle": "Le bras de levier",
+        "chapterLabel": "Chapitre 3 · Moment de force et levier",
+        "href": "/cours/biomecanique-marche-seniors/3-4-le-bras-de-levier"
       }
     ]
   },
@@ -181,6 +220,110 @@
     ]
   },
   {
+    "term": "Coefficient de frottement (μ)",
+    "definition": "Le nombre qui caractérise le degré d'adhérence de deux surfaces en contact. C'est le rapport de la force de frottement maximale à la force normale, donc une grandeur sans unité ; il appartient à une paire de surfaces, jamais à un matériau seul.",
+    "chapter": 4,
+    "occurrences": [
+      {
+        "section": "4.7",
+        "sectionTitle": "La limite avant le glissement",
+        "chapterLabel": "Chapitre 4 · Les forces de la marche",
+        "href": "/cours/biomecanique-marche-seniors/4-7-la-limite-avant-le-glissement"
+      }
+    ]
+  },
+  {
+    "term": "Coefficient de frottement disponible",
+    "definition": "Le coefficient de frottement de la paire de surfaces réellement en présence, celui que donnent les tables. C'est ce que le contact peut fournir, à opposer à ce que le pas demande.",
+    "chapter": 4,
+    "occurrences": [
+      {
+        "section": "4.9",
+        "sectionTitle": "Le coefficient de frottement requis",
+        "chapterLabel": "Chapitre 4 · Les forces de la marche",
+        "href": "/cours/biomecanique-marche-seniors/4-9-le-coefficient-de-frottement-requis"
+      }
+    ]
+  },
+  {
+    "term": "Coefficient de frottement requis",
+    "definition": "À chaque instant de l'appui, le coefficient de frottement minimal que le contact entre la semelle et le sol devrait présenter pour que le glissement ne se produise pas. Il se calcule en divisant la composante horizontale de la force de réaction du sol par sa composante verticale, et vaut environ 0,20 au maximum pour une marche à plat.",
+    "chapter": 4,
+    "occurrences": [
+      {
+        "section": "4.9",
+        "sectionTitle": "Le coefficient de frottement requis",
+        "chapterLabel": "Chapitre 4 · Les forces de la marche",
+        "href": "/cours/biomecanique-marche-seniors/4-9-le-coefficient-de-frottement-requis"
+      }
+    ]
+  },
+  {
+    "term": "Composante horizontale de la force de réaction du sol",
+    "definition": "La composante parallèle au sol de la force que le sol exerce sur le pied. C'est la force de frottement exercée par le sol sur le pied ; elle donne au vecteur son inclinaison, et elle seule produit l'accélération horizontale du centre de masse.",
+    "chapter": 4,
+    "occurrences": [
+      {
+        "section": "4.5",
+        "sectionTitle": "La composante horizontale : avancer",
+        "chapterLabel": "Chapitre 4 · Les forces de la marche",
+        "href": "/cours/biomecanique-marche-seniors/4-5-la-composante-horizontale-avancer"
+      }
+    ]
+  },
+  {
+    "term": "Composante normale (force normale)",
+    "definition": "La composante de la force de réaction du sol perpendiculaire à la surface de contact. « Normale » signifie perpendiculaire. Sur sol plat, c'est la composante verticale ; elle est toujours dirigée vers le haut, et son rôle est de porter le corps.",
+    "chapter": 4,
+    "occurrences": [
+      {
+        "section": "4.4",
+        "sectionTitle": "La composante verticale : porter",
+        "chapterLabel": "Chapitre 4 · Les forces de la marche",
+        "href": "/cours/biomecanique-marche-seniors/4-4-la-composante-verticale-porter"
+      }
+    ]
+  },
+  {
+    "term": "Composantes d'une force",
+    "definition": "Les deux grandeurs d'un vecteur force mesurées sur l'axe horizontal et sur l'axe vertical ; elles déterminent ensemble son intensité et son orientation (§2.3).",
+    "chapter": 4,
+    "occurrences": [
+      {
+        "section": "4.4",
+        "sectionTitle": "La composante verticale : porter",
+        "chapterLabel": "Chapitre 4 · Les forces de la marche",
+        "href": "/cours/biomecanique-marche-seniors/4-4-la-composante-verticale-porter"
+      }
+    ]
+  },
+  {
+    "term": "Contact initial",
+    "definition": "L'instant où le talon touche le sol ; la force de réaction du sol part de zéro (initial contact).",
+    "chapter": 4,
+    "occurrences": [
+      {
+        "section": "4.3",
+        "sectionTitle": "Une force qui varie pendant l'appui",
+        "chapterLabel": "Chapitre 4 · Les forces de la marche",
+        "href": "/cours/biomecanique-marche-seniors/4-3-une-force-qui-varie-pendant-l-appui"
+      }
+    ]
+  },
+  {
+    "term": "Décollement des orteils",
+    "definition": "L'instant où le pied quitte le sol ; la force de réaction du sol s'annule (toe-off).",
+    "chapter": 4,
+    "occurrences": [
+      {
+        "section": "4.3",
+        "sectionTitle": "Une force qui varie pendant l'appui",
+        "chapterLabel": "Chapitre 4 · Les forces de la marche",
+        "href": "/cours/biomecanique-marche-seniors/4-3-une-force-qui-varie-pendant-l-appui"
+      }
+    ]
+  },
+  {
     "term": "Déformation",
     "definition": "Changement de forme d'un corps provoqué par l'application d'une force. Réversible tant qu'elle reste sous la limite de résistance du corps.",
     "chapter": 2,
@@ -190,6 +333,19 @@
         "sectionTitle": "Qu'est-ce qu'une force ?",
         "chapterLabel": "Chapitre 2 · Cinétique",
         "href": "/cours/biomecanique-marche-seniors/2-2-qu-est-ce-qu-une-force"
+      }
+    ]
+  },
+  {
+    "term": "Désavantage mécanique",
+    "definition": "Situation d'un levier dont la force motrice a un bras de levier plus court que celui de la résistance : produire le moment nécessaire y coûte une force supérieure à la résistance. C'est le cas du biceps au coude.",
+    "chapter": 3,
+    "occurrences": [
+      {
+        "section": "3.6",
+        "sectionTitle": "Les deux bras de levier du coude : ce que la position coûte au muscle",
+        "chapterLabel": "Chapitre 3 · Moment de force et levier",
+        "href": "/cours/biomecanique-marche-seniors/3-6-les-deux-bras-de-levier-du-coude-ce-que-la-position-coute-au-muscle"
       }
     ]
   },
@@ -285,6 +441,32 @@
     ]
   },
   {
+    "term": "Fin d'appui",
+    "definition": "La dernière partie de l'appui, quand le talon se lève : la phase propulsive (terminal stance).",
+    "chapter": 4,
+    "occurrences": [
+      {
+        "section": "4.3",
+        "sectionTitle": "Une force qui varie pendant l'appui",
+        "chapterLabel": "Chapitre 4 · Les forces de la marche",
+        "href": "/cours/biomecanique-marche-seniors/4-3-une-force-qui-varie-pendant-l-appui"
+      }
+    ]
+  },
+  {
+    "term": "Fléchisseurs plantaires",
+    "definition": "Les muscles du mollet, qui tractent le talon vers le haut et permettent de monter sur la pointe des pieds.",
+    "chapter": 3,
+    "occurrences": [
+      {
+        "section": "3.5",
+        "sectionTitle": "Le levier et ses trois classes",
+        "chapterLabel": "Chapitre 3 · Moment de force et levier",
+        "href": "/cours/biomecanique-marche-seniors/3-5-le-levier-et-ses-trois-classes"
+      }
+    ]
+  },
+  {
     "term": "Force",
     "definition": "Action mécanique exercée par un objet sur un autre ; elle peut modifier le mouvement du corps qui la reçoit ou provoquer sa déformation. Unité : le newton (N). Elle se décrit toujours en nommant les deux corps : « la force exercée par … sur … ».",
     "chapter": 2,
@@ -311,6 +493,19 @@
     ]
   },
   {
+    "term": "Force articulaire",
+    "definition": "La force qu'un segment exerce sur le segment voisin au niveau de leur articulation. Son moment autour de cette articulation est nul, puisque sa ligne d'action passe par l'axe de rotation.",
+    "chapter": 3,
+    "occurrences": [
+      {
+        "section": "3.3",
+        "sectionTitle": "Le calcul sur l'haltère : les deux premières lois, côté rotation",
+        "chapterLabel": "Chapitre 3 · Moment de force et levier",
+        "href": "/cours/biomecanique-marche-seniors/3-3-le-calcul-sur-l-haltere-les-deux-premieres-lois-cote-rotation"
+      }
+    ]
+  },
+  {
     "term": "Force de contact",
     "definition": "Force qui s'exerce quand deux corps se touchent, sur leur surface de contact. Si le contact est rompu, elle disparaît instantanément.",
     "chapter": 2,
@@ -324,6 +519,19 @@
     ]
   },
   {
+    "term": "Force de frottement maximale",
+    "definition": "La valeur du frottement à l'instant où le glissement commence : la limite entre l'adhérence et le glissement. Elle vaut $\\mu \\times N$.",
+    "chapter": 4,
+    "occurrences": [
+      {
+        "section": "4.7",
+        "sectionTitle": "La limite avant le glissement",
+        "chapterLabel": "Chapitre 4 · Les forces de la marche",
+        "href": "/cours/biomecanique-marche-seniors/4-7-la-limite-avant-le-glissement"
+      }
+    ]
+  },
+  {
     "term": "Force de réaction",
     "definition": "La force qu'un corps B exerce en retour sur le corps A qui agit sur lui : même intensité, même direction, sens opposé.",
     "chapter": 2,
@@ -333,6 +541,25 @@
         "sectionTitle": "La troisième loi : l'action et la réaction",
         "chapterLabel": "Chapitre 2 · Cinétique",
         "href": "/cours/biomecanique-marche-seniors/2-9-la-troisieme-loi-l-action-et-la-reaction"
+      }
+    ]
+  },
+  {
+    "term": "Force de réaction du sol",
+    "definition": "La force exercée par le sol sur le pied ; elle est de même intensité et de sens opposé à la force exercée par le pied sur le sol, à chaque instant du contact. C'est l'application de la troisième loi de Newton à chaque pas.",
+    "chapter": 4,
+    "occurrences": [
+      {
+        "section": "4.1",
+        "sectionTitle": "Le diagramme du marcheur : trois forces",
+        "chapterLabel": "Chapitre 4 · Les forces de la marche",
+        "href": "/cours/biomecanique-marche-seniors/4-1-le-diagramme-du-marcheur-trois-forces"
+      },
+      {
+        "section": "4.2",
+        "sectionTitle": "D'où vient la réaction du sol",
+        "chapterLabel": "Chapitre 4 · Les forces de la marche",
+        "href": "/cours/biomecanique-marche-seniors/4-2-d-ou-vient-la-reaction-du-sol"
       }
     ]
   },
@@ -351,7 +578,7 @@
   },
   {
     "term": "Force interne",
-    "definition": "Force exercée entre les éléments du corps étudié (les muscles sur les os, pour une personne entière). Les forces internes réorganisent les segments du corps étudié, mais ne modifient pas son mouvement d'ensemble. La même force peut être interne ou externe selon le corps qu'on délimite.",
+    "definition": "Force exercée par une partie du corps isolé sur une autre partie de ce même corps (la traction d'un muscle sur un os). Elle ne figure pas sur le diagramme de forces et ne modifie pas le mouvement du corps pris comme un tout (§2.4).",
     "chapter": 2,
     "occurrences": [
       {
@@ -359,12 +586,31 @@
         "sectionTitle": "Deux façons de classer les forces",
         "chapterLabel": "Chapitre 2 · Cinétique",
         "href": "/cours/biomecanique-marche-seniors/2-4-deux-facons-de-classer-les-forces"
+      },
+      {
+        "section": "4.2",
+        "sectionTitle": "D'où vient la réaction du sol",
+        "chapterLabel": "Chapitre 4 · Les forces de la marche",
+        "href": "/cours/biomecanique-marche-seniors/4-2-d-ou-vient-la-reaction-du-sol"
+      }
+    ]
+  },
+  {
+    "term": "Force motrice",
+    "definition": "La force qui produit la rotation du levier. Dans le corps, c'est le plus souvent la traction d'un muscle.",
+    "chapter": 3,
+    "occurrences": [
+      {
+        "section": "3.5",
+        "sectionTitle": "Le levier et ses trois classes",
+        "chapterLabel": "Chapitre 3 · Moment de force et levier",
+        "href": "/cours/biomecanique-marche-seniors/3-5-le-levier-et-ses-trois-classes"
       }
     ]
   },
   {
     "term": "Force normale",
-    "definition": "Force de contact qu'une surface exerce, perpendiculairement à elle-même, sur le corps qui repose dessus. Elle le soutient.",
+    "definition": "La force perpendiculaire qui presse les deux surfaces l'une contre l'autre. Sous le pied, c'est la composante normale de la force de réaction du sol (§4.4).",
     "chapter": 2,
     "occurrences": [
       {
@@ -372,6 +618,25 @@
         "sectionTitle": "Deux façons de classer les forces",
         "chapterLabel": "Chapitre 2 · Cinétique",
         "href": "/cours/biomecanique-marche-seniors/2-4-deux-facons-de-classer-les-forces"
+      },
+      {
+        "section": "4.7",
+        "sectionTitle": "La limite avant le glissement",
+        "chapterLabel": "Chapitre 4 · Les forces de la marche",
+        "href": "/cours/biomecanique-marche-seniors/4-7-la-limite-avant-le-glissement"
+      }
+    ]
+  },
+  {
+    "term": "Freinage et propulsion",
+    "definition": "Les deux phases de la composante horizontale au cours d'un appui : dirigée vers l'arrière au contact initial et pendant la mise en charge, quand le pied est devant le centre de masse (freinage) ; dirigée vers l'avant en fin d'appui, quand le pied est derrière le centre de masse (propulsion).",
+    "chapter": 4,
+    "occurrences": [
+      {
+        "section": "4.5",
+        "sectionTitle": "La composante horizontale : avancer",
+        "chapterLabel": "Chapitre 4 · Les forces de la marche",
+        "href": "/cours/biomecanique-marche-seniors/4-5-la-composante-horizontale-avancer"
       }
     ]
   },
@@ -398,6 +663,32 @@
         "sectionTitle": "Le diagramme de forces et la résultante",
         "chapterLabel": "Chapitre 2 · Cinétique",
         "href": "/cours/biomecanique-marche-seniors/2-5-le-diagramme-de-forces-et-la-resultante"
+      }
+    ]
+  },
+  {
+    "term": "Frottement (force de)",
+    "definition": "Force qui s'exerce entre deux surfaces en contact, parallèlement à ces surfaces, et qui s'oppose à leur mouvement relatif, c'est-à-dire à leur glissement l'une sur l'autre. Sous le pied, c'est la composante horizontale de la force de réaction du sol.",
+    "chapter": 4,
+    "occurrences": [
+      {
+        "section": "4.6",
+        "sectionTitle": "Le frottement, défini",
+        "chapterLabel": "Chapitre 4 · Les forces de la marche",
+        "href": "/cours/biomecanique-marche-seniors/4-6-le-frottement-defini"
+      }
+    ]
+  },
+  {
+    "term": "Frottement statique et frottement cinétique",
+    "definition": "Les deux formes du frottement, distinguées par une seule question : les surfaces glissent-elles l'une sur l'autre ? Statique si elles ne glissent pas — c'est le cas de l'appui pendant la marche —, cinétique si elles glissent.",
+    "chapter": 4,
+    "occurrences": [
+      {
+        "section": "4.6",
+        "sectionTitle": "Le frottement, défini",
+        "chapterLabel": "Chapitre 4 · Les forces de la marche",
+        "href": "/cours/biomecanique-marche-seniors/4-6-le-frottement-defini"
       }
     ]
   },
@@ -454,6 +745,19 @@
     ]
   },
   {
+    "term": "Insertion et origine d'un muscle",
+    "definition": "L'insertion est l'attache distale, sur le segment mobile ; l'origine est l'attache proximale, du côté fixe. Le biceps s'insère sur l'avant-bras, juste sous le coude, et tire vers son origine, du côté de l'épaule.",
+    "chapter": 3,
+    "occurrences": [
+      {
+        "section": "3.6",
+        "sectionTitle": "Les deux bras de levier du coude : ce que la position coûte au muscle",
+        "chapterLabel": "Chapitre 3 · Moment de force et levier",
+        "href": "/cours/biomecanique-marche-seniors/3-6-les-deux-bras-de-levier-du-coude-ce-que-la-position-coute-au-muscle"
+      }
+    ]
+  },
+  {
     "term": "Intensité (d'une force)",
     "definition": "La quantité de force appliquée, mesurée en newtons (N). Sur un schéma, elle se lit à la longueur de la flèche. Synonyme : magnitude.",
     "chapter": 2,
@@ -463,6 +767,32 @@
         "sectionTitle": "Décrire une force : le vecteur force",
         "chapterLabel": "Chapitre 2 · Cinétique",
         "href": "/cours/biomecanique-marche-seniors/2-3-decrire-une-force-le-vecteur-force"
+      }
+    ]
+  },
+  {
+    "term": "Levier",
+    "definition": "Un corps rigide en rotation autour d'un axe ou d'un pivot. Dans le corps humain, les os sont les leviers et les articulations les pivots.",
+    "chapter": 3,
+    "occurrences": [
+      {
+        "section": "3.5",
+        "sectionTitle": "Le levier et ses trois classes",
+        "chapterLabel": "Chapitre 3 · Moment de force et levier",
+        "href": "/cours/biomecanique-marche-seniors/3-5-le-levier-et-ses-trois-classes"
+      }
+    ]
+  },
+  {
+    "term": "Ligne d'action d'une force",
+    "definition": "La droite qui prolonge le vecteur force des deux côtés, dans la direction de la force. Elle ne retient que la direction de la force, pas son intensité.",
+    "chapter": 3,
+    "occurrences": [
+      {
+        "section": "3.2",
+        "sectionTitle": "Le moment de force",
+        "chapterLabel": "Chapitre 3 · Moment de force et levier",
+        "href": "/cours/biomecanique-marche-seniors/3-2-le-moment-de-force"
       }
     ]
   },
@@ -532,6 +862,58 @@
     ]
   },
   {
+    "term": "Milieu d'appui",
+    "definition": "L'instant où le centre de masse passe à l'aplomb du pied d'appui (midstance).",
+    "chapter": 4,
+    "occurrences": [
+      {
+        "section": "4.3",
+        "sectionTitle": "Une force qui varie pendant l'appui",
+        "chapterLabel": "Chapitre 4 · Les forces de la marche",
+        "href": "/cours/biomecanique-marche-seniors/4-3-une-force-qui-varie-pendant-l-appui"
+      }
+    ]
+  },
+  {
+    "term": "Mise en charge",
+    "definition": "Le début de l'appui, pendant lequel le poids du corps est transféré sur le pied qui vient de se poser (loading response).",
+    "chapter": 4,
+    "occurrences": [
+      {
+        "section": "4.3",
+        "sectionTitle": "Une force qui varie pendant l'appui",
+        "chapterLabel": "Chapitre 4 · Les forces de la marche",
+        "href": "/cours/biomecanique-marche-seniors/4-3-une-force-qui-varie-pendant-l-appui"
+      }
+    ]
+  },
+  {
+    "term": "Moment de force",
+    "definition": "La tendance d'une force à produire une rotation d'un corps autour d'un point ou d'un axe. Il est égal au produit de l'intensité de la force par la plus courte distance entre l'axe de rotation et la ligne d'action de cette force : M = F × d⊥. Unité : le newton-mètre (N·m).",
+    "chapter": 3,
+    "occurrences": [
+      {
+        "section": "3.2",
+        "sectionTitle": "Le moment de force",
+        "chapterLabel": "Chapitre 3 · Moment de force et levier",
+        "href": "/cours/biomecanique-marche-seniors/3-2-le-moment-de-force"
+      }
+    ]
+  },
+  {
+    "term": "Moment résultant",
+    "definition": "La somme de tous les moments de force qui s'exercent sur le corps étudié, comptés positivement ou négativement selon le sens de rotation vers lequel ils tendent. Nul, l'état de rotation du corps ne change pas ; non nul, il produit une accélération angulaire.",
+    "chapter": 3,
+    "occurrences": [
+      {
+        "section": "3.3",
+        "sectionTitle": "Le calcul sur l'haltère : les deux premières lois, côté rotation",
+        "chapterLabel": "Chapitre 3 · Moment de force et levier",
+        "href": "/cours/biomecanique-marche-seniors/3-3-le-calcul-sur-l-haltere-les-deux-premieres-lois-cote-rotation"
+      }
+    ]
+  },
+  {
     "term": "Mouvement combiné",
     "definition": "Combinaison d'une translation et d'une ou plusieurs rotations. C'est le cas de la plupart des mouvements humains : à la marche, le corps se translate grâce à des segments qui tournent.",
     "chapter": 1,
@@ -590,6 +972,19 @@
     ]
   },
   {
+    "term": "Newton-mètre (N·m)",
+    "definition": "Unité de mesure du moment de force : une force d'un newton dont la ligne d'action passe à un mètre de l'axe de rotation produit un moment de force d'un newton-mètre.",
+    "chapter": 3,
+    "occurrences": [
+      {
+        "section": "3.2",
+        "sectionTitle": "Le moment de force",
+        "chapterLabel": "Chapitre 3 · Moment de force et levier",
+        "href": "/cours/biomecanique-marche-seniors/3-2-le-moment-de-force"
+      }
+    ]
+  },
+  {
     "term": "Objectiver",
     "definition": "Transformer une impression en mesure : une grandeur définie, exprimée dans une unité.",
     "chapter": 1,
@@ -638,6 +1033,19 @@
         "sectionTitle": "L'accélération",
         "chapterLabel": "Chapitre 1 · Cinématique",
         "href": "/cours/biomecanique-marche-seniors/1-7-l-acceleration"
+      }
+    ]
+  },
+  {
+    "term": "Pivot",
+    "definition": "Le point fixe autour duquel le levier tourne ; il porte l'axe de rotation.",
+    "chapter": 3,
+    "occurrences": [
+      {
+        "section": "3.5",
+        "sectionTitle": "Le levier et ses trois classes",
+        "chapterLabel": "Chapitre 3 · Moment de force et levier",
+        "href": "/cours/biomecanique-marche-seniors/3-5-le-levier-et-ses-trois-classes"
       }
     ]
   },
@@ -694,6 +1102,19 @@
     ]
   },
   {
+    "term": "Repérage des forces",
+    "definition": "La méthode en trois étapes pour dresser un diagramme de forces : isoler le corps étudié ; dessiner la force à distance, le poids ; lister tout ce qui touche le corps, chaque contact donnant une force.",
+    "chapter": 4,
+    "occurrences": [
+      {
+        "section": "4.1",
+        "sectionTitle": "Le diagramme du marcheur : trois forces",
+        "chapterLabel": "Chapitre 4 · Les forces de la marche",
+        "href": "/cours/biomecanique-marche-seniors/4-1-le-diagramme-du-marcheur-trois-forces"
+      }
+    ]
+  },
+  {
     "term": "Repères chiffrés à connaître",
     "definition": "Marche d'un adulte sain ≈ 1,2 à 1,4 m/s · marche d'un sénior ≈ 1,0 à 1,3 m/s · seuil d'alerte ≈ 0,8 m/s · conversion 1 m/s = 3,6 km/h.",
     "chapter": 1,
@@ -703,6 +1124,19 @@
         "sectionTitle": "La vitesse",
         "chapterLabel": "Chapitre 1 · Cinématique",
         "href": "/cours/biomecanique-marche-seniors/1-6-la-vitesse"
+      }
+    ]
+  },
+  {
+    "term": "Résistance",
+    "definition": "Ce qui s'oppose à la rotation produite par la force motrice : une charge portée, le poids d'un segment, le poids du corps.",
+    "chapter": 3,
+    "occurrences": [
+      {
+        "section": "3.5",
+        "sectionTitle": "Le levier et ses trois classes",
+        "chapterLabel": "Chapitre 3 · Moment de force et levier",
+        "href": "/cours/biomecanique-marche-seniors/3-5-le-levier-et-ses-trois-classes"
       }
     ]
   },
@@ -733,6 +1167,19 @@
     ]
   },
   {
+    "term": "Segment corporel",
+    "definition": "Une partie du corps que l'analyse du mouvement considère comme rigide (la cuisse, la jambe, le pied, l'avant-bras), reliée aux segments voisins par des articulations ; l'os en est le levier rigide.",
+    "chapter": 3,
+    "occurrences": [
+      {
+        "section": "3.1",
+        "sectionTitle": "La case qui manque : qu'est-ce qui provoque la rotation ?",
+        "chapterLabel": "Chapitre 3 · Moment de force et levier",
+        "href": "/cours/biomecanique-marche-seniors/3-1-la-case-qui-manque-qu-est-ce-qui-provoque-la-rotation"
+      }
+    ]
+  },
+  {
     "term": "Statique",
     "definition": "L'étude des forces qui s'exercent sur les corps en équilibre (résultante nulle).",
     "chapter": 2,
@@ -742,6 +1189,19 @@
         "sectionTitle": "Le diagramme de forces et la résultante",
         "chapterLabel": "Chapitre 2 · Cinétique",
         "href": "/cours/biomecanique-marche-seniors/2-5-le-diagramme-de-forces-et-la-resultante"
+      }
+    ]
+  },
+  {
+    "term": "Tendon",
+    "definition": "La structure qui relie le muscle à l'os. Mis en tension par la contraction du muscle, il exerce une force de traction sur l'os.",
+    "chapter": 4,
+    "occurrences": [
+      {
+        "section": "4.2",
+        "sectionTitle": "D'où vient la réaction du sol",
+        "chapterLabel": "Chapitre 4 · Les forces de la marche",
+        "href": "/cours/biomecanique-marche-seniors/4-2-d-ou-vient-la-reaction-du-sol"
       }
     ]
   },
