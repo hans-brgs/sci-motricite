@@ -68,9 +68,8 @@ export default function Glossaire() {
             marginBottom: "var(--sp-8)",
           }}
         >
-          Chaque terme est redéfini ici <strong>hors de son contexte</strong>, de
-          façon autonome : c'est le bloc que l'on relit la veille d'un examen. Le
-          lien renvoie à la section qui l'introduit et le met au travail.
+          Tous les termes du cours, chacun redéfini seul. C'est la page à relire
+          avant l'examen. Le lien mène à la section qui explique le terme.
         </p>
 
         <div style={{ maxWidth: 420, marginBottom: "var(--sp-6)" }}>

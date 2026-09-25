@@ -13,6 +13,7 @@ import {
   FigurePanel,
   Reference,
   Definition,
+  ListeChapitres,
   // Adaptateurs MDX
   Glossaire,
   Terme,
@@ -56,6 +57,7 @@ export default {
   FigurePanel,
   Reference,
   Definition,
+  ListeChapitres,
   Glossaire,
   Terme,
   Capacites,

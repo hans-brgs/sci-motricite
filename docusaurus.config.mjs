@@ -74,7 +74,11 @@ const config = {
           sidebarPath: "./sidebars.js",
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
-          showLastUpdateTime: true,
+          // En développement, Docusaurus ne lit pas Git et affiche une fausse
+          // date fixe (« 14 octobre 2018 — Simulated during dev »). Elle a déjà
+          // été prise pour un bug du site : on ne l'affiche qu'au build, où la
+          // date vient réellement du dernier commit du fichier.
+          showLastUpdateTime: process.env.NODE_ENV === "production",
           breadcrumbs: true,
           // Le contenu de `docs/` est généré depuis le vault Obsidian par
           // `npm run sync` : on n'édite pas ces fichiers sur GitHub. Le lien

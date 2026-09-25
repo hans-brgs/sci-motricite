@@ -42,6 +42,7 @@ export { CodeBlock } from "./content/CodeBlock";
 export { Reference } from "./content/Reference";
 export { Reveal } from "./content/Reveal";
 export { Quiz } from "./content/Quiz";
+export { ListeChapitres } from "./content/ListeChapitres";
 
 // Données
 export { Stat } from "./data/Stat";

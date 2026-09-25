@@ -1408,6 +1408,7 @@ function main() {
 
   const totals = { pages: 0, figures: 0, questions: 0, media: 0, missingAnswers: 0, quiz: 0 };
   const glossary = [];
+  const chapitres = [];
   // Dossiers d'images que ce passage a le droit de nettoyer : ceux des
   // chapitres effectivement chargés, et celui des quiz.
   const dossiersImages = [path.join(ROOT, "static", "img", "quiz")];
@@ -1510,6 +1511,17 @@ function main() {
 
     totals.quiz += quiz.length;
 
+    // Ce que l'accueil et les pages de présentation affichent des chapitres.
+    // Écrit ici plutôt qu'à la main : une liste tenue à la main a déjà affiché
+    // « 2 chapitres publiés » quand il y en avait quatre.
+    chapitres.push({
+      numero: chapter.number,
+      titre: chapter.title.replace(/^Chapitre\s+\d+\s*—\s*/, ""),
+      href: `/cours/${COURSE.slug}/${chapter.dir}`,
+      sections: pages.length,
+      quiz: quiz.length ? `/cours/${COURSE.slug}/${chapter.dir}/quiz` : null,
+    });
+
     console.log(
       `  ${chapter.label.padEnd(28)} ${String(pages.length).padStart(2)} sections · ` +
         `${String(stat.figures).padStart(2)} figures (${stat.avecImage} illustrées) · ` +
@@ -1589,6 +1601,15 @@ function main() {
     fs.writeFileSync(
       path.join(dataDir, "glossaire.json"),
       `${JSON.stringify(unique, null, 2)}\n`,
+      "utf8"
+    );
+    fs.writeFileSync(
+      path.join(dataDir, "cours.json"),
+      `${JSON.stringify(
+        [{ slug: COURSE.slug, href: `/cours/${COURSE.slug}`, chapitres }],
+        null,
+        2
+      )}\n`,
       "utf8"
     );
   }

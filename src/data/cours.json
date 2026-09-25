@@ -1,0 +1,36 @@
+[
+  {
+    "slug": "biomecanique-marche-seniors",
+    "href": "/cours/biomecanique-marche-seniors",
+    "chapitres": [
+      {
+        "numero": 1,
+        "titre": "Cinématique : décrire le mouvement",
+        "href": "/cours/biomecanique-marche-seniors/ch1-cinematique",
+        "sections": 9,
+        "quiz": "/cours/biomecanique-marche-seniors/ch1-cinematique/quiz"
+      },
+      {
+        "numero": 2,
+        "titre": "Cinétique : les causes du mouvement",
+        "href": "/cours/biomecanique-marche-seniors/ch2-cinetique",
+        "sections": 12,
+        "quiz": "/cours/biomecanique-marche-seniors/ch2-cinetique/quiz"
+      },
+      {
+        "numero": 3,
+        "titre": "Le moment de force et le levier : ce qui provoque la rotation",
+        "href": "/cours/biomecanique-marche-seniors/ch3-moment-de-force-et-levier",
+        "sections": 7,
+        "quiz": "/cours/biomecanique-marche-seniors/ch3-moment-de-force-et-levier/quiz"
+      },
+      {
+        "numero": 4,
+        "titre": "Les forces de la marche",
+        "href": "/cours/biomecanique-marche-seniors/ch4-forces-de-la-marche",
+        "sections": 11,
+        "quiz": "/cours/biomecanique-marche-seniors/ch4-forces-de-la-marche/quiz"
+      }
+    ]
+  }
+]

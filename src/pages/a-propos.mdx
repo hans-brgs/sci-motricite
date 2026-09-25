@@ -1,86 +1,85 @@
 ---
 title: À propos
-description: Pourquoi ce site existe, comment il est fait, et sous quelle licence son contenu est réutilisable.
+description: Qui écrit ce site, et pourquoi.
 ---
 
 # À propos
 
-<SectionLead label="En une phrase">
+## Qui je suis
 
-Je publie ici, en accès libre, le contenu des cours que je donne en STAPS —
-rédigé pour être lu seul, par mes étudiants comme par n'importe qui d'autre.
+J'enseigne la biomécanique en DEUST APSL Séniors, comme vacataire à l'UFR STAPS
+de l'université de Perpignan Via Domitia. Je suis docteur en sciences du sport,
+et à côté de l'enseignement je développe des outils de capture et d'analyse du
+mouvement.
 
-</SectionLead>
+Ce site est personnel : il n'engage pas l'université.
 
-## Qui écrit
+## Pourquoi ce site
 
-Je suis docteur en sciences du sport. J'enseigne la biomécanique et l'analyse du
-mouvement à l'UFR STAPS de l'université de Perpignan Via Domitia, et je développe
-par ailleurs des outils de capture et d'analyse du mouvement.
+Quand j'étais étudiant, je prenais mal les notes en cours. Ce qui m'aidait,
+c'était un support clair et bien construit. Comme je n'en avais pas toujours, je
+passais beaucoup de temps à chercher des ressources sur internet pour
+reconstituer le cours, ou j'achetais des livres spécialisés.
 
-Ce site est **personnel**, pas institutionnel : il n'engage aucune université, et
-ce que vous y lisez est ce que j'enseigne, sous ma seule responsabilité.
+J'aurais aimé avoir directement le cours du prof. Alors je le partage ici, en
+entier. Le but est simple : que vous y ayez accès le plus facilement possible,
+pour apprendre dans de bonnes conditions.
 
-## Pourquoi
+## L'usage de l'IA
 
-Un support de cours qui ne sort pas de l'amphithéâtre ne sert qu'une fois.
+Je me sers de l'intelligence artificielle (Claude, d'Anthropic) comme d'un
+assistant, pour produire des cours qui transmettent des informations justes,
+fondées sur la littérature scientifique, faciles à comprendre et utiles dans le
+futur métier des étudiants.
 
-Le diaporama projeté en séance est un support d'oral : il installe un récit,
-ménage des questions ouvertes, et laisse la connaissance dans les notes de
-l'orateur. L'étudiant qui le relit seul, trois mois plus tard, n'y trouve ni
-définition rédigée ni raisonnement complet. Ce site porte donc l'autre moitié du
-travail : le texte, entièrement écrit, avec ses définitions, ses exemples résolus
-et ses sources.
+La rédaction, et l'explication claire de concepts parfois complexes, ne sont
+pas mes points forts. L'IA m'aide à formuler clairement les idées que je veux
+transmettre. Elle me permet aussi d'accéder plus vite aux données scientifiques,
+et de construire des outils qui facilitent l'apprentissage, comme les
+animations 3D.
 
-Il en découle une règle de rédaction que je m'impose : **le texte ne renvoie
-jamais à une séance en présentiel**. Pas de « comme vu en cours », pas de « voir
-Moodle ». Les renvois se font aux chapitres et aux sections de ce site, et à eux
-seuls — sinon le document ne serait lisible que par ceux qui étaient là.
+Concrètement :
 
-## Comment c'est fait
+- **Les sources.** Le cours s'appuie d'abord sur un manuel de référence,
+  *Sport and Exercise Biomechanics* de Paul Grimshaw et Adrian Burden (Taylor &
+  Francis, 2006), dans sa traduction française : *Biomécanique du sport et de
+  l'exercice* (De Boeck), traduite par Simon Pradel et révisée scientifiquement
+  par Armel Crétual. Claude m'aide ensuite à trouver des articles
+  scientifiques, des ressources et des cours spécialisés en biomécanique
+  adaptés à ce contenu, pour l'enrichir. C'est moi qui choisis ce que je retiens.
+- **Le support écrit.** Claude m'aide à rédiger et à reformuler les sections, et
+  à écrire les questions des quiz. Je relis, j'apporte des corrections, puis je valide
+  chaque section avant de la publier.
+- **Les diapositives.** J'ai utilisé Claude Design pour définir un cadre
+  graphique commun et trouver des idées de mise en page. Les diapositives et
+  leurs animations, je les construis moi-même dans PowerPoint.
+- **Les animations 3D.** Elles sont réalisées dans Blender, que j'utilisais
+  déjà avant l'arrivée de l'IA. Claude m'assiste dans leur construction, mais
+  aucune n'est produite par un modèle de génération d'images ou de vidéos.
+- **Le site.** Je suis développeur, et j'utilise déjà Docusaurus pour documenter
+  mes projets. Ce site, je l'ai conçu avec Claude : je décide de ce qu'il
+  contient et de la façon dont il fonctionne, et je le guide au fil de nos
+  échanges. Claude en écrit le code.
 
-Les chapitres sont écrits dans un vault [Obsidian](https://obsidian.md), section
-par section, et validés une par une avant publication. Un script de conversion
-les transforme en pages de ce site : c'est lui qui traduit les encadrés du
-support écrit en composants, découpe un chapitre en une page par section, et
-réunit chaque question avec son corrigé.
+Le programme, le plan du cours et le choix de ce que les étudiants doivent
+apprendre sont de mon ressort.
 
-Le site tourne sous [Docusaurus](https://docusaurus.io), est hébergé par GitHub
-Pages, et [son code est public](https://github.com/hans-brgs/sci-motricite) — le
-contenu des chapitres comme le convertisseur qui les publie.
+Chaque chiffre et chaque affirmation scientifique renvoie au passage exact de sa
+source. J'en ai vérifié la majorité, mais certaines ont pu m'échapper : un clic
+suffit pour contrôler par soi-même. Si une erreur subsiste, elle est de ma
+responsabilité, et toute erreur repérée peut m'être signalée
+[sur GitHub](https://github.com/hans-brgs/sci-motricite/issues/new).
 
-## Sur les sources
-
-Toute affirmation scientifique et toute valeur chiffrée porte une note de bas de
-page. Ces notes ne se contentent pas de citer l'article : elles ouvrent **le
-passage exact** qui soutient l'affirmation, et en donnent le verbatim. Vous
-pouvez donc vérifier chaque phrase, et pas seulement me croire.
-
-Pour les concepts généraux de mécanique, je m'appuie sur les manuels et cours en
-accès libre — notamment *Biomechanics of Human Movement* de K. Hamm (OpenStax /
-BCcampus, CC BY), dont ce site reprend l'appareil pédagogique. Pour les points
-d'application spécifiques — données chiffrées, marche du sénior, mécanismes de
-blessure — je m'appuie sur des articles évalués par les pairs.
-
-## Réutiliser ce contenu
-
-<Admonition kind="note" title="Licence CC BY 4.0">
-
-Le contenu de ce site est publié sous
-[Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/deed.fr).
-Vous pouvez le **copier, le modifier, le traduire et le réutiliser**, y compris
-dans un cadre commercial, à la seule condition d'en **créditer l'auteur** et
-d'indiquer les modifications apportées.
-
-C'est la licence du manuel qui m'a servi de modèle. Elle m'a été utile ; autant
-qu'elle serve à quelqu'un d'autre.
-
-</Admonition>
+C'est ma façon de travailler aujourd'hui ; elle évoluera sans doute avec les
+outils.
 
 ## Une erreur ?
 
-Ce site est écrit à mesure qu'il s'écrit, et il contient certainement des
-erreurs. Si vous en trouvez une —  une valeur fausse, une source qui ne dit pas
-ce que je lui fais dire, une explication qui ne tient pas —
-[ouvrez un signalement](https://github.com/hans-brgs/sci-motricite/issues/new).
-Les corrections sont les bienvenues, y compris sur le fond.
+Il en reste sûrement. Si vous en voyez une, dites-le-moi en cours, ou
+[signalez-la sur GitHub](https://github.com/hans-brgs/sci-motricite/issues/new).
+
+## Licence
+
+Le contenu est sous licence
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.fr) : vous pouvez le
+réutiliser librement, en citant l'auteur.
