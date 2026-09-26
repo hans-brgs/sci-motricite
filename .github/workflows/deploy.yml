@@ -47,6 +47,10 @@ jobs:
           ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
           ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
           ALGOLIA_INDEX_NAME: ${{ secrets.ALGOLIA_INDEX_NAME }}
+          # Code du mode enseignant de l'Atelier centre de masse. Seule son
+          # empreinte est publiée ; sans ce secret, le mode enseignant est
+          # simplement indiqué comme non configuré.
+          CDM_TEACHER_CODE: ${{ secrets.CDM_TEACHER_CODE }}
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

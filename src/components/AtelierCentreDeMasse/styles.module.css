@@ -1,0 +1,795 @@
+/*
+ * Atelier centre de masse — couleurs et polices du site : tout ce qui est
+ * interface suit le thème clair ou sombre. Ce qui est dessiné SUR la photo
+ * (repères jaunes, polygone vert, symbole du centre de masse) garde ses couleurs
+ * fixes, et les pastilles du panneau reprennent ce même code : l'étudiant
+ * retrouve la même couleur des deux côtés.
+ */
+
+.app {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-inline: 16px;
+  padding-block: var(--sp-8) var(--sp-16);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text-body);
+}
+
+/* ---------- en-tête ---------- */
+
+.top {
+  margin-bottom: var(--sp-6);
+  max-width: 760px;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: var(--sp-3);
+}
+
+.back:hover {
+  color: var(--accent-strong);
+  text-decoration: none;
+}
+
+.top h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(26px, 4vw, 38px);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--text-title);
+  margin: 0 0 var(--sp-2);
+  text-wrap: balance;
+}
+
+.sub {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 16px;
+}
+
+/* ---------- mise en page ---------- */
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+}
+
+.stage {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+@media (min-width: 901px) {
+  .stage {
+    position: sticky;
+    top: calc(var(--ifm-navbar-height) + 16px);
+  }
+}
+
+.note {
+  margin: 0;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: var(--accent-soft);
+  color: var(--text-body);
+  font-size: 14px;
+}
+
+/* ---------- la photo ---------- */
+
+.canvasWrap {
+  position: relative;
+  background: #14191b;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  min-height: 240px;
+  box-shadow: var(--shadow-2);
+}
+
+.canvas {
+  display: block;
+  touch-action: none;
+  cursor: crosshair;
+  max-width: 100%;
+}
+
+.loupe {
+  position: absolute;
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+  pointer-events: none;
+  background: #000;
+  z-index: 2;
+}
+
+/* Le repère à placer, posé sur la photo : l'œil n'a pas à quitter l'image. */
+.hint {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  width: fit-content;
+  max-width: calc(100% - 24px);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px 6px 6px;
+  border-radius: 999px;
+  background: rgba(17, 17, 17, 0.78);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.3;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hintMark {
+  flex: none;
+  display: inline-grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #ffd23f;
+  color: #111;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.hintMarkPoly {
+  background: #2e9e6b;
+  color: #fff;
+}
+
+.caption {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ---------- panneau en accordéon ---------- */
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.step {
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.stepOpen {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-1);
+}
+
+.stepHead {
+  margin: 0;
+  font-size: inherit;
+}
+
+.stepHead button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: transparent;
+  border: 0;
+  border-radius: 12px;
+  color: var(--text-title);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.stepHead button:hover {
+  background: var(--bg-subtle);
+}
+
+.stepHead button:focus-visible {
+  outline: 3px solid var(--accent-strong);
+  outline-offset: -3px;
+}
+
+.badge {
+  flex: none;
+  display: inline-grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border-strong);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+.badgeDone {
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
+  color: var(--text-inverse);
+}
+
+.stepTitle {
+  flex: 1;
+  min-width: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.stepStatus {
+  flex: none;
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+
+.chevron {
+  flex: none;
+  color: var(--text-faint);
+  transition: transform 0.2s ease;
+}
+
+.stepOpen .chevron {
+  transform: rotate(180deg);
+}
+
+.stepBody {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 2px 16px 16px;
+  min-width: 0;
+}
+
+/* `display: flex` ci-dessus l'emporterait sur l'attribut `hidden` du
+   navigateur : une étape repliée resterait affichée. */
+.stepBody[hidden] {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .step,
+  .chevron {
+    transition: none;
+  }
+}
+
+/* ---------- contenus des étapes ---------- */
+
+.small {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.drop {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1.5px dashed var(--accent-strong);
+  border-radius: 10px;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  cursor: pointer;
+}
+
+.drop:hover {
+  border-style: solid;
+}
+
+.drop:focus-within {
+  outline: 3px solid var(--accent-strong);
+  outline-offset: 2px;
+}
+
+.drop span {
+  display: flex;
+  flex-direction: column;
+}
+
+.drop strong {
+  font-size: 15px;
+}
+
+.drop small {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.drop input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.tips {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 13.5px;
+  color: var(--text-muted);
+}
+
+.tips li {
+  margin: 2px 0;
+}
+
+.row {
+  display: flex;
+  gap: 8px 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.button {
+  font: inherit;
+  font-weight: 600;
+  font-size: 14.5px;
+  border-radius: 8px;
+  padding: 8px 14px;
+  border: 1.5px solid var(--accent-strong);
+  background: var(--accent-strong);
+  color: var(--text-inverse);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.button:hover {
+  color: var(--text-inverse);
+  text-decoration: none;
+  filter: brightness(1.06);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ghost {
+  background: transparent;
+  color: var(--accent-strong);
+}
+
+.ghost:hover {
+  color: var(--accent-strong);
+  background: var(--accent-soft);
+}
+
+.linkButton {
+  font: inherit;
+  font-size: 14px;
+  background: none;
+  border: 0;
+  padding: 4px;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.linkButton:hover {
+  color: var(--red-500);
+}
+
+.button:focus-visible,
+.linkButton:focus-visible,
+.select:focus-visible,
+.input:focus-visible,
+.teacher summary:focus-visible,
+.method summary:focus-visible {
+  outline: 3px solid var(--accent-strong);
+  outline-offset: 2px;
+}
+
+/* Liste des repères */
+
+.lm {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.lm li {
+  margin: 0;
+}
+
+.lm button {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 26px 1fr auto;
+  gap: 10px;
+  align-items: center;
+  text-align: left;
+  background: transparent;
+  color: var(--text-body);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 5px 8px;
+  font: inherit;
+  font-size: 14.5px;
+  cursor: pointer;
+}
+
+.lm button:hover {
+  background: var(--bg-subtle);
+}
+
+.lmLabel {
+  min-width: 0;
+}
+
+.num {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  border: 1.5px dashed var(--border-strong);
+  color: var(--text-muted);
+}
+
+.val {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 12.5px;
+  color: var(--text-faint);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.placed .num {
+  border: 0;
+  background: #ffd23f;
+  color: #111;
+}
+
+.placed .val {
+  color: var(--text-muted);
+}
+
+.edge.placed .num {
+  background: #2e9e6b;
+  color: #fff;
+}
+
+.active button {
+  border-color: var(--accent-strong);
+  background: var(--accent-soft);
+}
+
+.active .num {
+  outline: 2px solid var(--accent-strong);
+  outline-offset: 2px;
+}
+
+/* Champs */
+
+.two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+@media (max-width: 420px) {
+  .two {
+    grid-template-columns: 1fr;
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.label {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-title);
+}
+
+.label span {
+  font-weight: 400;
+  color: var(--text-faint);
+  font-size: 13px;
+}
+
+.input,
+.select {
+  font: inherit;
+  font-size: 16px;
+  padding: 8px 10px;
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  background: var(--bg-page);
+  color: var(--text-body);
+  width: 100%;
+}
+
+.input[type="number"] {
+  font-family: var(--font-mono);
+}
+
+.inline {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 13.5px;
+  color: var(--text-muted);
+}
+
+.inline .select {
+  width: auto;
+  font-size: 14px;
+  padding: 5px 8px;
+}
+
+.copyArea {
+  width: 100%;
+  min-height: 120px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  background: var(--bg-page);
+  color: var(--text-body);
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  padding: 8px;
+}
+
+/* Méthode repliée */
+
+.method {
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 10px;
+}
+
+.method summary {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent-strong);
+}
+
+.method[open] summary {
+  margin-bottom: 10px;
+}
+
+.method > * + * {
+  margin-top: 10px;
+}
+
+.formula {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  background: var(--bg-sunken);
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin: 0;
+  line-height: 1.7;
+}
+
+.tablewrap {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.table {
+  border-collapse: collapse;
+  font-size: 13px;
+  width: 100%;
+  display: table;
+  margin: 0;
+}
+
+.table th,
+.table td {
+  padding: 5px 7px;
+  border: 0;
+  border-bottom: 1px solid var(--border-subtle);
+  text-align: left;
+  white-space: nowrap;
+  background: transparent;
+}
+
+.table tr {
+  background: transparent;
+  border: 0;
+}
+
+.table th {
+  font-weight: 600;
+  color: var(--text-muted);
+  font-size: 12px;
+  letter-spacing: 0.03em;
+}
+
+.table td.nb {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.table td.vide {
+  color: var(--text-faint);
+}
+
+.table tfoot td {
+  font-weight: 700;
+  border-bottom: none;
+}
+
+/* Verdict */
+
+.empty {
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: var(--bg-subtle);
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.verdict {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 14.5px;
+}
+
+.verdict p {
+  margin: 0;
+}
+
+.verdict strong {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 16.5px;
+  margin-bottom: 2px;
+  color: var(--text-title);
+}
+
+.verdictIcon {
+  flex: none;
+  margin-top: 1px;
+}
+
+.in {
+  background: color-mix(in srgb, var(--green-500) 13%, transparent);
+  border-left: 4px solid var(--green-500);
+}
+
+.in .verdictIcon {
+  color: var(--green-500);
+}
+
+.out {
+  background: color-mix(in srgb, var(--red-500) 13%, transparent);
+  border-left: 4px solid var(--red-500);
+}
+
+.out .verdictIcon {
+  color: var(--red-500);
+}
+
+.fine {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 6px !important;
+}
+
+.figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.figure img {
+  border-radius: 8px;
+  display: block;
+  width: 100%;
+}
+
+.err {
+  color: var(--red-500);
+  font-size: 13.5px;
+  margin: 0;
+}
+
+/* Mode enseignant, discret en bas du panneau */
+
+.teacher {
+  border: 1px dashed var(--border-strong);
+  border-radius: 12px;
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.teacher[open] {
+  border-color: var(--brand-violet);
+}
+
+.teacher summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.teacher[open] summary {
+  margin-bottom: 10px;
+}
+
+.teacher > * + * {
+  margin-top: 10px;
+}
+
+.teacherLine {
+  margin: 0;
+  font-size: 14px;
+}
+
+.tv {
+  color: var(--brand-violet);
+  font-weight: 700;
+}

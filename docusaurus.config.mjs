@@ -1,7 +1,40 @@
 // @ts-check
+import { createHash } from "node:crypto";
+import { existsSync } from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
 import { themes as prismThemes } from "prism-react-renderer";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
+
+/**
+ * Secrets locaux. Le fichier `.env` n'est jamais versionné (voir .gitignore) ;
+ * en intégration continue, les mêmes variables viennent des secrets GitHub.
+ */
+const ENV = path.join(path.dirname(fileURLToPath(import.meta.url)), ".env");
+if (existsSync(ENV)) process.loadEnvFile(ENV);
+
+/**
+ * Mode enseignant de l'Atelier centre de masse.
+ *
+ * Le code en clair (CDM_TEACHER_CODE) ne quitte pas la machine qui compile :
+ * seule son empreinte SHA-256 est publiée, et la page la compare à celle de la
+ * saisie. Même normalisation des deux côtés : espaces retirés, minuscules.
+ *
+ * Limite : c'est un frein, pas une protection. La logique de calcul reste
+ * lisible dans le JavaScript publié, et un code court se retrouve par essais
+ * successifs — d'où l'avertissement sous 12 caractères.
+ */
+const codeEnseignant = (process.env.CDM_TEACHER_CODE || "").trim().toLowerCase();
+if (codeEnseignant && codeEnseignant.length < 12) {
+  console.warn(
+    "[Atelier centre de masse] CDM_TEACHER_CODE fait moins de 12 caractères : il se retrouve par essais successifs."
+  );
+}
+const cdmTeacherHash = codeEnseignant
+  ? createHash("sha256").update(codeEnseignant).digest("hex")
+  : null;
 
 /**
  * Sci Motricité — site public des cours de STAPS.
@@ -33,6 +66,11 @@ const algolia =
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Sci Motricité",
+  customFields: {
+    // null quand le code n'est pas configuré : la page le dit, au lieu d'offrir
+    // un champ qui ne pourrait jamais rien valider.
+    cdmTeacherHash,
+  },
   tagline: "Sciences du sport & motricité humaine",
   favicon: "img/favicon.svg",
 
@@ -125,6 +163,7 @@ const config = {
         items: [
           { to: "/cours", label: "Les cours", position: "left" },
           { to: "/glossaire", label: "Glossaire", position: "left" },
+          { to: "/outils", label: "Outils", position: "left" },
           { to: "/a-propos", label: "À propos", position: "left" },
           {
             href: "https://github.com/hans-brgs/sci-motricite",
@@ -145,6 +184,7 @@ const config = {
                 to: "/cours/biomecanique-marche-seniors",
               },
               { label: "Glossaire", to: "/glossaire" },
+              { label: "Outils", to: "/outils" },
             ],
           },
           {

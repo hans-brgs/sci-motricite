@@ -21,3 +21,6 @@ yarn-error.log*
 
 # Archive du design system (le dossier design-system/ est versionné, pas le zip)
 *.zip
+
+# Secrets locaux (code enseignant de l'Atelier centre de masse, mots de passe des TD)
+.env

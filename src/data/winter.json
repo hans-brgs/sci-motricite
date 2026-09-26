@@ -1,0 +1,20 @@
+{
+  "source": "Winter D.A. (2009), Biomechanics and Motor Control of Human Movement, 4e éd., table 4.1 — données de Dempster (1955).",
+  "copieDe": "vault : cours/biomecanique-marche-seniors/outils/table-anthropometrique-cours.md (source unique ; toute valeur change là-bas d'abord)",
+  "notes": [
+    "masse : masse du segment / masse du corps, pour UN segment (un seul bras, une seule cuisse).",
+    "fraction : position du centre de masse du segment depuis le repère proximal, en fraction de sa longueur.",
+    "membre : true si le segment existe en double (droite et gauche). En posture symétrique vue de profil, il compte deux fois.",
+    "Tête + cou : fraction 1,000 n'est pas une coquille — le centre de masse est au conduit auditif."
+  ],
+  "segments": [
+    { "id": "tete-cou", "nom": "Tête + cou", "reperes": "C7-T1 → conduit auditif", "masse": 0.081, "fraction": 1.0, "membre": false },
+    { "id": "tronc", "nom": "Tronc", "reperes": "grand trochanter → articulation gléno-humérale", "masse": 0.497, "fraction": 0.5, "membre": false },
+    { "id": "bras", "nom": "Bras", "reperes": "axe gléno-huméral → axe du coude", "masse": 0.028, "fraction": 0.436, "membre": true },
+    { "id": "avant-bras", "nom": "Avant-bras", "reperes": "axe du coude → styloïde ulnaire", "masse": 0.016, "fraction": 0.43, "membre": true },
+    { "id": "main", "nom": "Main", "reperes": "axe du poignet → 2ᵉ articulation métacarpo-phalangienne (médius)", "masse": 0.006, "fraction": 0.506, "membre": true },
+    { "id": "cuisse", "nom": "Cuisse", "reperes": "grand trochanter → condyles fémoraux", "masse": 0.1, "fraction": 0.433, "membre": true },
+    { "id": "jambe", "nom": "Jambe", "reperes": "condyles fémoraux → malléole médiale", "masse": 0.0465, "fraction": 0.433, "membre": true },
+    { "id": "pied", "nom": "Pied", "reperes": "malléole latérale → tête du 2ᵉ métatarsien", "masse": 0.0145, "fraction": 0.5, "membre": true }
+  ]
+}
