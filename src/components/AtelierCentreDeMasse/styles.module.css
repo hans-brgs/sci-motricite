@@ -301,6 +301,70 @@
   margin: 0;
 }
 
+/* Choix du plan d'analyse : deux cartes côte à côte. */
+.planChoix {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.planChoix legend {
+  padding: 0;
+  margin-bottom: 6px;
+}
+
+.planOpts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.planOpt {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 12px;
+  border: 1.5px solid var(--border-strong);
+  border-radius: 10px;
+  cursor: pointer;
+  color: var(--text-body);
+}
+
+.planOpt strong {
+  font-size: 14.5px;
+  color: var(--text-title);
+}
+
+.planOpt small {
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+
+.planOpt input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.planOn {
+  border-color: var(--accent-strong);
+  background: var(--accent-soft);
+}
+
+.planOn strong {
+  color: var(--accent-strong);
+}
+
+.planOpt:has(input:focus-visible) {
+  outline: 3px solid var(--accent-strong);
+  outline-offset: 2px;
+}
+
 .drop {
   position: relative;
   display: flex;
