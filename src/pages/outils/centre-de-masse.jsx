@@ -13,7 +13,7 @@ export default function PageCentreDeMasse() {
   return (
     <Layout
       title="Atelier centre de masse"
-      description="Pointer une photo de profil, calculer le centre de masse par la méthode segmentaire (table de Winter) et vérifier sa projection dans le polygone de sustentation."
+      description="Pointer une photo de profil ou de face, calculer le centre de masse par la méthode segmentaire (table de Winter) et vérifier sa projection dans le polygone de sustentation."
     >
       <AtelierCentreDeMasse />
     </Layout>

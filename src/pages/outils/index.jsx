@@ -13,7 +13,7 @@ const OUTILS = [
     href: "/outils/centre-de-masse",
     titre: "Atelier centre de masse",
     resume:
-      "Pointez une photo de profil, calculez le centre de masse avec la table de Winter, et vérifiez si sa projection tombe dans le polygone de sustentation.",
+      "Pointez une photo de profil ou de face, calculez le centre de masse avec la table de Winter, et vérifiez si sa projection tombe dans le polygone de sustentation.",
     etiquettes: ["Équilibre", "Centre de masse", "Photo"],
     vignette: <VignetteCentreDeMasse />,
   },
