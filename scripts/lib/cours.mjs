@@ -19,6 +19,10 @@ export const ASSETS = path.join(VAULT, "contenu/assets");
 
 export const COURSE = {
   slug: "biomecanique-marche-seniors",
+  // Intitulé complet, et forme courte pour le menu et le pied de page.
+  titre: "Biomécanique et analyse de la marche chez le sénior",
+  court: "Biomécanique & marche du sénior",
+  formation: "DEUST APSL Séniors",
   chapters: [
     {
       number: 1,

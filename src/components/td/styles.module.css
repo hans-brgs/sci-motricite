@@ -1,0 +1,886 @@
+/*
+ * Fiche de TD. Chaque rôle a sa couleur, la même partout :
+ *   rouge  — sécurité, interdits : ce qui ne se négocie pas ;
+ *   ambre  — la règle d'or d'un défi ;
+ *   bleu   — l'idée reçue, ce qu'on entend sur les réseaux ;
+ *   violet — les défis et la réponse protégée ;
+ *   teal   — les étapes du déroulement.
+ */
+
+.metaInfo {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font: var(--type-code);
+  font-size: 12px;
+  color: var(--banner-body, var(--text-muted));
+}
+
+.sousTitre {
+  margin: 0 0 var(--sp-2);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ---------- matériel ---------- */
+
+.materiel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: var(--sp-4) var(--sp-6);
+  margin-block: var(--sp-4);
+}
+
+.cases {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cases li {
+  margin: 0 0 4px;
+}
+
+.cases label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 1.4;
+  padding: 3px 0;
+}
+
+.cases input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.caseVisuelle {
+  flex: none;
+  display: inline-grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+  border-radius: 6px;
+  border: 1.5px solid var(--border-strong);
+  color: transparent;
+  transition: background 0.12s ease, border-color 0.12s ease;
+}
+
+.cases input:focus-visible + .caseVisuelle {
+  outline: 3px solid var(--accent-strong);
+  outline-offset: 2px;
+}
+
+.coche .caseVisuelle {
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
+  color: var(--text-inverse);
+}
+
+.coche > span:last-child {
+  color: var(--text-muted);
+  text-decoration: line-through;
+  text-decoration-color: color-mix(in srgb, var(--text-muted) 60%, transparent);
+}
+
+/* ---------- sécurité et interdits ---------- */
+
+.alerte {
+  margin-block: var(--sp-5);
+  padding: var(--sp-4) var(--sp-5);
+  border-radius: 12px;
+  border-left: 4px solid var(--red-500);
+  background: color-mix(in srgb, var(--red-500) 10%, transparent);
+}
+
+.alerte ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.alerteTitre {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 var(--sp-2);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--red-500);
+}
+
+.interdit {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin: var(--sp-3) 0 0;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--red-500) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--red-500) 35%, transparent);
+  font-size: 15px;
+}
+
+.interdit svg {
+  flex: none;
+  margin-top: 2px;
+  color: var(--red-500);
+}
+
+.interdit strong {
+  color: var(--red-500);
+}
+
+/* ---------- questions clés ---------- */
+
+.questionsCles ol {
+  counter-reset: q;
+  list-style: none;
+  padding: 0;
+  margin: var(--sp-4) 0;
+  display: grid;
+  gap: var(--sp-2);
+}
+
+.questionsCles li {
+  counter-increment: q;
+  position: relative;
+  margin: 0;
+  padding: 12px 14px 12px 50px;
+  border-radius: 10px;
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  font-size: 15.5px;
+}
+
+.questionsCles li::before {
+  content: counter(q);
+  position: absolute;
+  left: 14px;
+  top: 11px;
+  display: inline-grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ---------- étapes ---------- */
+
+.etape {
+  margin-block: var(--sp-4);
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle);
+  background: var(--surface-card);
+  overflow: hidden;
+}
+
+.etapeTete {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: color-mix(in srgb, var(--brand-teal) 9%, transparent);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.etapeNumero {
+  flex: none;
+  display: inline-grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--accent-strong);
+  color: var(--text-inverse);
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.etapeTitre {
+  flex: 1;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-title);
+}
+
+.duree {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.etapeCorps {
+  padding: 12px 16px 16px;
+}
+
+.etapeCorps > :first-child {
+  margin-top: 0;
+}
+
+.etapeCorps > :last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- choix du défi ---------- */
+
+.choix {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-block: var(--sp-4);
+}
+
+.choixLabel {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-right: 4px;
+}
+
+.choixPuce {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px 5px 5px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--brand-violet) 40%, transparent);
+  background: color-mix(in srgb, var(--brand-violet) 8%, transparent);
+  color: var(--text-title);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.choixPuce:hover {
+  color: var(--text-title);
+  text-decoration: none;
+  background: color-mix(in srgb, var(--brand-violet) 16%, transparent);
+}
+
+.choixNumero {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--brand-violet);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+/* ---------- défi ---------- */
+
+.defi {
+  margin-block: var(--sp-4);
+  border-radius: 14px;
+  border: 1px solid color-mix(in srgb, var(--brand-violet) 30%, var(--border-subtle));
+  background:
+    linear-gradient(150deg, color-mix(in srgb, var(--brand-violet) 9%, transparent), transparent 60%),
+    var(--surface-card);
+  scroll-margin-top: calc(var(--ifm-navbar-height) + 16px);
+}
+
+.defiOuvert {
+  box-shadow: var(--shadow-2);
+}
+
+.defiTete {
+  margin: 0;
+  font-size: inherit;
+}
+
+.defiTete button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  background: transparent;
+  border: 0;
+  border-radius: 14px;
+  color: var(--text-title);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.defiTete button:focus-visible {
+  outline: 3px solid var(--accent-strong);
+  outline-offset: -3px;
+}
+
+.defiNumero {
+  flex: none;
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--brand-violet);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.defiNoms {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.defiNom {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 19px;
+  letter-spacing: -0.01em;
+}
+
+.defiOrigines {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.defiGroupe {
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: var(--bg-subtle);
+  color: var(--text-muted);
+}
+
+.chevron {
+  flex: none;
+  color: var(--text-faint);
+  transition: transform 0.2s ease;
+}
+
+.defiOuvert .chevron {
+  transform: rotate(180deg);
+}
+
+.defiCorps {
+  padding: 0 18px 18px;
+}
+
+.defiCorps[hidden] {
+  display: none;
+}
+
+.defiCorps > :first-child {
+  margin-top: 0;
+}
+
+
+.illustration {
+  margin: var(--sp-3) 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.illustrationVide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  aspect-ratio: 16 / 7;
+  background: #14191b;
+  color: rgba(234, 240, 247, 0.55);
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+/* ---------- rubriques d'un défi ----------
+   Une seule forme pour tout l'intérieur de la carte : intitulé à gauche,
+   contenu à droite, filet fin entre deux rubriques. */
+
+.rubrique {
+  display: grid;
+  grid-template-columns: 9.5rem minmax(0, 1fr);
+  gap: 4px 20px;
+  padding: 14px 0;
+  border-top: 1px solid var(--border-subtle);
+}
+
+@media (max-width: 640px) {
+  .rubrique {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.rubriqueIntitule {
+  margin: 0;
+  padding-top: 2px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* La règle d'or : seule rubrique dont l'intitulé est en couleur, l'ambre doré
+   qui la signalait déjà. */
+.rubriqueAccent {
+  color: var(--amber-500);
+}
+
+.rubriqueCorps {
+  min-width: 0;
+  font-size: 15px;
+}
+
+.rubriqueCorps > :first-child {
+  margin-top: 0;
+}
+
+.rubriqueCorps > :last-child {
+  margin-bottom: 0;
+}
+
+.rubriqueCorps p {
+  margin: 0 0 8px;
+}
+
+.rubriqueCorps ol,
+.rubriqueCorps ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.rubriqueCorps li {
+  margin: 4px 0;
+}
+
+.regleOr {
+  font-weight: 600;
+  color: var(--text-title);
+}
+
+.ideeCitation {
+  margin: 0 0 6px;
+  padding: 0;
+  border: 0;
+  font-style: italic;
+  font-size: 16px;
+  color: var(--text-title);
+}
+
+.ideeCitation p {
+  margin: 0;
+}
+
+.ideeSource {
+  font-size: 13px;
+}
+
+.ideeSource a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ideeQuestion {
+  font-weight: 600;
+  color: var(--text-title);
+}
+
+/* Le premier filet sous la vidéo suffit : pas de filet au-dessus d'une
+   rubrique qui ouvre la carte. */
+.defiCorps > .rubrique:first-child {
+  border-top: 0;
+}
+
+/* ---------- réponse protégée ---------- */
+
+.protege {
+  margin: var(--sp-2) 0 0;
+  padding: var(--sp-4) var(--sp-5);
+  border-radius: 12px;
+  border: 1.5px dashed color-mix(in srgb, var(--brand-violet) 50%, var(--border-strong));
+  background: var(--bg-page);
+}
+
+.protegeOuvert {
+  border-style: solid;
+}
+
+.protegeTitre {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 var(--sp-2);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text-title);
+}
+
+.protegeTitre svg {
+  color: var(--brand-violet);
+}
+
+.protegeTexteFerme {
+  margin: 0 0 var(--sp-3);
+  font-size: 14.5px;
+  color: var(--text-muted);
+}
+
+.protegeTexte p {
+  font-size: 15.5px;
+  margin: 0 0 var(--sp-3);
+}
+
+.protegeTexte p:last-child {
+  margin-bottom: 0;
+}
+
+.protegeForm {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.protegeForm input {
+  flex: 1;
+  min-width: 160px;
+  font: inherit;
+  font-size: 16px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border-strong);
+  background: var(--bg-page);
+  color: var(--text-body);
+}
+
+.protegeForm button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font: inherit;
+  font-weight: 600;
+  font-size: 14.5px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1.5px solid var(--brand-violet);
+  background: var(--brand-violet);
+  color: #fff;
+  cursor: pointer;
+}
+
+.protegeForm button:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.protegeForm input:focus-visible,
+.protegeForm button:focus-visible {
+  outline: 3px solid var(--brand-violet);
+  outline-offset: 2px;
+}
+
+.protegeFaux {
+  margin: var(--sp-2) 0 0;
+  font-size: 14px;
+  color: var(--red-500);
+}
+
+/* ---------- évaluation et ressources ---------- */
+
+.evaluation {
+  margin-block: var(--sp-4);
+  padding: var(--sp-4) var(--sp-5);
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle);
+  background: var(--surface-card);
+}
+
+.evaluationFaits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3) var(--sp-8);
+  margin: 0 0 var(--sp-3);
+}
+
+.evaluationFaits div {
+  display: flex;
+  flex-direction: column;
+}
+
+.evaluationFaits dt {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.evaluationFaits dd {
+  margin: 0;
+  font-weight: 600;
+  color: var(--text-title);
+}
+
+.lienOutil {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-block: var(--sp-3);
+  padding: var(--sp-4) var(--sp-5);
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle);
+  border-left: 4px solid var(--brand-teal);
+  background: var(--surface-card);
+  text-decoration: none;
+  color: var(--text-body);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.lienOutil:hover {
+  text-decoration: none;
+  color: var(--text-body);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-2);
+}
+
+:global(.markdown) a.lienOutil,
+:global(.markdown) a.lienOutil:hover,
+:global(.markdown) a.choixPuce,
+:global(.markdown) a.choixPuce:hover {
+  text-decoration: none;
+}
+
+.lienOutilSurtitre {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+}
+
+.lienOutilTitre {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--text-title);
+}
+
+.lienOutilResume {
+  font-size: 14.5px;
+  color: var(--text-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chevron,
+  .lienOutil,
+  .caseVisuelle {
+    transition: none;
+  }
+}
+
+/* ---------- vidéo TikTok ---------- */
+
+.tiktok {
+  margin: var(--sp-3) auto var(--sp-4);
+  max-width: 300px;
+}
+
+/* Le cadre garde le format vertical des vidéos TikTok, en largeur bornée. */
+.tiktokCadre {
+  position: relative;
+  aspect-ratio: 9 / 16;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #0b0b0d;
+  box-shadow: var(--shadow-2);
+}
+
+.tiktokLecteur {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.tiktokFacade {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 20px;
+  border: 0;
+  cursor: pointer;
+  color: #fff;
+  font: inherit;
+  text-align: center;
+  background:
+    radial-gradient(90% 60% at 20% 10%, rgba(37, 244, 238, 0.28), transparent 60%),
+    radial-gradient(90% 60% at 85% 95%, rgba(254, 44, 85, 0.3), transparent 60%),
+    #0b0b0d;
+}
+
+.tiktokFacade:focus-visible {
+  outline: 3px solid #25f4ee;
+  outline-offset: -3px;
+}
+
+.tiktokAuteur {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  font-weight: 600;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.tiktokLire {
+  display: inline-grid;
+  place-items: center;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  transition: transform 0.18s ease, background 0.18s ease;
+}
+
+.tiktokFacade:hover .tiktokLire {
+  transform: scale(1.06);
+  background: rgba(255, 255, 255, 0.24);
+}
+
+.tiktokAction {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.tiktokNote {
+  position: absolute;
+  bottom: 14px;
+  left: 16px;
+  right: 16px;
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: 0.7;
+}
+
+.tiktokLegende {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.tiktokLegende a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tiktokLire {
+    transition: none;
+  }
+}
+
+/* ===========================================================================
+   Priorité sur les règles du texte
+   La feuille du site donne à tous les paragraphes et éléments de liste d'une
+   page (.markdown p, .markdown li) la police et la couleur du texte courant,
+   avec une règle plus précise que celles d'un module. Sans ce bloc, les
+   intitulés, titres d'encadré et tailles de la fiche seraient effacés en
+   silence — c'est ce qui arrivait.
+   ======================================================================== */
+
+:global(.markdown) .rubriqueIntitule {
+  font: 600 11.5px/1.4 var(--font-mono);
+  color: var(--text-muted);
+}
+
+:global(.markdown) .rubriqueAccent {
+  color: var(--amber-500);
+}
+
+:global(.markdown) .rubriqueCorps p,
+:global(.markdown) .rubriqueCorps li {
+  font-size: 15px;
+}
+
+:global(.markdown) .regleOr,
+:global(.markdown) .ideeQuestion {
+  font-weight: 600;
+  color: var(--text-title);
+}
+
+:global(.markdown) .ideeCitation p {
+  font-size: 16px;
+  font-style: italic;
+  color: var(--text-title);
+}
+
+:global(.markdown) .ideeSource {
+  font-size: 13px;
+}
+
+:global(.markdown) .alerteTitre {
+  font: 700 17px/1.3 var(--font-display);
+  color: var(--red-500);
+}
+
+:global(.markdown) .interdit {
+  font-size: 15px;
+}
+
+:global(.markdown) .questionsCles li {
+  font-size: 15.5px;
+}
+
+:global(.markdown) .protegeTitre {
+  font: 600 16px/1.3 var(--font-display);
+  color: var(--text-title);
+}
+
+:global(.markdown) .protegeTexteFerme {
+  font-size: 14.5px;
+  color: var(--text-muted);
+}
+
+:global(.markdown) .protegeFaux {
+  font-size: 14px;
+  color: var(--red-500);
+}

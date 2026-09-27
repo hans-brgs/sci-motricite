@@ -59,10 +59,16 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const PAGES_MANUELLES = [
   "docs/index.mdx",
   "docs/biomecanique-marche-seniors/index.mdx",
+  "docs/biomecanique-marche-seniors/cm/index.mdx",
+  "docs/biomecanique-marche-seniors/td/index.mdx",
   "src/pages/a-propos.mdx",
 ];
 
 const OUT = path.join(ROOT, "docs", COURSE.slug);
+// Un cours a deux sections : les cours théoriques (CM), générés ici depuis le
+// support écrit, et les travaux dirigés (TD). Les adresses des pages ne
+// dépendent pas de ces dossiers : chaque page fixe la sienne par son `slug`.
+const OUT_CM = path.join(OUT, "cm");
 const CHECK_ONLY = process.argv.includes("--check");
 
 /* ===========================================================================
@@ -1387,8 +1393,10 @@ function categoryJson(chapter, position) {
       label: chapter.label,
       position,
       collapsible: true,
-      collapsed: false,
-      link: { type: "doc", id: `${COURSE.slug}/${chapter.dir}/index` },
+      // Replié par défaut : quatre chapitres ouverts d'un coup noyaient la barre
+      // latérale. Celui de la page lue s'ouvre de lui-même.
+      collapsed: true,
+      link: { type: "doc", id: `${COURSE.slug}/cm/${chapter.dir}/index` },
     },
     null,
     2
@@ -1431,7 +1439,7 @@ function main() {
     }
 
     const pages = sections.map((s) => renderSection(s, chapter, corriges, footnotes, dates));
-    const dir = path.join(OUT, chapter.dir);
+    const dir = path.join(OUT_CM, chapter.dir);
     dossiersImages.push(path.join(ROOT, "static", "img", "figures", chapter.dir));
 
     // Table « numéro de section → adresse », pour que chaque question du quiz
@@ -1606,7 +1614,18 @@ function main() {
     fs.writeFileSync(
       path.join(dataDir, "cours.json"),
       `${JSON.stringify(
-        [{ slug: COURSE.slug, href: `/cours/${COURSE.slug}`, chapitres }],
+        [
+          {
+            slug: COURSE.slug,
+            titre: COURSE.titre,
+            href: `/cours/${COURSE.slug}`,
+            cm: `/cours/${COURSE.slug}/cm`,
+            td: `/cours/${COURSE.slug}/td`,
+            chapitres,
+            // Les fiches de TD seront listées ici quand leur conversion existera.
+            fiches: [],
+          },
+        ],
         null,
         2
       )}\n`,

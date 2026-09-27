@@ -2,7 +2,7 @@ import React from "react";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 
-import { Button, GlowSurface, Icon, ListeChapitres } from "@site/src/components";
+import { Button, GlowSurface, Icon, ListeChapitres, ListeFichesTD } from "@site/src/components";
 
 import glossaire from "@site/src/data/glossaire.json";
 
@@ -65,6 +65,21 @@ function Hero() {
   );
 }
 
+/** Intitulé de section (CM, TD) au-dessus de sa liste, avec un lien vers sa page. */
+function Section({ sigle, titre, href, teinte }) {
+  return (
+    <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: "var(--sp-4)", margin: "var(--sp-8) 0 var(--sp-3)" }}>
+      <h3 style={{ font: "var(--type-h3)", fontSize: "var(--fs-md)", margin: 0, display: "flex", alignItems: "baseline", gap: "var(--sp-2)" }}>
+        <span style={{ fontFamily: "var(--font-mono)", fontSize: 13, letterSpacing: "0.08em", color: teinte }}>{sigle}</span>
+        {titre}
+      </h3>
+      <Link to={href} style={{ font: "var(--type-small)", fontWeight: "var(--fw-semibold)", whiteSpace: "nowrap" }}>
+        Tout voir
+      </Link>
+    </div>
+  );
+}
+
 function Cours() {
   const lien = { font: "var(--type-small)", fontWeight: "var(--fw-semibold)" };
   return (
@@ -90,14 +105,18 @@ function Cours() {
           font: "var(--type-body)",
           color: "var(--text-body)",
           maxWidth: "var(--measure)",
-          margin: "var(--sp-3) 0 var(--sp-6)",
+          margin: "var(--sp-3) 0 0",
         }}
       >
         Décrire et expliquer la marche, la posture et l'équilibre du sénior, pour repérer un
         risque de chute et choisir l'activité physique qui y répond.
       </p>
 
+      <Section sigle="CM" titre="Cours théoriques" href="/cours/biomecanique-marche-seniors/cm" teinte="var(--brand-teal)" />
       <ListeChapitres slug="biomecanique-marche-seniors" />
+
+      <Section sigle="TD" titre="Travaux dirigés" href="/cours/biomecanique-marche-seniors/td" teinte="var(--brand-violet)" />
+      <ListeFichesTD slug="biomecanique-marche-seniors" />
 
       <div
         style={{

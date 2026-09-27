@@ -1,0 +1,11 @@
+{
+  "label": "Cours théoriques (CM)",
+  "position": 1,
+  "collapsible": true,
+  "collapsed": false,
+  "link": {
+    "type": "doc",
+    "id": "biomecanique-marche-seniors/cm/index"
+  },
+  "className": "sm-section-cours"
+}

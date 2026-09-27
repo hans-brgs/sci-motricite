@@ -1,7 +1,10 @@
 [
   {
     "slug": "biomecanique-marche-seniors",
+    "titre": "Biomécanique et analyse de la marche chez le sénior",
     "href": "/cours/biomecanique-marche-seniors",
+    "cm": "/cours/biomecanique-marche-seniors/cm",
+    "td": "/cours/biomecanique-marche-seniors/td",
     "chapitres": [
       {
         "numero": 1,
@@ -31,6 +34,7 @@
         "sections": 11,
         "quiz": "/cours/biomecanique-marche-seniors/ch4-forces-de-la-marche/quiz"
       }
-    ]
+    ],
+    "fiches": []
   }
 ]

@@ -1,0 +1,11 @@
+{
+  "label": "Travaux dirigés (TD)",
+  "position": 2,
+  "collapsible": true,
+  "collapsed": false,
+  "link": {
+    "type": "doc",
+    "id": "biomecanique-marche-seniors/td/index"
+  },
+  "className": "sm-section-cours"
+}

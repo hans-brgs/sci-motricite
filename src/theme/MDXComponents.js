@@ -14,6 +14,8 @@ import {
   Reference,
   Definition,
   ListeChapitres,
+  ListeFichesTD,
+  PortesCours,
   // Adaptateurs MDX
   Glossaire,
   Terme,
@@ -58,6 +60,8 @@ export default {
   Reference,
   Definition,
   ListeChapitres,
+  ListeFichesTD,
+  PortesCours,
   Glossaire,
   Terme,
   Capacites,

@@ -8,6 +8,8 @@ import { themes as prismThemes } from "prism-react-renderer";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 
+import { COURSE } from "./scripts/lib/cours.mjs";
+
 /**
  * Secrets locaux. Le fichier `.env` n'est jamais versionné (voir .gitignore) ;
  * en intégration continue, les mêmes variables viennent des secrets GitHub.
@@ -144,7 +146,8 @@ const config = {
       },
 
       docs: {
-        sidebar: { hideable: true, autoCollapseCategories: false },
+        // Ouvrir un chapitre referme les autres : la barre latérale reste courte.
+        sidebar: { hideable: true, autoCollapseCategories: true },
       },
 
       tableOfContents: {
@@ -161,7 +164,39 @@ const config = {
           height: 22,
         },
         items: [
-          { to: "/cours", label: "Les cours", position: "left" },
+          {
+            // Au survol, la liste des cours ; sous chacun, ses deux sections.
+            // Construit depuis scripts/lib/cours.mjs : un cours déclaré là
+            // apparaît ici sans retoucher le menu.
+            type: "dropdown",
+            label: "Les cours",
+            to: "/cours",
+            position: "left",
+            items: [
+              {
+                label: COURSE.court,
+                to: `/cours/${COURSE.slug}`,
+                className: "sm-dd-cours",
+                activeBaseRegex: `^/cours/${COURSE.slug}/?$`,
+              },
+              {
+                label: "Cours théoriques (CM)",
+                to: `/cours/${COURSE.slug}/cm`,
+                className: "sm-dd-sous",
+                // Allumé pendant la lecture d'un chapitre, de ses sections ou de
+                // son quiz : leurs adresses ne passent pas par /cm.
+                activeBaseRegex: `^/cours/${COURSE.slug}/(cm|ch\\d|\\d+-\\d+)`,
+              },
+              {
+                label: "Travaux dirigés (TD)",
+                to: `/cours/${COURSE.slug}/td`,
+                className: "sm-dd-sous",
+                activeBaseRegex: `^/cours/${COURSE.slug}/td`,
+              },
+              { type: "html", value: '<hr class="sm-dd-sep">' },
+              { label: "Tous les cours", to: "/cours", activeBaseRegex: "^/cours/?$" },
+            ],
+          },
           { to: "/glossaire", label: "Glossaire", position: "left" },
           { to: "/outils", label: "Outils", position: "left" },
           { to: "/a-propos", label: "À propos", position: "left" },

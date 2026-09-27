@@ -43,6 +43,8 @@ export { Reference } from "./content/Reference";
 export { Reveal } from "./content/Reveal";
 export { Quiz } from "./content/Quiz";
 export { ListeChapitres } from "./content/ListeChapitres";
+export { ListeFichesTD } from "./content/ListeFichesTD";
+export { PortesCours } from "./content/PortesCours";
 
 // Données
 export { Stat } from "./data/Stat";

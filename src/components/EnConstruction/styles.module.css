@@ -1,0 +1,214 @@
+.page {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: var(--sp-12) var(--sp-6) var(--sp-20);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chat {
+  width: min(100%, 300px);
+  height: auto;
+  margin-bottom: var(--sp-6);
+  overflow: visible;
+}
+
+.surtitre {
+  margin: 0 0 var(--sp-2);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+}
+
+.titre {
+  margin: 0 0 var(--sp-3);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(28px, 5vw, 40px);
+  letter-spacing: -0.02em;
+  color: var(--text-title);
+  text-wrap: balance;
+}
+
+.texte {
+  margin: 0;
+  max-width: 46ch;
+  font-size: 17px;
+  color: var(--text-muted);
+}
+
+.cible {
+  margin: var(--sp-4) 0 0;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  font-size: 14px;
+  color: var(--text-body);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-3);
+  margin-top: var(--sp-8);
+}
+
+.bouton {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: 1.5px solid var(--accent-strong);
+  background: var(--accent-strong);
+  color: var(--text-inverse);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.bouton:hover {
+  color: var(--text-inverse);
+  text-decoration: none;
+  filter: brightness(1.06);
+}
+
+.secondaire {
+  background: transparent;
+  color: var(--accent-strong);
+}
+
+.secondaire:hover {
+  color: var(--accent-strong);
+  background: var(--accent-soft);
+}
+
+/* ---------- l'animation du chat ---------- */
+
+.queue,
+.yeux,
+.casque,
+.oreilleG,
+.question,
+.tete,
+.cone {
+  transform-box: fill-box;
+}
+
+/* La queue balaie autour de sa base, à gauche du dessin de la queue. */
+.queue {
+  transform-origin: 0% 100%;
+  animation: balaie 2.4s ease-in-out infinite;
+}
+
+@keyframes balaie {
+  0%,
+  100% {
+    transform: rotate(-6deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+}
+
+/* Clignement : les yeux se ferment un instant, toutes les quelques secondes. */
+.yeux {
+  transform-origin: 50% 50%;
+  animation: cligne 4.2s infinite;
+}
+
+@keyframes cligne {
+  0%,
+  92%,
+  100% {
+    transform: scaleY(1);
+  }
+  95% {
+    transform: scaleY(0.1);
+  }
+}
+
+/* La tête penche doucement, comme un chat intrigué. */
+.tete {
+  transform-origin: 50% 90%;
+  animation: penche 5s ease-in-out infinite;
+}
+
+@keyframes penche {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(-5deg);
+  }
+  60% {
+    transform: rotate(3deg);
+  }
+}
+
+.oreilleG {
+  transform-origin: 80% 100%;
+  animation: oreille 3.6s ease-in-out infinite;
+}
+
+@keyframes oreille {
+  0%,
+  86%,
+  100% {
+    transform: rotate(0deg);
+  }
+  90% {
+    transform: rotate(-12deg);
+  }
+  94% {
+    transform: rotate(4deg);
+  }
+}
+
+.casque {
+  transform-origin: 50% 100%;
+  animation: dodeline 2.8s ease-in-out infinite;
+}
+
+@keyframes dodeline {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(-3px) rotate(3deg);
+  }
+}
+
+.question {
+  transform-origin: 50% 50%;
+  animation: flotte 2.6s ease-in-out infinite;
+}
+
+@keyframes flotte {
+  0%,
+  100% {
+    transform: translateY(0) rotate(8deg);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(-10px) rotate(-6deg);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .queue,
+  .yeux,
+  .casque,
+  .oreilleG,
+  .question,
+  .tete {
+    animation: none;
+  }
+}

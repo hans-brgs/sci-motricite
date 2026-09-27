@@ -9,6 +9,19 @@
         "start"
       ],
       "port": 3000
+    },
+    {
+      "name": "serve-build",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "serve",
+        "--",
+        "--port",
+        "3100",
+        "--no-open"
+      ],
+      "port": 3100
     }
   ]
 }

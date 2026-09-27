@@ -2,9 +2,9 @@
   "label": "Chapitre 2 · Cinétique",
   "position": 2,
   "collapsible": true,
-  "collapsed": false,
+  "collapsed": true,
   "link": {
     "type": "doc",
-    "id": "biomecanique-marche-seniors/ch2-cinetique/index"
+    "id": "biomecanique-marche-seniors/cm/ch2-cinetique/index"
   }
 }

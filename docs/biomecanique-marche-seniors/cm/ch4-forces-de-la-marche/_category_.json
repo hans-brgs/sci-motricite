@@ -2,9 +2,9 @@
   "label": "Chapitre 4 · Les forces de la marche",
   "position": 4,
   "collapsible": true,
-  "collapsed": false,
+  "collapsed": true,
   "link": {
     "type": "doc",
-    "id": "biomecanique-marche-seniors/ch4-forces-de-la-marche/index"
+    "id": "biomecanique-marche-seniors/cm/ch4-forces-de-la-marche/index"
   }
 }
