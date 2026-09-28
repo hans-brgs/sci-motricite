@@ -52,6 +52,19 @@ export function ListeFichesTD({ slug, style }) {
           }}
         >
           <div style={{ flex: 1, minWidth: 0 }}>
+            {f.seance && (
+              <div
+                style={{
+                  font: "var(--type-code)",
+                  fontSize: 12,
+                  color: "var(--brand-violet)",
+                  letterSpacing: "var(--ls-wide)",
+                  marginBottom: 2,
+                }}
+              >
+                {f.seance}
+              </div>
+            )}
             <Link
               to={f.href}
               style={{ font: "var(--type-h3)", fontSize: "var(--fs-md)", color: "var(--text-title)", textDecoration: "none" }}

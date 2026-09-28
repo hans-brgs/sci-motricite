@@ -101,6 +101,13 @@
   color: var(--accent-strong);
 }
 
+/* Le TD où sert l'outil : même pastille, teinte violette, pour ne pas se
+   confondre avec les étiquettes de contenu. */
+.etiquettes li.td {
+  background: var(--badge-violet-bg);
+  color: var(--badge-violet-fg);
+}
+
 .titre {
   font-family: var(--font-display);
   font-weight: 700;

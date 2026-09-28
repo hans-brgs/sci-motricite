@@ -1,0 +1,17 @@
+{
+  "berg": {
+    "valeur": 45,
+    "unite": "points",
+    "zone": "inferieur",
+    "description": "Score inférieur à 45 : risque de chute accru.",
+    "source": "Berg et coll., 1992"
+  },
+  "tug": {
+    "valeur": 13.5,
+    "unite": "s",
+    "zone": "superieurOuEgal",
+    "description": "Temps de 13,5 s ou plus : seuil qui classait correctement 90 % des personnes (chuteurs ou non).",
+    "source": "Shumway-Cook et coll., 2000",
+    "url": "https://academic.oup.com/ptj/article/80/9/896/2842520"
+  }
+}

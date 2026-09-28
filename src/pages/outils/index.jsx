@@ -3,10 +3,12 @@ import Layout from "@theme/Layout";
 
 import CarteOutil from "@site/src/components/CarteOutil";
 import VignetteCentreDeMasse from "@site/src/components/AtelierCentreDeMasse/Vignette";
+import VignetteBerg from "@site/src/components/EchelleBerg/Vignette";
+import VignetteTug from "@site/src/components/TimedUpAndGo/Vignette";
 
 /**
  * Les outils numériques des TD. Un outil = une carte ; en ajouter un, c'est
- * ajouter une entrée à OUTILS.
+ * ajouter une entrée à OUTILS. `td` : le ou les TD où l'outil sert.
  */
 const OUTILS = [
   {
@@ -14,8 +16,25 @@ const OUTILS = [
     titre: "Atelier centre de masse",
     resume:
       "Pointez une photo de profil ou de face, calculez le centre de masse avec la table de Winter, et vérifiez si sa projection tombe dans le polygone de sustentation.",
+    td: ["TD2"],
     etiquettes: ["Équilibre", "Centre de masse", "Photo"],
     vignette: <VignetteCentreDeMasse />,
+  },
+  {
+    href: "/outils/berg",
+    titre: "Échelle de Berg",
+    resume: "Coter les 14 épreuves, obtenir le score sur 56 et le situer face aux valeurs de référence.",
+    td: ["TD1"],
+    etiquettes: ["Équilibre", "Test clinique", "Score"],
+    vignette: <VignetteBerg />,
+  },
+  {
+    href: "/outils/tug",
+    titre: "Timed Up and Go",
+    resume: "Chronométrer le test, enregistrer le temps et le situer face aux valeurs de référence.",
+    td: ["TD1"],
+    etiquettes: ["Équilibre", "Test clinique", "Chronomètre"],
+    vignette: <VignetteTug />,
   },
 ];
 

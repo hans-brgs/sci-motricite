@@ -23,9 +23,9 @@ import styles from "./styles.module.css";
  * Composants d'une fiche de TD.
  *
  * Ils sont écrits pour être la cible de la conversion vault → site : une fiche
- * `contenu/td/<id>.md` rédigée selon `outils/format-fiche-td.md` deviendra une
- * page MDX qui n'utilise que ces composants. La fiche d'exemple
- * (`docs/…/td/exemple-defis-equilibre.mdx`) les écrit à la main, en attendant.
+ * `contenu/td/<id>.md` rédigée selon `outils/format-fiche-td.md` devient, à
+ * chaque `npm run sync`, une page MDX qui n'utilise que ces composants (voir
+ * `scripts/lib/td.mjs`).
  *
  * Le lecteur est l'étudiant, sur son téléphone, pendant la séance : chaque bloc
  * doit se lire d'un coup d'œil, et ce qui est interdit doit être aussi visible
@@ -33,13 +33,17 @@ import styles from "./styles.module.css";
  */
 
 /* ===========================================================================
-   En-tête, mission, matériel, sécurité, questions clés
+   En-tête, mission, matériel, sécurité
    ======================================================================== */
 
-export function EnTeteTD({ titre, seance, duree, activites = [], groupes, exemple = false, children }) {
+/**
+ * `chapitres` : les chapitres du cours que le TD mobilise, chacun en pastille
+ * qui mène au chapitre. Un chapitre pas encore publié mène à la page « en
+ * construction », comme les renvois.
+ */
+export function EnTeteTD({ titre, seance, duree, activites = [], groupes, chapitres = [], children }) {
   const meta = (
     <>
-      {exemple && <Badge tone="warning">Fiche d'exemple</Badge>}
       {seance && <Badge tone="violet">{seance}</Badge>}
       {activites.map((a) => (
         <Badge key={a} tone="neutral">
@@ -54,6 +58,16 @@ export function EnTeteTD({ titre, seance, duree, activites = [], groupes, exempl
       {groupes && (
         <span className={styles.metaInfo}>
           <Users size={13} aria-hidden="true" /> {groupes}
+        </span>
+      )}
+      {chapitres.length > 0 && (
+        <span className={styles.metaChapitres}>
+          {chapitres.map((c) => (
+            <Link key={c.numero} to={c.href} className={styles.metaChapitre} title={c.titre}>
+              Ch. {c.numero}
+              {c.avenir ? " (à venir)" : ""}
+            </Link>
+          ))}
         </span>
       )}
     </>
@@ -97,7 +111,7 @@ export function Materiel({ fiche, groupes = [] }) {
     <div className={styles.materiel}>
       {groupes.map((g) => (
         <div key={g.titre} className={styles.materielGroupe}>
-          <h3 className={styles.sousTitre}>{g.titre}</h3>
+          {g.titre && <h3 className={styles.sousTitre}>{g.titre}</h3>}
           <ul className={styles.cases}>
             {g.elements.map((e) => {
               const id = `${g.titre}:${e}`;
@@ -129,10 +143,6 @@ export function Securite({ children }) {
       {children}
     </aside>
   );
-}
-
-export function QuestionsCles({ children }) {
-  return <div className={styles.questionsCles}>{children}</div>;
 }
 
 /* ===========================================================================
@@ -168,16 +178,27 @@ export function Interdit({ children }) {
 }
 
 /* ===========================================================================
-   Les défis
+   Les défis et les activités
    ======================================================================== */
 
-/** Accès direct à son défi : sur téléphone, on ne fait pas défiler les trois autres. */
-export function ChoixDefi({ defis = [] }) {
+/*
+ * Deux sortes de blocs répétables, de même forme : le défi (avec une règle
+ * d'or) et l'activité. La sorte donne l'ancre (#defi-n, #activite-n) et les
+ * mots du sélecteur.
+ */
+const SORTES = {
+  defi: { ancre: "defi", choix: "Votre défi :", aria: "Aller à votre défi" },
+  activite: { ancre: "activite", choix: "Votre activité :", aria: "Aller à votre activité" },
+};
+
+/** Accès direct à son bloc : sur téléphone, on ne fait pas défiler les autres. */
+export function ChoixDefi({ sorte = "defi", defis = [] }) {
+  const s = SORTES[sorte] || SORTES.defi;
   return (
-    <nav className={styles.choix} aria-label="Aller à votre défi">
-      <span className={styles.choixLabel}>Votre défi :</span>
+    <nav className={styles.choix} aria-label={s.aria}>
+      <span className={styles.choixLabel}>{s.choix}</span>
       {defis.map((d) => (
-        <a key={d.numero} href={`#defi-${d.numero}`} className={styles.choixPuce}>
+        <a key={d.numero} href={`#${s.ancre}-${d.numero}`} className={styles.choixPuce}>
           <span className={styles.choixNumero}>{d.numero}</span> {d.nom}
         </a>
       ))}
@@ -185,10 +206,6 @@ export function ChoixDefi({ defis = [] }) {
   );
 }
 
-/**
- * Un défi, en carte repliable. Replié par défaut : chaque groupe n'en suit
- * qu'un. Il s'ouvre seul quand on y arrive par son ancre (#defi-n).
- */
 /**
  * Place la rubrique « Matériel » juste après l'illustration du défi, ou en
  * tête de carte s'il n'y en a pas : on lit ce qu'il faut avant les consignes.
@@ -206,8 +223,12 @@ function avecMateriel(children, materiel) {
   return [...liste.slice(0, i + 1), rubrique, ...liste.slice(i + 1)];
 }
 
-export function Defi({ numero, nom, origines, groupe, materiel, children }) {
-  const id = `defi-${numero}`;
+/**
+ * Un défi ou une activité, en carte repliable. Repliée par défaut : chaque
+ * groupe n'en suit qu'une. Elle s'ouvre seule quand on y arrive par son ancre.
+ */
+export function Defi({ sorte = "defi", numero, nom, origines, groupe, materiel, children }) {
+  const id = `${(SORTES[sorte] || SORTES.defi).ancre}-${numero}`;
   const [ouvert, setOuvert] = useState(false);
 
   useEffect(() => {
@@ -321,8 +342,8 @@ function Rubrique({ intitule, accent = false, children }) {
   );
 }
 
-export function CommentJouer({ children }) {
-  return <Rubrique intitule="Comment jouer">{children}</Rubrique>;
+export function CommentPratiquer({ children }) {
+  return <Rubrique intitule="Comment pratiquer">{children}</Rubrique>;
 }
 
 export function RegleOr({ children }) {
@@ -416,6 +437,7 @@ async function dechiffrer(fiche, motDePasse, chiffre) {
 
 const normaliser = (m) => m.trim().toLowerCase().replace(/\s+/g, " ");
 
+/** `titre` : « Explication et verdict » pour un défi, « Corrigé » pour une activité. */
 export function ReponseProtegee({ fiche, chiffre, titre = "Explication et verdict" }) {
   const [html, setHtml] = useState(null);
   const [saisie, setSaisie] = useState("");

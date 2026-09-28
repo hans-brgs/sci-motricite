@@ -1,0 +1,151 @@
+/*
+ * Échelle de Berg — ce qui lui est propre : les 14 épreuves et leurs niveaux,
+ * et le score. Le reste (cartes, champs, graphique, liste) vient de
+ * OutilsPassations/styles.module.css.
+ */
+
+/* Sur grand écran, le score et le graphique restent visibles pendant qu'on
+   cote les épreuves. */
+@media (min-width: 901px) {
+  .side {
+    position: sticky;
+    top: calc(var(--ifm-navbar-height) + 16px);
+  }
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.item {
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.done {
+  border-color: var(--status-success);
+}
+
+.item h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.35;
+  color: var(--text-title);
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+}
+
+.n {
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.titre {
+  min-width: 0;
+}
+
+.sc {
+  flex: none;
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.opts {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.opt {
+  position: relative;
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 8px;
+  align-items: start;
+  padding: 6px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  font-weight: 400;
+  font-size: 14.5px;
+  color: var(--text-body);
+}
+
+.opt:hover {
+  background: var(--bg-subtle);
+}
+
+.opt input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.k {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  border: 1.5px solid var(--border-strong);
+}
+
+.opt input:focus-visible + .k {
+  outline: 3px solid var(--accent-strong);
+  outline-offset: 2px;
+}
+
+.optOn {
+  border-color: var(--accent-strong);
+  background: var(--accent-soft);
+}
+
+.optOn:hover {
+  background: var(--accent-soft);
+}
+
+.optOn .k {
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
+  color: var(--text-inverse);
+}
+
+.total {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.big {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-title);
+}
+
+.of {
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+}

@@ -8,6 +8,7 @@
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "build": "docusaurus build",
+    "postbuild": "node scripts/verifier-contenu-protege.mjs",
     "swizzle": "docusaurus swizzle",
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
@@ -15,6 +16,7 @@
     "write-heading-ids": "docusaurus write-heading-ids",
     "sync": "node scripts/sync-content.mjs",
     "sync:check": "node scripts/sync-content.mjs --check",
+    "td:verifier": "node scripts/verifier-contenu-protege.mjs",
     "video": "node scripts/encode-video.mjs"
   },
   "dependencies": {

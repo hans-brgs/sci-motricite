@@ -19,6 +19,9 @@
  *   4. le **quiz d'entraînement** de fin de chapitre, écrit dans son propre
  *      fichier du vault — voir `parseQuiz` et le README § « Écrire un quiz ».
  *      Ce quiz est public : la banque d'examen ne doit jamais y figurer.
+ *   5. les **fiches de TD** déclarées dans `COURSE.td` — voir `lib/td.mjs` et
+ *      `outils/format-fiche-td.md` dans le vault. Leurs réponses protégées sont
+ *      chiffrées ici : le texte en clair n'atteint jamais `docs/`.
  *
  * Ce qui est propre à l'enseignant ne franchit jamais la frontière : état des
  * sections, notes de production, wikilinks vers le vault, plan de cours.
@@ -34,7 +37,9 @@ import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { VAULT, COURSE } from "./lib/cours.mjs";
+import { VAULT, COURSE, OUTILS } from "./lib/cours.mjs";
+import { convertirFiche } from "./lib/td.mjs";
+import { chercherTemoins } from "./lib/verifier-protege.mjs";
 import {
   toutesLignesVideo,
   estIdentifiantYouTube,
@@ -43,6 +48,9 @@ import {
 } from "./lib/video.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+
+// Les mots de passe des fiches de TD vivent dans `.env`, ignoré par Git.
+if (fs.existsSync(path.join(ROOT, ".env"))) process.loadEnvFile(path.join(ROOT, ".env"));
 
 /* ===========================================================================
    Configuration — elle vit maintenant dans `scripts/lib/cours.mjs`, partagée
@@ -69,6 +77,7 @@ const OUT = path.join(ROOT, "docs", COURSE.slug);
 // support écrit, et les travaux dirigés (TD). Les adresses des pages ne
 // dépendent pas de ces dossiers : chaque page fixe la sienne par son `slug`.
 const OUT_CM = path.join(OUT, "cm");
+const OUT_TD = path.join(OUT, "td");
 const CHECK_ONLY = process.argv.includes("--check");
 
 /* ===========================================================================
@@ -1407,7 +1416,7 @@ function categoryJson(chapter, position) {
    Exécution
    ======================================================================== */
 
-function main() {
+async function main() {
   if (!fs.existsSync(VAULT)) {
     console.error(`\n  Vault introuvable :\n    ${VAULT}\n`);
     console.error("  Corrigez la constante VAULT en tête de scripts/sync-content.mjs.\n");
@@ -1417,6 +1426,8 @@ function main() {
   const totals = { pages: 0, figures: 0, questions: 0, media: 0, missingAnswers: 0, quiz: 0 };
   const glossary = [];
   const chapitres = [];
+  // Toutes les sections publiées, pour les renvois des fiches de TD.
+  const sectionsPubliees = new Map();
   // Dossiers d'images que ce passage a le droit de nettoyer : ceux des
   // chapitres effectivement chargés, et celui des quiz.
   const dossiersImages = [path.join(ROOT, "static", "img", "quiz")];
@@ -1450,6 +1461,9 @@ function main() {
         `/cours/${COURSE.slug}/${slugify(p.section.number, p.section.title)}`,
       ])
     );
+    for (const p of pages) {
+      sectionsPubliees.set(p.section.number, { titre: plain(p.section.title), href: hrefs[p.section.number] });
+    }
 
     let quiz = [];
     if (chapter.quiz) {
@@ -1539,6 +1553,76 @@ function main() {
     );
   }
 
+  // Les fiches de TD. Une fiche en erreur n'est pas publiée, et le passage
+  // sort en échec ; les autres fiches le sont quand même.
+  const fiches = [];
+  const temoins = [];
+  const fichesEcrites = new Set();
+  let fichesEnEchec = 0;
+  if (COURSE.td?.length) console.log("");
+  for (const [i, decl] of (COURSE.td || []).entries()) {
+    const erreursLecture = [];
+    // Garde-fou : ces fichiers ne sont jamais lus, même déclarés par erreur.
+    if (/-enseignant\.md$/i.test(decl.source) || /qcm-examen/i.test(decl.source)) {
+      erreursLecture.push(`source refusée : ${decl.source} (notes enseignant ou banque d'examen)`);
+    }
+    const source = path.join(VAULT, decl.source);
+    if (!erreursLecture.length && !fs.existsSync(source)) erreursLecture.push(`source introuvable : ${decl.source}`);
+
+    let r;
+    if (erreursLecture.length) r = { erreurs: erreursLecture, avertissements: [], temoins: [] };
+    else {
+      const raw = fs.readFileSync(source, "utf8");
+      r = await convertirFiche({
+        decl,
+        raw,
+        propre: sanitizeSource(stripFrontMatter(raw)),
+        motDePasse: decl.motDePasse ? process.env[decl.motDePasse] || null : null,
+        position: i + 1,
+        site: {
+          slug: COURSE.slug,
+          frenchSpacing,
+          plain,
+          truncate,
+          chapitres,
+          sections: sectionsPubliees,
+          outils: OUTILS,
+        },
+      });
+    }
+
+    const etiquette = `TD · ${decl.id}`;
+    if (r.erreurs.length) {
+      fichesEnEchec += 1;
+      console.log(`  ${etiquette.padEnd(28)} NON PUBLIÉE · ${r.erreurs.length} erreur(s)`);
+    } else {
+      const { blocs, reponses } = r.resume;
+      console.log(`  ${etiquette.padEnd(28)} ${blocs} blocs · ${reponses} réponses protégées, chiffrées`);
+      fiches.push(r.resume);
+      temoins.push(...r.temoins);
+      const fichier = path.join(OUT_TD, `${decl.id}.mdx`);
+      fichesEcrites.add(fichier);
+      if (!CHECK_ONLY) {
+        fs.mkdirSync(OUT_TD, { recursive: true });
+        fs.writeFileSync(fichier, r.mdx, "utf8");
+      }
+    }
+    for (const e of r.erreurs) console.log(`      ✗ ${e}`);
+    for (const a of r.avertissements) console.log(`      · ${a}`);
+  }
+  // Une fiche retirée de la déclaration, ou passée en erreur, n'est plus
+  // publiée : sa page générée disparaît. Les pages écrites à la main restent.
+  if (!CHECK_ONLY && fs.existsSync(OUT_TD)) {
+    for (const nom of fs.readdirSync(OUT_TD)) {
+      const fichier = path.join(OUT_TD, nom);
+      if (!nom.endsWith(".mdx") || fichesEcrites.has(fichier)) continue;
+      if (fs.readFileSync(fichier, "utf8").includes("Page générée par scripts/sync-content.mjs")) {
+        fs.rmSync(fichier);
+        console.log(`  fiche retirée : ${path.relative(ROOT, fichier)}`);
+      }
+    }
+  }
+
   // Typographie des pages écrites à la main.
   let retouchees = 0;
   for (const relative of PAGES_MANUELLES) {
@@ -1622,8 +1706,7 @@ function main() {
             cm: `/cours/${COURSE.slug}/cm`,
             td: `/cours/${COURSE.slug}/td`,
             chapitres,
-            // Les fiches de TD seront listées ici quand leur conversion existera.
-            fiches: [],
+            fiches,
           },
         ],
         null,
@@ -1674,7 +1757,29 @@ function main() {
     console.log(`\n  ${warnings.length} avertissement(s) :`);
     for (const w of warnings) console.log(`    · ${w}`);
   }
+
+  // Test d'acceptation du contenu protégé : aucune phrase d'une réponse
+  // protégée ne doit se trouver dans ce qui part dans le dépôt public. Le même
+  // test passe sur build/ après `npm run build` (scripts/verifier-contenu-protege.mjs).
+  if (!CHECK_ONLY && temoins.length) {
+    const trouves = chercherTemoins([path.join(ROOT, "docs"), path.join(ROOT, "src", "data")], temoins);
+    if (trouves.length) {
+      console.log(`\n  ✗ CONTENU PROTÉGÉ EN CLAIR dans ${trouves.length} fichier(s) :`);
+      for (const t of trouves) console.log(`    ${path.relative(ROOT, t.fichier)} : « ${t.phrase} »`);
+      process.exitCode = 1;
+    } else {
+      console.log(`\n  contenu protégé : ${temoins.length} phrases témoins, aucune dans docs/ ni src/data/`);
+    }
+  }
+
+  if (fichesEnEchec) {
+    console.log(`\n  ✗ ${fichesEnEchec} fiche(s) de TD en erreur, non publiée(s).`);
+    process.exitCode = 1;
+  }
   console.log("");
 }
 
-main();
+main().catch((e) => {
+  console.error(e);
+  process.exit(1);
+});

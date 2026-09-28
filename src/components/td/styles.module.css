@@ -16,6 +16,30 @@
   color: var(--banner-body, var(--text-muted));
 }
 
+/* Les chapitres mobilisés : de petites pastilles-liens, discrètes dans le bandeau. */
+.metaChapitres {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.metaChapitre {
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-strong);
+  font: var(--type-code);
+  font-size: 12px;
+  color: var(--banner-body, var(--text-muted));
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.metaChapitre:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  text-decoration: none;
+}
+
 .sousTitre {
   margin: 0 0 var(--sp-2);
   font-family: var(--font-mono);
@@ -138,45 +162,6 @@
 
 .interdit strong {
   color: var(--red-500);
-}
-
-/* ---------- questions clés ---------- */
-
-.questionsCles ol {
-  counter-reset: q;
-  list-style: none;
-  padding: 0;
-  margin: var(--sp-4) 0;
-  display: grid;
-  gap: var(--sp-2);
-}
-
-.questionsCles li {
-  counter-increment: q;
-  position: relative;
-  margin: 0;
-  padding: 12px 14px 12px 50px;
-  border-radius: 10px;
-  background: var(--surface-card);
-  border: 1px solid var(--border-subtle);
-  font-size: 15.5px;
-}
-
-.questionsCles li::before {
-  content: counter(q);
-  position: absolute;
-  left: 14px;
-  top: 11px;
-  display: inline-grid;
-  place-items: center;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: var(--accent-soft);
-  color: var(--accent-strong);
-  font-family: var(--font-mono);
-  font-size: 12px;
-  font-weight: 600;
 }
 
 /* ---------- étapes ---------- */
@@ -832,7 +817,10 @@
   color: var(--text-muted);
 }
 
-:global(.markdown) .rubriqueAccent {
+/* Deux classes, pas une : à la minification, cette règle est fusionnée avec
+   `.rubriqueAccent` et remontée avant la règle grise ci-dessus, qui
+   l'emporterait à spécificité égale. */
+:global(.markdown) .rubriqueIntitule.rubriqueAccent {
   color: var(--amber-500);
 }
 
@@ -864,10 +852,6 @@
 
 :global(.markdown) .interdit {
   font-size: 15px;
-}
-
-:global(.markdown) .questionsCles li {
-  font-size: 15.5px;
 }
 
 :global(.markdown) .protegeTitre {

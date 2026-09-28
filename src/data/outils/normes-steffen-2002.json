@@ -1,0 +1,112 @@
+{
+  "source": "Steffen, T. M., Hacker, T. A., & Mollinger, L. (2002). Physical Therapy, 82(2), 128-137. Moyennes, écarts-types et effectifs repris de la base RehabMeasures (Shirley Ryan AbilityLab).",
+  "population": "96 personnes âgées vivant à domicile",
+  "berg": {
+    "unite": "points",
+    "url": "https://www.sralab.org/rehabilitation-measures/berg-balance-scale",
+    "groupes": [
+      {
+        "ageMin": 60,
+        "ageMax": 69,
+        "sexe": "H",
+        "n": 15,
+        "moyenne": 55,
+        "ecartType": 1
+      },
+      {
+        "ageMin": 60,
+        "ageMax": 69,
+        "sexe": "F",
+        "n": 22,
+        "moyenne": 55,
+        "ecartType": 2
+      },
+      {
+        "ageMin": 70,
+        "ageMax": 79,
+        "sexe": "H",
+        "n": 14,
+        "moyenne": 54,
+        "ecartType": 3
+      },
+      {
+        "ageMin": 70,
+        "ageMax": 79,
+        "sexe": "F",
+        "n": 22,
+        "moyenne": 53,
+        "ecartType": 4
+      },
+      {
+        "ageMin": 80,
+        "ageMax": 89,
+        "sexe": "H",
+        "n": 8,
+        "moyenne": 53,
+        "ecartType": 2
+      },
+      {
+        "ageMin": 80,
+        "ageMax": 89,
+        "sexe": "F",
+        "n": 15,
+        "moyenne": 50,
+        "ecartType": 3
+      }
+    ]
+  },
+  "tug": {
+    "unite": "s",
+    "url": "https://www.sralab.org/rehabilitation-measures/timed-and-go",
+    "groupes": [
+      {
+        "ageMin": 60,
+        "ageMax": 69,
+        "sexe": "H",
+        "n": 15,
+        "moyenne": 8,
+        "ecartType": 2
+      },
+      {
+        "ageMin": 60,
+        "ageMax": 69,
+        "sexe": "F",
+        "n": 22,
+        "moyenne": 8,
+        "ecartType": 2
+      },
+      {
+        "ageMin": 70,
+        "ageMax": 79,
+        "sexe": "H",
+        "n": 14,
+        "moyenne": 9,
+        "ecartType": 3
+      },
+      {
+        "ageMin": 70,
+        "ageMax": 79,
+        "sexe": "F",
+        "n": 22,
+        "moyenne": 9,
+        "ecartType": 2
+      },
+      {
+        "ageMin": 80,
+        "ageMax": 89,
+        "sexe": "H",
+        "n": 8,
+        "moyenne": 10,
+        "ecartType": 1
+      },
+      {
+        "ageMin": 80,
+        "ageMax": 89,
+        "sexe": "F",
+        "n": 15,
+        "moyenne": 11,
+        "ecartType": 3
+      }
+    ]
+  }
+}

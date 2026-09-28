@@ -1,0 +1,384 @@
+{
+  "source": "Formulaire du CNFS, version française de l'échelle de Berg (Berg et coll., 1992). Textes repris mot pour mot, orthographe du formulaire comprise.",
+  "url": "https://cnfs.ca/agees/images/documents/2-TEST_berg.pdf",
+  "epreuves": [
+    {
+      "numero": 1,
+      "titre": "Passer de la position assise à debout",
+      "consigne": "Veuillez vous lever en essayant de ne pas vous aider avec les mains.",
+      "niveaux": [
+        {
+          "cote": 4,
+          "texte": "Peut se lever sans l'aide des mains et garder son équilibre"
+        },
+        {
+          "cote": 3,
+          "texte": "Peut se lever seul avec l'aide de ses mains"
+        },
+        {
+          "cote": 2,
+          "texte": "Peut se lever en s'aidant de ses mains, après plusieurs essais"
+        },
+        {
+          "cote": 1,
+          "texte": "Besoin d'un peu d'aide pour se lever ou garder l'équilibre"
+        },
+        {
+          "cote": 0,
+          "texte": "Besoin d'une aide modérée ou importante pour se lever"
+        }
+      ]
+    },
+    {
+      "numero": 2,
+      "titre": "Se tenir debout sans appui",
+      "consigne": "Essayez de rester debout 2 minutes sans appui.",
+      "niveaux": [
+        {
+          "cote": 4,
+          "texte": "Peut rester debout sans danger pendant 2 minutes"
+        },
+        {
+          "cote": 3,
+          "texte": "Peut tenir debout pendant 2 minutes, sous surveillance"
+        },
+        {
+          "cote": 2,
+          "texte": "Peut tenir debout 30 secondes sans appui, sous surveillance"
+        },
+        {
+          "cote": 1,
+          "texte": "Doit faire plusieurs essais pour tenir debout 30 sec sans appui"
+        },
+        {
+          "cote": 0,
+          "texte": "Est incapable de rester debout 30 sec sans aide"
+        }
+      ]
+    },
+    {
+      "numero": 3,
+      "titre": "Se tenir assis sans appui, pieds au sol ou sur un tabouret",
+      "consigne": "SVP Assoyez-vous avec les bras croisés pour deux minutes.",
+      "niveaux": [
+        {
+          "cote": 4,
+          "texte": "Peut rester assis sans danger pendant 2 minutes"
+        },
+        {
+          "cote": 3,
+          "texte": "Peut rester assis pendant 2 minutes, sous surveillance"
+        },
+        {
+          "cote": 2,
+          "texte": "Peut rester assis pendant 30 secondes, sous surveillance"
+        },
+        {
+          "cote": 1,
+          "texte": "Peut rester assis pendant 10 secondes, sous surveillance"
+        },
+        {
+          "cote": 0,
+          "texte": "Est incapable de rester assis 10 secondes sans appui"
+        }
+      ]
+    },
+    {
+      "numero": 4,
+      "titre": "Passer de la position debout à assise",
+      "consigne": "SVP Assoyez-vous.",
+      "niveaux": [
+        {
+          "cote": 4,
+          "texte": "Peut s'asseoir correctement en s'aidant légèrement des mains"
+        },
+        {
+          "cote": 3,
+          "texte": "Contrôle la descente avec les mains"
+        },
+        {
+          "cote": 2,
+          "texte": "Contrôle la descente avec le derrière des jambes sur la chaise"
+        },
+        {
+          "cote": 1,
+          "texte": "S'asseoir sans aide, sans contrôler la descente"
+        },
+        {
+          "cote": 0,
+          "texte": "A besoin d'aide pour s'asseoir"
+        }
+      ]
+    },
+    {
+      "numero": 5,
+      "titre": "Transferts",
+      "consigne": "Placez la chaise pour un transfert pivot. Allez de la chaise (avec accoudoirs) à la chaise (sans accoudoir) et revenez.",
+      "niveaux": [
+        {
+          "cote": 4,
+          "texte": "Exécute sans difficulté, en s'aidant un peu des mains"
+        },
+        {
+          "cote": 3,
+          "texte": "Exécute sans difficulté, en s'aidant beaucoup des mains"
+        },
+        {
+          "cote": 2,
+          "texte": "Exécute avec des instructions verbales et/ou surveillance"
+        },
+        {
+          "cote": 1,
+          "texte": "A besoin d'être aidé par quelqu'un"
+        },
+        {
+          "cote": 0,
+          "texte": "A besoin de l'aide/surveillance de deux personnes"
+        }
+      ]
+    },
+    {
+      "numero": 6,
+      "titre": "Se tenir debout les yeux fermés",
+      "consigne": "Fermez les yeux et restez immobile 10 secondes.",
+      "niveaux": [
+        {
+          "cote": 4,
+          "texte": "Peut se tenir debout sans appui pendant 10 secondes, sans danger"
+        },
+        {
+          "cote": 3,
+          "texte": "Peut se tenir debout pendant 10 secondes, sous surveillance"
+        },
+        {
+          "cote": 2,
+          "texte": "Peut se tenir debout pendant 3 secondes"
+        },
+        {
+          "cote": 1,
+          "texte": "Incapable de fermer les yeux 3 secondes, mais garde l'équilibre"
+        },
+        {
+          "cote": 0,
+          "texte": "A besoin d'aide pour ne pas tomber"
+        }
+      ]
+    },
+    {
+      "numero": 7,
+      "titre": "Se tenir debout les pieds ensemble",
+      "consigne": "Placez vos pieds ensemble.",
+      "niveaux": [
+        {
+          "cote": 4,
+          "texte": "Peut joindre les pieds sans aide et rester debout 1 minute, sans danger"
+        },
+        {
+          "cote": 3,
+          "texte": "Peut joindre les pieds sans aide et rester debout 1 minute, sous surveillance"
+        },
+        {
+          "cote": 2,
+          "texte": "Peut joindre les pieds sans aide mais ne peut rester debout plus de 30 secondes"
+        },
+        {
+          "cote": 1,
+          "texte": "A besoin d'aide pour joindre les pieds mais peut tenir 15 secondes"
+        },
+        {
+          "cote": 0,
+          "texte": "A besoin d'aide et ne peut tenir 15 secondes"
+        }
+      ]
+    },
+    {
+      "numero": 8,
+      "titre": "Déplacement antérieur bras étendus",
+      "consigne": "Levez les bras à 90°. Étendez les doigts et allez le plus loin possible vers l'avant.",
+      "niveaux": [
+        {
+          "cote": 4,
+          "texte": "Peut se pencher sans danger, 25 cm (10 pouces) et plus"
+        },
+        {
+          "cote": 3,
+          "texte": "Peut se pencher sans danger, entre 12 et 25 cm (5 et 10 pouces)"
+        },
+        {
+          "cote": 2,
+          "texte": "Peut se pencher sans danger, entre 5 et 12 cm (2 et 5 pouces)"
+        },
+        {
+          "cote": 1,
+          "texte": "Peut se pencher, mais sous surveillance"
+        },
+        {
+          "cote": 0,
+          "texte": "A besoin d'aide pour ne pas tomber"
+        }
+      ]
+    },
+    {
+      "numero": 9,
+      "titre": "Ramasser un objet par terre",
+      "consigne": "Ramassez votre chaussure qui est devant vos pieds.",
+      "niveaux": [
+        {
+          "cote": 4,
+          "texte": "Peut ramasser sa chaussure facilement et sans danger"
+        },
+        {
+          "cote": 3,
+          "texte": "Peut ramasser sa chaussure mais sous surveillance"
+        },
+        {
+          "cote": 2,
+          "texte": "Ne peut ramasser sa chaussure mais s'arrête à 2-5 cm (1-2 pouces) de l'objet et garde l'équilibre"
+        },
+        {
+          "cote": 1,
+          "texte": "Ne peut ramasser sa chaussure, a besoin de surveillance"
+        },
+        {
+          "cote": 0,
+          "texte": "Incapable d'exécuter l'exercice/a besoin d'aide pour ne pas tomber"
+        }
+      ]
+    },
+    {
+      "numero": 10,
+      "titre": "Se retourner pour regarder par-dessus l'épaule gauche et l'épaule droite",
+      "consigne": "Retournez-vous et regardez directement derrière vous par-dessus votre épaule gauche. Faites le même mouvement à droite.",
+      "niveaux": [
+        {
+          "cote": 4,
+          "texte": "Se retourne des deux côtés ; bon déplacement du poids"
+        },
+        {
+          "cote": 3,
+          "texte": "Se retourne d'un côté seulement, mauvais déplacement du poids de l'autre côté"
+        },
+        {
+          "cote": 2,
+          "texte": "Se retourne de profil seulement en gardant son équilibre"
+        },
+        {
+          "cote": 1,
+          "texte": "A besoin de surveillance"
+        },
+        {
+          "cote": 0,
+          "texte": "A besoin d'aide pour ne pas tomber"
+        }
+      ]
+    },
+    {
+      "numero": 11,
+      "titre": "Pivoter sur place (360 degrés)",
+      "consigne": "Faites un tour complet de 360° et arrêtez. Puis, faites un autre tour complet de l'autre côté.",
+      "niveaux": [
+        {
+          "cote": 4,
+          "texte": "Peut tourner 360° sans danger de chaque côté en < 4 secondes"
+        },
+        {
+          "cote": 3,
+          "texte": "Peut tourner 360° sans danger d'un seul côté en < 4 secondes"
+        },
+        {
+          "cote": 2,
+          "texte": "Peut tourner 360° sans danger mais lentement"
+        },
+        {
+          "cote": 1,
+          "texte": "A besoin de surveillance ou de directives verbales"
+        },
+        {
+          "cote": 0,
+          "texte": "A besoin d'aide pour ne pas tomber"
+        }
+      ]
+    },
+    {
+      "numero": 12,
+      "titre": "Debout et sans support, placement alternatif d'un pied sur une marche ou tabouret",
+      "consigne": "Placez en alternance un pied sur un tabouret. Continuez jusqu'à ce que chaque pied ait touché le tabouret au moins 4 fois.",
+      "niveaux": [
+        {
+          "cote": 4,
+          "texte": "Peut tenir sans appui, sans danger et toucher 8 fois en 20 secondes"
+        },
+        {
+          "cote": 3,
+          "texte": "Peut tenir debout sans appui et toucher 8 fois en plus de 20 secondes"
+        },
+        {
+          "cote": 2,
+          "texte": "Peut toucher 4 fois sans aide et sous surveillance"
+        },
+        {
+          "cote": 1,
+          "texte": "Ne peut toucher plus de 2 fois ; a besoin d'aide"
+        },
+        {
+          "cote": 0,
+          "texte": "A besoin d'aide pour ne pas tomber/ne peut faire l'exercice"
+        }
+      ]
+    },
+    {
+      "numero": 13,
+      "titre": "Se tenir debout sans appui, un pied devant l'autre (noter le pied devant)",
+      "consigne": "Placez un pied devant l'autre, le talon en contact avec les orteils de l'autre jambe. Si impossible, faites un grand pas.",
+      "niveaux": [
+        {
+          "cote": 4,
+          "texte": "Peut placer un pied directement devant l'autre sans aide et tenir la position 30 secondes"
+        },
+        {
+          "cote": 3,
+          "texte": "Peut faire un grand pas sans aide et tenir la position 30 secondes"
+        },
+        {
+          "cote": 2,
+          "texte": "Peut faire un petit pas sans aide et tenir la position 30 secondes"
+        },
+        {
+          "cote": 1,
+          "texte": "A besoin d'aide pour faire un pas mais peut tenir 15 secondes"
+        },
+        {
+          "cote": 0,
+          "texte": "Perd l'équilibre en faisant un pas ou en essayant de se tenir debout"
+        }
+      ]
+    },
+    {
+      "numero": 14,
+      "titre": "Se tenir debout sur une jambe (noter la jambe utilisée)",
+      "consigne": "Tenez-vous sur une jambe le plus longtemps possible, sans prendre appui.",
+      "niveaux": [
+        {
+          "cote": 4,
+          "texte": "Peut lever une jambe sans aide et tenir plus de 10 secondes"
+        },
+        {
+          "cote": 3,
+          "texte": "Peut lever une jambe sans aide et tenir de 5 à 10 secondes"
+        },
+        {
+          "cote": 2,
+          "texte": "Peut lever une jambe sans aide et tenir de 3 à 5 secondes"
+        },
+        {
+          "cote": 1,
+          "texte": "Essaie de lever une jambe mais ne peut tenir 3 secondes tout en restant debout, sans aide"
+        },
+        {
+          "cote": 0,
+          "texte": "Ne peut exécuter l'exercice ou a besoin d'aide pour ne pas tomber"
+        }
+      ]
+    }
+  ]
+}

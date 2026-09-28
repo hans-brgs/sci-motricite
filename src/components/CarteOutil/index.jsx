@@ -8,16 +8,24 @@ import styles from "./styles.module.css";
  * Carte d'un outil sur la page « Outils » : une vignette qui montre ce que fait
  * l'outil, puis son nom, ce qu'on y fait en une phrase, et le lien pour l'ouvrir.
  * Toute la carte est cliquable.
+ *
+ * `td` : le ou les TD où l'outil sert (« TD1 »), en tête des étiquettes, dans
+ * une pastille à part. Un outil sert aussi hors TD : le champ est facultatif.
  */
-export default function CarteOutil({ href, titre, resume, etiquettes = [], vignette, large = false }) {
+export default function CarteOutil({ href, titre, resume, td = [], etiquettes = [], vignette, large = false }) {
   return (
     <Link to={href} className={`${styles.carte} ${large ? styles.large : ""}`}>
       <div className={styles.vignette} aria-hidden={vignette ? undefined : "true"}>
         {vignette}
       </div>
       <div className={styles.corps}>
-        {etiquettes.length > 0 && (
+        {td.length + etiquettes.length > 0 && (
           <ul className={styles.etiquettes}>
+            {td.map((t) => (
+              <li key={t} className={styles.td}>
+                {t}
+              </li>
+            ))}
             {etiquettes.map((e) => (
               <li key={e}>{e}</li>
             ))}

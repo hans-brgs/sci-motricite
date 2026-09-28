@@ -35,6 +35,25 @@
         "quiz": "/cours/biomecanique-marche-seniors/ch4-forces-de-la-marche/quiz"
       }
     ],
-    "fiches": []
+    "fiches": [
+      {
+        "id": "tests-equilibre",
+        "seance": "TD1",
+        "titre": "Tests d'équilibre",
+        "href": "/cours/biomecanique-marche-seniors/td/tests-equilibre",
+        "resume": "Faites passer un test d'équilibre utilisé par les professionnels, à l'un des membres de votre groupe sans puis avec la mallette de simulation du vieillissement, et expliquez à la classe ce que les épreuves évaluent.",
+        "blocs": 3,
+        "reponses": 3
+      },
+      {
+        "id": "defis-equilibre",
+        "seance": "TD2",
+        "titre": "Défis d'équilibre",
+        "href": "/cours/biomecanique-marche-seniors/td/defis-equilibre",
+        "resume": "Relevez un défi d'équilibre réputé impossible, prouvez par la mesure s'il l'est vraiment, puis démêlez le vrai du faux dans ce qu'on en dit sur les réseaux sociaux.",
+        "blocs": 4,
+        "reponses": 4
+      }
+    ]
   }
 ]

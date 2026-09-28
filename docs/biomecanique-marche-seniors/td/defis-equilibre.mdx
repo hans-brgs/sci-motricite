@@ -1,0 +1,267 @@
+---
+id: defis-equilibre
+title: "TD2 · Défis d'équilibre"
+sidebar_label: "TD2 · Défis d'équilibre"
+sidebar_position: 2
+slug: /biomecanique-marche-seniors/td/defis-equilibre
+description: "Relevez un défi d'équilibre réputé impossible, prouvez par la mesure s'il l'est vraiment, puis démêlez le vrai du faux dans ce qu'on en dit sur les…"
+hide_title: true
+---
+
+{/* Page générée par scripts/sync-content.mjs depuis contenu/td/defis-equilibre.md — ne pas modifier ici :
+    toute modification serait écrasée au prochain `npm run sync`. Les réponses protégées
+    ne sont pas dans ce fichier : seul leur chiffré y est. */}
+
+import { EnTeteTD, Materiel, Securite, Etape, Interdit, ChoixDefi, Defi, Illustration, CommentPratiquer, RegleOr, InstantPhoto, IdeeRecue, QuestionsDefi, ReponseProtegee, Evaluation, LienOutil } from "@site/src/components/td";
+
+<EnTeteTD titre={"Défis d'équilibre"} seance={"TD2"} duree={"1 h 30"} activites={["Exploration","Mesure","Esprit critique"]} groupes={"4 groupes (4, 4, 4, 3)"} chapitres={[{"numero":1,"titre":"Chapitre 1 — Cinématique : décrire le mouvement","href":"/cours/biomecanique-marche-seniors/ch1-cinematique"},{"numero":2,"titre":"Chapitre 2 — Cinétique : les causes du mouvement","href":"/cours/biomecanique-marche-seniors/ch2-cinetique"},{"numero":3,"titre":"Chapitre 3 — Le moment de force et le levier : ce qui provoque la rotation","href":"/cours/biomecanique-marche-seniors/ch3-moment-de-force-et-levier"},{"numero":4,"titre":"Chapitre 4 — Les forces de la marche","href":"/cours/biomecanique-marche-seniors/ch4-forces-de-la-marche"},{"numero":5,"titre":"Chapitre 5, à venir","href":"/en-construction?cible=Chapitre%205","avenir":true}]}>
+
+Relevez un défi d'équilibre réputé impossible, prouvez par la mesure s'il l'est vraiment, puis démêlez le vrai du faux dans ce qu'on en dit sur les réseaux sociaux.
+
+</EnTeteTD>
+
+## Introduction
+
+Vous tenez debout tant que la projection verticale de votre centre de masse tombe dans votre polygone de sustentation : la surface au sol délimitée par vos appuis, qui comprend vos pieds et tout l'espace entre eux ([§5.4](/en-construction?cible=%C2%A75.4)). Quand vous bougez, votre corps garde cette projection au-dessus des appuis par l'une de deux stratégies : déplacer le centre de masse, par exemple en reculant le bassin, ou déplacer les appuis, en faisant un pas ([§5.1](/en-construction?cible=%C2%A75.1)).
+
+Chacun des quatre défis de ce TD impose une posture ou une règle qui affecte ces stratégies. Certains d'entre vous échoueront, d'autres réussiront peut-être : c'est justement ce qu'il faudra expliquer.
+
+Sur les réseaux sociaux, ces défis circulent avec une explication toute faite : « seules les femmes y arrivent », « un doigt suffit à vous clouer sur votre chaise ». Votre travail est double : expliquer, avec les notions du cours, ce qui rend le défi réalisable ou non ; puis valider ou infirmer ces affirmations en vous appuyant sur des données objectives. Ce que vous ressentez pendant l'essai ne suffira pas à trancher : il faut passer de l'impression à la mesure ([§1.2](/cours/biomecanique-marche-seniors/1-2-pourquoi-mesurer-de-l-impression-a-la-donnee)).
+
+## Ce que vous allez acquérir
+
+- Passer d'une impression (« je n'y arrive pas ») à une mesure : la position du centre de masse par rapport au polygone de sustentation.
+- Calculer un centre de masse par la méthode segmentaire, à partir d'une photo et d'une table anthropométrique.
+- Expliquer un déséquilibre avec les notions du cours : projection verticale, polygone de sustentation, marge.
+- Aiguiser votre esprit critique : confronter les affirmations qui circulent sur les réseaux sociaux au réel, par la mesure, et expliquer d'où vient l'erreur.
+
+## Matériel
+
+<Materiel fiche={"defis-equilibre"} groupes={[{"titre":"Pour la classe","elements":["Deux chaises à dossier droit, sans accoudoirs","Une chaise légère","Un mur libre","Un petit objet (une gomme, un bouchon)"]},{"titre":"Par groupe","elements":["Au moins un ordinateur portable, avec un tableur","Une calculatrice","Un mètre ruban (facultatif : pour exprimer la marge en centimètres)"]},{"titre":"Par étudiant","elements":["Son téléphone, pour filmer"]}]} />
+
+## Sécurité
+
+<Securite>
+
+- Un pareur se tient à côté de chaque personne qui tente un défi, sans exception.
+- Ne forcez pas le mouvement si vous avez l'impression que le défi est réellement impossible pour vous.
+
+</Securite>
+
+## Déroulement
+
+<Etape numero={1} titre={"Découvrir votre défi"} duree={5}>
+
+1. Lisez la carte de votre défi, dans la rubrique « Les défis ».
+2. Répartissez les rôles : le sujet, qui tente le défi ; le pareur, qui le sécurise ; le vidéaste, qui filme ; l'analyste, qui pointera les repères sur la photo.
+3. Changez de rôle à chaque essai, pour que chacun tente le défi au moins une fois.
+
+</Etape>
+
+<Etape numero={2} titre={"Réaliser et filmer le défi"} duree={15}>
+
+1. Tentez le défi à tour de rôle, deux essais chacun.
+2. Filmez chaque échec. Si l'un de vous réussit, filmez aussi sa réussite : la mesure permettra de comprendre ce qui diffère. Si personne ne réussit, filmez un essai où vous enfreignez la règle d'or pour réussir.
+3. Filmez de profil : téléphone tenu à niveau, grille de l'appareil photo activée, à 3 m ou plus, à hauteur du bassin.
+4. Filmez au ralenti si votre téléphone le permet.
+
+<Interdit>Tenter un défi sans pareur.</Interdit>
+
+</Etape>
+
+<Etape numero={3} titre={"Mesurer"} duree={30}>
+
+1. Dans la vidéo d'un échec, choisissez l'instant indiqué par la carte de votre défi.
+2. Faites une capture d'écran de cet instant.
+3. Ouvrez l'Atelier centre de masse, chargez la capture, puis pointez les neuf repères anatomiques et les deux bords du polygone de sustentation indiqués par la carte de votre défi.
+4. Copiez le tableau de l'outil dans votre tableur, puis calculez le centre de masse avec la table de Winter.
+5. Saisissez votre résultat dans l'outil, et relevez la marge.
+6. Générez l'image annotée.
+7. Refaites la mesure sur la réussite, ou sur l'essai qui enfreint la règle d'or, au même instant du mouvement, et comparez les résultats.
+
+<Interdit>Placer le centre de masse à l'œil : il se calcule.</Interdit>
+
+</Etape>
+
+<Etape numero={4} titre={"Confronter la mesure à l'idée reçue"} duree={10}>
+
+1. Lisez ou visionnez la source de l'idée reçue indiquée sur la carte de votre défi.
+2. Résumez en une phrase ce que la source affirme.
+3. Notez ce que vos mesures confirment ou contredisent dans cette affirmation.
+
+</Etape>
+
+<Etape numero={5} titre={"Préparer la restitution"} duree={10}>
+
+1. Rédigez en une phrase votre verdict sur l'idée reçue.
+2. Préparez votre présentation orale. Le support est libre, et vous pouvez n'en utiliser aucun.
+3. Répartissez-vous la parole.
+
+</Etape>
+
+<Etape numero={6} titre={"Restitution"} duree={20}>
+
+1. Chaque groupe présente à son tour, devant toute la classe (voir « Modalités d'évaluation »).
+
+</Etape>
+
+## Les défis
+
+<ChoixDefi sorte={"defi"} defis={[{"numero":1,"nom":"Chaise collée"},{"numero":2,"nom":"Le renifleur"},{"numero":3,"nom":"Saut impossible"},{"numero":4,"nom":"Chair challenge"}]} />
+
+<Defi sorte={"defi"} numero={1} nom={"Chaise collée"} origines={"Super Glue Chair (Science World) · « standing up with finger on forehead » (TikTok)"} groupe={"1"} materiel={"une chaise à dossier droit, sans accoudoirs, placée contre un mur"}>
+
+<Illustration tiktok={{"id":"7157541433526897966","auteur":"precisioncaremedical","legende":"Un doigt sur le front"}} />
+
+<CommentPratiquer>
+
+1. Placez la chaise contre le mur, pour qu'elle ne puisse pas reculer.
+2. Asseyez-vous au fond de la chaise, le dos contre le dossier.
+3. Posez les pieds à plat sur le sol, devant vous.
+4. Croisez les bras sur la poitrine.
+5. Un partenaire pose doucement un doigt au milieu de votre front.
+6. Levez-vous en gardant le bas du dos en contact avec le dossier, sans repousser le doigt.
+
+</CommentPratiquer>
+
+<RegleOr>Le bas du dos reste en contact avec le dossier, les pieds restent à plat là où vous les avez posés, et vous ne repoussez pas le doigt.</RegleOr>
+
+<InstantPhoto>L'instant où vous poussez le plus fort sur vos pieds pour vous lever, de profil, le corps entier et les pieds dans le cadre. Bords du polygone à pointer : le talon et la pointe du pied.</InstantPhoto>
+
+<IdeeRecue source={{"titre":"TikTok, « standing up with finger on forehead »","url":"https://www.tiktok.com/discover/standing-up-with-finger-on-forehead"}} question={"Est-ce la force du doigt qui vous empêche de vous lever ? Démontrez-le par la mesure, et expliquez pourquoi on se trompe."}>Un doigt posé sur le front suffit à vous clouer sur votre chaise.</IdeeRecue>
+
+<QuestionsDefi>
+
+1. À partir de vos connaissances en biomécanique, expliquez ce qui rend ce défi réalisable ou non.
+2. À l'instant critique, à quel endroit tombe la projection de votre centre de masse par rapport à votre polygone de sustentation, et à quelle distance de son bord ? Faites la mesure sur un échec, sur une réussite si l'un de vous a réussi, et, si personne n'a réussi, sur un essai où vous enfreignez la règle d'or pour réussir (par exemple : décoller le dos du dossier, ou reculer les pieds sous l'assise en gardant le doigt sur le front).
+3. Quel est votre polygone de sustentation quand vous êtes assis ? Et au moment où vos fesses quittent la chaise ?
+4. Pourquoi, d'après vous, a-t-on choisi de poser le doigt sur le front, et pas sur le sternum ?
+
+</QuestionsDefi>
+
+<ReponseProtegee fiche={"defis-equilibre"} titre={"Explication et verdict"} chiffre={"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"} />
+
+</Defi>
+
+<Defi sorte={"defi"} numero={2} nom={"Le renifleur"} origines={"Smartie Sniffer (Science World) · « kneeling challenge » (TikTok)"} groupe={"2"} materiel={"un petit objet (une gomme, un bouchon)"}>
+
+<Illustration tiktok={{"id":"6937298437100588294","auteur":"jeremylynch"}} />
+
+<CommentPratiquer>
+
+1. Agenouillez-vous, les genoux serrés.
+2. Penchez-vous en avant et posez les avant-bras au sol devant vous, les coudes contre les genoux, les mains à plat.
+3. Votre partenaire pose le petit objet au sol, au bout de vos doigts.
+4. Redressez-vous à genoux, le buste droit, et croisez les mains dans le dos.
+5. Le pareur se place devant vous, à côté de l'objet, prêt à retenir vos épaules.
+6. Penchez-vous en avant et touchez l'objet avec le nez.
+
+</CommentPratiquer>
+
+<RegleOr>Les mains restent croisées dans le dos, et les genoux ne bougent pas.</RegleOr>
+
+<InstantPhoto>L'instant où votre buste est le plus penché, juste avant de toucher l'objet ou de basculer, de profil, les genoux et les pieds dans le cadre. Bords du polygone à pointer : les genoux et les orteils.</InstantPhoto>
+
+<IdeeRecue source={{"titre":"Jacksonville Orthopaedic Institute, « TikTok's Center of Gravity Challenge Explained »","url":"https://www.joionline.net/library/tiktoks-center-of-gravity-challenge-explained/"}} question={"Est-ce le sexe, ou la hauteur du centre de masse, qui décide de la réussite ? Démontrez-le par la mesure, et expliquez pourquoi on se trompe."}>Les femmes réussissent et pas les hommes, parce que leur centre de gravité est plus bas.</IdeeRecue>
+
+<QuestionsDefi>
+
+1. À partir de vos connaissances en biomécanique, expliquez ce qui rend ce défi réalisable ou non.
+2. À l'instant critique, à quel endroit tombe la projection de votre centre de masse par rapport à votre polygone de sustentation, et à quelle distance de son bord ? Faites la mesure sur un échec, sur une réussite si l'un de vous a réussi, et, si personne n'a réussi, sur un essai où vous enfreignez la règle d'or pour réussir (par exemple : poser une main au sol).
+3. À genoux, quel est votre polygone de sustentation ? Lequel de ses bords compte dans ce défi ?
+4. Comparez le calcul d'une personne qui réussit et celui d'une personne qui échoue. Qu'est-ce qui fait la différence ?
+
+</QuestionsDefi>
+
+<ReponseProtegee fiche={"defis-equilibre"} titre={"Explication et verdict"} chiffre={"0uclYh2fxhIc9f5Ov02sqIbuHFWDu5kNOUSbTxwz9W5XN05TG+ycdww+OlSeiqJhoOdSrkjSzjGp3EE3BwbCYD1JzjS7rqvjC9nDbcBhL6YucudU7yUcO3EXulEvGrSnuZmHP/bHtycD9u/DCgjgRc1sGUanARJmOeNDOfn3GHfUHqKTLfN368YiB3W3cm9Y3GNhxyqZWKmd/W58qLcO6/dulm6po5Ye28XG4VuoxLQzAZbI3y2glo4j/Hc4oYgf8R2bSH6o2JuYwpXqS3Z/df/UngNV9XhBkn4dgs1tzzFSY6kQNmO78JE2QYYfOraU4BVfWBufuO1uI8yGnZSKBDWMhDPiq0YP4hDh4pIL/85/XUJ8hjVJQTPqGiYWpXqAaztXR6dwy8nz1zRwUzw7Fc3iyTm45lNjZSBhIuvtFxPAL7r56BJYqNwen8wd36IzKzOkBSPanDkNREt/oUYKrjs082dH7fbJBmxZNlRmUj8wS/WZsqBCT5CszEqaiebsEHOSu1E22JkGWW4l/Ls0ME9gn7fhx7TVpzdSE0PtpgWvP1LFz4ldzLNQPgAh29HPLE0huIj6luWZSY9jjWOkXumjxH7rrj0P5o8bJjRmT9r2yxqfolIw+JhhXHUxM1A+nEX/ITjUKqMoek6FGyz7v9Y7/K5iG6voYu3RBWTJ3wJ1l86hKvlwxB6DbASXR0NeGzTSgN8wHJsvydF/2alVGY7aXnw2UkY00xyTiknkQWrZkqPrWdNT2WG+oQY5GfOpsDACcSmmpv8kbbB3mvMrhqZqbx+LHsa/0pRYVbEHkYIg0r+AFOHMj2KinXZsbRhHLjAG2iQ7SyRotUGZL3yFup3z16LGYnWtjlf1mEAn3dXEFxkePLoj3zfWOYSO/jpkud8B/MMYzr2sDD8SivLJBJSx8rT96z/+fMnAzyebKsjsKl3iAPHozceDcXIJ2WtHfmoQOEZLS9eOaB8I7+zurSCz51Ei60taZvHzRxmuMsj6fTF/rSrbmJNa+O88voSH9IJPUHg5gYtQsbjp7fgxkMBdTN2woSOFPcOH7eW+/A3j7wiWZJO3B6EfpVFNSOkkiVrXiTGhHNTjEaCiKbaKimlp+yjmleyh/8/JlcfFKdM59Xy/sVz5Hy1ADaUiu+TGIKgevPz9qT06WrC7G8/uvSQt6vN+7UPcNnn1wPzXCnE2Ju5+PdZGwkLw5PrTv6zymCs+mp/B3dS222iPVwXGd6r+neFBfXzeyc97UowWkz6ZeH4JxlMeyTQytI/5lU3dJb92Mdc1sEj7pE2Cmk58sIvEA68SRQOjAZoCHhK3CEhCIw9VXYOSYG7qbN9ANYtESV+xtpsQYm57lMPodp2Y2MWb2fmAxJsBZ96/kL9fAaaox9UHv6Oo+NuAZGd3XWFSrU4EGaXRc8GqD0FhzKEoRW7k6zkz0eKTcnRGRN/Yv8ZOY3FKOTlJkaWdM0AprFSwXMLu6bZYdkApYdcOSVkT482pAdWIMaPqfnviDzXpmRAWV8NEEyj+kO9VCyVyfCKQVtq1zbJSSvZ3ZO/1xzjljnWl5GXumjoEIe1hH49EJHMJIkaI1WmkekdtRzfQcIXU8EBo1TkIDC9N2zYnzun6U5ImYibnsaBn8DjAECfhXwusODWUt/NW9HIcRdDT5A1fvt5gZaQUsuwfPjzIdxIqrDV7RllLQKgGgI8ISbxZ6gDoeVLdKmP4NAcDL4zKHWdQ0hILCqPlN+3iReRLkNL7JB2Ff73O4wA1I1Kqnh1wP6IrAlWnWbTimmpAfIfny69TFEUkGvN0C3AaZuR5zdYEnOP+jGeyJ2mBw9ajUeB6/xWgmyWcR4qLpxanR2q+9ouojOdH8WWN41MCsJ/lm3yLStTMg20SGjg+mjVQyqOM8ZX1OLA/c5Gf1+fomZSMt7WKXeKYc86uxYDITX6rdocNUvCsgfN6C63sifix6cCcCRz3swbvaDg2MqEHHobOfb0xwuw0xYtIu5PpbWhWUXhcxiKL98LCJqSumw++otXAOpR34vhQWr9XQDZPow3XUwwJADDmKpvjIg4y+EkWs/SesDJ99gvOa9quawHmZhwApfa2v93Zv39t4XW1eW0XBswUNSLva+Qs9viaDDJBsvgs6HtinxWRF4vUN5sxydG9X8YEbKrplrNZlcW0UTQszyMLMthwXmItMW4/rCR5GYunmYFB9Y+XLogsXliU6wAoHBtF50ij32ZQszD3vxqcw0iVO8a7R8lRcXpKgG82mmVCX1bGRpHKETEomdqVAdV00LcDDFGFEoG+DS1VgMeX+mC+n59JZsIE09l77TuUfPr8TW3BSGF66ZKT/4bPxOeRtsWbBdU1OlFHacAIqhXB9S6rr9UIDN2ooxJHAUbCFXU+ynpPkWgGITFhLjFoFQ1W9EMv01ttmYTdzfk2rvlFrUtJlsNmFjgTOU3EIfj8PTNqGO9W4tBgzu4b8ZozRFowR2u+lQbKR+dnqaHg+Jx6cIFJvFti/j/kWCkgjN1CGsbqKTPyKPYfD9MwbDaS7uwRpLIIDM/Ri/dAFm8n7WKsjzjeQSh4PHSjGk/DgLKjKq9yrGdSx6dI165fuiofdj/eXG45KKiA0kJCifxgFaCIqIttGrJOCopQGsKK8sZOptVexiPL3Uy9+3aKbjrsrWNgZl8LdLK05hIwVmrbdgkzlUWd2CLHuhfNDY9CcFlxLDAWRTpfqMcVVFSKD411brtiRQ5/CGKPCHazl3Z0lq8u5GHYsewB1HLqcw9W2LI7+DzIsqIWQN28WmUJ52aLWTfXFIQ9LQCqtHq0YaRcl3swSd28Sm+ZfTqakgDgXWgQadKwcUw665FvqmC/iUyCy8PBm5Jqj/fVOauYPr3Yrr32EmXsbdDr6vxoMgBb+ausuefTTYXVtqdvcRpBeSWd1Hpux4Lk41fGJz6duoeyj31am6jgeuGpAUk5c378YzAc3ddRh+RDvNNh3fYlsJa16GBluAk137rlriiu4sXb7J5gHdJT36XZ6+LkREOhwJeKVmtAFTQRYACvm6ZfgfEayWCJLwOcjXxahfWvUTL8kkPLJh7tRpM+Ze6y8HGTT7zsltwp/aT5yijne0HHjfliZR/SjOQ3B7KHIaBA9lIFYpwzMbTCwTFQcpuxmUSVff6Wu+SniM3IT/72zZfzknUYH73PT5ryJtwzgnJ9xUBj9uODjORWWsx2HD9QKhFAUlMd1NE08IVDx7G+VvkyfKJ9kzDaZ+oUKlQIf9/qTAdbrR2d4qI5vbzlf6cI/xsqRGJysqChAc6UjlWElj7A5/IUJ9rByLhZfjN7wP4NLWy17EuWZ3p+iSN5y0tX0GvMvyBAoePc8J57XHIhJEzME6vpUz6ziCy9VfJoZ2yPbGt9NizZ//pzRXRahkW2DSMKiCkyH4lntT29ypq0KxvByFp6wftAtyOPeI2qPftcavTnGe9L8OrWcuOr1gmd8jT6eKDeBenGz/O/WD4vjhs9P44oTMuRP1zxwNaFUypSCPTbobnj04SZ9XzWac3a/ZRHKjJnQzvfPBHXpnO9goYwdaXXTFQ13KS3L5dDnUIBFGT1rrLjj6sRHIMjNcyQ2EWPDiujUtTauCJbbe9miZUOk9HtRVRcuXsExyL5vE65HrvjjiL+rLUSU2rELFmFyp0liXVt7XiN5aDqpPTXPqkndK1YY/AQE1b/Lg9X1IATUHNQr+8pqSoS1vUDFvMOht4teDTJXLdgwg8zDhTI2qhz3agR3hhxQjcsHrepXd/qywoUwpBbqIugM0kn2NpBPmUBuN+AkK52Y9rY+Q2lgQuL5G+V4juDJPBu6Bpq968pupD7qJ3mFgkuHGn63cKFr9w79MwKLzealtgQh5WOVRxZha9zBU6eUD2M4zyGObO8ArhmILSekfl4RgYgqMGR8b0lYJSHYLtgaVBebohxUPI0omZDch0IUEf1oWO+VNE9/edMFXffohe8oTdC21ikl/lfrRbMgtairqwadcJtL8Au6C6n0qmolSwocnycnLMljJzjpiLgyS3je7NtPGXd6X0oeH/vhzb19+gjCkJcqeOOvTSFc8f7p4Wcgp7EJHymt/RKNFKiomtXPDLityBEYVhVZOeBiuRYH/dsnrzQcrcwbI60m1G76XUUiVkUySduwM8jojtCvHwiXHf6BHzu26wA2QP/zH+fDtOyBYdXmiwtf6nvRVnNzmICnjgqfQTSJRKRgSrSVjZXTUjY+S9DFbGk9aZ2dLHQnXWmHWE1BN3THH0PmT54YLzAKWC5O0979g6ajnVon1+UfLUbcF8byb4AcebE+ou5zBiU+QctYwSbVeOgfOtaU2cfwHQlrcTxGmW7Rg7cTrpHKaC3uI0UIesYVd7KG+6CpKKfI2f51o13OcIJvoCp6snrhSM4fiuvgnTog7hvzBo//UV+7J7VzsxUSWsyEHUlVLAZvOoXYatUCxGLvmZxQyOuEo0TFAZ2zd4oDD+/+EETqc7eDg2095nKcMdjMWPZRV4la1xMCdVsp3qipVbevptdfDMFvbt4awkTaUvBIxU6jrKVAXosvjSwSCIk3S22Xz6+KyGY7E9JK4360sft1BusqpOe4YBzhLbHVLtuP0WiFoVkmrY6wuIhSsIfsXaE2Vu6e+SVxNCpqkm69CvcNy2USooJ4deKIwmS2olMwq0vOgEoIerM9wEeGh9lwFYUNoTV+co+Bm605kglvGiQybO4guP9U5izmYbl+qMJokg3bm/8y5c5IexLUq4iEodbgWJpnYHRlfRhLp+PH1AJTsLMDi5f9uPm6vHmJdkehXxKIFqislel3X7BvX5YuIOTNPdthC6JnHuqJPqYrZViZB7bDljtQMcTkrVQFUnNT5WiHDaHRzATxTUWiwXMbAsX0tG9CR8nyoWuFMpDWulehGP+vxU+j3+oxcof2bSdsAmDr+abK/1iCYu1bXUSdoRx+2q+sAdedWikMYpGcc7O/KoGYVeidff3SA9GgmBSH0sN9yvXsfjfflHithzJD1o8uA5SLlLacc4Ko9ywCD+ahxy95tcMx2VkwFBlt8lKA50Fmp3vMG6H/DkYzX1ctu3UgVXX72/+5cxD996wX/GM6aZxhqiLjPqxe/UndgagiuYhwGPGLFMHzmBW18fw1IkPpojvbj/SIU8pHW+dPTgb9sevnKU3ItYMJ639vnwMvG1apUfZ0VjP9RAV6M6pnehBVIhpoVLDEWtU+r/Vyf2o6k77tFyYT7bLoqe3wMlSw8aj+45onaDoLAiwGfDsWBaJ1GAWaSYXmr4b7GRydgH4y8WNoqh88QEjfTi6TL9PCxRQkuiv9oEckRRnX02JFf4bnpKATq6vRcZckpFZ1oeWToY67Q/+QOxfD9/W6CKAqC3vEpiYEO7sX1cAdPC8UMLIH8N1mxVXIdHsIKv/7Wv5MxeK6AQO1goUgWMU6wMOXVLz2grp0mIjpuXxc0YTtYZh4M7IwF94kz0qVIlwyEvojigqs+AZ9Xr/rZJroClYA8i/33Qe55tSbv5jNDc9tK9E19QTn9tY93QuJMSjVyHiQIkmxwGkkrWvzVjvF/MD2EpwHxajzBUodtlke26W3M6rTC/AtupjgzeD+uES6x7/8O3HmD010akp9Pl/xWKXww0+HV2eu6+NjNhepgt4qL3Qu8TFwZM/j9G73Zqm8Rot/jCsP/FbovPTiitrQhfrSywKf/3ZbXbSCD1GaCkiT80J3vkLLhzR8+X+ZLjjD+sRojyztLVdi4VNP5n6KJGOl2jV9rvtLnD4TV575MJYdf8CaCYlXOdViGSkbGO1Hm14qdbtushLZdhE05vY2kteD0Yi+tDvD5WrJ303Z6aHv35b2+xxg6DpFGyyHH/ApjToZ2lC9MrUsm3SvMxTLvKwI+hORaPIltMK5omkN4sWZ4scL65hDbnRtrGaKSiL+UfxT4AadPO32uS6nb2AO6jbq6mxGQnFllecUSU3m+JJJMwIY2UgtuMKqZafm+0Kt0qoMi/JgYlb4FY2FZCz05IryudFxB6ZYK3i1CEiYOSJEwx7EswUPZ+QhJHq+JfLvqoQaZlbVRGOjtufhRAMYkFb64A0yf++ClseW5Ol25GBbGimzcNDO3vF4oO36UTH+WETKpvF6s/bFT+Lv0WGTD+B/ywoTQP7NEVgOQp+lCp6kY9J69AFxsACd3DbbApmsa4RHvCYWAzThmVJ38ORez4/Hf6rHETi6pU2Q4LH39G93AHjtJz9aKzmLbRcKuMG7kayj7J6ZioE2lzY5jwJuRknwencPfYZ9XwsQF4dNcaM/rpj0jC7b22WZ8gHRZqW5ivI14yoD0fKIjQ+R5c4CJwSYCa6dr/iSPSDfn3myl0QiCYsesyB7zQSbn365V4aysF/ODOqKjhrXMibSG/YnqAsa19LMdsw3SRtSJobQ2hX5xvtI1dvzj/qWU6IdxLzDKlAi2YAGuHKSCOOY+mkb/fzT7GrlvRYhS+wk058FhUxF8Tq9if5D8ON4AZ9aJ/TzBeCRrorqvnAI1PEql3Kwv9uXVmfEsBshly1i1j2BQHUmUBQf71U+qTIAy7JghUkqx1UUaphsw1WUXT6iOch/WMgEz0hFNhxtTlF8OQDsPPuJrcqUUS/JbLrg8p2O+RcXZgFnfw0vkXEE0rGhnj8/GPn/2/Yh/BUVv7926Dr2U5+lbxKSAWOuqXgOsGvBaR4U9OBRCA0vY5gOBEvc2RIs9CMqNz1eXCucVJSfIaS/UmqpWaGBkca8NAS2U5f8+BlYw4eHsqpI57D/6A5bPwekDjeJrtViOHXrkPLamT+Ap8nUys0Cjnj85tRHyg3+QTxJwiQpzdi9UZUAPWCg5cj+Inuq3Q5KdoSMq457VhECinqtg=="} />
+
+</Defi>
+
+<Defi sorte={"defi"} numero={3} nom={"Saut impossible"} origines={"Impossible Leap (Science World)"} groupe={"3"}>
+
+<Illustration tiktok={{"id":"7085723279616462085","auteur":"wesbarker"}} />
+
+<CommentPratiquer>
+
+1. Debout, penchez-vous en avant et attrapez vos orteils avec les mains, les genoux légèrement fléchis.
+2. Le pareur se place devant vous, prêt à retenir vos épaules.
+3. Sans lâcher vos orteils, essayez de sauter vers l'avant.
+4. Recommencez, en essayant cette fois de sauter vers l'arrière ; le pareur se place alors derrière vous.
+
+</CommentPratiquer>
+
+<RegleOr>Vos doigts ne lâchent pas vos orteils, du départ jusqu'à la réception.</RegleOr>
+
+<InstantPhoto>L'instant où vous poussez le plus fort sur le sol, juste avant que vos pieds ne le quittent : une fois pour le saut vers l'avant, une fois pour le saut vers l'arrière. De profil, les pieds dans le cadre. Bords du polygone à pointer : le talon et la pointe du pied.</InstantPhoto>
+
+<IdeeRecue source={{"titre":"TikTok, Wes Barker, « It's IMPOSSIBLE to jump while holding your toes! »","url":"https://www.tiktok.com/@wesbarker/video/7085723279616462085"}} question={"Est-il vraiment impossible de sauter en se tenant les orteils ? Démontrez-le par la mesure, et expliquez pourquoi on se trompe."}>Il est impossible de sauter en se tenant les orteils.</IdeeRecue>
+
+<QuestionsDefi>
+
+1. À partir de vos connaissances en biomécanique, expliquez ce qui rend ce défi réalisable ou non.
+2. À l'instant critique, à quel endroit tombe la projection de votre centre de masse par rapport à votre polygone de sustentation, et à quelle distance de son bord ? Faites la mesure sur le saut vers l'avant, sur le saut vers l'arrière, et, si aucun des deux ne réussit, sur un essai où vous enfreignez la règle d'or pour réussir (par exemple : lâcher les orteils).
+3. Quel est votre polygone de sustentation pendant le défi ? Par quel bord la projection de votre centre de masse doit-elle passer pour sauter vers l'avant ? Et vers l'arrière ?
+4. Pourquoi l'un des deux sauts est-il possible, et pas l'autre ?
+
+</QuestionsDefi>
+
+<ReponseProtegee fiche={"defis-equilibre"} titre={"Explication et verdict"} chiffre={"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"} />
+
+</Defi>
+
+<Defi sorte={"defi"} numero={4} nom={"Chair challenge"} origines={"Chair challenge (TikTok)"} groupe={"4"} materiel={"une chaise légère, un mur libre, un mètre ruban"}>
+
+<Illustration tiktok={{"id":"7439149021882731822","auteur":"demibagby"}} />
+
+<CommentPratiquer>
+
+1. Tenez-vous face au mur, puis reculez de deux longueurs de votre pied, en les mesurant depuis le mur : un pied devant l'autre, talon contre pointe.
+2. Penchez-vous en avant, le buste à l'horizontale, jusqu'à poser le haut de la tête contre le mur.
+3. Votre partenaire place la chaise sous votre buste, entre vous et le mur.
+4. Saisissez la chaise des deux mains et soulevez-la contre votre poitrine.
+5. Redressez-vous jusqu'à être debout, la chaise contre la poitrine.
+
+</CommentPratiquer>
+
+<RegleOr>Les pieds ne bougent pas, et la chaise reste contre votre poitrine jusqu'à ce que vous soyez debout.</RegleOr>
+
+<InstantPhoto>L'instant où votre tête quitte le mur, ou tente de le quitter, la chaise contre la poitrine, de profil, les pieds et le mur dans le cadre. Bords du polygone à pointer : le talon et la pointe du pied.</InstantPhoto>
+
+<IdeeRecue source={{"titre":"CBS News, « Why Are Women So Much Better At The Chair Challenge Than Men? »","url":"https://www.cbsnews.com/newyork/news/why-are-women-so-much-better-at-the-chair-challenge-than-men/"}} question={"Est-ce le sexe, ou la hauteur du centre de masse, qui décide de la réussite ? Démontrez-le par la mesure, et expliquez pourquoi on se trompe."}>Les femmes réussissent et pas les hommes, parce que leur centre de gravité est plus bas.</IdeeRecue>
+
+<QuestionsDefi>
+
+1. À partir de vos connaissances en biomécanique, expliquez ce qui rend ce défi réalisable ou non.
+2. À l'instant critique, à quel endroit tombe la projection de votre centre de masse par rapport à votre polygone de sustentation, et à quelle distance de son bord ? Faites la mesure sur un échec, sur une réussite si l'un de vous a réussi, et, si personne n'a réussi, sur un essai où vous enfreignez la règle d'or pour réussir (par exemple : avancer un pied vers le mur).
+3. Tant que votre tête touche le mur, qu'est-ce qui vous empêche de basculer vers l'avant ? Et quand elle le quitte ?
+4. Refaites le défi en plaçant tous les membres du groupe à la même distance du mur, mesurée en centimètres. Les résultats changent-ils ? Pourquoi ?
+5. L'Atelier centre de masse calcule le centre de masse à partir des seuls repères du corps. Que manque-t-il à l'outil pour que votre mesure corresponde vraiment à la situation du défi ? Dans quel sens votre résultat en serait-il modifié ?
+
+</QuestionsDefi>
+
+<ReponseProtegee fiche={"defis-equilibre"} titre={"Explication et verdict"} chiffre={"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"} />
+
+</Defi>
+
+## Modalités d'évaluation
+
+<Evaluation format={"Restitution orale"} duree={"5 min par groupe"} note={"Aucune"}>
+
+Chaque groupe présente devant toute la classe, avec le support de son choix ou sans support :
+
+- son défi, en le faisant tester par un membre d'un autre groupe ;
+- ce qui le rend réalisable ou non : où tombe la projection du centre de masse par rapport au polygone de sustentation, et avec quelle marge ;
+- son verdict sur l'idée reçue : vraie ou fausse, la preuve par la mesure, et pourquoi on se trompe.
+
+</Evaluation>
+
+## Ressources liées
+
+- [§1.2 Pourquoi mesurer ? De l'impression à la donnée](/cours/biomecanique-marche-seniors/1-2-pourquoi-mesurer-de-l-impression-a-la-donnee)
+- [§2.11 Le centre de masse : où s'applique le poids](/cours/biomecanique-marche-seniors/2-11-le-centre-de-masse-ou-s-applique-le-poids)
+- [§3.2 Le moment de force](/cours/biomecanique-marche-seniors/3-2-le-moment-de-force)
+- [§4.5 La composante horizontale : avancer](/cours/biomecanique-marche-seniors/4-5-la-composante-horizontale-avancer)
+- [Chapitre 5, §5.1, §5.3, §5.4, §5.5](/en-construction?cible=Chapitre%205%20%3A%20%C2%A75.1%2C%20%C2%A75.3%2C%20%C2%A75.4%2C%20%C2%A75.5), à venir
+- [Science World, « Betcha Can't! Balancing Challenges »](https://www.scienceworld.ca/resource/betcha-cant-balancing-challenges/)
+
+<LienOutil href={"/outils/centre-de-masse"} titre={"Atelier centre de masse"} resume={"Pointer la photo, calculer le centre de masse, vérifier sa projection dans le polygone de sustentation."} />

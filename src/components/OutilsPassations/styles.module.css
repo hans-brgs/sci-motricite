@@ -1,0 +1,421 @@
+/*
+ * Outils à passations (échelle de Berg, Timed Up and Go) — mise en page,
+ * cartes, champs, graphique, liste des passations et export, communs aux deux.
+ *
+ * L'interface suit les tokens du site, donc le thème clair ou sombre. Le
+ * graphique a ses propres couleurs (--op-…), définies ici pour chaque thème :
+ * quatre passations, la passation en cours, la zone colorée et le surlignage du
+ * groupe doivent rester distincts l'un de l'autre sur les deux fonds.
+ */
+
+.outil {
+  --op-s1: #2451b8;
+  --op-s2: #c2621b;
+  --op-s3: #7b3fa3;
+  --op-s4: #0e7c86;
+  --op-cur: #6f6f6f;
+  --op-norm: var(--text-title);
+  --op-grid: var(--border-default);
+  --op-zone: #f8e1dc;
+  --op-hl: rgba(36, 81, 184, 0.11);
+
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-inline: 16px;
+  padding-block: var(--sp-8) var(--sp-16);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text-body);
+}
+
+:global([data-theme="dark"]) .outil {
+  --op-s1: #86a7f2;
+  --op-s2: #f0a15e;
+  --op-s3: #c79be6;
+  --op-s4: #5cc6ce;
+  --op-cur: #9d9d9d;
+  --op-zone: rgba(240, 138, 118, 0.2);
+  --op-hl: rgba(234, 240, 247, 0.1);
+}
+
+/* ---------- en-tête ---------- */
+
+.top {
+  margin-bottom: var(--sp-6);
+  max-width: 760px;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: var(--sp-3);
+}
+
+.back:hover {
+  color: var(--accent-strong);
+  text-decoration: none;
+}
+
+.top h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(26px, 4vw, 38px);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--text-title);
+  margin: 0 0 var(--sp-2);
+  text-wrap: balance;
+}
+
+.sub {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 16px;
+}
+
+/* ---------- mise en page ---------- */
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+}
+
+.main,
+.side {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+
+.card {
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.card h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--text-title);
+  margin: 0;
+}
+
+.small {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.hint {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.warn {
+  color: var(--badge-danger-fg);
+  font-size: 13.5px;
+  margin: 0;
+}
+
+/* ---------- champs ---------- */
+
+.row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.grow {
+  flex: 1 1 220px;
+}
+
+.age {
+  flex: 0 0 96px;
+}
+
+.sexe {
+  flex: 0 0 140px;
+}
+
+.label {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-title);
+}
+
+.input,
+.select {
+  font: inherit;
+  font-size: 16px;
+  padding: 8px 10px;
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  background: var(--bg-page);
+  color: var(--text-body);
+  width: 100%;
+}
+
+.input[type="number"] {
+  font-family: var(--font-mono);
+}
+
+/* ---------- boutons ---------- */
+
+.button {
+  font: inherit;
+  font-weight: 600;
+  font-size: 14.5px;
+  border-radius: 8px;
+  padding: 8px 14px;
+  border: 1.5px solid var(--accent-strong);
+  background: var(--accent-strong);
+  color: var(--text-inverse);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.button:hover {
+  filter: brightness(1.06);
+}
+
+.button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  filter: none;
+}
+
+.ghost {
+  background: transparent;
+  color: var(--accent-strong);
+}
+
+.ghost:hover:not(:disabled) {
+  background: var(--accent-soft);
+}
+
+.mini {
+  padding: 3px 8px;
+  font-size: 12.5px;
+}
+
+.button:focus-visible,
+.input:focus-visible,
+.select:focus-visible,
+.intro summary:focus-visible,
+.checkbox:focus-visible {
+  outline: 3px solid var(--accent-strong);
+  outline-offset: 2px;
+}
+
+/* ---------- consigne à lire au sujet ---------- */
+
+.consigne {
+  margin: 0;
+  background: var(--bg-sunken);
+  border-left: 3px solid var(--accent-strong);
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 15px;
+  color: var(--text-body);
+}
+
+.consigne::before {
+  content: "À lire au sujet";
+  display: block;
+  font-size: 11.5px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+/* ---------- encadré dépliable ---------- */
+
+.intro summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--text-title);
+}
+
+.intro ul {
+  margin: 6px 0 0;
+  padding-left: 18px;
+}
+
+.intro li {
+  margin: 3px 0;
+}
+
+/* ---------- graphique ---------- */
+
+.chart {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.chart text {
+  font-family: var(--font-mono);
+}
+
+.legend {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 13px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.legend li {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin: 0;
+}
+
+.legend svg,
+.swatch {
+  flex: none;
+}
+
+/* ---------- passations enregistrées ---------- */
+
+.tablewrap {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 14px;
+  display: table;
+  margin: 0;
+}
+
+.table th,
+.table td {
+  padding: 6px 8px;
+  border: 0;
+  border-bottom: 1px solid var(--border-subtle);
+  text-align: left;
+  white-space: nowrap;
+  vertical-align: middle;
+  background: transparent;
+}
+
+.table tr {
+  background: transparent;
+  border: 0;
+}
+
+.table th {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.03em;
+}
+
+.table td.wrap {
+  white-space: normal;
+  min-width: 120px;
+}
+
+.table td.nb {
+  font-family: var(--font-mono);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.table label {
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent-strong);
+  cursor: pointer;
+}
+
+.checkbox:disabled {
+  cursor: not-allowed;
+}
+
+.cmp {
+  background: var(--bg-sunken);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 14.5px;
+  margin: 0;
+}
+
+.cmp strong {
+  font-family: var(--font-display);
+  color: var(--text-title);
+}
+
+.copyArea {
+  width: 100%;
+  min-height: 90px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  background: var(--bg-page);
+  color: var(--text-body);
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  padding: 6px;
+}
+
+/* ---------- sources ---------- */
+
+.refs {
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.refs h2 {
+  font-size: 15px;
+}
+
+.refs p {
+  margin: 4px 0;
+}

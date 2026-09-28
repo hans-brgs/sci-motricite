@@ -1,0 +1,25 @@
+/*
+ * Timed Up and Go — ce qui lui est propre : le chronomètre et le champ du
+ * temps. Le reste (cartes, champs, graphique, liste) vient de
+ * OutilsPassations/styles.module.css.
+ */
+
+.chrono {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(44px, 12vw, 64px);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--text-title);
+}
+
+.chrono small {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.time {
+  flex: 0 0 160px;
+}

@@ -70,6 +70,39 @@ export const COURSE = {
       lead: "Appliquer tous les outils à un seul cas : une personne qui marche. Trois forces, la réaction du sol et ses deux composantes, puis le frottement — jusqu'à ce qui décide qu'un pied glisse, et ce que change le pas court du sénior.",
     },
   ],
+  // Fiches de TD publiées (grammaire : `outils/format-fiche-td.md` du vault).
+  // Déclarer, c'est publier ; l'ordre de la liste est l'ordre d'affichage.
+  // `motDePasse` nomme la variable de `.env` qui porte le mot de passe des
+  // réponses protégées de la fiche : un mot de passe par fiche, jamais écrit ici.
+  // Les notes enseignant (`-enseignant.md`) et la banque d'examen
+  // (`qcm-examen-*`) ne doivent JAMAIS être déclarées : la synchronisation les
+  // refuse de toute façon.
+  td: [
+    { id: "tests-equilibre", source: "contenu/td/tests-equilibre.md", motDePasse: "TD_MDP_TESTS_EQUILIBRE" },
+    { id: "defis-equilibre", source: "contenu/td/defis-equilibre.md", motDePasse: "TD_MDP_DEFIS_EQUILIBRE" },
+  ],
+};
+
+/**
+ * Les outils de la section Outils, par l'identifiant qu'une fiche de TD cite
+ * sur une ligne `Outil : <id>`. Un identifiant absent d'ici est une erreur.
+ */
+export const OUTILS = {
+  "centre-de-masse": {
+    titre: "Atelier centre de masse",
+    href: "/outils/centre-de-masse",
+    resume: "Pointer la photo, calculer le centre de masse, vérifier sa projection dans le polygone de sustentation.",
+  },
+  berg: {
+    titre: "Échelle de Berg",
+    href: "/outils/berg",
+    resume: "Coter les 14 épreuves, obtenir le score sur 56 et le situer face aux valeurs de référence.",
+  },
+  tug: {
+    titre: "Timed Up and Go",
+    href: "/outils/tug",
+    resume: "Chronométrer le test, enregistrer le temps et le situer face aux valeurs de référence.",
+  },
 };
 
 /** Chemins absolus des fichiers de chapitre, dans l'ordre du cours. */
