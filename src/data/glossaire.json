@@ -13,6 +13,19 @@
     ]
   },
   {
+    "term": "Afférences sensorielles",
+    "definition": "Les informations qui remontent des récepteurs sensoriels vers le système nerveux : vue, oreille interne, proprioception, sensibilité cutanée plantaire. Elles permettent de détecter les dérives que le contrôle postural corrige.",
+    "chapter": 5,
+    "occurrences": [
+      {
+        "section": "5.8",
+        "sectionTitle": "Corriger sans bouger les pieds : cheville, hanche, et les afférences sensorielles",
+        "chapterLabel": "Chapitre 5 · L'équilibre postural",
+        "href": "/cours/biomecanique-marche-seniors/5-8-corriger-sans-bouger-les-pieds-cheville-hanche-et-les-afferences-sensorielles"
+      }
+    ]
+  },
+  {
     "term": "Amplitude articulaire",
     "definition": "Nombre de degrés balayés par un segment au cours d'un mouvement, complété par le sens de rotation (horaire ou anti-horaire). L'équivalent angulaire du déplacement. En évaluation articulaire, le terme — souvent noté ROM (range of motion) — désigne l'étendue totale de mouvement dont une articulation est capable.",
     "chapter": 1,
@@ -35,6 +48,19 @@
         "sectionTitle": "La cinématique angulaire",
         "chapterLabel": "Chapitre 1 · Cinématique",
         "href": "/cours/biomecanique-marche-seniors/1-8-la-cinematique-angulaire"
+      }
+    ]
+  },
+  {
+    "term": "Antéro-postérieur",
+    "definition": "Qui s'exerce d'avant en arrière (ou d'arrière en avant).",
+    "chapter": 5,
+    "occurrences": [
+      {
+        "section": "5.13",
+        "sectionTitle": "Perturbé : un rattrapage qui se dégrade, surtout en médio-latéral",
+        "chapterLabel": "Chapitre 5 · L'équilibre postural",
+        "href": "/cours/biomecanique-marche-seniors/5-13-perturbe-un-rattrapage-qui-se-degrade-surtout-en-medio-lateral"
       }
     ]
   },
@@ -156,6 +182,32 @@
     ]
   },
   {
+    "term": "Centre de pression",
+    "definition": "Le point d'application de la résultante des forces de réaction du sol sur les pieds ; le barycentre des pressions exercées par les appuis au sol. Il se mesure avec une plateforme de force, et oscille autour de la projection verticale du centre de masse sans se confondre avec elle.",
+    "chapter": 5,
+    "occurrences": [
+      {
+        "section": "5.7",
+        "sectionTitle": "Le contrôle postural, vu par le centre de pression",
+        "chapterLabel": "Chapitre 5 · L'équilibre postural",
+        "href": "/cours/biomecanique-marche-seniors/5-7-le-controle-postural-vu-par-le-centre-de-pression"
+      }
+    ]
+  },
+  {
+    "term": "Chute",
+    "definition": "Une perte brutale et totalement accidentelle de l'équilibre postural, lors de la marche ou de toute autre activité, qui fait tomber la personne sur le sol ou sur une surface plus basse (définition de la Haute Autorité de santé). Dans les termes de ce chapitre : le centre de masse n'a pas pu être maintenu au-dessus du polygone de sustentation.",
+    "chapter": 5,
+    "occurrences": [
+      {
+        "section": "5.11",
+        "sectionTitle": "La chute de la personne âgée : l'enjeu",
+        "chapterLabel": "Chapitre 5 · L'équilibre postural",
+        "href": "/cours/biomecanique-marche-seniors/5-11-la-chute-de-la-personne-agee-l-enjeu"
+      }
+    ]
+  },
+  {
     "term": "Chute libre",
     "definition": "Mouvement d'un corps soumis à la seule force gravitationnelle, quand plus rien ne la compense.",
     "chapter": 2,
@@ -165,6 +217,19 @@
         "sectionTitle": "La première loi : l'inertie",
         "chapterLabel": "Chapitre 2 · Cinétique",
         "href": "/cours/biomecanique-marche-seniors/2-7-la-premiere-loi-l-inertie"
+      }
+    ]
+  },
+  {
+    "term": "Chutes répétées",
+    "definition": "Au moins deux chutes sur une période de douze mois.",
+    "chapter": 5,
+    "occurrences": [
+      {
+        "section": "5.11",
+        "sectionTitle": "La chute de la personne âgée : l'enjeu",
+        "chapterLabel": "Chapitre 5 · L'équilibre postural",
+        "href": "/cours/biomecanique-marche-seniors/5-11-la-chute-de-la-personne-agee-l-enjeu"
       }
     ]
   },
@@ -259,6 +324,19 @@
     ]
   },
   {
+    "term": "Collision",
+    "definition": "Lors d'un pas croisé, le choc de la jambe qui croise contre la jambe d'appui.",
+    "chapter": 5,
+    "occurrences": [
+      {
+        "section": "5.13",
+        "sectionTitle": "Perturbé : un rattrapage qui se dégrade, surtout en médio-latéral",
+        "chapterLabel": "Chapitre 5 · L'équilibre postural",
+        "href": "/cours/biomecanique-marche-seniors/5-13-perturbe-un-rattrapage-qui-se-degrade-surtout-en-medio-lateral"
+      }
+    ]
+  },
+  {
     "term": "Composante horizontale de la force de réaction du sol",
     "definition": "La composante parallèle au sol de la force que le sol exerce sur le pied. C'est la force de frottement exercée par le sol sur le pied ; elle donne au vecteur son inclinaison, et elle seule produit l'accélération horizontale du centre de masse.",
     "chapter": 4,
@@ -307,6 +385,19 @@
         "sectionTitle": "Une force qui varie pendant l'appui",
         "chapterLabel": "Chapitre 4 · Les forces de la marche",
         "href": "/cours/biomecanique-marche-seniors/4-3-une-force-qui-varie-pendant-l-appui"
+      }
+    ]
+  },
+  {
+    "term": "Contrôle postural",
+    "definition": "La tâche qui a pour objectif de contrôler la position du corps dans l'espace, pour permettre à la fois la stabilité et l'orientation (la posture). C'est une compétence complexe, qui s'apprend en réaction à des perturbations.",
+    "chapter": 5,
+    "occurrences": [
+      {
+        "section": "5.7",
+        "sectionTitle": "Le contrôle postural, vu par le centre de pression",
+        "chapterLabel": "Chapitre 5 · L'équilibre postural",
+        "href": "/cours/biomecanique-marche-seniors/5-7-le-controle-postural-vu-par-le-centre-de-pression"
       }
     ]
   },
@@ -428,6 +519,19 @@
     ]
   },
   {
+    "term": "Entraînement par perturbation",
+    "definition": "Un entraînement dans lequel la personne subit, de façon répétée, des perturbations de son équilibre, et doit produire à chaque fois la réaction qui évite la chute.",
+    "chapter": 5,
+    "occurrences": [
+      {
+        "section": "5.15",
+        "sectionTitle": "Entraîner le rattrapage",
+        "chapterLabel": "Chapitre 5 · L'équilibre postural",
+        "href": "/cours/biomecanique-marche-seniors/5-15-entrainer-le-rattrapage"
+      }
+    ]
+  },
+  {
     "term": "Équilibre",
     "definition": "État d'un corps dont la résultante des forces est nulle.",
     "chapter": 2,
@@ -437,6 +541,32 @@
         "sectionTitle": "Le diagramme de forces et la résultante",
         "chapterLabel": "Chapitre 2 · Cinétique",
         "href": "/cours/biomecanique-marche-seniors/2-5-le-diagramme-de-forces-et-la-resultante"
+      }
+    ]
+  },
+  {
+    "term": "Équilibre postural dynamique",
+    "definition": "Le fait de maintenir ou de rétablir l'équilibre au cours d'un mouvement, ou après une perturbation. Les conditions de l'équilibre n'y sont pas réunies à chaque instant : elles sont rétablies à chaque pas.",
+    "chapter": 5,
+    "occurrences": [
+      {
+        "section": "5.10",
+        "sectionTitle": "La marche, une succession de déséquilibres rattrapés",
+        "chapterLabel": "Chapitre 5 · L'équilibre postural",
+        "href": "/cours/biomecanique-marche-seniors/5-10-la-marche-une-succession-de-desequilibres-rattrapes"
+      }
+    ]
+  },
+  {
+    "term": "Équilibre postural statique",
+    "definition": "L'équilibre d'un corps qui maintient une posture, immobile : la résultante des forces qui s'exercent sur lui est nulle, et le moment résultant de ces forces est nul.",
+    "chapter": 5,
+    "occurrences": [
+      {
+        "section": "5.2",
+        "sectionTitle": "Posture, état d'équilibre, stabilité posturale",
+        "chapterLabel": "Chapitre 5 · L'équilibre postural",
+        "href": "/cours/biomecanique-marche-seniors/5-2-posture-etat-d-equilibre-stabilite-posturale"
       }
     ]
   },
@@ -455,7 +585,7 @@
   },
   {
     "term": "Fléchisseurs plantaires",
-    "definition": "Les muscles du mollet, qui tractent le talon vers le haut et permettent de monter sur la pointe des pieds.",
+    "definition": "Les muscles du mollet, qui étendent la cheville (pointe du pied vers le bas) et produisent l'essentiel de la poussée en fin d'appui.",
     "chapter": 3,
     "occurrences": [
       {
@@ -463,6 +593,12 @@
         "sectionTitle": "Le levier et ses trois classes",
         "chapterLabel": "Chapitre 3 · Moment de force et levier",
         "href": "/cours/biomecanique-marche-seniors/3-5-le-levier-et-ses-trois-classes"
+      },
+      {
+        "section": "5.14",
+        "sectionTitle": "En marche : le chuteur garde son centre de masse plus près de son appui",
+        "chapterLabel": "Chapitre 5 · L'équilibre postural",
+        "href": "/cours/biomecanique-marche-seniors/5-14-en-marche-le-chuteur-garde-son-centre-de-masse-plus-pres-de-son-appui"
       }
     ]
   },
@@ -771,6 +907,19 @@
     ]
   },
   {
+    "term": "Jambe chargée, jambe déchargée",
+    "definition": "Lors d'une traction latérale, la jambe du côté de la traction reçoit le poids du corps (jambe chargée) ; l'autre est allégée (jambe déchargée).",
+    "chapter": 5,
+    "occurrences": [
+      {
+        "section": "5.13",
+        "sectionTitle": "Perturbé : un rattrapage qui se dégrade, surtout en médio-latéral",
+        "chapterLabel": "Chapitre 5 · L'équilibre postural",
+        "href": "/cours/biomecanique-marche-seniors/5-13-perturbe-un-rattrapage-qui-se-degrade-surtout-en-medio-lateral"
+      }
+    ]
+  },
+  {
     "term": "Levier",
     "definition": "Un corps rigide en rotation autour d'un axe ou d'un pivot. Dans le corps humain, les os sont les leviers et les articulations les pivots.",
     "chapter": 3,
@@ -797,6 +946,19 @@
     ]
   },
   {
+    "term": "Ligne de gravité",
+    "definition": "La droite verticale qui passe par le centre de masse et descend jusqu'au sol.",
+    "chapter": 5,
+    "occurrences": [
+      {
+        "section": "5.4",
+        "sectionTitle": "La projection verticale et le polygone de sustentation",
+        "chapterLabel": "Chapitre 5 · L'équilibre postural",
+        "href": "/cours/biomecanique-marche-seniors/5-4-la-projection-verticale-et-le-polygone-de-sustentation"
+      }
+    ]
+  },
+  {
     "term": "Limite de résistance",
     "definition": "Niveau de contrainte au-delà duquel la déformation d'un corps devient irréversible (terme des physiciens : limite d'élasticité), jusqu'au point de rupture. Appliquée aux tissus : au-delà de cette limite, la déformation devient une blessure (élongation, déchirure, fracture).",
     "chapter": 2,
@@ -806,6 +968,32 @@
         "sectionTitle": "Qu'est-ce qu'une force ?",
         "chapterLabel": "Chapitre 2 · Cinétique",
         "href": "/cours/biomecanique-marche-seniors/2-2-qu-est-ce-qu-une-force"
+      }
+    ]
+  },
+  {
+    "term": "Limites de stabilité (cône de stabilité)",
+    "definition": "L'espace dans lequel une personne peut déplacer son centre de masse et maintenir son équilibre sans changer ses appuis ; debout, il a la forme d'un cône. Sa taille dépend du polygone de sustentation, de l'amplitude articulaire, de la force musculaire et des informations sensorielles.",
+    "chapter": 5,
+    "occurrences": [
+      {
+        "section": "5.4",
+        "sectionTitle": "La projection verticale et le polygone de sustentation",
+        "chapterLabel": "Chapitre 5 · L'équilibre postural",
+        "href": "/cours/biomecanique-marche-seniors/5-4-la-projection-verticale-et-le-polygone-de-sustentation"
+      }
+    ]
+  },
+  {
+    "term": "Marge",
+    "definition": "La distance entre la projection verticale du centre de masse et le bord du polygone de sustentation le plus proche. Plus elle est grande, plus le corps est stable. Elle dépend des dimensions du polygone, direction par direction, et non de sa surface ; la hauteur du centre de masse ne la change pas, mais fixe l'inclinaison qu'il faut pour la consommer.",
+    "chapter": 5,
+    "occurrences": [
+      {
+        "section": "5.5",
+        "sectionTitle": "La marge, et les deux paramètres qui la déterminent",
+        "chapterLabel": "Chapitre 5 · L'équilibre postural",
+        "href": "/cours/biomecanique-marche-seniors/5-5-la-marge-et-les-deux-parametres-qui-la-determinent"
       }
     ]
   },
@@ -849,6 +1037,19 @@
     ]
   },
   {
+    "term": "Médio-latéral",
+    "definition": "Qui s'exerce de gauche à droite (ou de droite à gauche).",
+    "chapter": 5,
+    "occurrences": [
+      {
+        "section": "5.13",
+        "sectionTitle": "Perturbé : un rattrapage qui se dégrade, surtout en médio-latéral",
+        "chapterLabel": "Chapitre 5 · L'équilibre postural",
+        "href": "/cours/biomecanique-marche-seniors/5-13-perturbe-un-rattrapage-qui-se-degrade-surtout-en-medio-lateral"
+      }
+    ]
+  },
+  {
     "term": "Mesure",
     "definition": "Valeur d'une grandeur, obtenue par un protocole défini. Reproductible (le même protocole redonne une valeur proche), transmissible (elle garde le même sens pour tous, partout, dans le temps) et comparable (à des mesures antérieures et aux valeurs de référence).",
     "chapter": 1,
@@ -858,6 +1059,19 @@
         "sectionTitle": "Pourquoi mesurer ? De l'impression à la donnée",
         "chapterLabel": "Chapitre 1 · Cinématique",
         "href": "/cours/biomecanique-marche-seniors/1-2-pourquoi-mesurer-de-l-impression-a-la-donnee"
+      }
+    ]
+  },
+  {
+    "term": "Méthode segmentaire",
+    "definition": "Le calcul du centre de masse du corps entier à partir d'un découpage du corps en segments : c'est la moyenne des positions des centres de masse des segments, pondérée par leurs masses.",
+    "chapter": 5,
+    "occurrences": [
+      {
+        "section": "5.3",
+        "sectionTitle": "Le centre de masse : où il se situe, comment il se déplace",
+        "chapterLabel": "Chapitre 5 · L'équilibre postural",
+        "href": "/cours/biomecanique-marche-seniors/5-3-le-centre-de-masse-ou-il-se-situe-comment-il-se-deplace"
       }
     ]
   },
@@ -1024,6 +1238,19 @@
     ]
   },
   {
+    "term": "Pas croisé",
+    "definition": "Pas de rattrapage fait avec la jambe déchargée, qui passe devant ou derrière la jambe d'appui pour se poser de l'autre côté.",
+    "chapter": 5,
+    "occurrences": [
+      {
+        "section": "5.13",
+        "sectionTitle": "Perturbé : un rattrapage qui se dégrade, surtout en médio-latéral",
+        "chapterLabel": "Chapitre 5 · L'équilibre postural",
+        "href": "/cours/biomecanique-marche-seniors/5-13-perturbe-un-rattrapage-qui-se-degrade-surtout-en-medio-lateral"
+      }
+    ]
+  },
+  {
     "term": "Pente (de la courbe de vitesse)",
     "definition": "Inclinaison de la courbe : la variation verticale (de vitesse) rapportée à l'avancée horizontale (de temps). La pente de la courbe de vitesse est l'accélération.",
     "chapter": 1,
@@ -1037,6 +1264,19 @@
     ]
   },
   {
+    "term": "Perturbation interne / externe",
+    "definition": "Ce qui tend à écarter le corps de son état : interne quand elle provient des activités musculaires et articulaires de l'organisme (respiration, activité cardiaque, mouvement d'un segment), externe quand elle provient d'éléments extérieurs (force gravitationnelle, perturbations visuelles, bousculade).",
+    "chapter": 5,
+    "occurrences": [
+      {
+        "section": "5.2",
+        "sectionTitle": "Posture, état d'équilibre, stabilité posturale",
+        "chapterLabel": "Chapitre 5 · L'équilibre postural",
+        "href": "/cours/biomecanique-marche-seniors/5-2-posture-etat-d-equilibre-stabilite-posturale"
+      }
+    ]
+  },
+  {
     "term": "Pivot",
     "definition": "Le point fixe autour duquel le levier tourne ; il porte l'axe de rotation.",
     "chapter": 3,
@@ -1046,6 +1286,19 @@
         "sectionTitle": "Le levier et ses trois classes",
         "chapterLabel": "Chapitre 3 · Moment de force et levier",
         "href": "/cours/biomecanique-marche-seniors/3-5-le-levier-et-ses-trois-classes"
+      }
+    ]
+  },
+  {
+    "term": "Plateforme de force",
+    "definition": "Un instrument de mesure, posé au sol, qui enregistre les forces exercées par les appuis, et permet d'en déduire la position du centre de pression.",
+    "chapter": 5,
+    "occurrences": [
+      {
+        "section": "5.7",
+        "sectionTitle": "Le contrôle postural, vu par le centre de pression",
+        "chapterLabel": "Chapitre 5 · L'équilibre postural",
+        "href": "/cours/biomecanique-marche-seniors/5-7-le-controle-postural-vu-par-le-centre-de-pression"
       }
     ]
   },
@@ -1089,6 +1342,45 @@
     ]
   },
   {
+    "term": "Posture",
+    "definition": "L'activité musculaire de l'ensemble du corps qui permet d'organiser les segments les uns par rapport aux autres, par rapport à l'environnement et par rapport à la verticale (debout, assis, penché).",
+    "chapter": 5,
+    "occurrences": [
+      {
+        "section": "5.2",
+        "sectionTitle": "Posture, état d'équilibre, stabilité posturale",
+        "chapterLabel": "Chapitre 5 · L'équilibre postural",
+        "href": "/cours/biomecanique-marche-seniors/5-2-posture-etat-d-equilibre-stabilite-posturale"
+      }
+    ]
+  },
+  {
+    "term": "Principe de spécificité",
+    "definition": "En préparation physique, le principe selon lequel on améliore une tâche en entraînant cette tâche elle-même.",
+    "chapter": 5,
+    "occurrences": [
+      {
+        "section": "5.15",
+        "sectionTitle": "Entraîner le rattrapage",
+        "chapterLabel": "Chapitre 5 · L'équilibre postural",
+        "href": "/cours/biomecanique-marche-seniors/5-15-entrainer-le-rattrapage"
+      }
+    ]
+  },
+  {
+    "term": "Projection verticale du centre de masse",
+    "definition": "Le point où la ligne de gravité rencontre le sol. Il se déplace avec le centre de masse.",
+    "chapter": 5,
+    "occurrences": [
+      {
+        "section": "5.4",
+        "sectionTitle": "La projection verticale et le polygone de sustentation",
+        "chapterLabel": "Chapitre 5 · L'équilibre postural",
+        "href": "/cours/biomecanique-marche-seniors/5-4-la-projection-verticale-et-le-polygone-de-sustentation"
+      }
+    ]
+  },
+  {
     "term": "Propriétés à connaître",
     "definition": "Accélération nulle → vitesse constante (que l'on soit à l'arrêt ou lancé) · accélération constante et non nulle → vitesse qui croît linéairement (cas de la chute libre).",
     "chapter": 1,
@@ -1098,6 +1390,32 @@
         "sectionTitle": "L'accélération",
         "chapterLabel": "Chapitre 1 · Cinématique",
         "href": "/cours/biomecanique-marche-seniors/1-7-l-acceleration"
+      }
+    ]
+  },
+  {
+    "term": "Proprioception",
+    "definition": "La perception de la position des articulations et de la tension des muscles.",
+    "chapter": 5,
+    "occurrences": [
+      {
+        "section": "5.8",
+        "sectionTitle": "Corriger sans bouger les pieds : cheville, hanche, et les afférences sensorielles",
+        "chapterLabel": "Chapitre 5 · L'équilibre postural",
+        "href": "/cours/biomecanique-marche-seniors/5-8-corriger-sans-bouger-les-pieds-cheville-hanche-et-les-afferences-sensorielles"
+      }
+    ]
+  },
+  {
+    "term": "Qualité de vie liée à la santé",
+    "definition": "La qualité de vie d'une personne dans ses dimensions physique, psychologique et sociale, telle que son état de santé l'influence.",
+    "chapter": 5,
+    "occurrences": [
+      {
+        "section": "5.11",
+        "sectionTitle": "La chute de la personne âgée : l'enjeu",
+        "chapterLabel": "Chapitre 5 · L'équilibre postural",
+        "href": "/cours/biomecanique-marche-seniors/5-11-la-chute-de-la-personne-agee-l-enjeu"
       }
     ]
   },
@@ -1124,6 +1442,19 @@
         "sectionTitle": "La vitesse",
         "chapterLabel": "Chapitre 1 · Cinématique",
         "href": "/cours/biomecanique-marche-seniors/1-6-la-vitesse"
+      }
+    ]
+  },
+  {
+    "term": "Réserve d'équilibre",
+    "definition": "Ce qui sépare le corps de la rupture de son équilibre : plus elle est grande, plus il faut une perturbation importante pour rompre l'équilibre ; plus elle est faible, plus l'équilibre est précaire. La marge la mesure.",
+    "chapter": 5,
+    "occurrences": [
+      {
+        "section": "5.5",
+        "sectionTitle": "La marge, et les deux paramètres qui la déterminent",
+        "chapterLabel": "Chapitre 5 · L'équilibre postural",
+        "href": "/cours/biomecanique-marche-seniors/5-5-la-marge-et-les-deux-parametres-qui-la-determinent"
       }
     ]
   },
@@ -1167,6 +1498,19 @@
     ]
   },
   {
+    "term": "S2",
+    "definition": "La deuxième vertèbre sacrée. Chez une personne debout, en position relâchée, le centre de masse se situe approximativement en avant de ce repère.",
+    "chapter": 5,
+    "occurrences": [
+      {
+        "section": "5.3",
+        "sectionTitle": "Le centre de masse : où il se situe, comment il se déplace",
+        "chapterLabel": "Chapitre 5 · L'équilibre postural",
+        "href": "/cours/biomecanique-marche-seniors/5-3-le-centre-de-masse-ou-il-se-situe-comment-il-se-deplace"
+      }
+    ]
+  },
+  {
     "term": "Segment corporel",
     "definition": "Une partie du corps que l'analyse du mouvement considère comme rigide (la cuisse, la jambe, le pied, l'avant-bras), reliée aux segments voisins par des articulations ; l'os en est le levier rigide.",
     "chapter": 3,
@@ -1180,6 +1524,32 @@
     ]
   },
   {
+    "term": "Simple appui",
+    "definition": "La phase de la marche pendant laquelle un seul pied est au sol ; le polygone de sustentation se réduit alors à ce pied.",
+    "chapter": 5,
+    "occurrences": [
+      {
+        "section": "5.14",
+        "sectionTitle": "En marche : le chuteur garde son centre de masse plus près de son appui",
+        "chapterLabel": "Chapitre 5 · L'équilibre postural",
+        "href": "/cours/biomecanique-marche-seniors/5-14-en-marche-le-chuteur-garde-son-centre-de-masse-plus-pres-de-son-appui"
+      }
+    ]
+  },
+  {
+    "term": "Stabilité posturale",
+    "definition": "Le processus qui permet à l'individu de résister à une perturbation et de revenir à son état initial ; c'est ce qui permet au corps de conserver son état d'équilibre face à une perturbation.",
+    "chapter": 5,
+    "occurrences": [
+      {
+        "section": "5.2",
+        "sectionTitle": "Posture, état d'équilibre, stabilité posturale",
+        "chapterLabel": "Chapitre 5 · L'équilibre postural",
+        "href": "/cours/biomecanique-marche-seniors/5-2-posture-etat-d-equilibre-stabilite-posturale"
+      }
+    ]
+  },
+  {
     "term": "Statique",
     "definition": "L'étude des forces qui s'exercent sur les corps en équilibre (résultante nulle).",
     "chapter": 2,
@@ -1189,6 +1559,110 @@
         "sectionTitle": "Le diagramme de forces et la résultante",
         "chapterLabel": "Chapitre 2 · Cinétique",
         "href": "/cours/biomecanique-marche-seniors/2-5-le-diagramme-de-forces-et-la-resultante"
+      }
+    ]
+  },
+  {
+    "term": "Stratégie à appui fixe",
+    "definition": "Stratégie du contrôle postural dans laquelle les appuis ne bougent pas et le centre de masse est déplacé : stratégie de cheville, stratégie de hanche.",
+    "chapter": 5,
+    "occurrences": [
+      {
+        "section": "5.9",
+        "sectionTitle": "Changer d'appui : la stratégie du pas",
+        "chapterLabel": "Chapitre 5 · L'équilibre postural",
+        "href": "/cours/biomecanique-marche-seniors/5-9-changer-d-appui-la-strategie-du-pas"
+      }
+    ]
+  },
+  {
+    "term": "Stratégie à changement d'appui",
+    "definition": "Stratégie du contrôle postural dans laquelle le polygone de sustentation est déplacé pour contenir de nouveau la projection verticale du centre de masse : pas, main qui saisit un appui.",
+    "chapter": 5,
+    "occurrences": [
+      {
+        "section": "5.9",
+        "sectionTitle": "Changer d'appui : la stratégie du pas",
+        "chapterLabel": "Chapitre 5 · L'équilibre postural",
+        "href": "/cours/biomecanique-marche-seniors/5-9-changer-d-appui-la-strategie-du-pas"
+      }
+    ]
+  },
+  {
+    "term": "Stratégie de cheville",
+    "definition": "Correction de l'équilibre par une rotation de tout le corps, d'un bloc, autour des chevilles, sous l'action des muscles de la cheville ; les appuis ne bougent pas.",
+    "chapter": 5,
+    "occurrences": [
+      {
+        "section": "5.8",
+        "sectionTitle": "Corriger sans bouger les pieds : cheville, hanche, et les afférences sensorielles",
+        "chapterLabel": "Chapitre 5 · L'équilibre postural",
+        "href": "/cours/biomecanique-marche-seniors/5-8-corriger-sans-bouger-les-pieds-cheville-hanche-et-les-afferences-sensorielles"
+      }
+    ]
+  },
+  {
+    "term": "Stratégie de hanche",
+    "definition": "Correction de l'équilibre par une flexion ou une extension du buste à la hanche, qui déplace le centre de masse ; les appuis ne bougent pas.",
+    "chapter": 5,
+    "occurrences": [
+      {
+        "section": "5.8",
+        "sectionTitle": "Corriger sans bouger les pieds : cheville, hanche, et les afférences sensorielles",
+        "chapterLabel": "Chapitre 5 · L'équilibre postural",
+        "href": "/cours/biomecanique-marche-seniors/5-8-corriger-sans-bouger-les-pieds-cheville-hanche-et-les-afferences-sensorielles"
+      }
+    ]
+  },
+  {
+    "term": "Stratégie du pas",
+    "definition": "Stratégie du contrôle postural qui consiste à déplacer le polygone de sustentation sous la projection verticale du centre de masse, par un pas ; une main qui saisit un appui applique le même principe.",
+    "chapter": 5,
+    "occurrences": [
+      {
+        "section": "5.9",
+        "sectionTitle": "Changer d'appui : la stratégie du pas",
+        "chapterLabel": "Chapitre 5 · L'équilibre postural",
+        "href": "/cours/biomecanique-marche-seniors/5-9-changer-d-appui-la-strategie-du-pas"
+      }
+    ]
+  },
+  {
+    "term": "Table anthropométrique",
+    "definition": "Le tableau qui donne, pour chaque segment du corps, sa masse en fraction de la masse du corps entier et la position de son centre de masse le long du segment. Les tables classiques ont été établies sur des cadavres.",
+    "chapter": 5,
+    "occurrences": [
+      {
+        "section": "5.3",
+        "sectionTitle": "Le centre de masse : où il se situe, comment il se déplace",
+        "chapterLabel": "Chapitre 5 · L'équilibre postural",
+        "href": "/cours/biomecanique-marche-seniors/5-3-le-centre-de-masse-ou-il-se-situe-comment-il-se-deplace"
+      }
+    ]
+  },
+  {
+    "term": "Tandem",
+    "definition": "La position debout, un pied devant l'autre : le polygone de sustentation est long et étroit, et la marge latérale petite.",
+    "chapter": 5,
+    "occurrences": [
+      {
+        "section": "5.5",
+        "sectionTitle": "La marge, et les deux paramètres qui la déterminent",
+        "chapterLabel": "Chapitre 5 · L'équilibre postural",
+        "href": "/cours/biomecanique-marche-seniors/5-5-la-marge-et-les-deux-parametres-qui-la-determinent"
+      }
+    ]
+  },
+  {
+    "term": "Taux de chutes",
+    "definition": "Le nombre moyen de chutes par personne et par unité de temps (par exemple, par an).",
+    "chapter": 5,
+    "occurrences": [
+      {
+        "section": "5.15",
+        "sectionTitle": "Entraîner le rattrapage",
+        "chapterLabel": "Chapitre 5 · L'équilibre postural",
+        "href": "/cours/biomecanique-marche-seniors/5-15-entrainer-le-rattrapage"
       }
     ]
   },
@@ -1319,6 +1793,19 @@
         "sectionTitle": "La vitesse",
         "chapterLabel": "Chapitre 1 · Cinématique",
         "href": "/cours/biomecanique-marche-seniors/1-6-la-vitesse"
+      }
+    ]
+  },
+  {
+    "term": "Vitesse moyenne du centre de pression",
+    "definition": "Le chemin parcouru par le centre de pression pendant un enregistrement, divisé par la durée de l'enregistrement.",
+    "chapter": 5,
+    "occurrences": [
+      {
+        "section": "5.12",
+        "sectionTitle": "Debout : une correction plus active",
+        "chapterLabel": "Chapitre 5 · L'équilibre postural",
+        "href": "/cours/biomecanique-marche-seniors/5-12-debout-une-correction-plus-active"
       }
     ]
   }

@@ -69,6 +69,16 @@ export const COURSE = {
       quiz: "contenu/evaluation/quiz-ch4-forces-de-la-marche.md",
       lead: "Appliquer tous les outils à un seul cas : une personne qui marche. Trois forces, la réaction du sol et ses deux composantes, puis le frottement — jusqu'à ce qui décide qu'un pied glisse, et ce que change le pas court du sénior.",
     },
+    {
+      number: 5,
+      dir: "ch5-equilibre-postural",
+      label: "Chapitre 5 · L'équilibre postural",
+      title: "Chapitre 5 — L'équilibre postural",
+      tags: ["Biomécanique", "Équilibre"],
+      source: "contenu/support-ecrit/support-ecrit-ch5-equilibre-postural.md",
+      // Pas encore de quiz d'entraînement pour ce chapitre.
+      lead: "Tomber pour avancer. Debout, le corps garde la projection de son centre de masse dans son polygone de sustentation ; en marchant, il la laisse en sortir à chaque pas, puis la rattrape. Ce chapitre montre comment ce rattrapage devient plus fragile avec l'âge, surtout en médio-latéral, et comment la personne âgée s'en protège.",
+    },
   ],
   // Fiches de TD publiées (grammaire : `outils/format-fiche-td.md` du vault).
   // Déclarer, c'est publier ; l'ordre de la liste est l'ordre d'affichage.

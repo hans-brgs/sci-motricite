@@ -1428,6 +1428,9 @@ async function main() {
   const chapitres = [];
   // Toutes les sections publiées, pour les renvois des fiches de TD.
   const sectionsPubliees = new Map();
+  // Le texte des pages de chapitre publiées : public par définition, il ne peut
+  // pas servir de témoin d'une fuite de réponse protégée.
+  const pagesPubliees = [];
   // Dossiers d'images que ce passage a le droit de nettoyer : ceux des
   // chapitres effectivement chargés, et celui des quiz.
   const dossiersImages = [path.join(ROOT, "static", "img", "quiz")];
@@ -1450,6 +1453,7 @@ async function main() {
     }
 
     const pages = sections.map((s) => renderSection(s, chapter, corriges, footnotes, dates));
+    pagesPubliees.push(...pages.map((p) => p.content));
     const dir = path.join(OUT_CM, chapter.dir);
     dossiersImages.push(path.join(ROOT, "static", "img", "figures", chapter.dir));
 
@@ -1587,6 +1591,7 @@ async function main() {
           chapitres,
           sections: sectionsPubliees,
           outils: OUTILS,
+          textePublic: pagesPubliees.join(" "),
         },
       });
     }

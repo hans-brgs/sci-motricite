@@ -25,6 +25,18 @@ if (!fs.existsSync(VAULT)) {
   process.exit(0);
 }
 
+// Le texte des chapitres publiés est public : une réponse qui le cite mot pour
+// mot ne prouve aucune fuite (même règle que dans sync-content.mjs).
+const textePublic = [];
+(function lire(dossier) {
+  if (!fs.existsSync(dossier)) return;
+  for (const e of fs.readdirSync(dossier, { withFileTypes: true })) {
+    const p = path.join(dossier, e.name);
+    if (e.isDirectory()) lire(p);
+    else if (e.name.endsWith(".mdx")) textePublic.push(fs.readFileSync(p, "utf8"));
+  }
+})(path.join(ROOT, "docs", COURSE.slug, "cm"));
+
 const temoins = [];
 let encadres = 0;
 for (const decl of COURSE.td || []) {
@@ -32,7 +44,7 @@ for (const decl of COURSE.td || []) {
   const source = path.join(VAULT, decl.source);
   if (!fs.existsSync(source)) continue;
   const { corps } = lireFrontMatter(fs.readFileSync(source, "utf8"));
-  for (const e of temoinsDeFiche(corps)) {
+  for (const e of temoinsDeFiche(corps, textePublic.join(" "))) {
     encadres += 1;
     if (!e.temoins.length) console.log(`  · ${decl.id} : une réponse protégée n'a aucune phrase témoin propre à elle`);
     temoins.push(...e.temoins);

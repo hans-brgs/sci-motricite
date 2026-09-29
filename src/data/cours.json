@@ -33,6 +33,13 @@
         "href": "/cours/biomecanique-marche-seniors/ch4-forces-de-la-marche",
         "sections": 11,
         "quiz": "/cours/biomecanique-marche-seniors/ch4-forces-de-la-marche/quiz"
+      },
+      {
+        "numero": 5,
+        "titre": "L'équilibre postural",
+        "href": "/cours/biomecanique-marche-seniors/ch5-equilibre-postural",
+        "sections": 16,
+        "quiz": null
       }
     ],
     "fiches": [

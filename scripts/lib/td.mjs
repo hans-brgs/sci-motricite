@@ -776,7 +776,7 @@ export async function convertirFiche({ decl, raw, propre, motDePasse, position, 
     const liste = [...avenirEnLigne].sort((a, b) => a.localeCompare(b, "fr", { numeric: true }));
     avert(null, `renvois dans le texte vers un chapitre pas encore publié (${liste.join(", ")}) : ils mènent à la page « en construction »`);
   }
-  for (const e of temoinsDeFiche(corpsBrut)) {
+  for (const e of temoinsDeFiche(corpsBrut, site.textePublic)) {
     if (!e.temoins.length) avert(no(e.debut), "réponse protégée sans phrase assez longue et propre à elle : le test d'acceptation ne peut rien vérifier à son sujet");
   }
 
@@ -874,7 +874,7 @@ export async function convertirFiche({ decl, raw, propre, motDePasse, position, 
       blocs: blocsResume.length,
       reponses: proteges.length,
     },
-    temoins: temoinsDeFiche(corpsBrut).flatMap((e) => e.temoins),
+    temoins: temoinsDeFiche(corpsBrut, site.textePublic).flatMap((e) => e.temoins),
   };
 }
 
@@ -913,14 +913,16 @@ export function phrasesTemoins(lignesEncadre) {
  * On l'écarte. Chaque encadré doit garder au moins un témoin, sans quoi le
  * test ne pourrait rien affirmer à son sujet.
  */
-export function temoinsDeFiche(corps) {
+export function temoinsDeFiche(corps, textePublic = "") {
   const encadres = encadresProteges(corps);
   const dedans = new Set(encadres.flatMap((e) => Array.from({ length: e.fin - e.debut + 1 }, (_, k) => e.debut + k)));
-  const publique = corps
+  // Est public ce qui est hors des encadrés de la fiche, et, via `textePublic`,
+  // le texte des chapitres publiés : une réponse qui cite le cours mot pour mot
+  // (« et le corps commence à tomber vers l'avant », §5.10) ne fuit rien.
+  const publique = `${corps
     .split(/\r?\n/)
     .filter((_, i) => !dedans.has(i))
-    .join(" ")
-    .replace(/[^\p{L}\p{N}]+/gu, " ");
+    .join(" ")} ${textePublic}`.replace(/[^\p{L}\p{N}]+/gu, " ");
   return encadres.map((e) => ({
     debut: e.debut,
     temoins: phrasesTemoins(e.lignes).filter((t) => !publique.includes(t)),
