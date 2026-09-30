@@ -197,8 +197,8 @@
   font-size: 14.5px;
   border-radius: 8px;
   padding: 8px 14px;
-  border: 1.5px solid var(--accent-strong);
-  background: var(--accent-strong);
+  border: 1.5px solid var(--accent-fill);
+  background: var(--accent-fill);
   color: var(--text-inverse);
   cursor: pointer;
   display: inline-flex;
@@ -219,7 +219,7 @@
 
 .ghost {
   background: transparent;
-  color: var(--accent-strong);
+  color: var(--accent-fill);
 }
 
 .ghost:hover:not(:disabled) {

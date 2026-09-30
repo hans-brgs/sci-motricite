@@ -70,7 +70,7 @@ function Section({ sigle, titre, href, teinte }) {
   return (
     <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: "var(--sp-4)", margin: "var(--sp-8) 0 var(--sp-3)" }}>
       <h3 style={{ font: "var(--type-h3)", fontSize: "var(--fs-md)", margin: 0, display: "flex", alignItems: "baseline", gap: "var(--sp-2)" }}>
-        <span style={{ fontFamily: "var(--font-mono)", fontSize: 13, letterSpacing: "0.08em", color: teinte }}>{sigle}</span>
+        <span style={{ fontFamily: "var(--font-mono)", fontSize: 13, letterSpacing: "0.08em", color: `color-mix(in srgb, ${teinte} 55%, var(--text-title))` }}>{sigle}</span>
         {titre}
       </h3>
       <Link to={href} style={{ font: "var(--type-small)", fontWeight: "var(--fw-semibold)", whiteSpace: "nowrap" }}>

@@ -18,6 +18,19 @@ const ENV = path.join(path.dirname(fileURLToPath(import.meta.url)), ".env");
 if (existsSync(ENV)) process.loadEnvFile(ENV);
 
 /**
+ * Minification CSS sans réordonnancement.
+ *
+ * Par défaut, Docusaurus fait suivre cssnano de CleanCSS en mode
+ * `restructureRules`, qui fusionne des règles venues de fichiers différents et
+ * les déplace. L'ordre de la cascade n'est plus garanti : une règle de
+ * modification (`.badgeDone`, `.rubriqueAccent`) se retrouvait avant la
+ * règle de base qu'elle devait surcharger, et la perdait à spécificité égale.
+ * Ce défaut ne se voit qu'en production — le serveur de développement ne
+ * minifie pas. Le minifieur simple (cssnano par défaut) garde l'ordre.
+ */
+process.env.USE_SIMPLE_CSS_MINIFIER ??= "true";
+
+/**
  * Mode enseignant de l'Atelier centre de masse.
  *
  * Le code en clair (CDM_TEACHER_CODE) ne quitte pas la machine qui compile :

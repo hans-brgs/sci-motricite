@@ -63,5 +63,13 @@ export function panel(hue, { edge, dashed = false, fill = 12, angle = "150deg" }
   };
 }
 
-/** Teinte pleine, pour l'étiquette et l'icône d'un encadré. */
-export const hueOf = (hue) => HUES[hue] || HUES.teal;
+/**
+ * Teinte de texte, pour l'étiquette et l'icône d'un encadré.
+ *
+ * Les teintes de la marque sont faites pour les aplats et les filets, pas pour
+ * le texte : sur blanc, le teal ne donne que 2,49:1 et le violet 3,9:1, sous
+ * le seuil de 4,5:1. Mêlée à la couleur des titres, la teinte fonce en mode
+ * clair et s'éclaircit en mode sombre : elle reste reconnaissable et passe le
+ * seuil dans les deux thèmes, aplat de l'encadré compris.
+ */
+export const hueOf = (hue) => `color-mix(in srgb, ${HUES[hue] || HUES.teal} 55%, var(--text-title))`;

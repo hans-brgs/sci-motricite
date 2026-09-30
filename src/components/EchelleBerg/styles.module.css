@@ -124,8 +124,8 @@
 }
 
 .optOn .k {
-  background: var(--accent-strong);
-  border-color: var(--accent-strong);
+  background: var(--accent-fill);
+  border-color: var(--accent-fill);
   color: var(--text-inverse);
 }
 

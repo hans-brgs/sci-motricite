@@ -105,8 +105,8 @@
 }
 
 .coche .caseVisuelle {
-  background: var(--accent-strong);
-  border-color: var(--accent-strong);
+  background: var(--accent-fill);
+  border-color: var(--accent-fill);
   color: var(--text-inverse);
 }
 
@@ -139,7 +139,7 @@
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 17px;
-  color: var(--red-500);
+  color: var(--text-danger);
 }
 
 .interdit {
@@ -157,11 +157,11 @@
 .interdit svg {
   flex: none;
   margin-top: 2px;
-  color: var(--red-500);
+  color: var(--text-danger);
 }
 
 .interdit strong {
-  color: var(--red-500);
+  color: var(--text-danger);
 }
 
 /* ---------- étapes ---------- */
@@ -190,7 +190,7 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: var(--accent-strong);
+  background: var(--accent-fill);
   color: var(--text-inverse);
   font-family: var(--font-mono);
   font-weight: 600;
@@ -598,7 +598,7 @@
 .protegeFaux {
   margin: var(--sp-2) 0 0;
   font-size: 14px;
-  color: var(--red-500);
+  color: var(--text-danger);
 }
 
 /* ---------- évaluation et ressources ---------- */
@@ -817,10 +817,7 @@
   color: var(--text-muted);
 }
 
-/* Deux classes, pas une : à la minification, cette règle est fusionnée avec
-   `.rubriqueAccent` et remontée avant la règle grise ci-dessus, qui
-   l'emporterait à spécificité égale. */
-:global(.markdown) .rubriqueIntitule.rubriqueAccent {
+:global(.markdown) .rubriqueAccent {
   color: var(--amber-500);
 }
 
@@ -847,7 +844,7 @@
 
 :global(.markdown) .alerteTitre {
   font: 700 17px/1.3 var(--font-display);
-  color: var(--red-500);
+  color: var(--text-danger);
 }
 
 :global(.markdown) .interdit {
@@ -866,5 +863,5 @@
 
 :global(.markdown) .protegeFaux {
   font-size: 14px;
-  color: var(--red-500);
+  color: var(--text-danger);
 }

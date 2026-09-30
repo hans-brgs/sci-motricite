@@ -57,7 +57,7 @@ export function ListeFichesTD({ slug, style }) {
                 style={{
                   font: "var(--type-code)",
                   fontSize: 12,
-                  color: "var(--brand-violet)",
+                  color: "var(--accent-2-strong)",
                   letterSpacing: "var(--ls-wide)",
                   marginBottom: 2,
                 }}

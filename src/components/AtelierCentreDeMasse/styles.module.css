@@ -241,8 +241,8 @@
 }
 
 .badgeDone {
-  background: var(--accent-strong);
-  border-color: var(--accent-strong);
+  background: var(--accent-fill);
+  border-color: var(--accent-fill);
   color: var(--text-inverse);
 }
 
@@ -432,8 +432,8 @@
   font-size: 14.5px;
   border-radius: 8px;
   padding: 8px 14px;
-  border: 1.5px solid var(--accent-strong);
-  background: var(--accent-strong);
+  border: 1.5px solid var(--accent-fill);
+  background: var(--accent-fill);
   color: var(--text-inverse);
   cursor: pointer;
   text-decoration: none;
@@ -456,11 +456,11 @@
 
 .ghost {
   background: transparent;
-  color: var(--accent-strong);
+  color: var(--accent-fill);
 }
 
 .ghost:hover {
-  color: var(--accent-strong);
+  color: var(--accent-fill);
   background: var(--accent-soft);
 }
 
@@ -478,7 +478,7 @@
 }
 
 .linkButton:hover {
-  color: var(--red-500);
+  color: var(--text-danger);
 }
 
 .button:focus-visible,
@@ -786,7 +786,7 @@
 }
 
 .out .verdictIcon {
-  color: var(--red-500);
+  color: var(--text-danger);
 }
 
 .fine {
@@ -810,7 +810,7 @@
 }
 
 .err {
-  color: var(--red-500);
+  color: var(--text-danger);
   font-size: 13.5px;
   margin: 0;
 }

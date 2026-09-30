@@ -33,13 +33,15 @@
    ======================================================================== */
 
 :root {
-  --ifm-color-primary: var(--teal-600);
-  --ifm-color-primary-dark: var(--teal-700);
-  --ifm-color-primary-darker: var(--teal-700);
-  --ifm-color-primary-darkest: var(--teal-800, var(--teal-700));
-  --ifm-color-primary-light: var(--teal-500);
-  --ifm-color-primary-lighter: var(--teal-400);
-  --ifm-color-primary-lightest: var(--teal-300);
+  /* teal-700 et non teal-600 : sur blanc, le teal-600 ne donne que 4,24:1,
+     sous le seuil de 4,5:1 (menu actif, table des matières, fil d'Ariane). */
+  --ifm-color-primary: var(--teal-700);
+  --ifm-color-primary-dark: var(--teal-800);
+  --ifm-color-primary-darker: var(--teal-800);
+  --ifm-color-primary-darkest: var(--teal-900);
+  --ifm-color-primary-light: var(--teal-600);
+  --ifm-color-primary-lighter: var(--teal-500);
+  --ifm-color-primary-lightest: var(--teal-400);
 
   --ifm-background-color: var(--bg-page);
   --ifm-background-surface-color: var(--surface-card);
@@ -180,7 +182,7 @@ body {
 .footer__copyright {
   font: var(--type-code);
   font-size: 12px;
-  color: var(--ink-500);
+  color: var(--ink-400);
 }
 
 /* --- Colonne de lecture ------------------------------------------------- */
@@ -227,6 +229,15 @@ html.plugin-docs .container {
 [data-theme="dark"] .sm-figure-plate {
   background: var(--brand-night);
   border-color: rgba(234, 240, 247, 0.1);
+}
+
+/* Le texte qui suit une figure ne colle pas à sa légende. La figure n'a pas de
+   marge basse (elle clôt souvent un encadré), et un paragraphe n'a pas de
+   marge haute : sans cette règle, la légende touchait la ligne suivante. */
+.markdown figure + p,
+.markdown figure + ul,
+.markdown figure + ol {
+  margin-top: var(--sp-6);
 }
 
 /* --- Le bandeau d'ouverture --------------------------------------------- */
@@ -615,6 +626,8 @@ html.plugin-docs .container {
 }
 
 .sm-porte {
+  /* La teinte de la porte, rendue lisible comme texte (voir hueOf, mdx/panel.js). */
+  --porte-texte: color-mix(in srgb, var(--porte) 55%, var(--text-title));
   display: flex;
   flex-direction: column;
   gap: var(--sp-2);
@@ -656,7 +669,7 @@ html.plugin-docs .container {
   height: 38px;
   border-radius: 10px;
   background: color-mix(in srgb, var(--porte) 18%, transparent);
-  color: var(--porte);
+  color: var(--porte-texte);
 }
 
 .sm-porte__sigle {
@@ -664,7 +677,7 @@ html.plugin-docs .container {
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.08em;
-  color: var(--porte);
+  color: var(--porte-texte);
 }
 
 .sm-porte__titre {
@@ -687,7 +700,7 @@ html.plugin-docs .container {
   gap: 6px;
   font-weight: 600;
   font-size: 14.5px;
-  color: var(--porte);
+  color: var(--porte-texte);
 }
 
 @media (prefers-reduced-motion: reduce) {

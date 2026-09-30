@@ -12,13 +12,19 @@
 --text-on-dark-muted:var(--ink-400);
 --text-title:var(--ink-900);
 --text-body:var(--ink-700);
---text-muted:var(--ink-500);
---text-faint:var(--ink-400);
+/* Textes secondaires : ink-500 donne 4,36:1 sur blanc et ink-400 2,62:1, sous le seuil de 4,5:1. Le « faible » sert aussi de vrai texte (pagination, sources, compteurs) : il passe le seuil lui aussi, et reste un cran sous le « discret ». */
+--text-muted:color-mix(in srgb, var(--ink-500) 50%, var(--ink-600));
+--text-faint:color-mix(in srgb, var(--ink-500) 75%, var(--ink-600));
+/* Texte d'un interdit, d'une erreur : le rouge de la marque (3,8:1 sur son aplat) foncé vers l'encre. */
+--text-danger:color-mix(in srgb, var(--red-500) 70%, var(--ink-900));
 --text-inverse:var(--ink-0);
---text-link:var(--teal-600);
---text-link-hover:var(--teal-700);
+/* Le teal-600 ne donne que 4,24:1 sur blanc, sous le seuil de 4,5:1 du texte courant : le texte teal du mode clair est en teal-700 (6,03:1). */
+--text-link:var(--teal-700);
+--text-link-hover:var(--teal-800);
 --accent:var(--teal-400);
---accent-strong:var(--teal-600);
+--accent-strong:var(--teal-700);
+/* Fond plein sous un texte inversé (boutons, pastilles, cases cochées). Égal à --accent-strong en clair, il reste un jeton à part : en sombre, les deux peuvent diverger. */
+--accent-fill:var(--teal-700);
 --accent-soft:var(--teal-50);
 --accent-2:var(--violet-400);
 --accent-2-strong:var(--violet-600);
@@ -52,12 +58,15 @@
 --text-title:var(--ink-50);
 --text-body:var(--ink-300);
 --text-muted:var(--ink-400);
---text-faint:var(--ink-500);
+/* ink-500 ne donne que 3,56:1 sur les cartes sombres. */
+--text-faint:color-mix(in srgb, var(--ink-400) 65%, var(--ink-500));
+--text-danger:color-mix(in srgb, var(--red-500) 50%, var(--ink-50));
 --text-inverse:var(--ink-900);
 --text-link:var(--teal-300);
 --text-link-hover:var(--teal-200);
 --accent:var(--teal-400);
 --accent-strong:var(--teal-300);
+--accent-fill:var(--teal-300);
 --accent-soft:rgba(21,184,167,.14);
 --accent-2:var(--violet-400);
 --accent-2-strong:var(--violet-300);
