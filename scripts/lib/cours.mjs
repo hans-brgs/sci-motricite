@@ -76,7 +76,7 @@ export const COURSE = {
       title: "Chapitre 5 — L'équilibre postural",
       tags: ["Biomécanique", "Équilibre"],
       source: "contenu/support-ecrit/support-ecrit-ch5-equilibre-postural.md",
-      // Pas encore de quiz d'entraînement pour ce chapitre.
+      quiz: "contenu/evaluation/quiz-ch5-equilibre-postural.md",
       lead: "Tomber pour avancer. Debout, le corps garde la projection de son centre de masse dans son polygone de sustentation ; en marchant, il la laisse en sortir à chaque pas, puis la rattrape. Ce chapitre montre comment ce rattrapage devient plus fragile avec l'âge, surtout en médio-latéral, et comment la personne âgée s'en protège.",
     },
   ],
